@@ -135,3 +135,65 @@ test('branding: Tailwind config includes required brand tokens', () => {
   assert.match(tailwind, /#4ade80|#22c55e/, 'Tailwind config must include fresh green accent');
   assert.match(tailwind, /Cairo/, 'Tailwind config must include Cairo in font families');
 });
+
+// ---------------------------------------------------------------------------
+// 5. Phase 2: Schema Migrations & Security Tests
+// ---------------------------------------------------------------------------
+test('security: full_setup.sql enforces RLS and safe triggers on all tables', () => {
+  const sqlPath = path.join(rootDir, 'supabase/full_setup.sql');
+  const sql = fs.readFileSync(sqlPath, 'utf8');
+
+  // Verify RLS enabled on all core tables
+  const tables = ['profiles', 'categories', 'products', 'delivery_areas', 'orders', 'order_items', 'promotions', 'favorites'];
+  for (const t of tables) {
+    assert.match(
+      sql,
+      new RegExp(`ALTER TABLE public\\.${t} ENABLE ROW LEVEL SECURITY`, 'i'),
+      `RLS must be explicitly enabled on table ${t}`
+    );
+  }
+
+  // Verify concurrency safe stock functions
+  assert.match(sql, /decrement_product_stock/i, 'Must contain decrement_product_stock function');
+  assert.match(sql, /FOR UPDATE/i, 'Stock decrement must acquire FOR UPDATE row lock');
+
+  // Verify admin helper function and storage policies
+  assert.match(sql, /CREATE OR REPLACE FUNCTION public\.is_admin/i, 'Must contain is_admin function');
+  assert.match(sql, /storage\.buckets/i, 'Must contain storage bucket provisioning');
+  assert.match(sql, /product-images/i, 'Must contain product-images storage bucket');
+  assert.match(sql, /promote_user_to_admin/i, 'Must contain secure admin provisioning function');
+});
+
+test('security: client environment variables must never expose service_role secret', () => {
+  const envPath = path.join(rootDir, '.env.local');
+  if (fs.existsSync(envPath)) {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    assert.match(envContent, /VITE_SUPABASE_URL=/i, 'Must define VITE_SUPABASE_URL');
+    assert.match(envContent, /VITE_SUPABASE_ANON_KEY=/i, 'Must define VITE_SUPABASE_ANON_KEY');
+    assert.doesNotMatch(
+      envContent,
+      /service_role/i,
+      'SECURITY: service_role key must NEVER be in frontend .env'
+    );
+  }
+});
+
+test('storage: getProductImageUrl resolves both relative paths and absolute URLs', () => {
+  const getProductImageUrl = (filePath, supabaseUrl) => {
+    if (!filePath) return '';
+    if (filePath.startsWith('http://') || filePath.startsWith('https://')) return filePath;
+    return `${supabaseUrl}/storage/v1/object/public/product-images/${filePath}`;
+  };
+
+  const fakeBase = 'https://fake-project.supabase.co';
+  assert.equal(
+    getProductImageUrl('https://example.com/apple.jpg', fakeBase),
+    'https://example.com/apple.jpg'
+  );
+  assert.equal(
+    getProductImageUrl('products/fresh-tomatoes.png', fakeBase),
+    'https://fake-project.supabase.co/storage/v1/object/public/product-images/products/fresh-tomatoes.png'
+  );
+  assert.equal(getProductImageUrl('', fakeBase), '');
+});
+

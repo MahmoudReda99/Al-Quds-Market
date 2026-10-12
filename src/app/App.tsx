@@ -5,6 +5,8 @@ import HomePage from '@/components/storefront/HomePage';
 import NotFoundPage from '@/components/storefront/NotFoundPage';
 import ProfilePage from '@/features/auth/ProfilePage';
 import AuthModal from '@/features/auth/AuthModal';
+import AdminRouteGuard from '@/features/auth/AdminRouteGuard';
+import ProtectedRouteGuard from '@/features/auth/ProtectedRouteGuard';
 import { useAuthStore } from '@/features/auth/store';
 
 export default function App() {
@@ -56,9 +58,30 @@ export default function App() {
           <Route path="/favorites" element={<PlaceholderPage title="المفضلة | Favorites" />} />
           <Route path="/cart" element={<PlaceholderPage title="السلة | Cart" />} />
           <Route path="/checkout" element={<PlaceholderPage title="الدفع | Checkout" />} />
-          <Route path="/orders" element={<PlaceholderPage title="طلباتي | My Orders" />} />
-          <Route path="/orders/:id" element={<PlaceholderPage title="تفاصيل الطلب | Order Detail" />} />
-          <Route path="/admin" element={<PlaceholderPage title="لوحة التحكم | Admin Dashboard" />} />
+          <Route
+            path="/orders"
+            element={
+              <ProtectedRouteGuard>
+                <PlaceholderPage title="طلباتي | My Orders" />
+              </ProtectedRouteGuard>
+            }
+          />
+          <Route
+            path="/orders/:id"
+            element={
+              <ProtectedRouteGuard>
+                <PlaceholderPage title="تفاصيل الطلب | Order Detail" />
+              </ProtectedRouteGuard>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <AdminRouteGuard>
+                <PlaceholderPage title="لوحة التحكم | Admin Dashboard" />
+              </AdminRouteGuard>
+            }
+          />
         </Route>
 
         {/* 404 */}

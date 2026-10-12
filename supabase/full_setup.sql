@@ -468,3 +468,79 @@ SELECT
   id, 35.00, 42.00, 'لتر', 'liter', 110, true
 FROM public.categories WHERE slug = 'pantry'
 ON CONFLICT (sku) DO NOTHING;
+
+-- 14. STORAGE BUCKET & POLICIES
+INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+VALUES (
+  'product-images',
+  'product-images',
+  true,
+  5242880,
+  ARRAY['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml']
+)
+ON CONFLICT (id) DO UPDATE SET
+  public = true,
+  file_size_limit = 5242880,
+  allowed_mime_types = ARRAY['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'];
+
+DROP POLICY IF EXISTS "Public Read Access for Product Images" ON storage.objects;
+CREATE POLICY "Public Read Access for Product Images"
+  ON storage.objects FOR SELECT
+  USING (bucket_id = 'product-images');
+
+DROP POLICY IF EXISTS "Admin Upload Access for Product Images" ON storage.objects;
+CREATE POLICY "Admin Upload Access for Product Images"
+  ON storage.objects FOR INSERT
+  WITH CHECK (
+    bucket_id = 'product-images'
+    AND public.is_admin()
+  );
+
+DROP POLICY IF EXISTS "Admin Update Access for Product Images" ON storage.objects;
+CREATE POLICY "Admin Update Access for Product Images"
+  ON storage.objects FOR UPDATE
+  USING (
+    bucket_id = 'product-images'
+    AND public.is_admin()
+  );
+
+DROP POLICY IF EXISTS "Admin Delete Access for Product Images" ON storage.objects;
+CREATE POLICY "Admin Delete Access for Product Images"
+  ON storage.objects FOR DELETE
+  USING (
+    bucket_id = 'product-images'
+    AND public.is_admin()
+  );
+
+-- 15. SECURE ADMIN PROVISIONING FUNCTION
+CREATE OR REPLACE FUNCTION public.promote_user_to_admin(p_email TEXT)
+RETURNS BOOLEAN
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  v_user_id UUID;
+BEGIN
+  SELECT id INTO v_user_id
+  FROM auth.users
+  WHERE email = LOWER(TRIM(p_email));
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'No user found with email %', p_email;
+  END IF;
+
+  UPDATE public.profiles
+  SET
+    role = 'admin',
+    updated_at = now()
+  WHERE id = v_user_id;
+
+  RETURN TRUE;
+END;
+$$;
+
+REVOKE ALL ON FUNCTION public.promote_user_to_admin(TEXT) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.promote_user_to_admin(TEXT) FROM anon;
+REVOKE ALL ON FUNCTION public.promote_user_to_admin(TEXT) FROM authenticated;
+GRANT EXECUTE ON FUNCTION public.promote_user_to_admin(TEXT) TO service_role;
