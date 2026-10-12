@@ -14,6 +14,8 @@ import {
 import { cn } from '@/lib/utils';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
+import { useCartStore } from '@/features/cart/store';
+import type { Product } from '@/types';
 
 /* ─── Mock categories for Phase 1 visual ───── */
 const MOCK_CATEGORIES = [
@@ -294,6 +296,34 @@ function ProductCard({
     ? Math.round(((product.compareAt! - product.price) / product.compareAt!) * 100)
     : 0;
 
+  const addItem = useCartStore((s) => s.addItem);
+  const openCart = useCartStore((s) => s.openCart);
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const productData: Product = {
+      id: product.id,
+      sku: `PROD-${product.id}`,
+      name_ar: product.nameAr,
+      name_en: product.nameEn,
+      description_ar: product.nameAr,
+      description_en: product.nameEn,
+      category_id: 'fresh-produce',
+      price: product.price,
+      compare_at_price: product.compareAt,
+      unit_label_ar: product.unit,
+      unit_label_en: product.unit,
+      stock_quantity: 50,
+      is_active: true,
+      is_featured: true,
+      images: [{ url: '', alt_ar: product.nameAr, alt_en: product.nameEn }],
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    addItem(productData);
+    openCart();
+  };
+
   return (
     <Link to={`/product/${product.id}`} className="product-card group">
       {/* Image area */}
@@ -307,7 +337,6 @@ function ProductCard({
         <button
           onClick={(e) => {
             e.preventDefault();
-            // Favorites handled in Phase 3
           }}
           className="absolute end-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm opacity-0 transition-opacity group-hover:opacity-100 hover:text-red-500"
           aria-label="Add to favorites"
@@ -343,10 +372,7 @@ function ProductCard({
             )}
           </div>
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              // Cart integration in Phase 4
-            }}
+            onClick={handleAddToCart}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-700 text-white shadow-sm transition-transform active:scale-95 hover:bg-brand-800"
             aria-label={t('common.addToCart')}
           >
