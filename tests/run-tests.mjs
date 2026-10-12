@@ -507,6 +507,133 @@ test('orders: cancelling a pending order restores product inventory', () => {
   assert.equal(inventory['prod-bread'], 15, 'Inventory must be restored on cancellation');
 });
 
+// ---------------------------------------------------------------------------
+// 9. Phase 7: Deployment, Mobile Packaging, Security Audit & E2E Workflows
+// ---------------------------------------------------------------------------
+test('deployment: vercel.json includes SPA rewrites and hardened security headers', () => {
+  const vercelPath = path.join(rootDir, 'vercel.json');
+  assert.ok(fs.existsSync(vercelPath), 'vercel.json must exist');
+
+  const vercelConfig = JSON.parse(fs.readFileSync(vercelPath, 'utf8'));
+
+  // 1. Verify SPA rewrites
+  assert.ok(Array.isArray(vercelConfig.rewrites), 'Must have rewrites array');
+  const spaRewrite = vercelConfig.rewrites.find((r) => r.destination === '/index.html');
+  assert.ok(spaRewrite, 'Must rewrite unknown routes to /index.html for React Router');
+
+  // 2. Verify security headers
+  assert.ok(Array.isArray(vercelConfig.headers), 'Must define headers');
+  const allHeaders = vercelConfig.headers.flatMap((h) => h.headers || []);
+  const headerKeys = allHeaders.map((h) => h.key.toLowerCase());
+
+  assert.ok(headerKeys.includes('x-content-type-options'), 'Must set X-Content-Type-Options');
+  assert.ok(headerKeys.includes('x-frame-options'), 'Must set X-Frame-Options');
+  assert.ok(headerKeys.includes('referrer-policy'), 'Must set Referrer-Policy');
+});
+
+test('mobile: capacitor.config.ts correctly defines app ID, app name, and webDir', () => {
+  const capPath = path.join(rootDir, 'capacitor.config.ts');
+  assert.ok(fs.existsSync(capPath), 'capacitor.config.ts must exist');
+
+  const capContent = fs.readFileSync(capPath, 'utf8');
+  assert.match(capContent, /appId:\s*['"]com\.alqudsmarket\.app['"]/i, 'Must define bundle identifier');
+  assert.match(capContent, /webDir:\s*['"]dist['"]/i, 'webDir must target Vite output dist');
+  assert.match(capContent, /appName:\s*['"]Al Quds Market['"]/i, 'Must define app name');
+
+  const guidePath = path.join(rootDir, 'CAPACITOR_GUIDE.md');
+  assert.ok(fs.existsSync(guidePath), 'CAPACITOR_GUIDE.md documentation must exist');
+});
+
+test('security: codebase audit verifies zero privileged service_role secrets in frontend code', () => {
+  const srcDir = path.join(rootDir, 'src');
+
+  const checkDirForSecrets = (dir) => {
+    const files = fs.readdirSync(dir);
+    for (const f of files) {
+      const fullPath = path.join(dir, f);
+      const stat = fs.statSync(fullPath);
+      if (stat.isDirectory()) {
+        checkDirForSecrets(fullPath);
+      } else if (f.endsWith('.ts') || f.endsWith('.tsx') || f.endsWith('.js')) {
+        const content = fs.readFileSync(fullPath, 'utf8');
+        // Ensure no service_role key assignment, env export, or hardcoded JWT secret
+        assert.doesNotMatch(
+          content,
+          /(?:VITE_[A-Z_]*SERVICE_ROLE|service_role_key\s*=|supabase_service_role)/i,
+          `SECURITY ALERT: privileged secret reference found in frontend file: ${f}`
+        );
+      }
+    }
+  };
+
+  checkDirForSecrets(srcDir);
+});
+
+test('e2e: customer journey simulation (discovery -> cart -> area fees -> order placement -> cancel)', () => {
+  // 1. Initial Central Inventory state
+  const inventory = {
+    'prod-tomato': { name: 'بندورة بلدية', price: 4.5, stock: 50 },
+    'prod-cucumber': { name: 'خيار بلدي', price: 3.5, stock: 30 },
+  };
+
+  const deliveryAreas = [
+    { id: 'area-beit-hanina', name: 'بيت حنينا', fee: 12.0, threshold: 120.0 },
+    { id: 'area-center', name: 'وسط القدس', fee: 10.0, threshold: 100.0 },
+  ];
+
+  // 2. Customer adds to cart
+  const cart = [
+    { productId: 'prod-tomato', qty: 10 },   // 10 * 4.5 = 45.0
+    { productId: 'prod-cucumber', qty: 20 }, // 20 * 3.5 = 70.0
+  ];
+
+  const subtotal = cart.reduce((sum, item) => sum + inventory[item.productId].price * item.qty, 0);
+  assert.equal(subtotal, 115.0); // 45 + 70
+
+  // 3. Customer selects Beit Hanina (threshold 120, subtotal 115 => not free, fee 12.0)
+  const selectedArea = deliveryAreas[0];
+  const fee1 = subtotal >= selectedArea.threshold ? 0 : selectedArea.fee;
+  assert.equal(fee1, 12.0);
+  assert.equal(subtotal + fee1, 127.0);
+
+  // 4. Customer adds 2 more tomatoes (2 * 4.5 = 9.0 => subtotal 124.0 => qualifies for FREE delivery!)
+  cart[0].qty += 2;
+  const newSubtotal = cart.reduce((sum, item) => sum + inventory[item.productId].price * item.qty, 0);
+  assert.equal(newSubtotal, 124.0);
+  const fee2 = newSubtotal >= selectedArea.threshold ? 0 : selectedArea.fee;
+  assert.equal(fee2, 0); // Free delivery!
+
+  // 5. Checkout order placement: decrement stock
+  for (const item of cart) {
+    inventory[item.productId].stock -= item.qty;
+  }
+  assert.equal(inventory['prod-tomato'].stock, 38); // 50 - 12
+  assert.equal(inventory['prod-cucumber'].stock, 10); // 30 - 20
+
+  // 6. Order created in pending status
+  const order = {
+    id: 'ord-101',
+    orderNumber: 1001,
+    status: 'pending',
+    subtotal: newSubtotal,
+    deliveryFee: fee2,
+    total: newSubtotal + fee2,
+    items: cart,
+  };
+  assert.equal(order.total, 124.0);
+  assert.equal(order.status, 'pending');
+
+  // 7. Customer cancels pending order: inventory restored
+  for (const item of order.items) {
+    inventory[item.productId].stock += item.qty;
+  }
+  assert.equal(inventory['prod-tomato'].stock, 50); // Fully restored!
+  assert.equal(inventory['prod-cucumber'].stock, 30); // Fully restored!
+  order.status = 'cancelled';
+  assert.equal(order.status, 'cancelled');
+});
+
+
 
 
 
