@@ -248,6 +248,7 @@ export default function Header() {
 /* ─── Search Bar ────────────────────────────── */
 function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <form
@@ -257,7 +258,9 @@ function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
         e.preventDefault();
         const data = new FormData(e.currentTarget);
         const q = data.get('q');
-        if (q) window.location.href = `/search?q=${encodeURIComponent(String(q))}`;
+        if (q && String(q).trim()) {
+          navigate(`/search?q=${encodeURIComponent(String(q).trim())}`);
+        }
       }}
     >
       <Search

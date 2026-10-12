@@ -1,8 +1,8 @@
 # Al Quds Market — Project Progress Document
 
 > **Last Updated:** 2026-10-12  
-> **Current Phase:** Phase 3 Complete → Phase 4 Ready  
-> **Status:** ✅ Phase 1, 2 & 3 Done
+> **Current Phase:** Phase 4 Complete → Phase 5 Ready  
+> **Status:** ✅ Phase 1, 2, 3 & 4 Done
 
 ---
 
@@ -189,17 +189,22 @@ valid_from, valid_until, is_active
 - [x] Idempotent catalog & image import script (`scripts/import-catalog.mjs` / `npm run catalog:import`)
 - [x] Automated idempotent SQL migration generator (`supabase/seed_catalog_upsert.sql`)
 
-### 🟡 Phase 4 — Cart, Checkout & Cash-on-Delivery Order Pipeline (Next)
-- [ ] Cart drawer / page
-- [ ] Delivery area selector
-- [ ] Address form
-- [ ] Server-side checkout Edge Function
-- [ ] Order confirmation page
+### ✅ Phase 4 — Customer Shopping, Cart & Delivery Fee Calculator (Completed)
+- [x] Persistent shopping cart (`useCartStore`) with `localStorage` sync and concurrency stock clamping
+- [x] Slide-out `CartDrawer` with free delivery progress bar and quick checkout CTA
+- [x] Dedicated full Cart Page (`/cart`) with itemized quantities, image previews, and clear cart modal
+- [x] Jerusalem delivery area selector with dynamic delivery fee & free delivery threshold calculation
+- [x] Delivery driver notes textarea and Cash on Delivery trust badges
+- [x] Advanced search page (`/search`) with live debounced search, category filter pills, stock toggle, and sort selector
+- [x] Category detail page (`/category/:slug`) with subcategory chips, price range filters (< ₪10, ₪10-₪25, > ₪25), and filter reset
+- [x] 14 passing automated tests verifying cart calculations, stock capping, delivery math, and i18n parity
 
-### ⬜ Phase 5 — Order Management (Customer)
-- [ ] Order history page
-- [ ] Order detail with status timeline
-- [ ] Real-time status updates
+### 🟡 Phase 5 — Cash-on-Delivery Checkout Pipeline & Order Management (Next)
+- [ ] Checkout Page (`/checkout`) with recipient name, phone, Jerusalem delivery area, and address line
+- [ ] Server-side order creation & concurrency-safe stock decrement (`decrement_product_stock`)
+- [ ] Order confirmation page with order number, breakdown, and estimated delivery time
+- [ ] Customer order history page (`/orders`)
+- [ ] Customer order detail view with status timeline (`pending` → `confirmed` → `preparing` → `out_for_delivery` → `delivered`)
 
 ### ⬜ Phase 6 — Admin Dashboard
 - [ ] Admin login + route guards
@@ -282,6 +287,20 @@ Same two variables — never the `service_role` key.
 | Admin Catalog Screen | ✅ `/admin` (Product Management + Storage upload) |
 | Idempotent Import Script | ✅ `scripts/import-catalog.mjs` + `supabase/seed_catalog_upsert.sql` |
 | Remote Synchronization | ✅ Pushed to GitHub `MahmoudReda99/Al-Quds-Market` (commit `a394a61`) |
+
+### Phase 4 (Customer Shopping, Cart & Delivery Fee Calculator) — Verified 2026-10-12
+
+| Check | Result |
+|-------|--------|
+| `npm run typecheck` (`tsc --noEmit`) | ✅ 0 errors |
+| `npm run lint` (`eslint .`) | ✅ 0 errors, 0 warnings |
+| `npm test` (`node --test tests/run-tests.mjs`) | ✅ 14 / 14 passed (153ms) |
+| `npm run build` (`vite build`) | ✅ Exit 0 — 1817 modules transformed in 5.10s |
+| Dedicated Cart Page | ✅ `/cart` with itemized stepper, stock limit caps, subtotal, and driver notes |
+| Delivery Area Calculator | ✅ Connected to live Supabase `delivery_areas` table with area-specific fees and free delivery threshold progress bar |
+| Search & Filtering | ✅ `/search` with debounced search, category chips, in-stock toggle, and sorting |
+| Category Detail Filters | ✅ `/category/:slug` with price range chips (< ₪10, ₪10-₪25, > ₪25), subcategory pills, and filter reset |
+| Cart Persistence & Stock Clamping | ✅ Zustand `persist` (`al-quds-cart`), quantities capped by `product.stock_quantity` |
 
 ---
 

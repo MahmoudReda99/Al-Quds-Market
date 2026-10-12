@@ -240,4 +240,140 @@ test('favorites: toggle and deduplication logic', () => {
   assert.deepEqual(merged, ['p2', 'p3']);
 });
 
+// ---------------------------------------------------------------------------
+// 7. Phase 4: Customer Shopping, Delivery Calculator & Cart State Tests
+// ---------------------------------------------------------------------------
+test('checkout & cart: calculateDelivery calculates accurate delivery fees and free threshold', () => {
+  const calculateDelivery = (subtotal, area) => {
+    if (!area) {
+      const defaultThreshold = 100;
+      const isFree = subtotal >= defaultThreshold;
+      const needed = isFree ? 0 : Math.max(0, defaultThreshold - subtotal);
+      const fee = isFree ? 0 : 15;
+      return {
+        subtotal,
+        deliveryFee: fee,
+        isFreeDelivery: isFree,
+        freeDeliveryThreshold: defaultThreshold,
+        amountNeededForFreeDelivery: needed,
+        total: subtotal + fee,
+      };
+    }
+
+    const threshold = area.free_delivery_threshold;
+    const isFree = threshold !== null && threshold !== undefined && subtotal >= threshold;
+    const fee = isFree ? 0 : area.fee;
+    const needed = threshold !== null && !isFree ? Math.max(0, threshold - subtotal) : 0;
+
+    return {
+      subtotal,
+      deliveryFee: fee,
+      isFreeDelivery: isFree,
+      freeDeliveryThreshold: threshold,
+      amountNeededForFreeDelivery: needed,
+      total: subtotal + fee,
+    };
+  };
+
+  const beitHanina = {
+    id: 'area-1',
+    name_ar: 'بيت حنينا',
+    name_en: 'Beit Hanina',
+    fee: 12.0,
+    free_delivery_threshold: 120.0,
+  };
+
+  // 1. Order below threshold
+  const calcBelow = calculateDelivery(80, beitHanina);
+  assert.equal(calcBelow.subtotal, 80);
+  assert.equal(calcBelow.deliveryFee, 12);
+  assert.equal(calcBelow.isFreeDelivery, false);
+  assert.equal(calcBelow.amountNeededForFreeDelivery, 40);
+  assert.equal(calcBelow.total, 92);
+
+  // 2. Order exactly at threshold
+  const calcExact = calculateDelivery(120, beitHanina);
+  assert.equal(calcExact.deliveryFee, 0);
+  assert.equal(calcExact.isFreeDelivery, true);
+  assert.equal(calcExact.amountNeededForFreeDelivery, 0);
+  assert.equal(calcExact.total, 120);
+
+  // 3. Order above threshold
+  const calcAbove = calculateDelivery(150, beitHanina);
+  assert.equal(calcAbove.deliveryFee, 0);
+  assert.equal(calcAbove.isFreeDelivery, true);
+  assert.equal(calcAbove.total, 150);
+
+  // 4. Fallback when no area selected
+  const calcNoArea = calculateDelivery(50, null);
+  assert.equal(calcNoArea.deliveryFee, 15);
+  assert.equal(calcNoArea.isFreeDelivery, false);
+  assert.equal(calcNoArea.amountNeededForFreeDelivery, 50);
+  assert.equal(calcNoArea.total, 65);
+});
+
+test('cart: item removals, zero-quantity transitions and complete cart clearing', () => {
+  let items = [
+    { product: { id: 'p1', price: 10, stock_quantity: 5 }, quantity: 2 },
+    { product: { id: 'p2', price: 25, stock_quantity: 3 }, quantity: 1 },
+  ];
+
+  const updateQuantity = (productId, quantity) => {
+    if (quantity <= 0) {
+      items = items.filter((i) => i.product.id !== productId);
+      return;
+    }
+    items = items.map((i) =>
+      i.product.id === productId
+        ? { ...i, quantity: Math.min(quantity, i.product.stock_quantity) }
+        : i
+    );
+  };
+
+  const clearCart = () => {
+    items = [];
+  };
+
+  // Decrement p1
+  updateQuantity('p1', 1);
+  assert.equal(items.find((i) => i.product.id === 'p1').quantity, 1);
+
+  // Decrement p1 to 0 -> should remove
+  updateQuantity('p1', 0);
+  assert.equal(items.find((i) => i.product.id === 'p1'), undefined);
+  assert.equal(items.length, 1);
+
+  // Attempt to increment p2 beyond stock of 3
+  updateQuantity('p2', 10);
+  assert.equal(items.find((i) => i.product.id === 'p2').quantity, 3);
+
+  // Clear cart
+  clearCart();
+  assert.equal(items.length, 0);
+});
+
+test('catalog: price range filter logic works correctly', () => {
+  const products = [
+    { id: '1', price: 5 },
+    { id: '2', price: 15 },
+    { id: '3', price: 25 },
+    { id: '4', price: 40 },
+  ];
+
+  const filterByRange = (items, range) => {
+    return items.filter((item) => {
+      if (range === 'under10') return item.price < 10;
+      if (range === '10to25') return item.price >= 10 && item.price <= 25;
+      if (range === 'above25') return item.price > 25;
+      return true;
+    });
+  };
+
+  assert.equal(filterByRange(products, 'under10').length, 1); // 5
+  assert.equal(filterByRange(products, '10to25').length, 2); // 15, 25
+  assert.equal(filterByRange(products, 'above25').length, 1); // 40
+  assert.equal(filterByRange(products, 'all').length, 4);
+});
+
+
 

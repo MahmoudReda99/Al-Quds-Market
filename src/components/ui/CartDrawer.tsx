@@ -251,6 +251,17 @@ export default function CartDrawer() {
                 <span>{t('cart.proceedToCheckout')}</span>
                 <ArrowIcon size={18} />
               </Button>
+
+              {/* View full cart link */}
+              <button
+                onClick={() => {
+                  closeCart();
+                  navigate('/cart');
+                }}
+                className="w-full text-center text-xs font-bold text-brand-700 hover:text-brand-900 transition-colors py-1"
+              >
+                {t('cart.viewFullCart')}
+              </button>
             </div>
           )}
         </Dialog.Content>

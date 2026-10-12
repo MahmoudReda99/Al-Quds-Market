@@ -20,6 +20,10 @@ export default function CategoryDetailPage() {
   const activeSubcategoryId = searchParams.get('sub') || undefined;
   const [sortBy, setSortBy] = useState<ProductSortOption>('featured');
   const [inStockOnly, setInStockOnly] = useState(false);
+  const [priceRange, setPriceRange] = useState<'all' | 'under10' | '10to25' | 'above25'>('all');
+
+  const minPrice = priceRange === '10to25' ? 10 : priceRange === 'above25' ? 25 : undefined;
+  const maxPrice = priceRange === 'under10' ? 10 : priceRange === '10to25' ? 25 : undefined;
 
   // Fetch category and subcategories
   const { data: category, isLoading: isCategoryLoading } = useCategoryQuery(slug);
@@ -29,6 +33,8 @@ export default function CategoryDetailPage() {
     categorySlug: slug,
     subcategoryId: activeSubcategoryId,
     inStockOnly,
+    minPrice,
+    maxPrice,
     sortBy,
   });
 
@@ -42,6 +48,17 @@ export default function CategoryDetailPage() {
       setSearchParams({});
     }
   };
+
+  const handleResetFilters = () => {
+    setSearchParams({});
+    setInStockOnly(false);
+    setPriceRange('all');
+    setSortBy('featured');
+  };
+
+  const hasActiveFilters = Boolean(
+    activeSubcategoryId || inStockOnly || priceRange !== 'all' || sortBy !== 'featured'
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 animate-fade-in">
@@ -116,18 +133,79 @@ export default function CategoryDetailPage() {
 
       {/* Toolbar: Sort & Filters */}
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-surface-border bg-surface-muted p-3">
-        {/* In-stock toggle */}
-        <label className="flex items-center gap-2 text-sm font-medium text-foreground cursor-pointer select-none">
-          <input
-            type="checkbox"
-            checked={inStockOnly}
-            onChange={(e) => setInStockOnly(e.target.checked)}
-            className="h-4 w-4 rounded border-surface-border text-brand-700 focus:ring-brand-700"
-          />
-          <span>{t('product.inStock')}</span>
-        </label>
+        {/* Left: In-stock toggle & Price range chips */}
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={inStockOnly}
+              onChange={(e) => setInStockOnly(e.target.checked)}
+              className="h-4 w-4 rounded border-surface-border text-brand-700 focus:ring-brand-700"
+            />
+            <span>{t('product.inStock')}</span>
+          </label>
 
-        {/* Sort Selector */}
+          <div className="hidden sm:block h-4 w-px bg-surface-border" />
+
+          {/* Price Range Chips */}
+          <div className="flex items-center gap-1 text-xs">
+            <button
+              onClick={() => setPriceRange('all')}
+              className={cn(
+                'rounded-lg px-2.5 py-1 font-semibold transition-colors',
+                priceRange === 'all'
+                  ? 'bg-brand-700 text-white'
+                  : 'bg-white text-foreground-muted hover:text-foreground border border-surface-border'
+              )}
+            >
+              {isRtl ? 'كل الأسعار' : 'All Prices'}
+            </button>
+            <button
+              onClick={() => setPriceRange('under10')}
+              className={cn(
+                'rounded-lg px-2.5 py-1 font-semibold transition-colors',
+                priceRange === 'under10'
+                  ? 'bg-brand-700 text-white'
+                  : 'bg-white text-foreground-muted hover:text-foreground border border-surface-border'
+              )}
+            >
+              &lt; ₪10
+            </button>
+            <button
+              onClick={() => setPriceRange('10to25')}
+              className={cn(
+                'rounded-lg px-2.5 py-1 font-semibold transition-colors',
+                priceRange === '10to25'
+                  ? 'bg-brand-700 text-white'
+                  : 'bg-white text-foreground-muted hover:text-foreground border border-surface-border'
+              )}
+            >
+              ₪10 - ₪25
+            </button>
+            <button
+              onClick={() => setPriceRange('above25')}
+              className={cn(
+                'rounded-lg px-2.5 py-1 font-semibold transition-colors',
+                priceRange === 'above25'
+                  ? 'bg-brand-700 text-white'
+                  : 'bg-white text-foreground-muted hover:text-foreground border border-surface-border'
+              )}
+            >
+              &gt; ₪25
+            </button>
+          </div>
+
+          {hasActiveFilters && (
+            <button
+              onClick={handleResetFilters}
+              className="rounded-lg bg-surface-border px-2 py-1 text-[11px] font-semibold text-foreground hover:bg-red-50 hover:text-red-600 transition-colors"
+            >
+              {isRtl ? 'إلغاء الفلاتر' : 'Reset'}
+            </button>
+          )}
+        </div>
+
+        {/* Right: Sort Selector */}
         <div className="flex items-center gap-2">
           <ArrowUpDown size={15} className="text-foreground-subtle" />
           <select

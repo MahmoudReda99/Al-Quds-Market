@@ -84,7 +84,14 @@
     "continueShopping": "مواصلة التسوق",
     "proceedToCheckout": "إتمام الطلب",
     "remove": "إزالة",
-    "updateQuantity": "تحديث الكمية"
+    "updateQuantity": "تحديث الكمية",
+    "clearCart": "تفريغ السلة",
+    "clearCartConfirm": "هل أنت متأكد من رغبتك في إفراغ السلة بالكامل؟",
+    "viewFullCart": "عرض السلة بالتفصيل",
+    "orderSummary": "ملخص الطلب",
+    "estimatedDelivery": "حساب رسوم التوصيل",
+    "selectDeliveryArea": "حدد منطقتك لحساب رسوم التوصيل الدقيقة",
+    "maxStockReached": "تم الوصول للحد الأقصى المتوفر بالمخزون"
   },
   "checkout": {
     "title": "إتمام الطلب",

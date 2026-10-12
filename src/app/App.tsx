@@ -17,6 +17,9 @@ import SearchPage from '@/features/catalog/SearchPage';
 import FavoritesPage from '@/features/favorites/FavoritesPage';
 import ProductManagement from '@/features/catalog/admin/ProductManagement';
 
+// Phase 4 Cart Page
+import CartPage from '@/features/cart/CartPage';
+
 export default function App() {
   const initializeAuth = useAuthStore((s) => s.initialize);
   const user = useAuthStore((s) => s.user);
@@ -66,7 +69,7 @@ export default function App() {
           <Route path="/favorites" element={<FavoritesPage />} />
 
           {/* Cart & Orders — Phase 4 */}
-          <Route path="/cart" element={<PlaceholderPage title="السلة | Cart" />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<PlaceholderPage title="الدفع | Checkout" />} />
           <Route
             path="/orders"

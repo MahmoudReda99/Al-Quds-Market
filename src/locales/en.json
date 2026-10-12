@@ -82,9 +82,16 @@
     "emptyTitle": "Your cart is empty",
     "emptyDesc": "Add items to start shopping",
     "continueShopping": "Continue Shopping",
-    "proceedToCheckout": "Checkout",
+    "proceedToCheckout": "Proceed to Checkout",
     "remove": "Remove",
-    "updateQuantity": "Update Quantity"
+    "updateQuantity": "Update Quantity",
+    "clearCart": "Clear Cart",
+    "clearCartConfirm": "Are you sure you want to completely empty your cart?",
+    "viewFullCart": "View Detailed Cart",
+    "orderSummary": "Order Summary",
+    "estimatedDelivery": "Calculate Delivery Fee",
+    "selectDeliveryArea": "Select your delivery area for accurate delivery fees",
+    "maxStockReached": "Maximum stock quantity reached"
   },
   "checkout": {
     "title": "Checkout",
