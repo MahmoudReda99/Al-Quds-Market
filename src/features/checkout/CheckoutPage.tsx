@@ -97,7 +97,7 @@ export default function CheckoutPage() {
     }
 
     if (!deliveryAreaId) {
-      setErrorMsg(isRtl ? 'يرجى اختيار منطقة التوصيل في القدس' : 'Please select a delivery area');
+      setErrorMsg(isRtl ? 'يرجى اختيار منطقة التوصيل في 6 أكتوبر' : 'Please select a delivery area in 6th of October');
       return;
     }
 

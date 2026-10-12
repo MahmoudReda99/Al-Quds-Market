@@ -275,34 +275,34 @@ test('checkout & cart: calculateDelivery calculates accurate delivery fees and f
     };
   };
 
-  const beitHanina = {
-    id: 'area-1',
-    name_ar: 'بيت حنينا',
-    name_en: 'Beit Hanina',
-    fee: 12.0,
-    free_delivery_threshold: 120.0,
+  const alMotamayez = {
+    id: 'area-motamayez',
+    name_ar: 'الحي المتميز - 6 أكتوبر',
+    name_en: 'Al Motamayez District - 6th of October',
+    fee: 15.0,
+    free_delivery_threshold: 150.0,
   };
 
   // 1. Order below threshold
-  const calcBelow = calculateDelivery(80, beitHanina);
+  const calcBelow = calculateDelivery(80, alMotamayez);
   assert.equal(calcBelow.subtotal, 80);
-  assert.equal(calcBelow.deliveryFee, 12);
+  assert.equal(calcBelow.deliveryFee, 15);
   assert.equal(calcBelow.isFreeDelivery, false);
-  assert.equal(calcBelow.amountNeededForFreeDelivery, 40);
-  assert.equal(calcBelow.total, 92);
+  assert.equal(calcBelow.amountNeededForFreeDelivery, 70);
+  assert.equal(calcBelow.total, 95);
 
   // 2. Order exactly at threshold
-  const calcExact = calculateDelivery(120, beitHanina);
+  const calcExact = calculateDelivery(150, alMotamayez);
   assert.equal(calcExact.deliveryFee, 0);
   assert.equal(calcExact.isFreeDelivery, true);
   assert.equal(calcExact.amountNeededForFreeDelivery, 0);
-  assert.equal(calcExact.total, 120);
+  assert.equal(calcExact.total, 150);
 
   // 3. Order above threshold
-  const calcAbove = calculateDelivery(150, beitHanina);
+  const calcAbove = calculateDelivery(200, alMotamayez);
   assert.equal(calcAbove.deliveryFee, 0);
   assert.equal(calcAbove.isFreeDelivery, true);
-  assert.equal(calcAbove.total, 150);
+  assert.equal(calcAbove.total, 200);
 
   // 4. Fallback when no area selected
   const calcNoArea = calculateDelivery(50, null);
@@ -416,11 +416,11 @@ test('orders: server-side subtotal and delivery fee calculation with historical 
   ];
 
   const deliveryArea = {
-    id: 'area-old-city',
-    name_ar: 'البلدة القديمة',
-    name_en: 'The Old City',
-    fee: 15.0,
-    free_delivery_threshold: 150.0,
+    id: 'area-october-gardens',
+    name_ar: 'حدائق أكتوبر',
+    name_en: 'October Gardens (Hadayek October)',
+    fee: 20.0,
+    free_delivery_threshold: 200.0,
   };
 
   // Order with 2 Milks and 1 Eggs
@@ -455,13 +455,27 @@ test('orders: server-side subtotal and delivery fee calculation with historical 
   assert.equal(snapshotItems[0].line_total, 13.0);
   assert.equal(snapshotItems[1].line_total, 22.0);
 
-  // Delivery fee check (35 < 150 threshold => fee is 15.0)
+  // Delivery fee check (35 < 200 threshold => fee is 20.0)
   const isFree = deliveryArea.free_delivery_threshold !== null && subtotal >= deliveryArea.free_delivery_threshold;
   const fee = isFree ? 0 : deliveryArea.fee;
-  assert.equal(fee, 15.0);
+  assert.equal(fee, 20.0);
 
   const total = subtotal + fee;
-  assert.equal(total, 50.0);
+  assert.equal(total, 55.0);
+});
+
+test('delivery: migration 008 properly configures 6th of October city (Giza) delivery areas', () => {
+  const sqlPath = path.join(rootDir, 'supabase/migrations/008_october_giza_delivery_areas.sql');
+  assert.ok(fs.existsSync(sqlPath), 'Migration 008 file must exist');
+
+  const sql = fs.readFileSync(sqlPath, 'utf8');
+  assert.match(sql, /الحي المتميز - 6 أكتوبر/);
+  assert.match(sql, /غرب سوميد - 6 أكتوبر/);
+  assert.match(sql, /ميدان الحصري والمحور المركزي/);
+  assert.match(sql, /حدائق أكتوبر/);
+  assert.match(sql, /الشيخ زايد/);
+  assert.match(sql, /المنطقة الصناعية - 6 أكتوبر/);
+  assert.match(sql, /UPDATE public\.delivery_areas\s+SET is_active = false/);
 });
 
 test('orders: inventory validation rejects placement when requested exceeds available stock', () => {
