@@ -78,8 +78,16 @@ export default function CategoryDetailPage() {
       {/* Category Hero / Header */}
       <div className="mb-8 rounded-3xl bg-fresh-gradient p-6 sm:p-8 border border-brand-200/50 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm text-4xl">
-            {category?.icon || '🥦'}
+          <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-white shadow-sm text-4xl overflow-hidden p-1">
+            {category?.image_url ? (
+              <img
+                src={category.image_url}
+                alt={categoryName}
+                className="h-full w-full object-cover rounded-xl"
+              />
+            ) : (
+              category?.icon || '🥦'
+            )}
           </div>
           <div>
             <h1 className="text-2xl font-black text-brand-950 sm:text-3xl">

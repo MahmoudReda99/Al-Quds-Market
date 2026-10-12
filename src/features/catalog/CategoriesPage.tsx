@@ -49,8 +49,17 @@ export default function CategoriesPage() {
                   to={`/category/${category.slug}`}
                   className="flex items-center gap-3.5 group"
                 >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-3xl group-hover:scale-105 transition-transform">
-                    {category.icon || '🛒'}
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-3xl group-hover:scale-105 transition-transform overflow-hidden shadow-xs">
+                    {category.image_url ? (
+                      <img
+                        src={category.image_url}
+                        alt={name}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      category.icon || '🛒'
+                    )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <h2 className="text-lg font-bold text-foreground group-hover:text-brand-700 transition-colors">

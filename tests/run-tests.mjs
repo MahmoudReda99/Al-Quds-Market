@@ -245,6 +245,39 @@ test('catalog: seed_catalog_upsert.sql is idempotent and covers all main categor
   assert.match(sql, /FROM public\.categories WHERE slug = 'dairy-eggs'/i);
 });
 
+test('catalog: migration 009 incorporates all 36 InstaShop El Wekala categories with extracted images and EGP products', () => {
+  const sqlPath = path.join(rootDir, 'supabase/migrations/009_instashop_el_wekala_full_catalog.sql');
+  assert.ok(fs.existsSync(sqlPath), 'Migration 009 file must exist');
+
+  const sql = fs.readFileSync(sqlPath, 'utf8');
+
+  // Verify key categories from InstaShop El Wekala
+  const keyCategories = [
+    'new', 'offers', 'back-to-school', 'dairy-eggs', 'fruits-vegetables',
+    'bakery', 'nuts-seeds', 'stationery', 'chips-snacks', 'grab-and-go',
+    'chocolates-candies', 'soft-drinks-juices', 'water', 'coffee-tea',
+    'ice-creams', 'household-care', 'hygiene-personal-care', 'body-care',
+    'facial-care', 'shampoos-hair-care', 'baby-care', 'home-baking',
+    'cereals-packets', 'meat-fish', 'cans-jars', 'pasta-rice',
+    'around-the-world', 'healthy-organic', 'herbs-spices', 'frozen',
+    'cosmetics', 'general-health', 'more', 'electronics',
+    'kitchen-pantry', 'camping-bbq'
+  ];
+
+  for (const cat of keyCategories) {
+    assert.match(sql, new RegExp(`VALUES \\('${cat}'`, 'i'), `Must contain category ${cat}`);
+    const imgPath = path.join(rootDir, `public/categories/${cat}.png`);
+    assert.ok(fs.existsSync(imgPath), `Category image ${cat}.png must exist in public/categories/`);
+  }
+
+  // Verify authentic Egyptian products with EGP prices
+  assert.match(sql, /Juhayna|جهينة/);
+  assert.match(sql, /Chipsy|شيبسي/);
+  assert.match(sql, /Aquafina|أكوافينا/);
+  assert.match(sql, /El Arosa|العروسة/);
+  assert.match(sql, /Al Doha|الضحى/);
+});
+
 test('favorites: toggle and deduplication logic', () => {
   let favoriteIds = [];
 

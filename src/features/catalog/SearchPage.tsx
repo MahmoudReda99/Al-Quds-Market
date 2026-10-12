@@ -139,7 +139,11 @@ export default function SearchPage() {
                     : 'border border-surface-border bg-white text-foreground-muted hover:border-brand-200'
                 )}
               >
-                <span>{cat.icon || '🛍️'}</span>
+                {cat.image_url ? (
+                  <img src={cat.image_url} alt="" className="h-4 w-4 rounded-sm object-cover inline-block" />
+                ) : (
+                  <span>{cat.icon || '🛍️'}</span>
+                )}
                 <span>{localizedText(cat.name_ar, cat.name_en, lang)}</span>
               </button>
             ))}

@@ -56,19 +56,30 @@ export default function HomePage() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
               {categories.map((cat) => {
                 const name = localizedText(cat.name_ar, cat.name_en, lang);
                 return (
                   <Link
                     key={cat.id}
                     to={`/category/${cat.slug}`}
-                    className="flex flex-col items-center gap-2 rounded-2xl border border-surface-border bg-white p-3 text-center card-hover hover:border-brand-200"
+                    className="group flex flex-col items-center gap-2 rounded-2xl border border-surface-border bg-white p-2.5 sm:p-3 text-center card-hover hover:border-brand-200 transition-all"
                   >
-                    <span className="text-3xl sm:text-4xl" aria-hidden="true">
-                      {cat.icon || '🛒'}
-                    </span>
-                    <span className="text-xs font-semibold text-foreground sm:text-sm leading-tight line-clamp-1">
+                    <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-surface-muted overflow-hidden shadow-xs group-hover:scale-105 transition-transform">
+                      {cat.image_url ? (
+                        <img
+                          src={cat.image_url}
+                          alt={name}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span className="text-3xl sm:text-4xl" aria-hidden="true">
+                          {cat.icon || '🛒'}
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-[11px] font-bold text-foreground sm:text-xs leading-tight line-clamp-2">
                       {name}
                     </span>
                   </Link>
