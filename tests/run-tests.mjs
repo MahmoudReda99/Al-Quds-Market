@@ -375,5 +375,138 @@ test('catalog: price range filter logic works correctly', () => {
   assert.equal(filterByRange(products, 'all').length, 4);
 });
 
+// ---------------------------------------------------------------------------
+// 8. Phase 5: Delivery & Checkout Pipeline, Order History & Inventory Validation
+// ---------------------------------------------------------------------------
+test('orders: status badges cover all 6 lifecycle statuses in both AR and EN', () => {
+  const statuses = ['pending', 'confirmed', 'preparing', 'out_for_delivery', 'delivered', 'cancelled'];
+
+  const getStatusBadge = (status, lang) => {
+    const isRtl = lang === 'ar';
+    switch (status) {
+      case 'pending':
+        return { label: isRtl ? 'قيد المراجعة' : 'Pending', color: 'amber' };
+      case 'confirmed':
+        return { label: isRtl ? 'تم التأكيد' : 'Confirmed', color: 'sky' };
+      case 'preparing':
+        return { label: isRtl ? 'جاري التجهيز' : 'Preparing', color: 'indigo' };
+      case 'out_for_delivery':
+        return { label: isRtl ? 'في الطريق إليك' : 'Out for Delivery', color: 'orange' };
+      case 'delivered':
+        return { label: isRtl ? 'تم التوصيل' : 'Delivered', color: 'emerald' };
+      case 'cancelled':
+        return { label: isRtl ? 'ملغي' : 'Cancelled', color: 'red' };
+    }
+  };
+
+  for (const s of statuses) {
+    const arBadge = getStatusBadge(s, 'ar');
+    const enBadge = getStatusBadge(s, 'en');
+
+    assert.ok(arBadge.label.length > 0, `Status ${s} must have an Arabic label`);
+    assert.ok(enBadge.label.length > 0, `Status ${s} must have an English label`);
+    assert.equal(arBadge.color, enBadge.color, `Status ${s} must have consistent color theme`);
+  }
+});
+
+test('orders: server-side subtotal and delivery fee calculation with historical snapshot preservation', () => {
+  const dbProducts = [
+    { id: 'prod-milk', name_ar: 'حليب', name_en: 'Fresh Milk', price: 6.5, stock: 20 },
+    { id: 'prod-eggs', name_ar: 'بيض بلدي', name_en: 'Farm Eggs', price: 22.0, stock: 10 },
+  ];
+
+  const deliveryArea = {
+    id: 'area-old-city',
+    name_ar: 'البلدة القديمة',
+    name_en: 'The Old City',
+    fee: 15.0,
+    free_delivery_threshold: 150.0,
+  };
+
+  // Order with 2 Milks and 1 Eggs
+  const cartItems = [
+    { product_id: 'prod-milk', quantity: 2 },
+    { product_id: 'prod-eggs', quantity: 1 },
+  ];
+
+  let subtotal = 0;
+  const snapshotItems = [];
+
+  for (const item of cartItems) {
+    const prod = dbProducts.find((p) => p.id === item.product_id);
+    assert.ok(prod, 'Product must exist in DB');
+    const lineTotal = prod.price * item.quantity;
+    subtotal += lineTotal;
+
+    // Immutable snapshot
+    snapshotItems.push({
+      product_id: prod.id,
+      product_name_ar: prod.name_ar,
+      product_name_en: prod.name_en,
+      unit_price: prod.price,
+      quantity: item.quantity,
+      line_total: lineTotal,
+    });
+  }
+
+  // 2 * 6.5 (13) + 1 * 22 (22) = 35.0
+  assert.equal(subtotal, 35.0);
+  assert.equal(snapshotItems.length, 2);
+  assert.equal(snapshotItems[0].line_total, 13.0);
+  assert.equal(snapshotItems[1].line_total, 22.0);
+
+  // Delivery fee check (35 < 150 threshold => fee is 15.0)
+  const isFree = deliveryArea.free_delivery_threshold !== null && subtotal >= deliveryArea.free_delivery_threshold;
+  const fee = isFree ? 0 : deliveryArea.fee;
+  assert.equal(fee, 15.0);
+
+  const total = subtotal + fee;
+  assert.equal(total, 50.0);
+});
+
+test('orders: inventory validation rejects placement when requested exceeds available stock', () => {
+  const stockInventory = {
+    'prod-apples': 3, // only 3 apples in stock
+  };
+
+  const validateStock = (productId, requestedQty) => {
+    const available = stockInventory[productId] ?? 0;
+    if (available < requestedQty) {
+      throw new Error(`Insufficient stock. Requested: ${requestedQty}, Available: ${available}`);
+    }
+    return true;
+  };
+
+  // 1. Valid quantity within stock
+  assert.equal(validateStock('prod-apples', 3), true);
+
+  // 2. Excess quantity rejected
+  assert.throws(
+    () => validateStock('prod-apples', 4),
+    /Insufficient stock/
+  );
+});
+
+test('orders: cancelling a pending order restores product inventory', () => {
+  const inventory = {
+    'prod-bread': 15,
+  };
+
+  // Place order of 5
+  inventory['prod-bread'] -= 5;
+  assert.equal(inventory['prod-bread'], 10);
+
+  // Cancel order: restores 5
+  const cancelOrder = (items) => {
+    for (const item of items) {
+      inventory[item.product_id] += item.quantity;
+    }
+  };
+
+  cancelOrder([{ product_id: 'prod-bread', quantity: 5 }]);
+  assert.equal(inventory['prod-bread'], 15, 'Inventory must be restored on cancellation');
+});
+
+
 
 

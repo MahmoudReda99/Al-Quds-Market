@@ -1,8 +1,8 @@
 # Al Quds Market — Project Progress Document
 
-> **Last Updated:** 2026-10-12  
-> **Current Phase:** Phase 4 Complete → Phase 5 Ready  
-> **Status:** ✅ Phase 1, 2, 3 & 4 Done
+> **Last Updated:** 2026-10-13  
+> **Current Phase:** Phase 5 Complete → Phase 6 Ready  
+> **Status:** ✅ Phase 1, 2, 3, 4 & 5 Done
 
 ---
 
@@ -199,18 +199,25 @@ valid_from, valid_until, is_active
 - [x] Category detail page (`/category/:slug`) with subcategory chips, price range filters (< ₪10, ₪10-₪25, > ₪25), and filter reset
 - [x] 14 passing automated tests verifying cart calculations, stock capping, delivery math, and i18n parity
 
-### 🟡 Phase 5 — Cash-on-Delivery Checkout Pipeline & Order Management (Next)
-- [ ] Checkout Page (`/checkout`) with recipient name, phone, Jerusalem delivery area, and address line
-- [ ] Server-side order creation & concurrency-safe stock decrement (`decrement_product_stock`)
-- [ ] Order confirmation page with order number, breakdown, and estimated delivery time
-- [ ] Customer order history page (`/orders`)
-- [ ] Customer order detail view with status timeline (`pending` → `confirmed` → `preparing` → `out_for_delivery` → `delivered`)
+### ✅ Phase 5 — Cash-on-Delivery Checkout Pipeline & Order Management (Completed)
+- [x] Dedicated Cash-on-Delivery Checkout Page (`/checkout`) with recipient name, phone, Jerusalem delivery area, and detailed address
+- [x] Authentic server-side order calculation (retrieves live DB prices and stock, rejecting client price tampering)
+- [x] Concurrency-safe inventory decrement using PostgreSQL `decrement_product_stock` (`FOR UPDATE` row lock)
+- [x] Immutable historical price and product details snapshot captured into `order_items` table
+- [x] Dynamic Jerusalem delivery fee calculation with free delivery threshold qualification
+- [x] Order celebration banner and instant redirection to live tracking view
+- [x] Customer Order History Page (`/orders`) with status badges and item previews
+- [x] Order Detail & Progress Tracking Page (`/orders/:id`) with 5-stage milestone progress timeline (`pending` → `confirmed` → `preparing` → `out_for_delivery` → `delivered`)
+- [x] Safe order cancellation for pending orders with automatic stock restoration via `restore_product_stock`
+- [x] 18 passing automated tests verifying order calculations, stock validation, cancellations, and status progression
 
-### ⬜ Phase 6 — Admin Dashboard
-- [ ] Admin login + route guards
-- [ ] Category & subcategory CRUD
-- [ ] Product CRUD with image upload
-- [ ] Inventory, order, delivery area, promotions management
+### 🟡 Phase 6 — Admin Dashboard & Store Management (Next)
+- [ ] Admin navigation & overview dashboard (`/admin`)
+- [ ] Category & subcategory CRUD with ordering and icons
+- [ ] Product management with Supabase Storage image upload
+- [ ] Central inventory management & low-stock alerts
+- [ ] Order management: live order pipeline, status updates (`pending` → `delivered`), and filtering
+- [ ] Delivery areas configuration & fee tuning
 
 ### ⬜ Phase 7 — Polish & Production Hardening
 - [ ] Image optimization, SEO, accessibility audit
@@ -301,6 +308,21 @@ Same two variables — never the `service_role` key.
 | Search & Filtering | ✅ `/search` with debounced search, category chips, in-stock toggle, and sorting |
 | Category Detail Filters | ✅ `/category/:slug` with price range chips (< ₪10, ₪10-₪25, > ₪25), subcategory pills, and filter reset |
 | Cart Persistence & Stock Clamping | ✅ Zustand `persist` (`al-quds-cart`), quantities capped by `product.stock_quantity` |
+
+### Phase 5 (Cash-on-Delivery Checkout & Order Management) — Verified 2026-10-13
+
+| Check | Result |
+|-------|--------|
+| `npm run typecheck` (`tsc --noEmit`) | ✅ 0 errors |
+| `npm run lint` (`eslint .`) | ✅ 0 errors, 0 warnings |
+| `npm test` (`node --test tests/run-tests.mjs`) | ✅ 18 / 18 passed (135ms) |
+| `npm run build` (`vite build`) | ✅ Exit 0 — 1822 modules transformed in 4.64s |
+| Cash-on-Delivery Checkout | ✅ `/checkout` with recipient details, Jerusalem delivery area, and detailed address |
+| Server-Side Price & Fee Integrity | ✅ Calculations done against live database prices, preventing tampering |
+| Concurrency-Safe Stock Locking | ✅ Decrements stock with `decrement_product_stock` (`FOR UPDATE` row lock) |
+| Historical Order Snapshots | ✅ Preserves unit prices, product titles, and line totals in `order_items` table |
+| Customer Order History | ✅ `/orders` with colored status badges, item thumbnails, and timestamps |
+| Order Detail & Progress Stepper | ✅ `/orders/:id` with 5-stage visual tracker (`pending` → `delivered`) and pending order cancellation |
 
 ---
 

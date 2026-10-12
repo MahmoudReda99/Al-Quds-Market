@@ -9,6 +9,7 @@ import {
   Menu,
   X,
   ChevronDown,
+  Package,
 } from 'lucide-react';
 import { useCartStore } from '@/features/cart/store';
 import { useAuthStore } from '@/features/auth/store';
@@ -86,15 +87,26 @@ export default function Header() {
 
           {/* Account */}
           {user ? (
-            <button
-              onClick={() => navigate('/account')}
-              className="btn-ghost relative flex items-center gap-1.5 p-2"
-              aria-label={t('common.account')}
-            >
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-800">
-                {profile?.full_name?.charAt(0) || user.email?.charAt(0).toUpperCase() || 'U'}
-              </div>
-            </button>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() => navigate('/orders')}
+                className="btn-ghost hidden sm:flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-foreground-muted hover:text-brand-700"
+                aria-label={t('common.orders')}
+              >
+                <Package size={16} />
+                <span>{t('common.orders')}</span>
+              </button>
+
+              <button
+                onClick={() => navigate('/account')}
+                className="btn-ghost relative flex items-center gap-1.5 p-2"
+                aria-label={t('common.account')}
+              >
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-800">
+                  {profile?.full_name?.charAt(0) || user.email?.charAt(0).toUpperCase() || 'U'}
+                </div>
+              </button>
+            </div>
           ) : (
             <button
               onClick={() => openAuthModal('login')}
@@ -207,14 +219,25 @@ export default function Header() {
               </NavLink>
             ))}
             {user ? (
-              <NavLink
-                to="/account"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 py-3 text-sm font-semibold text-brand-700"
-              >
-                <User size={16} />
-                <span>{profile?.full_name || user.email || t('common.account')}</span>
-              </NavLink>
+              <>
+                <NavLink
+                  to="/orders"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 py-3 text-sm font-semibold text-foreground hover:text-brand-700"
+                >
+                  <Package size={16} />
+                  <span>{t('common.orders')}</span>
+                </NavLink>
+
+                <NavLink
+                  to="/account"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 py-3 text-sm font-semibold text-brand-700"
+                >
+                  <User size={16} />
+                  <span>{profile?.full_name || user.email || t('common.account')}</span>
+                </NavLink>
+              </>
             ) : (
               <button
                 onClick={() => {

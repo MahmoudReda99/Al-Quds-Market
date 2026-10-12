@@ -105,6 +105,22 @@
     "orderPlaced": "Order Confirmed!",
     "orderNumber": "Order Number"
   },
+  "orders": {
+    "title": "My Orders",
+    "noOrders": "No previous orders",
+    "noOrdersDesc": "You have not placed any orders yet. Explore our grocery catalog!",
+    "trackOrder": "Track Order",
+    "cancelOrder": "Cancel Order",
+    "orderDetails": "Order Details",
+    "orderedItems": "Ordered Products",
+    "deliveryDetails": "Delivery Details",
+    "orderReceived": "Order Received",
+    "confirmed": "Confirmed",
+    "preparing": "Preparing",
+    "outForDelivery": "Out for Delivery",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled"
+  },
   "auth": {
     "email": "Email",
     "password": "Password",

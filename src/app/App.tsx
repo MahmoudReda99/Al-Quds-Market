@@ -20,6 +20,11 @@ import ProductManagement from '@/features/catalog/admin/ProductManagement';
 // Phase 4 Cart Page
 import CartPage from '@/features/cart/CartPage';
 
+// Phase 5 Checkout & Orders Pages
+import CheckoutPage from '@/features/checkout/CheckoutPage';
+import OrdersPage from '@/features/orders/OrdersPage';
+import OrderDetailPage from '@/features/orders/OrderDetailPage';
+
 export default function App() {
   const initializeAuth = useAuthStore((s) => s.initialize);
   const user = useAuthStore((s) => s.user);
@@ -68,14 +73,14 @@ export default function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
 
-          {/* Cart & Orders — Phase 4 */}
+          {/* Cart & Orders — Phase 4 & Phase 5 */}
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/checkout" element={<PlaceholderPage title="الدفع | Checkout" />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
           <Route
             path="/orders"
             element={
               <ProtectedRouteGuard>
-                <PlaceholderPage title="طلباتي | My Orders" />
+                <OrdersPage />
               </ProtectedRouteGuard>
             }
           />
@@ -83,7 +88,7 @@ export default function App() {
             path="/orders/:id"
             element={
               <ProtectedRouteGuard>
-                <PlaceholderPage title="تفاصيل الطلب | Order Detail" />
+                <OrderDetailPage />
               </ProtectedRouteGuard>
             }
           />
@@ -120,17 +125,3 @@ function AuthActionTrigger({
   return <Navigate to="/" replace />;
 }
 
-// Temporary placeholder for routes not yet implemented
-function PlaceholderPage({ title }: { title: string }) {
-  return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 px-4 text-center">
-      <div className="rounded-2xl bg-brand-50 px-8 py-6">
-        <p className="text-sm font-medium text-brand-600">قريباً | Coming Soon</p>
-        <h1 className="mt-2 text-2xl font-bold text-foreground">{title}</h1>
-        <p className="mt-2 text-sm text-foreground-muted">
-          هذه الصفحة ستكون متاحة في المراحل القادمة من التطوير.
-        </p>
-      </div>
-    </div>
-  );
-}

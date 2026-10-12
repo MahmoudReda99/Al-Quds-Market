@@ -105,6 +105,22 @@
     "orderPlaced": "تم تأكيد طلبك!",
     "orderNumber": "رقم الطلب"
   },
+  "orders": {
+    "title": "طلباتي",
+    "noOrders": "لا توجد طلبات سابقة",
+    "noOrdersDesc": "لم تقم بإنشاء أي طلبات حتى الآن. استكشف أقسام المتجر وابدأ التسوق!",
+    "trackOrder": "تتبع حالة الطلب",
+    "cancelOrder": "إلغاء الطلب",
+    "orderDetails": "تفاصيل الطلب",
+    "orderedItems": "المنتجات المطلوبة",
+    "deliveryDetails": "بيانات التوصيل والمستلم",
+    "orderReceived": "استلام الطلب",
+    "confirmed": "تم التأكيد",
+    "preparing": "جاري التجهيز",
+    "outForDelivery": "في الطريق للتسليم",
+    "delivered": "تم التوصيل",
+    "cancelled": "ملغي"
+  },
   "auth": {
     "email": "البريد الإلكتروني",
     "password": "كلمة المرور",
