@@ -1,15 +1,53 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import StorefrontLayout from '@/components/layout/StorefrontLayout';
 import HomePage from '@/components/storefront/HomePage';
 import NotFoundPage from '@/components/storefront/NotFoundPage';
+import ProfilePage from '@/features/auth/ProfilePage';
+import AuthModal from '@/features/auth/AuthModal';
+import { useAuthStore } from '@/features/auth/store';
 
 export default function App() {
+  const initializeAuth = useAuthStore((s) => s.initialize);
+  const user = useAuthStore((s) => s.user);
+  const openAuthModal = useAuthStore((s) => s.openAuthModal);
+
+  useEffect(() => {
+    initializeAuth();
+  }, [initializeAuth]);
+
   return (
     <BrowserRouter>
+      {/* Global Modals */}
+      <AuthModal />
+
       <Routes>
         {/* Storefront */}
         <Route element={<StorefrontLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/account" element={<ProfilePage />} />
+          
+          <Route
+            path="/login"
+            element={
+              user ? (
+                <Navigate to="/account" replace />
+              ) : (
+                <AuthActionTrigger action="login" openAuthModal={openAuthModal} />
+              )
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              user ? (
+                <Navigate to="/account" replace />
+              ) : (
+                <AuthActionTrigger action="signup" openAuthModal={openAuthModal} />
+              )
+            }
+          />
+
           {/* Placeholder routes — implemented in Phases 3-5 */}
           <Route path="/categories" element={<PlaceholderPage title="الأقسام | Categories" />} />
           <Route path="/category/:slug" element={<PlaceholderPage title="قسم | Category" />} />
@@ -20,15 +58,28 @@ export default function App() {
           <Route path="/checkout" element={<PlaceholderPage title="الدفع | Checkout" />} />
           <Route path="/orders" element={<PlaceholderPage title="طلباتي | My Orders" />} />
           <Route path="/orders/:id" element={<PlaceholderPage title="تفاصيل الطلب | Order Detail" />} />
-          <Route path="/account" element={<PlaceholderPage title="حسابي | My Account" />} />
-          <Route path="/login" element={<PlaceholderPage title="تسجيل الدخول | Log In" />} />
-          <Route path="/signup" element={<PlaceholderPage title="إنشاء حساب | Sign Up" />} />
+          <Route path="/admin" element={<PlaceholderPage title="لوحة التحكم | Admin Dashboard" />} />
         </Route>
+
         {/* 404 */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
+}
+
+function AuthActionTrigger({
+  action,
+  openAuthModal,
+}: {
+  action: 'login' | 'signup';
+  openAuthModal: (view: 'login' | 'signup') => void;
+}) {
+  useEffect(() => {
+    openAuthModal(action);
+  }, [action, openAuthModal]);
+
+  return <Navigate to="/" replace />;
 }
 
 // Temporary placeholder for routes not yet implemented

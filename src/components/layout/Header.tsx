@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   ShoppingCart,
@@ -11,6 +11,7 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { useCartStore } from '@/features/cart/store';
+import { useAuthStore } from '@/features/auth/store';
 import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/lib/i18n';
 import i18n from '@/lib/i18n';
@@ -18,10 +19,15 @@ import Logo from '@/components/ui/Logo';
 
 export default function Header() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const itemCount = useCartStore((s) => s.itemCount());
   const toggleCart = useCartStore((s) => s.toggleCart);
+
+  const user = useAuthStore((s) => s.user);
+  const profile = useAuthStore((s) => s.profile);
+  const openAuthModal = useAuthStore((s) => s.openAuthModal);
 
   const currentLang = (i18n.language as SupportedLanguage) ?? 'ar';
 
@@ -79,13 +85,26 @@ export default function Header() {
           </button>
 
           {/* Account */}
-          <Link
-            to="/account"
-            className="btn-ghost p-2"
-            aria-label={t('common.account')}
-          >
-            <User size={20} />
-          </Link>
+          {user ? (
+            <button
+              onClick={() => navigate('/account')}
+              className="btn-ghost relative flex items-center gap-1.5 p-2"
+              aria-label={t('common.account')}
+            >
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-800">
+                {profile?.full_name?.charAt(0) || user.email?.charAt(0).toUpperCase() || 'U'}
+              </div>
+            </button>
+          ) : (
+            <button
+              onClick={() => openAuthModal('login')}
+              className="btn-ghost flex items-center gap-1.5 p-2 text-sm"
+              aria-label={t('common.login')}
+            >
+              <User size={20} />
+              <span className="hidden sm:inline font-medium text-xs">{t('common.login')}</span>
+            </button>
+          )}
 
           {/* Cart */}
           <button
@@ -187,6 +206,27 @@ export default function Header() {
                 {link.label}
               </NavLink>
             ))}
+            {user ? (
+              <NavLink
+                to="/account"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-2 py-3 text-sm font-semibold text-brand-700"
+              >
+                <User size={16} />
+                <span>{profile?.full_name || user.email || t('common.account')}</span>
+              </NavLink>
+            ) : (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openAuthModal('login');
+                }}
+                className="flex w-full items-center gap-2 py-3 text-sm font-semibold text-brand-700 text-start"
+              >
+                <User size={16} />
+                <span>{t('auth.loginTitle')} / {t('auth.signupTitle')}</span>
+              </button>
+            )}
             <button
               onClick={() => {
                 toggleLanguage();
