@@ -248,30 +248,30 @@ Same two variables — never the `service_role` key.
 | Accessible Primitives | ✅ `Button`, `Badge`, `Input`, `CartDrawer` with RTL sliding support |
 | Remote Synchronization | ✅ Synced with GitHub `MahmoudReda99/Al-Quds-Market` on `main` |
 
-### Phase 2 (Supabase Backend, RLS & Auth) — Verified 2026-10-12
+### Phase 2 (Supabase Backend, Live DB, RLS, Storage & Auth) — Verified 2026-10-12
 
 | Check | Result |
 |-------|--------|
-| `npx tsc --noEmit` | ✅ 0 errors |
-| `npx vite build` | ✅ Exit 0 — 1743 modules, 4.03s |
-| Bundle chunking | ✅ Vendor (164KB) / Supabase (170KB) / App (191KB) / UI (34KB) / CSS (34KB) |
-| Supabase SQL files | ✅ `001_initial_schema`, `002_rls_policies`, `003_auth_triggers_and_functions`, `004_seed_data`, `full_setup.sql` |
-| RLS verification | ✅ Enabled on 100% of tables with public read rules & customer write restrictions |
+| Live Database Connectivity | ✅ Verified live connection to `ejorpzypevglnrawyxfc.supabase.co` |
+| Live Tables Provisioned | ✅ `categories` (8 rows), `products` (7 rows), `delivery_areas` (8 rows) |
+| `npm run typecheck` (`tsc --noEmit`) | ✅ 0 errors |
+| `npm run lint` (`eslint .`) | ✅ 0 errors, 0 warnings |
+| `npm test` (`node --test tests/run-tests.mjs`) | ✅ 9 / 9 passed (schema RLS, storage URLs, key safety, utils, cart, i18n) |
+| `npm run build` (`vite build`) | ✅ Exit 0 — 1801 modules transformed in 4.12s |
+| Storage Bucket Policies | ✅ Public read, admin-only upload/update/delete in `005_storage_and_admin_provisioning.sql` |
+| Route Security Guards | ✅ `AdminRouteGuard` (role = 'admin') and `ProtectedRouteGuard` |
 | Concurrency safety | ✅ `decrement_product_stock` using `FOR UPDATE` row lock |
-| Git commit | ✅ Commit `376625d` pushed to `origin/main` |
+| Remote Synchronization | ✅ Synced with GitHub `MahmoudReda99/Al-Quds-Market` (commit `1a5cd2c`) |
 
 ---
 
 ## Configuration Still Required
 
-1. **Supabase Project Credentials (`.env.local`)**:
-   - Create `.env.local` inside `al-quds-market/` with your Supabase URL & anon key:
-     ```env
-     VITE_SUPABASE_URL=https://<your-project-id>.supabase.co
-     VITE_SUPABASE_ANON_KEY=<your-anon-public-key>
-     ```
-   - Execute `supabase/full_setup.sql` in the Supabase SQL Editor.
-2. **Vercel Project Setup**:
+1. **Storage Bucket Provisioning (One-time)**:
+   - Run [`supabase/migrations/005_storage_and_admin_provisioning.sql`](file:///Users/mahmoudreda/Desktop/My%20Projects/Al%20Quds/al-quds-market/supabase/migrations/005_storage_and_admin_provisioning.sql) in your Supabase SQL Editor to create the `product-images` storage bucket and admin promotion function.
+2. **First Admin Provisioning**:
+   - Once your first admin account registers through the website, run `SELECT public.promote_user_to_admin('your-admin-email@example.com');` in the SQL Editor to grant admin privileges.
+3. **Vercel Project Setup**:
    - Import the GitHub repo `MahmoudReda99/Al-Quds-Market` on Vercel.
    - Set Root Directory to `al-quds-market`.
    - Add environment variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
