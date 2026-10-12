@@ -12,11 +12,11 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open http://localhost:3000 in your browser.
 
 ## Environment Setup
 
-Copy `.env.example` to `.env.local` and fill in your Supabase credentials (Phase 2):
+Copy `.env.example` to `.env.local` and fill in your Supabase credentials when required:
 
 ```bash
 cp .env.example .env.local
@@ -25,18 +25,18 @@ cp .env.example .env.local
 ## Scripts
 
 | Command | Description |
-|---------|-------------|
+|---|---|
 | `npm run dev` | Start Vite dev server on port 3000 |
-| `npm run build` | Type-check + production build |
-| `npm run preview` | Preview production build locally |
+| `npm run build` | Type-check and create a production build |
+| `npm run preview` | Preview the production build locally |
 | `npm run typecheck` | Run TypeScript without emitting |
-| `npm run lint` | ESLint check |
+| `npm run lint` | Run ESLint |
 
 ## Project Structure
 
-See the [Project Progress Document](../PROJECT_PROGRESS.md) for full architecture, schema, and phased implementation plan.
+See the `PROJECT_PROGRESS.md` document for the architecture, schema, and phased implementation plan, if that document is available in your project.
 
-## Technology
+## Technology Stack
 
 - **React 18** + **TypeScript** (strict)
 - **Vite 5** with path aliases
@@ -45,6 +45,6 @@ See the [Project Progress Document](../PROJECT_PROGRESS.md) for full architectur
 - **Zustand** for cart state
 - **TanStack Query v5** for server state
 - **React Router v6** for routing
-- **i18next** for Arabic/English with full RTL/LTR support
-- **Supabase** for backend (Auth, PostgreSQL, Storage, Edge Functions)
+- **i18next** for Arabic/English with RTL/LTR support
+- **Supabase** for backend services
 - **Vercel** for deployment
