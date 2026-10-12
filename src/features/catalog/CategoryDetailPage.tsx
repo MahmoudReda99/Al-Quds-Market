@@ -169,7 +169,7 @@ export default function CategoryDetailPage() {
                   : 'bg-white text-foreground-muted hover:text-foreground border border-surface-border'
               )}
             >
-              &lt; ₪10
+              &lt; 10 {t('common.currency')}
             </button>
             <button
               onClick={() => setPriceRange('10to25')}
@@ -180,7 +180,7 @@ export default function CategoryDetailPage() {
                   : 'bg-white text-foreground-muted hover:text-foreground border border-surface-border'
               )}
             >
-              ₪10 - ₪25
+              10 - 25 {t('common.currency')}
             </button>
             <button
               onClick={() => setPriceRange('above25')}
@@ -191,7 +191,7 @@ export default function CategoryDetailPage() {
                   : 'bg-white text-foreground-muted hover:text-foreground border border-surface-border'
               )}
             >
-              &gt; ₪25
+              &gt; 25 {t('common.currency')}
             </button>
           </div>
 

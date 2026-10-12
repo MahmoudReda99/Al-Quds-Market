@@ -9,12 +9,12 @@ export function cn(...inputs: ClassValue[]): string {
 }
 
 /**
- * Format a number as a currency string.
+ * Format a number as a currency string (defaults to Egyptian Pound EGP).
  */
 export function formatCurrency(
   amount: number,
-  locale: string = 'ar-PS',
-  currency: string = 'ILS'
+  locale: string = 'ar-EG',
+  currency: string = 'EGP'
 ): string {
   return new Intl.NumberFormat(locale, {
     style: 'currency',
@@ -22,6 +22,14 @@ export function formatCurrency(
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(amount);
+}
+
+/**
+ * Format a price with the appropriate Egyptian Pound currency label (جنيه مصري / EGP).
+ */
+export function formatPrice(amount: number, lang: 'ar' | 'en' = 'ar'): string {
+  const formatted = amount.toFixed(2);
+  return lang === 'ar' ? `${formatted} جنيه مصري` : `${formatted} EGP`;
 }
 
 /**

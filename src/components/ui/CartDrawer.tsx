@@ -32,7 +32,7 @@ export default function CartDrawer() {
   const isRtl = lang === 'ar';
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
-  // Free delivery threshold indicator (e.g. ₪100)
+  // Free delivery threshold indicator (e.g. 100 EGP)
   const freeDeliveryThreshold = 100;
   const remainingForFreeDelivery = Math.max(0, freeDeliveryThreshold - subtotal);
   const freeDeliveryProgress = Math.min(100, (subtotal / freeDeliveryThreshold) * 100);
@@ -94,8 +94,8 @@ export default function CartDrawer() {
                       ? 'مبروك! حصلت على توصيل مجاني 🎉'
                       : 'Congratulations! You qualified for Free Delivery 🎉'
                     : isRtl
-                    ? `أضف بـ ₪${remainingForFreeDelivery.toFixed(2)} إضافية للتوصيل المجاني`
-                    : `Add ₪${remainingForFreeDelivery.toFixed(2)} more for Free Delivery`}
+                    ? `أضف بـ ${remainingForFreeDelivery.toFixed(2)} ${t('common.currency')} إضافية للتوصيل المجاني`
+                    : `Add ${remainingForFreeDelivery.toFixed(2)} ${t('common.currency')} more for Free Delivery`}
                 </span>
                 <span>{Math.round(freeDeliveryProgress)}%</span>
               </div>
@@ -162,10 +162,10 @@ export default function CartDrawer() {
                         {name}
                       </h4>
                       <p className="text-xs text-foreground-muted mt-0.5">
-                        ₪{product.price.toFixed(2)} / {unit}
+                        {product.price.toFixed(2)} {t('common.currency')} / {unit}
                       </p>
                       <p className="text-sm font-bold text-brand-700 mt-1">
-                        ₪{lineTotal.toFixed(2)}
+                        {lineTotal.toFixed(2)} {t('common.currency')}
                       </p>
                     </div>
 
@@ -218,7 +218,7 @@ export default function CartDrawer() {
                 <div className="flex justify-between text-foreground-muted">
                   <span>{t('common.subtotal')}</span>
                   <span className="font-semibold text-foreground">
-                    ₪{subtotal.toFixed(2)}
+                    {subtotal.toFixed(2)} {t('common.currency')}
                   </span>
                 </div>
                 <div className="flex justify-between text-foreground-muted">
@@ -233,7 +233,7 @@ export default function CartDrawer() {
                 </div>
                 <div className="flex justify-between border-t border-surface-border pt-2 text-base font-bold text-foreground">
                   <span>{t('common.total')}</span>
-                  <span className="text-brand-800">₪{subtotal.toFixed(2)}</span>
+                  <span className="text-brand-800">{subtotal.toFixed(2)} {t('common.currency')}</span>
                 </div>
               </div>
 

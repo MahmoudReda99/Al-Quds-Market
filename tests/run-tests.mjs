@@ -84,6 +84,36 @@ test('utils: localizedText falls back properly between languages', () => {
   assert.equal(localizedText('', 'Tomatoes', 'ar'), 'Tomatoes');
 });
 
+test('currency: Egyptian Pound (جنيه مصري / EGP) is standard currency across locales and utilities', () => {
+  const arJson = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/locales/ar.json'), 'utf8'));
+  const enJson = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/locales/en.json'), 'utf8'));
+
+  assert.equal(arJson.common.currency, 'جنيه مصري', 'Arabic currency must be جنيه مصري');
+  assert.equal(enJson.common.currency, 'EGP', 'English currency must be EGP');
+
+  const utilsPath = path.join(rootDir, 'src/lib/utils.ts');
+  const utilsCode = fs.readFileSync(utilsPath, 'utf8');
+
+  assert.match(utilsCode, /locale:\s*string\s*=\s*'ar-EG'/, 'Default locale must be ar-EG');
+  assert.match(utilsCode, /currency:\s*string\s*=\s*'EGP'/, 'Default currency must be EGP');
+  assert.match(utilsCode, /formatPrice/, 'utils must export formatPrice helper');
+
+  // Verify no lingering ₪ in src/ code
+  function walkDir(dir) {
+    let files = [];
+    for (const item of fs.readdirSync(dir)) {
+      const p = path.join(dir, item);
+      if (fs.statSync(p).isDirectory()) files = files.concat(walkDir(p));
+      else if (p.endsWith('.ts') || p.endsWith('.tsx') || p.endsWith('.json')) files.push(p);
+    }
+    return files;
+  }
+
+  const srcFiles = walkDir(path.join(rootDir, 'src'));
+  const lingeringShekel = srcFiles.filter((f) => fs.readFileSync(f, 'utf8').includes('₪'));
+  assert.deepEqual(lingeringShekel, [], 'No files in src/ should contain the ₪ symbol');
+});
+
 // ---------------------------------------------------------------------------
 // 3. Cart Calculations & Concurrency Stock Limiting Tests
 // ---------------------------------------------------------------------------

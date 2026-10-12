@@ -211,7 +211,7 @@ export default function OrdersPage() {
                 <div className="text-start sm:text-end">
                   <p className="text-xs text-foreground-muted">{t('common.total')}</p>
                   <p className="text-lg font-black text-brand-800">
-                    ₪{order.total.toFixed(2)}
+                    {order.total.toFixed(2)} {t('common.currency')}
                   </p>
                   <span className="text-[11px] font-semibold text-brand-600">
                     {t('common.cashOnDelivery')}

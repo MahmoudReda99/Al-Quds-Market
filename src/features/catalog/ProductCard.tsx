@@ -134,11 +134,11 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           <div>
             <div className="flex items-baseline gap-1.5">
               <span className="text-base font-extrabold text-foreground">
-                ₪{product.price.toFixed(2)}
+                {product.price.toFixed(2)} {t('common.currency')}
               </span>
               {hasDiscount && (
                 <span className="text-xs text-foreground-subtle line-through">
-                  ₪{product.compare_at_price!.toFixed(2)}
+                  {product.compare_at_price!.toFixed(2)} {t('common.currency')}
                 </span>
               )}
             </div>

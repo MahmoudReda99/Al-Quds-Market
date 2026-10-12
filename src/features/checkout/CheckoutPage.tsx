@@ -290,8 +290,8 @@ export default function CheckoutPage() {
                 <option value="">{t('checkout.selectArea')}</option>
                 {deliveryAreas.map((area) => (
                   <option key={area.id} value={area.id}>
-                    {localizedText(area.name_ar, area.name_en, lang)} (₪{area.fee.toFixed(2)}
-                    {area.free_delivery_threshold ? ` - مجاني فوق ₪${area.free_delivery_threshold}` : ''})
+                    {localizedText(area.name_ar, area.name_en, lang)} ({area.fee.toFixed(2)} {t('common.currency')}
+                    {area.free_delivery_threshold ? ` - ${t('common.free')} فوق ${area.free_delivery_threshold} ${t('common.currency')}` : ''})
                   </option>
                 ))}
               </select>
@@ -377,11 +377,11 @@ export default function CheckoutPage() {
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-bold text-foreground line-clamp-1">{name}</p>
                       <p className="text-[11px] text-foreground-muted">
-                        {quantity} × ₪{product.price.toFixed(2)}
+                        {quantity} × {product.price.toFixed(2)} {t('common.currency')}
                       </p>
                     </div>
                     <span className="text-xs font-bold text-brand-800">
-                      ₪{lineTotal.toFixed(2)}
+                      {lineTotal.toFixed(2)} {t('common.currency')}
                     </span>
                   </div>
                 );
@@ -392,7 +392,7 @@ export default function CheckoutPage() {
             <div className="space-y-2 border-t border-surface-border pt-4 text-sm">
               <div className="flex justify-between text-foreground-muted">
                 <span>{t('common.subtotal')}</span>
-                <span className="font-bold text-foreground">₪{subtotal.toFixed(2)}</span>
+                <span className="font-bold text-foreground">{subtotal.toFixed(2)} {t('common.currency')}</span>
               </div>
 
               <div className="flex justify-between items-center text-foreground-muted">
@@ -404,7 +404,7 @@ export default function CheckoutPage() {
                     </span>
                   ) : (
                     <span className="font-bold text-brand-700">
-                      ₪{deliveryCalc.deliveryFee.toFixed(2)}
+                      {deliveryCalc.deliveryFee.toFixed(2)} {t('common.currency')}
                     </span>
                   )
                 ) : (
@@ -416,7 +416,7 @@ export default function CheckoutPage() {
 
               <div className="flex justify-between border-t border-surface-border pt-3 text-lg font-black text-foreground">
                 <span>{t('common.total')}</span>
-                <span className="text-brand-800">₪{deliveryCalc.total.toFixed(2)}</span>
+                <span className="text-brand-800">{deliveryCalc.total.toFixed(2)} {t('common.currency')}</span>
               </div>
             </div>
 

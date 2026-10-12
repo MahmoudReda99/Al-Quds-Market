@@ -335,7 +335,7 @@ export default function OrderDetailPage() {
                         {name}
                       </h4>
                       <p className="text-xs text-foreground-muted mt-0.5">
-                        ₪{item.unit_price.toFixed(2)} / {unit}
+                        {item.unit_price.toFixed(2)} {t('common.currency')} / {unit}
                       </p>
                       <p className="text-xs text-brand-700 font-semibold mt-0.5">
                         {isRtl ? 'الكمية:' : 'Qty:'} {item.quantity}
@@ -344,7 +344,7 @@ export default function OrderDetailPage() {
 
                     <div className="text-end">
                       <span className="text-sm font-black text-brand-800">
-                        ₪{item.line_total.toFixed(2)}
+                        {item.line_total.toFixed(2)} {t('common.currency')}
                       </span>
                     </div>
                   </div>
@@ -404,7 +404,7 @@ export default function OrderDetailPage() {
             <div className="space-y-2.5 text-sm">
               <div className="flex justify-between text-foreground-muted">
                 <span>{t('common.subtotal')}</span>
-                <span className="font-bold text-foreground">₪{order.subtotal.toFixed(2)}</span>
+                <span className="font-bold text-foreground">{order.subtotal.toFixed(2)} {t('common.currency')}</span>
               </div>
 
               <div className="flex justify-between items-center text-foreground-muted">
@@ -415,14 +415,14 @@ export default function OrderDetailPage() {
                   </span>
                 ) : (
                   <span className="font-bold text-brand-700">
-                    ₪{order.delivery_fee.toFixed(2)}
+                    {order.delivery_fee.toFixed(2)} {t('common.currency')}
                   </span>
                 )}
               </div>
 
               <div className="flex justify-between border-t border-surface-border pt-3 text-lg font-black text-foreground">
                 <span>{t('common.total')}</span>
-                <span className="text-brand-800">₪{order.total.toFixed(2)}</span>
+                <span className="text-brand-800">{order.total.toFixed(2)} {t('common.currency')}</span>
               </div>
             </div>
 
@@ -433,8 +433,8 @@ export default function OrderDetailPage() {
                 <p className="font-bold text-brand-950">{t('common.cashOnDelivery')}</p>
                 <p className="text-brand-800 text-[11px] mt-0.5">
                   {isRtl
-                    ? `المبلغ المطلوب دفعه للمندوب عند الاستلام: ₪${order.total.toFixed(2)}`
-                    : `Amount to pay in cash to courier: ₪${order.total.toFixed(2)}`}
+                    ? `المبلغ المطلوب دفعه للمندوب عند الاستلام: ${order.total.toFixed(2)} ${t('common.currency')}`
+                    : `Amount to pay in cash to courier: ${order.total.toFixed(2)} ${t('common.currency')}`}
                 </p>
               </div>
             </div>

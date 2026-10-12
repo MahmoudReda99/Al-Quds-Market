@@ -199,8 +199,8 @@ export default function CartPage() {
             ) : (
               <span>
                 {isRtl
-                  ? `أضف بقيمة ₪${deliveryCalc.amountNeededForFreeDelivery.toFixed(2)} إضافية للحصول على توصيل مجاني`
-                  : `Add ₪${deliveryCalc.amountNeededForFreeDelivery.toFixed(2)} more to qualify for Free Delivery`}
+                  ? `أضف بقيمة ${deliveryCalc.amountNeededForFreeDelivery.toFixed(2)} ${t('common.currency')} إضافية للحصول على توصيل مجاني`
+                  : `Add ${deliveryCalc.amountNeededForFreeDelivery.toFixed(2)} ${t('common.currency')} more to qualify for Free Delivery`}
               </span>
             )}
           </span>
@@ -256,7 +256,7 @@ export default function CartPage() {
                           {name}
                         </Link>
                         <p className="mt-0.5 text-xs text-foreground-muted">
-                          ₪{product.price.toFixed(2)} / {unit}
+                          {product.price.toFixed(2)} {t('common.currency')} / {unit}
                         </p>
                         <div className="mt-1 flex items-center gap-2">
                           <span className="text-xs text-foreground-subtle">
@@ -305,7 +305,7 @@ export default function CartPage() {
                       {/* Total */}
                       <div className="text-end min-w-[80px]">
                         <p className="text-base font-extrabold text-brand-800">
-                          ₪{lineTotal.toFixed(2)}
+                          {lineTotal.toFixed(2)} {t('common.currency')}
                         </p>
                       </div>
 
@@ -359,10 +359,10 @@ export default function CartPage() {
                 <option value="">{t('checkout.selectArea')}</option>
                 {deliveryAreas.map((area) => (
                   <option key={area.id} value={area.id}>
-                    {localizedText(area.name_ar, area.name_en, lang)} (₪
-                    {area.fee.toFixed(2)}
+                    {localizedText(area.name_ar, area.name_en, lang)} (
+                    {area.fee.toFixed(2)} {t('common.currency')}
                     {area.free_delivery_threshold
-                      ? ` - مجاني فوق ₪${area.free_delivery_threshold}`
+                      ? ` - ${t('common.free')} فوق ${area.free_delivery_threshold} ${t('common.currency')}`
                       : ''}
                     )
                   </option>
@@ -393,7 +393,7 @@ export default function CartPage() {
               <div className="flex justify-between text-foreground-muted">
                 <span>{t('common.subtotal')}</span>
                 <span className="font-bold text-foreground">
-                  ₪{subtotal.toFixed(2)}
+                  {subtotal.toFixed(2)} {t('common.currency')}
                 </span>
               </div>
 
@@ -406,7 +406,7 @@ export default function CartPage() {
                     </span>
                   ) : (
                     <span className="font-bold text-brand-700">
-                      ₪{deliveryCalc.deliveryFee.toFixed(2)}
+                      {deliveryCalc.deliveryFee.toFixed(2)} {t('common.currency')}
                     </span>
                   )
                 ) : (
@@ -419,7 +419,7 @@ export default function CartPage() {
               <div className="flex justify-between border-t border-surface-border pt-3 text-lg font-black text-foreground">
                 <span>{t('common.total')}</span>
                 <span className="text-brand-800">
-                  ₪{deliveryCalc.total.toFixed(2)}
+                  {deliveryCalc.total.toFixed(2)} {t('common.currency')}
                 </span>
               </div>
             </div>

@@ -255,10 +255,10 @@ export default function ProductManagement() {
 
                     {/* Price Cell */}
                     <td className="px-4 py-3">
-                      <span className="font-bold text-foreground">₪{p.price.toFixed(2)}</span>
+                      <span className="font-bold text-foreground">{p.price.toFixed(2)} {t('common.currency')}</span>
                       {p.compare_at_price && (
                         <span className="ms-1.5 text-xs text-foreground-subtle line-through">
-                          ₪{p.compare_at_price.toFixed(2)}
+                          {p.compare_at_price.toFixed(2)} {t('common.currency')}
                         </span>
                       )}
                     </td>
@@ -361,7 +361,7 @@ export default function ProductManagement() {
                   required
                 />
                 <Input
-                  label="السعر (₪) *"
+                  label={`السعر (${t('common.currency')}) *`}
                   type="number"
                   step="0.01"
                   value={price}

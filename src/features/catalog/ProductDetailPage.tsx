@@ -191,15 +191,16 @@ export default function ProductDetailPage() {
           {/* Price */}
           <div className="mt-4 flex items-baseline gap-3 border-y border-surface-border py-4">
             <span className="text-3xl font-black text-foreground">
-              ₪{product.price.toFixed(2)}
+              {product.price.toFixed(2)}{' '}
+              <span className="text-lg font-bold text-brand-700">{t('common.currency')}</span>
             </span>
             {hasDiscount && (
               <span className="text-lg text-foreground-subtle line-through">
-                ₪{product.compare_at_price!.toFixed(2)}
+                {product.compare_at_price!.toFixed(2)} {t('common.currency')}
               </span>
             )}
             <span className="ms-auto text-xs font-semibold text-brand-700">
-              {t('common.currency')} / {unit}
+              {unit ? `/ ${unit}` : ''}
             </span>
           </div>
 
@@ -272,7 +273,7 @@ export default function ProductDetailPage() {
               ) : (
                 <>
                   <ShoppingCart className="me-2" size={18} />
-                  <span>{t('common.addToCart')} (₪{(product.price * quantity).toFixed(2)})</span>
+                  <span>{t('common.addToCart')} ({(product.price * quantity).toFixed(2)} {t('common.currency')})</span>
                 </>
               )}
             </Button>
