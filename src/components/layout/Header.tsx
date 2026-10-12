@@ -14,6 +14,7 @@ import { useCartStore } from '@/features/cart/store';
 import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/lib/i18n';
 import i18n from '@/lib/i18n';
+import Logo from '@/components/ui/Logo';
 
 export default function Header() {
   const { t } = useTranslation();
@@ -45,7 +46,7 @@ export default function Header() {
           className="flex shrink-0 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 rounded-lg"
           aria-label={t('common.appName')}
         >
-          <LogoMark />
+          <Logo size="md" showText={false} />
           <span className="text-lg font-bold text-brand-700 leading-none hidden sm:block">
             {t('common.appName')}
           </span>
@@ -203,28 +204,6 @@ export default function Header() {
   );
 }
 
-/* ─── Logo Mark SVG ─────────────────────────── */
-function LogoMark() {
-  return (
-    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-700 text-white shadow-sm">
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        {/* Stylized leaf / market icon */}
-        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" />
-        <path d="M8 12l2.5 2.5L16 9" />
-      </svg>
-    </div>
-  );
-}
 
 /* ─── Search Bar ────────────────────────────── */
 function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {

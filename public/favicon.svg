@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Shopping basket -->
+  <path d="M4 14h24l-2 12H6L4 14z" fill="none" stroke="#15803d" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="4" y1="14" x2="28" y2="14" stroke="#15803d" stroke-width="2"/>
+  <!-- Handle -->
+  <path d="M10 14 Q10 8 16 8 Q22 8 22 14" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+  <!-- Leaf left -->
+  <path d="M13 13 Q8 7 11 3 Q13 6 13 13z" fill="#22c55e"/>
+  <!-- Leaf center -->
+  <path d="M16 12 Q16 5 16 2 Q18 6 16 12z" fill="#15803d"/>
+  <!-- Leaf right -->
+  <path d="M19 13 Q24 7 21 3 Q19 6 19 13z" fill="#22c55e"/>
+</svg>
