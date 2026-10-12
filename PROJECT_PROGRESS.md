@@ -1,8 +1,8 @@
 # Al Quds Market — Project Progress Document
 
 > **Last Updated:** 2026-10-12  
-> **Current Phase:** Phase 2 Complete → Phase 3 Ready  
-> **Status:** ✅ Phase 1 & 2 Done
+> **Current Phase:** Phase 3 Complete → Phase 4 Ready  
+> **Status:** ✅ Phase 1, 2 & 3 Done
 
 ---
 
@@ -176,14 +176,20 @@ valid_from, valid_until, is_active
 - [x] Typed database definitions in `src/types/database.ts`
 - [x] Optimized manualChunks bundle splitting (zero chunk size warnings)
 
-### 🟡 Phase 3 — Catalog & Product Discovery (Next)
-- [ ] Category listing and subcategory navigation
-- [ ] Product grid with sort, filter, and pagination
-- [ ] Product detail page with image gallery and stock status
-- [ ] Full-text search with Supabase vector search / debounce
-- [ ] Customer favorites toggle & database persistence
+### ✅ Phase 3 — Catalog, Images & Discovery
+**Goal:** Category hierarchy, live product discovery, favorites, admin management, and idempotent import.
 
-### ⬜ Phase 4 — Cart & Checkout
+- [x] Category listing and subcategory browse page (`/categories`)
+- [x] Category detail page with subcategory chips & sorting (`/category/:slug`)
+- [x] Product detail page with image gallery, stock badges & related items (`/product/:id`)
+- [x] Bilingual full-text search with debounce (`/search`)
+- [x] Customer favorites store with Supabase sync & localStorage fallback (`/favorites`)
+- [x] Connected homepage to live Supabase categories & products with skeleton loading
+- [x] Admin product management screen (`/admin`) with Supabase Storage upload
+- [x] Idempotent catalog & image import script (`scripts/import-catalog.mjs` / `npm run catalog:import`)
+- [x] Automated idempotent SQL migration generator (`supabase/seed_catalog_upsert.sql`)
+
+### 🟡 Phase 4 — Cart, Checkout & Cash-on-Delivery Order Pipeline (Next)
 - [ ] Cart drawer / page
 - [ ] Delivery area selector
 - [ ] Address form
@@ -262,6 +268,20 @@ Same two variables — never the `service_role` key.
 | Route Security Guards | ✅ `AdminRouteGuard` (role = 'admin') and `ProtectedRouteGuard` |
 | Concurrency safety | ✅ `decrement_product_stock` using `FOR UPDATE` row lock |
 | Remote Synchronization | ✅ Synced with GitHub `MahmoudReda99/Al-Quds-Market` (commit `1a5cd2c`) |
+
+### Phase 3 (Catalog, Images, Discovery & Import) — Verified 2026-10-12
+
+| Check | Result |
+|-------|--------|
+| `npm run typecheck` (`tsc --noEmit`) | ✅ 0 errors |
+| `npm run lint` (`eslint .`) | ✅ 0 errors, 0 warnings |
+| `npm test` (`node --test tests/run-tests.mjs`) | ✅ 11 / 11 passed (125ms) |
+| `npm run build` (`vite build`) | ✅ Exit 0 — 1814 modules transformed in 3.73s |
+| Bundle chunking | ✅ Vendor (165KB) / Supabase (171KB) / App (245KB) / UI (35KB) / CSS (37KB) |
+| Customer Catalog Pages | ✅ `/categories`, `/category/:slug`, `/product/:id`, `/search`, `/favorites` |
+| Admin Catalog Screen | ✅ `/admin` (Product Management + Storage upload) |
+| Idempotent Import Script | ✅ `scripts/import-catalog.mjs` + `supabase/seed_catalog_upsert.sql` |
+| Remote Synchronization | ✅ Pushed to GitHub `MahmoudReda99/Al-Quds-Market` (commit `a394a61`) |
 
 ---
 
