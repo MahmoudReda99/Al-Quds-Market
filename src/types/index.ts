@@ -22,6 +22,7 @@ export interface Category {
   name_en: string;
   parent_id: string | null;
   image_url: string | null;
+  icon: string | null;
   sort_order: number;
   is_active: boolean;
 }

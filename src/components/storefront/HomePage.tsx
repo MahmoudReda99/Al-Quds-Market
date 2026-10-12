@@ -7,45 +7,27 @@ import {
   Leaf,
   Tag,
   ShieldCheck,
-  Heart,
-  ShoppingCart,
-  Star,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn, localizedText } from '@/lib/utils';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
-import { useCartStore } from '@/features/cart/store';
-import type { Product } from '@/types';
-
-/* ─── Mock categories for Phase 1 visual ───── */
-const MOCK_CATEGORIES = [
-  { id: '1', slug: 'fresh-produce', icon: '🥦', nameAr: 'خضر وفواكه', nameEn: 'Fresh Produce', color: 'bg-green-50 border-green-100' },
-  { id: '2', slug: 'dairy-eggs', icon: '🥛', nameAr: 'ألبان وبيض', nameEn: 'Dairy & Eggs', color: 'bg-yellow-50 border-yellow-100' },
-  { id: '3', slug: 'bakery', icon: '🍞', nameAr: 'مخبوزات', nameEn: 'Bakery', color: 'bg-amber-50 border-amber-100' },
-  { id: '4', slug: 'meat', icon: '🥩', nameAr: 'لحوم ودواجن', nameEn: 'Meat & Poultry', color: 'bg-red-50 border-red-100' },
-  { id: '5', slug: 'beverages', icon: '🧃', nameAr: 'مشروبات', nameEn: 'Beverages', color: 'bg-blue-50 border-blue-100' },
-  { id: '6', slug: 'snacks', icon: '🍫', nameAr: 'وجبات خفيفة', nameEn: 'Snacks', color: 'bg-purple-50 border-purple-100' },
-  { id: '7', slug: 'household', icon: '🧹', nameAr: 'منزلية وتنظيف', nameEn: 'Household', color: 'bg-cyan-50 border-cyan-100' },
-  { id: '8', slug: 'personal-care', icon: '🧴', nameAr: 'عناية شخصية', nameEn: 'Personal Care', color: 'bg-pink-50 border-pink-100' },
-];
-
-/* ─── Mock featured products for Phase 1 ─── */
-const MOCK_PRODUCTS = [
-  { id: '1', nameAr: 'تفاح أحمر طازج', nameEn: 'Fresh Red Apples', price: 12.5, compareAt: 15, unit: 'كغ', emoji: '🍎', rating: 4.8, reviews: 124 },
-  { id: '2', nameAr: 'موز أكوادور', nameEn: 'Ecuador Bananas', price: 8.0, compareAt: null, unit: 'كغ', emoji: '🍌', rating: 4.6, reviews: 89 },
-  { id: '3', nameAr: 'طماطم طازجة', nameEn: 'Fresh Tomatoes', price: 6.5, compareAt: 8, unit: 'كغ', emoji: '🍅', rating: 4.9, reviews: 203 },
-  { id: '4', nameAr: 'حليب كامل الدسم', nameEn: 'Full Fat Milk', price: 9.0, compareAt: null, unit: 'لتر', emoji: '🥛', rating: 4.7, reviews: 156 },
-  { id: '5', nameAr: 'خبز عربي', nameEn: 'Arabic Bread', price: 4.5, compareAt: null, unit: 'ربطة', emoji: '🫓', rating: 4.5, reviews: 78 },
-  { id: '6', nameAr: 'زيت زيتون بكر', nameEn: 'Extra Virgin Olive Oil', price: 35.0, compareAt: 42, unit: 'لتر', emoji: '🫒', rating: 4.9, reviews: 312 },
-  { id: '7', nameAr: 'بيض مزارع', nameEn: 'Farm Eggs', price: 18.0, compareAt: null, unit: 'كرتونة', emoji: '🥚', rating: 4.8, reviews: 445 },
-  { id: '8', nameAr: 'جبنة بيضاء', nameEn: 'White Cheese', price: 22.0, compareAt: 27, unit: '500g', emoji: '🧀', rating: 4.6, reviews: 98 },
-];
+import { useCategoriesQuery, useProductsQuery } from '@/features/catalog/hooks';
+import ProductCard from '@/features/catalog/ProductCard';
 
 export default function HomePage() {
   const { t } = useTranslation();
   const lang = (i18n.language as SupportedLanguage) ?? 'ar';
   const isRtl = lang === 'ar';
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
+
+  // Live queries
+  const { data: categories = [], isLoading: isCategoriesLoading } = useCategoriesQuery();
+  const { data: featuredData, isLoading: isProductsLoading } = useProductsQuery({
+    isFeatured: true,
+    limit: 8,
+  });
+
+  const featuredProducts = featuredData?.products || [];
 
   return (
     <div className="animate-fade-in">
@@ -63,11 +45,37 @@ export default function HomePage() {
             linkLabel={t('common.seeAll')}
             ArrowIcon={ArrowIcon}
           />
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
-            {MOCK_CATEGORIES.map((cat) => (
-              <CategoryCard key={cat.id} category={cat} lang={lang} />
-            ))}
-          </div>
+
+          {isCategoriesLoading ? (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="h-28 rounded-2xl border border-surface-border bg-surface-muted animate-pulse"
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+              {categories.map((cat) => {
+                const name = localizedText(cat.name_ar, cat.name_en, lang);
+                return (
+                  <Link
+                    key={cat.id}
+                    to={`/category/${cat.slug}`}
+                    className="flex flex-col items-center gap-2 rounded-2xl border border-surface-border bg-white p-3 text-center card-hover hover:border-brand-200"
+                  >
+                    <span className="text-3xl sm:text-4xl" aria-hidden="true">
+                      {cat.icon || '🛒'}
+                    </span>
+                    <span className="text-xs font-semibold text-foreground sm:text-sm leading-tight line-clamp-1">
+                      {name}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
@@ -78,25 +86,38 @@ export default function HomePage() {
             id="featured-heading"
             title={t('home.featuredProducts')}
             subtitle={t('home.featuredSubtitle')}
-            linkTo="/offers"
+            linkTo="/categories"
             linkLabel={t('common.seeAll')}
             ArrowIcon={ArrowIcon}
           />
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
-            {MOCK_PRODUCTS.map((product) => (
-              <ProductCard key={product.id} product={product} lang={lang} t={t} />
-            ))}
-          </div>
+
+          {isProductsLoading ? (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="aspect-[3/4] rounded-2xl border border-surface-border bg-white animate-pulse"
+                />
+              ))}
+            </div>
+          ) : featuredProducts.length === 0 ? (
+            <div className="rounded-3xl border border-dashed border-surface-border bg-white p-8 text-center text-foreground-muted">
+              لا توجد منتجات مميزة حالياً
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
+              {featuredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* Why Us / Features */}
       <section className="py-10 sm:py-16" aria-labelledby="why-us-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2
-            id="why-us-heading"
-            className="section-heading text-center"
-          >
+          <h2 id="why-us-heading" className="section-heading text-center">
             {t('home.whyUs')}
           </h2>
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -137,7 +158,6 @@ function HeroSection({
       className="relative overflow-hidden bg-brand-gradient"
       aria-label={t('home.heroTitle')}
     >
-      {/* Decorative circles */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-white/5"
@@ -149,9 +169,7 @@ function HeroSection({
 
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center">
-          {/* Text */}
           <div className="flex-1">
-            {/* Pill badge */}
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-medium text-white/90 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-accent-400 animate-pulse" aria-hidden="true" />
               {t('common.tagline')}
@@ -177,7 +195,6 @@ function HeroSection({
               </Link>
             </div>
 
-            {/* Stats row */}
             <div className="mt-10 flex gap-8">
               {[
                 { value: '500+', labelAr: 'منتج', labelEn: 'Products' },
@@ -194,17 +211,12 @@ function HeroSection({
             </div>
           </div>
 
-          {/* Hero visual — emoji grid placeholder (replaced by image in later phase) */}
-          <div
-            className="relative hidden flex-shrink-0 lg:block"
-            aria-hidden="true"
-          >
+          <div className="relative hidden flex-shrink-0 lg:block" aria-hidden="true">
             <div className="grid grid-cols-3 gap-3">
               {['🥦', '🍎', '🥛', '🍞', '🥩', '🫒', '🍌', '🍅', '🥚'].map((emoji, i) => (
                 <div
                   key={i}
                   className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white/15 text-3xl backdrop-blur-sm transition-transform hover:scale-105"
-                  style={{ animationDelay: `${i * 80}ms` }}
                 >
                   {emoji}
                 </div>
@@ -249,137 +261,5 @@ function SectionHeader({
         <ArrowIcon size={14} aria-hidden="true" />
       </Link>
     </div>
-  );
-}
-
-/* ─── Category Card ─────────────────────────── */
-function CategoryCard({
-  category,
-  lang,
-}: {
-  category: (typeof MOCK_CATEGORIES)[number];
-  lang: SupportedLanguage;
-}) {
-  const name = lang === 'ar' ? category.nameAr : category.nameEn;
-
-  return (
-    <Link
-      to={`/category/${category.slug}`}
-      className={cn(
-        'flex flex-col items-center gap-2 rounded-2xl border p-3 text-center card-hover',
-        category.color
-      )}
-    >
-      <span className="text-3xl sm:text-4xl" aria-hidden="true">
-        {category.icon}
-      </span>
-      <span className="text-xs font-semibold text-foreground sm:text-sm leading-tight">
-        {name}
-      </span>
-    </Link>
-  );
-}
-
-/* ─── Product Card ──────────────────────────── */
-function ProductCard({
-  product,
-  lang,
-  t,
-}: {
-  product: (typeof MOCK_PRODUCTS)[number];
-  lang: SupportedLanguage;
-  t: (key: string) => string;
-}) {
-  const name = lang === 'ar' ? product.nameAr : product.nameEn;
-  const hasDiscount = product.compareAt !== null;
-  const discountPct = hasDiscount
-    ? Math.round(((product.compareAt! - product.price) / product.compareAt!) * 100)
-    : 0;
-
-  const addItem = useCartStore((s) => s.addItem);
-  const openCart = useCartStore((s) => s.openCart);
-
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const productData: Product = {
-      id: product.id,
-      sku: `PROD-${product.id}`,
-      name_ar: product.nameAr,
-      name_en: product.nameEn,
-      description_ar: product.nameAr,
-      description_en: product.nameEn,
-      category_id: 'fresh-produce',
-      price: product.price,
-      compare_at_price: product.compareAt,
-      unit_label_ar: product.unit,
-      unit_label_en: product.unit,
-      stock_quantity: 50,
-      is_active: true,
-      is_featured: true,
-      images: [{ url: '', alt_ar: product.nameAr, alt_en: product.nameEn }],
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    };
-    addItem(productData);
-    openCart();
-  };
-
-  return (
-    <Link to={`/product/${product.id}`} className="product-card group">
-      {/* Image area */}
-      <div className="relative flex aspect-square items-center justify-center bg-surface-muted text-6xl sm:text-7xl">
-        <span aria-hidden="true">{product.emoji}</span>
-        {hasDiscount && (
-          <span className="badge-red absolute start-2 top-2 text-[10px]">
-            -{discountPct}%
-          </span>
-        )}
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-          }}
-          className="absolute end-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm opacity-0 transition-opacity group-hover:opacity-100 hover:text-red-500"
-          aria-label="Add to favorites"
-        >
-          <Heart size={14} />
-        </button>
-      </div>
-
-      {/* Info */}
-      <div className="flex flex-1 flex-col p-3">
-        <p className="line-clamp-2 text-sm font-medium text-foreground leading-snug">
-          {name}
-        </p>
-
-        {/* Rating */}
-        <div className="mt-1 flex items-center gap-1">
-          <Star size={11} className="fill-amber-400 text-amber-400" aria-hidden="true" />
-          <span className="text-[11px] text-foreground-muted">
-            {product.rating} ({product.reviews})
-          </span>
-        </div>
-
-        {/* Price row */}
-        <div className="mt-auto flex items-center justify-between pt-2">
-          <div>
-            <span className="text-base font-bold text-foreground">
-              ₪{product.price.toFixed(2)}
-            </span>
-            {hasDiscount && (
-              <span className="ms-1.5 text-xs text-foreground-subtle line-through">
-                ₪{product.compareAt!.toFixed(2)}
-              </span>
-            )}
-          </div>
-          <button
-            onClick={handleAddToCart}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-700 text-white shadow-sm transition-transform active:scale-95 hover:bg-brand-800"
-            aria-label={t('common.addToCart')}
-          >
-            <ShoppingCart size={14} />
-          </button>
-        </div>
-      </div>
-    </Link>
   );
 }

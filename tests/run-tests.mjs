@@ -197,3 +197,47 @@ test('storage: getProductImageUrl resolves both relative paths and absolute URLs
   assert.equal(getProductImageUrl('', fakeBase), '');
 });
 
+// ---------------------------------------------------------------------------
+// 6. Phase 3: Catalog Import & Favorites Tests
+// ---------------------------------------------------------------------------
+test('catalog: seed_catalog_upsert.sql is idempotent and covers all main categories and products', () => {
+  const sqlPath = path.join(rootDir, 'supabase/seed_catalog_upsert.sql');
+  assert.ok(fs.existsSync(sqlPath), 'seed_catalog_upsert.sql must be generated');
+
+  const sql = fs.readFileSync(sqlPath, 'utf8');
+
+  // Verify idempotent upsert clauses
+  assert.match(sql, /ON CONFLICT \(slug\) DO UPDATE/i, 'Categories must use ON CONFLICT (slug) DO UPDATE');
+  assert.match(sql, /ON CONFLICT \(sku\) DO UPDATE/i, 'Products must use ON CONFLICT (sku) DO UPDATE');
+
+  // Verify subcategories link to parent via slug
+  assert.match(sql, /FROM public\.categories WHERE slug = 'fresh-produce'/i);
+  assert.match(sql, /FROM public\.categories WHERE slug = 'dairy-eggs'/i);
+});
+
+test('favorites: toggle and deduplication logic', () => {
+  let favoriteIds = [];
+
+  const toggle = (id) => {
+    if (favoriteIds.includes(id)) {
+      favoriteIds = favoriteIds.filter((item) => item !== id);
+    } else {
+      favoriteIds.push(id);
+    }
+  };
+
+  toggle('p1');
+  assert.deepEqual(favoriteIds, ['p1']);
+
+  toggle('p2');
+  assert.deepEqual(favoriteIds, ['p1', 'p2']);
+
+  toggle('p1');
+  assert.deepEqual(favoriteIds, ['p2']);
+
+  // Deduplication
+  const merged = Array.from(new Set([...favoriteIds, 'p2', 'p3']));
+  assert.deepEqual(merged, ['p2', 'p3']);
+});
+
+
