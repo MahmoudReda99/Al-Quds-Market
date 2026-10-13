@@ -278,6 +278,36 @@ test('catalog: migration 009 incorporates all 36 InstaShop El Wekala categories 
   assert.match(sql, /Al Doha|الضحى/);
 });
 
+test('catalog: migration 010 seeds 96 authentic Dairy & Eggs items from InstaShop with cropped package images', () => {
+  const sqlPath = path.join(rootDir, 'supabase/migrations/010_dairy_and_eggs_catalog_expansion.sql');
+  assert.ok(fs.existsSync(sqlPath), 'Migration 010 file must exist');
+
+  const sql = fs.readFileSync(sqlPath, 'utf8');
+
+  // Verify category link and conflict handling
+  assert.match(sql, /slug = 'dairy-eggs'/);
+  assert.match(sql, /ON CONFLICT \(sku\) DO UPDATE/);
+
+  // Extract all referenced product image paths from migration
+  const imageMatches = [...sql.matchAll(/\/products\/dairy\/[A-Za-z0-9_-]+\.png/g)].map((m) => m[0]);
+  assert.ok(imageMatches.length >= 90, `Expected at least 90 product image paths, found ${imageMatches.length}`);
+
+  // Verify that all referenced images exist on disk in public/products/dairy/
+  for (const imgPath of imageMatches) {
+    const fullPath = path.join(rootDir, 'public', imgPath);
+    assert.ok(fs.existsSync(fullPath), `Product image ${imgPath} must exist on disk`);
+  }
+
+  // Verify key authentic Egyptian dairy brands
+  assert.match(sql, /Juhayna|جهينة/);
+  assert.match(sql, /Almarai|المراعي/);
+  assert.match(sql, /Danone|دانون/);
+  assert.match(sql, /Lamar|لمار/);
+  assert.match(sql, /Domty|دومتي/);
+  assert.match(sql, /Président|بريزيدون|بريزيدن/);
+  assert.match(sql, /Kiri|كيري/);
+});
+
 test('favorites: toggle and deduplication logic', () => {
   let favoriteIds = [];
 

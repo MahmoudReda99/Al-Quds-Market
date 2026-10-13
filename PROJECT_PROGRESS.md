@@ -334,13 +334,22 @@ Same two variables — never the `service_role` key.
 |-------|--------|
 | `npm run typecheck` (`tsc --noEmit`) | ✅ 0 errors |
 | `npm run lint` (`eslint .`) | ✅ 0 errors, 0 warnings |
-| `npm test` (`node --test tests/run-tests.mjs`) | ✅ 22 / 22 passed (146ms) |
-| `npm run build` (`vite build`) | ✅ Exit 0 — 1822 modules transformed in 4.45s |
+| `npm test` (`node --test tests/run-tests.mjs`) | ✅ 26 / 26 passed (193ms) |
+| `npm run build` (`vite build`) | ✅ Exit 0 — 1822 modules transformed in 4.74s |
 | Vercel SPA Routing & Security Headers | ✅ `vercel.json` configured with `/index.html` rewrites, nosniff, DENY frame options, and assets cache |
 | Capacitor Mobile Configuration | ✅ `capacitor.config.ts` configured for `com.alqudsmarket.app`, `dist` webDir, and splash branding |
 | Capacitor Mobile Packaging Guide | ✅ `CAPACITOR_GUIDE.md` comprehensive documentation for iOS (Xcode) and Android (Android Studio) |
 | Codebase Secret Scanner | ✅ Automated audit verifies zero privileged `service_role` keys in client codebase |
 | End-to-End Customer Journey Simulation | ✅ Full workflow verified: Discovery → Cart → Area Fee Calc → COD Order → Tracking → Cancellation |
+
+### InstaShop El Wekala Catalog Expansion & Localization — Verified 2026-10-13
+
+| Feature / Artifact | Status | Details |
+|---|---|---|
+| **EGP Currency Rebranding** | ✅ Verified | All prices localized to Egyptian Pounds (`جنيه مصري` / `EGP`), 0 shekel references in app |
+| **6th of October & Zayed Delivery** | ✅ Verified | Migration `008_october_giza_delivery_areas.sql` active with 7 local districts and EGP thresholds |
+| **36 Supermarket Departments** | ✅ Verified | Migration `009_instashop_el_wekala_full_catalog.sql` with icons in `public/categories/*.png` |
+| **Dairy & Eggs 96 Items Catalog** | ✅ Verified | Migration `010_dairy_and_eggs_catalog_expansion.sql` with 96 authentic product package crops in `public/products/dairy/`, bilingual names, weights, and exact EGP prices |
 
 ---
 
