@@ -60,3 +60,42 @@ export function calculateDelivery(
     total: subtotal + fee,
   };
 }
+
+export async function fetchAllDeliveryAreasAdmin(): Promise<DeliveryArea[]> {
+  const { data, error } = await supabase
+    .from('delivery_areas')
+    .select('*')
+    .order('sort_order', { ascending: true });
+
+  if (error) {
+    console.error('[admin] fetchAllDeliveryAreasAdmin error:', error);
+    throw error;
+  }
+
+  return (data || []).map((row) => ({
+    id: String(row.id),
+    name_ar: String(row.name_ar),
+    name_en: String(row.name_en),
+    fee: Number(row.fee),
+    free_delivery_threshold:
+      row.free_delivery_threshold !== null && row.free_delivery_threshold !== undefined
+        ? Number(row.free_delivery_threshold)
+        : null,
+    is_active: Boolean(row.is_active),
+  }));
+}
+
+export async function updateDeliveryAreaAdmin(
+  id: string,
+  updates: { fee?: number; free_delivery_threshold?: number | null; is_active?: boolean }
+): Promise<void> {
+  const { error } = await supabase
+    .from('delivery_areas')
+    .update(updates)
+    .eq('id', id);
+
+  if (error) {
+    throw new Error(`فشل تحديث منطقة التوصيل: ${error.message}`);
+  }
+}
+

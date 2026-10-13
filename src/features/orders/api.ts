@@ -376,3 +376,107 @@ export async function cancelOrder(orderId: string): Promise<void> {
     throw new Error(`فشل إلغاء الطلب: ${error.message}`);
   }
 }
+
+export async function fetchAllOrdersAdmin(): Promise<OrderDetail[]> {
+  const { data: ordersData, error: ordersError } = await supabase
+    .from('orders')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (ordersError || !ordersData) {
+    console.error('[orders] fetchAllOrdersAdmin error:', ordersError);
+    throw new Error('فشل تحميل قائمة الطلبات | Failed to load orders');
+  }
+
+  if (ordersData.length === 0) return [];
+
+  const orderIds = ordersData.map((o) => o.id);
+  const areaIds = Array.from(new Set(ordersData.map((o) => o.delivery_area_id)));
+
+  const [itemsRes, areasRes] = await Promise.all([
+    supabase.from('order_items').select('*').in('order_id', orderIds),
+    supabase.from('delivery_areas').select('*').in('id', areaIds),
+  ]);
+
+  const itemsByOrder = new Map<string, OrderItemDetail[]>();
+  for (const item of itemsRes.data || []) {
+    const list = itemsByOrder.get(item.order_id) || [];
+    list.push({
+      id: item.id,
+      order_id: item.order_id,
+      product_id: item.product_id,
+      product_name_ar: item.product_name_ar,
+      product_name_en: item.product_name_en,
+      unit_price: Number(item.unit_price),
+      quantity: item.quantity,
+      unit_label_ar: item.unit_label_ar,
+      unit_label_en: item.unit_label_en,
+      image_url: item.image_url,
+      line_total: Number(item.line_total),
+      created_at: item.created_at,
+    });
+    itemsByOrder.set(item.order_id, list);
+  }
+
+  const areaMap = new Map<string, DeliveryArea>();
+  for (const a of areasRes.data || []) {
+    areaMap.set(a.id, {
+      id: String(a.id),
+      name_ar: String(a.name_ar),
+      name_en: String(a.name_en),
+      fee: Number(a.fee),
+      free_delivery_threshold:
+        a.free_delivery_threshold !== null && a.free_delivery_threshold !== undefined
+          ? Number(a.free_delivery_threshold)
+          : null,
+      is_active: Boolean(a.is_active),
+    });
+  }
+
+  return ordersData.map((o) => ({
+    id: o.id,
+    order_number: o.order_number,
+    profile_id: o.profile_id,
+    status: o.status as OrderStatus,
+    delivery_area_id: o.delivery_area_id,
+    delivery_area: areaMap.get(o.delivery_area_id),
+    address_line: o.address_line,
+    recipient_name: o.recipient_name,
+    recipient_phone: o.recipient_phone,
+    notes: o.notes,
+    subtotal: Number(o.subtotal),
+    delivery_fee: Number(o.delivery_fee),
+    discount_amount: Number(o.discount_amount),
+    total: Number(o.total),
+    items: itemsByOrder.get(o.id) || [],
+    created_at: o.created_at,
+    updated_at: o.updated_at,
+  }));
+}
+
+export async function updateOrderStatusAdmin(orderId: string, status: OrderStatus): Promise<void> {
+  // If transitioning to cancelled, restore stock
+  if (status === 'cancelled') {
+    const order = await fetchOrderById(orderId);
+    if (order && order.status !== 'cancelled') {
+      for (const item of order.items) {
+        if (item.product_id) {
+          await supabase.rpc('restore_product_stock', {
+            p_product_id: item.product_id,
+            p_quantity: item.quantity,
+          });
+        }
+      }
+    }
+  }
+
+  const { error } = await supabase
+    .from('orders')
+    .update({ status, updated_at: new Date().toISOString() })
+    .eq('id', orderId);
+
+  if (error) {
+    throw new Error(`فشل تحديث حالة الطلب: ${error.message}`);
+  }
+}
+

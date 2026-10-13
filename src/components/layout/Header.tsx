@@ -10,6 +10,7 @@ import {
   X,
   ChevronDown,
   Package,
+  ShieldCheck,
 } from 'lucide-react';
 import { useCartStore } from '@/features/cart/store';
 import { useAuthStore } from '@/features/auth/store';
@@ -88,6 +89,17 @@ export default function Header() {
           {/* Account */}
           {user ? (
             <div className="flex items-center gap-1">
+              {profile?.role === 'admin' && (
+                <button
+                  onClick={() => navigate('/admin')}
+                  className="hidden sm:flex items-center gap-1.5 rounded-xl bg-brand-50 px-2.5 py-1.5 text-xs font-bold text-brand-800 border border-brand-200 hover:bg-brand-100 transition-colors me-1 shadow-xs"
+                  aria-label={i18n.language === 'ar' ? 'لوحة التحكم' : 'Dashboard'}
+                >
+                  <ShieldCheck size={15} className="text-brand-700" />
+                  <span>{i18n.language === 'ar' ? 'لوحة التحكم' : 'Dashboard'}</span>
+                </button>
+              )}
+
               <button
                 onClick={() => navigate('/orders')}
                 className="btn-ghost hidden sm:flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-foreground-muted hover:text-brand-700"
@@ -220,6 +232,17 @@ export default function Header() {
             ))}
             {user ? (
               <>
+                {profile?.role === 'admin' && (
+                  <NavLink
+                    to="/admin"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2 py-3 text-sm font-bold text-brand-800 hover:text-brand-900 bg-brand-50/50 -mx-4 px-4"
+                  >
+                    <ShieldCheck size={18} className="text-brand-700" />
+                    <span>{i18n.language === 'ar' ? 'لوحة تحكم الإدارة والتشغيل' : 'Admin & Operator Dashboard'}</span>
+                  </NavLink>
+                )}
+
                 <NavLink
                   to="/orders"
                   onClick={() => setMobileMenuOpen(false)}

@@ -15,7 +15,7 @@ import CategoryDetailPage from '@/features/catalog/CategoryDetailPage';
 import ProductDetailPage from '@/features/catalog/ProductDetailPage';
 import SearchPage from '@/features/catalog/SearchPage';
 import FavoritesPage from '@/features/favorites/FavoritesPage';
-import ProductManagement from '@/features/catalog/admin/ProductManagement';
+import AdminDashboard from '@/features/admin/AdminDashboard';
 
 // Phase 4 Cart Page
 import CartPage from '@/features/cart/CartPage';
@@ -96,9 +96,7 @@ export default function App() {
             path="/admin"
             element={
               <AdminRouteGuard>
-                <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-                  <ProductManagement />
-                </div>
+                <AdminDashboard />
               </AdminRouteGuard>
             }
           />

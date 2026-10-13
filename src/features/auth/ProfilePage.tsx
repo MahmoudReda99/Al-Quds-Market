@@ -153,10 +153,10 @@ export default function ProfilePage() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-brand-900">
-                  {t('admin.dashboard')}
+                  {i18n.language === 'ar' ? 'لوحة تحكم المشغل والإدارة' : 'Operator & Admin Dashboard'}
                 </h3>
                 <p className="text-xs text-brand-700">
-                  {i18n.language === 'ar' ? 'إدارة المتجر والمخزون' : 'Store administration'}
+                  {i18n.language === 'ar' ? 'إدارة الطلبات، التوصيل، والمنتجات' : 'Orders dispatch, delivery & catalog'}
                 </p>
               </div>
             </Link>

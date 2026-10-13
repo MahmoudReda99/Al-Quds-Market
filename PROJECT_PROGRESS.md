@@ -351,15 +351,30 @@ Same two variables — never the `service_role` key.
 | **36 Supermarket Departments** | ✅ Verified | Migration `009_instashop_el_wekala_full_catalog.sql` with icons in `public/categories/*.png` |
 | **Dairy & Eggs 96 Items Catalog** | ✅ Verified | Migration `010_dairy_and_eggs_catalog_expansion.sql` with 96 authentic product package crops in `public/products/dairy/`, bilingual names, weights, and exact EGP prices |
 
+### Operator & Administrator Command Center — Verified 2026-10-13
+
+| Feature / Artifact | Status | Details |
+|---|---|---|
+| **Default Admin & Operator Account** | ✅ Verified | Migration `011_create_default_admin_account.sql` provisions verified account `admin@alqudsmarket.com` with password `Admin@AlQuds2026!` and role `admin` |
+| **Operator Order Dispatch Queue** | ✅ Verified | Live feed of all customer orders, filter pills for all 6 statuses, customer WhatsApp link, direct phone dialing, and driver notes |
+| **One-Click Status Transitions** | ✅ Verified | Operator buttons for Confirm → Prepare → Dispatch with Driver → Mark Delivered, with automatic inventory rollback on cancel |
+| **Delivery Zones & Fee Manager** | ✅ Verified | Live editing of 6th of October & Zayed delivery fees, free delivery thresholds, and active status |
+| **Catalog & Product Management** | ✅ Verified | Integrated tab with full creation, pricing, photo upload, and inventory management |
+| **1-Click Admin Header Navigation** | ✅ Verified | Direct "لوحة التحكم / Dashboard" button in Header and Profile page for verified admins |
+
 ---
 
-## Configuration Still Required
+## Configuration & Credentials
 
-1. **Storage Bucket Provisioning (One-time)**:
-   - Run [`supabase/migrations/005_storage_and_admin_provisioning.sql`](file:///Users/mahmoudreda/Desktop/My%20Projects/Al%20Quds/al-quds-market/supabase/migrations/005_storage_and_admin_provisioning.sql) in your Supabase SQL Editor to create the `product-images` storage bucket and admin promotion function.
-2. **First Admin Provisioning**:
-   - Once your first admin account registers through the website, run `SELECT public.promote_user_to_admin('your-admin-email@example.com');` in the SQL Editor to grant admin privileges.
+1. **Default Administrator / Operator Login**:
+   - **Email:** `admin@alqudsmarket.com`
+   - **Password:** `Admin@AlQuds2026!`
+   - **Role:** `admin` (full operator and catalog access)
+   - *How to apply:* Run [`supabase/migrations/011_create_default_admin_account.sql`](file:///Users/mahmoudreda/Desktop/My%20Projects/Al%20Quds/al-quds-market/supabase/migrations/011_create_default_admin_account.sql) in your Supabase SQL Editor.
+2. **Storage Bucket Provisioning (One-time)**:
+   - Run [`supabase/migrations/005_storage_and_admin_provisioning.sql`](file:///Users/mahmoudreda/Desktop/My%20Projects/Al%20Quds/al-quds-market/supabase/migrations/005_storage_and_admin_provisioning.sql) in your Supabase SQL Editor to create the `product-images` storage bucket.
 3. **Vercel Project Setup**:
    - Import the GitHub repo `MahmoudReda99/Al-Quds-Market` on Vercel.
    - Set Root Directory to `al-quds-market`.
    - Add environment variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
+

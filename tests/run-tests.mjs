@@ -308,6 +308,43 @@ test('catalog: migration 010 seeds 96 authentic Dairy & Eggs items from InstaSho
   assert.match(sql, /Kiri|كيري/);
 });
 
+test('auth & security: migration 011 provisions default admin & operator account with encrypted credentials', () => {
+  const sqlPath = path.join(rootDir, 'supabase/migrations/011_create_default_admin_account.sql');
+  assert.ok(fs.existsSync(sqlPath), 'Migration 011 file must exist');
+
+  const sql = fs.readFileSync(sqlPath, 'utf8');
+
+  // Verify default admin email and password hashing
+  assert.match(sql, /admin@alqudsmarket\.com/i, 'Must reference admin@alqudsmarket.com');
+  assert.match(sql, /crypt\(|extensions\.crypt/i, 'Must use cryptographic password hashing');
+  assert.match(sql, /role = 'admin'|'admin'/i, 'Must assign role admin');
+  assert.match(sql, /auth\.users/i, 'Must insert/update into auth.users');
+  assert.match(sql, /public\.profiles/i, 'Must ensure public.profiles record exists');
+});
+
+test('admin & operator: dashboard provides live order dispatch, delivery zones, and catalog controls', () => {
+  const dashboardPath = path.join(rootDir, 'src/features/admin/AdminDashboard.tsx');
+  assert.ok(fs.existsSync(dashboardPath), 'AdminDashboard.tsx component must exist');
+
+  const dashboardCode = fs.readFileSync(dashboardPath, 'utf8');
+
+  // Verify all 6 order fulfillment statuses supported in operator workflow
+  const statuses = ['pending', 'confirmed', 'preparing', 'out_for_delivery', 'delivered', 'cancelled'];
+  for (const s of statuses) {
+    assert.match(dashboardCode, new RegExp(s), `AdminDashboard must handle status: ${s}`);
+  }
+
+  // Verify WhatsApp & Phone quick-action customer contact links
+  assert.match(dashboardCode, /https:\/\/wa\.me\//, 'Operator must have direct WhatsApp link for customers');
+  assert.match(dashboardCode, /tel:\$\{order\.recipient_phone\}/, 'Operator must have direct phone call link');
+
+  // Verify Header contains direct dashboard trigger for admin users
+  const headerPath = path.join(rootDir, 'src/components/layout/Header.tsx');
+  const headerCode = fs.readFileSync(headerPath, 'utf8');
+  assert.match(headerCode, /navigate\('\/admin'\)/, 'Header must allow 1-click navigation to /admin');
+  assert.match(headerCode, /profile\?\.role === 'admin'/, 'Header must condition dashboard on admin role');
+});
+
 test('favorites: toggle and deduplication logic', () => {
   let favoriteIds = [];
 
