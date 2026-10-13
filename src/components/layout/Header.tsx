@@ -100,14 +100,16 @@ export default function Header() {
                 </button>
               )}
 
-              <button
-                onClick={() => navigate('/orders')}
-                className="btn-ghost hidden sm:flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-foreground-muted hover:text-brand-700"
-                aria-label={t('common.orders')}
-              >
-                <Package size={16} />
-                <span>{t('common.orders')}</span>
-              </button>
+              {profile?.role !== 'admin' && (
+                <button
+                  onClick={() => navigate('/orders')}
+                  className="btn-ghost hidden sm:flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold text-foreground-muted hover:text-brand-700"
+                  aria-label={t('common.orders')}
+                >
+                  <Package size={16} />
+                  <span>{t('common.orders')}</span>
+                </button>
+              )}
 
               <button
                 onClick={() => navigate('/account')}
@@ -130,19 +132,21 @@ export default function Header() {
             </button>
           )}
 
-          {/* Cart */}
-          <button
-            onClick={toggleCart}
-            className="btn-ghost relative p-2"
-            aria-label={`${t('common.cart')} (${itemCount})`}
-          >
-            <ShoppingCart size={20} />
-            {itemCount > 0 && (
-              <span className="absolute -end-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-700 text-[10px] font-bold text-white">
-                {itemCount > 99 ? '99+' : itemCount}
-              </span>
-            )}
-          </button>
+          {/* Cart — Only visible for customers/clients, hidden for admin/operators */}
+          {profile?.role !== 'admin' && (
+            <button
+              onClick={toggleCart}
+              className="btn-ghost relative p-2"
+              aria-label={`${t('common.cart')} (${itemCount})`}
+            >
+              <ShoppingCart size={20} />
+              {itemCount > 0 && (
+                <span className="absolute -end-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-700 text-[10px] font-bold text-white">
+                  {itemCount > 99 ? '99+' : itemCount}
+                </span>
+              )}
+            </button>
+          )}
 
           {/* Mobile menu toggle */}
           <button
@@ -243,14 +247,16 @@ export default function Header() {
                   </NavLink>
                 )}
 
-                <NavLink
-                  to="/orders"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2 py-3 text-sm font-semibold text-foreground hover:text-brand-700"
-                >
-                  <Package size={16} />
-                  <span>{t('common.orders')}</span>
-                </NavLink>
+                {profile?.role !== 'admin' && (
+                  <NavLink
+                    to="/orders"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2 py-3 text-sm font-semibold text-foreground hover:text-brand-700"
+                  >
+                    <Package size={16} />
+                    <span>{t('common.orders')}</span>
+                  </NavLink>
+                )}
 
                 <NavLink
                   to="/account"

@@ -20,6 +20,10 @@ import {
   ShieldCheck,
   Check,
   Building2,
+  Plus,
+  Pencil,
+  Trash2,
+  X,
 } from 'lucide-react';
 import {
   useAdminOrdersQuery,
@@ -28,6 +32,8 @@ import {
 import {
   fetchAllDeliveryAreasAdmin,
   updateDeliveryAreaAdmin,
+  createDeliveryAreaAdmin,
+  deleteDeliveryAreaAdmin,
 } from '@/features/checkout/api';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import ProductManagement from '@/features/catalog/admin/ProductManagement';
@@ -49,6 +55,14 @@ export default function AdminDashboard() {
   const [selectedStatus, setSelectedStatus] = useState<OrderStatus | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedOrders, setExpandedOrders] = useState<Record<string, boolean>>({});
+
+  // Add Zone Dialog State
+  const [isAddZoneModalOpen, setIsAddZoneModalOpen] = useState(false);
+  const [newZoneNameAr, setNewZoneNameAr] = useState('');
+  const [newZoneNameEn, setNewZoneNameEn] = useState('');
+  const [newZoneFee, setNewZoneFee] = useState('15');
+  const [newZoneThreshold, setNewZoneThreshold] = useState('150');
+  const [addZoneError, setAddZoneError] = useState<string | null>(null);
 
   // Query all orders
   const {
@@ -73,13 +87,72 @@ export default function AdminDashboard() {
       updates,
     }: {
       id: string;
-      updates: { fee?: number; free_delivery_threshold?: number | null; is_active?: boolean };
+      updates: {
+        name_ar?: string;
+        name_en?: string;
+        fee?: number;
+        free_delivery_threshold?: number | null;
+        is_active?: boolean;
+      };
     }) => updateDeliveryAreaAdmin(id, updates),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-delivery-areas'] });
       queryClient.invalidateQueries({ queryKey: ['delivery-areas'] });
     },
   });
+
+  const createAreaMutation = useMutation({
+    mutationFn: (data: {
+      name_ar: string;
+      name_en: string;
+      fee: number;
+      free_delivery_threshold: number | null;
+    }) => createDeliveryAreaAdmin(data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['admin-delivery-areas'] });
+      queryClient.invalidateQueries({ queryKey: ['delivery-areas'] });
+      setIsAddZoneModalOpen(false);
+      setNewZoneNameAr('');
+      setNewZoneNameEn('');
+      setNewZoneFee('15');
+      setNewZoneThreshold('150');
+      setAddZoneError(null);
+    },
+    onError: (err: unknown) => {
+      setAddZoneError(err instanceof Error ? err.message : 'Failed to add zone');
+    },
+  });
+
+  const deleteAreaMutation = useMutation({
+    mutationFn: (id: string) => deleteDeliveryAreaAdmin(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['admin-delivery-areas'] });
+      queryClient.invalidateQueries({ queryKey: ['delivery-areas'] });
+    },
+  });
+
+  const handleCreateZoneSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setAddZoneError(null);
+    if (!newZoneNameAr.trim() || !newZoneNameEn.trim()) {
+      setAddZoneError(isAr ? 'يرجى إدخال اسم المنطقة بالعربية والإنجليزية' : 'Please provide zone names');
+      return;
+    }
+    const parsedFee = parseFloat(newZoneFee);
+    if (isNaN(parsedFee) || parsedFee < 0) {
+      setAddZoneError(isAr ? 'يرجى إدخال رسوم توصيل صحيحة' : 'Invalid fee amount');
+      return;
+    }
+    const parsedThreshold = newZoneThreshold.trim() ? parseFloat(newZoneThreshold) : null;
+
+    createAreaMutation.mutate({
+      name_ar: newZoneNameAr.trim(),
+      name_en: newZoneNameEn.trim(),
+      fee: parsedFee,
+      free_delivery_threshold: parsedThreshold,
+    });
+  };
+
 
   // Calculate high-level KPIs
   const stats = useMemo(() => {
@@ -412,7 +485,7 @@ export default function AdminDashboard() {
       {/* TAB 3: DELIVERY AREAS & FEES */}
       {activeTab === 'delivery' && (
         <div className="rounded-2xl border border-surface-border bg-white p-6 shadow-card space-y-6">
-          <div className="flex flex-col justify-between gap-2 border-b border-surface-border pb-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col justify-between gap-4 border-b border-surface-border pb-4 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
                 <Building2 className="text-brand-700" size={20} />
@@ -420,11 +493,131 @@ export default function AdminDashboard() {
               </h2>
               <p className="text-xs text-foreground-muted mt-0.5">
                 {isAr
-                  ? 'تحديد رسوم التوصيل وحد التوصيل المجاني لكل حي ومنطقة سكنية'
-                  : 'Manage delivery fees and free-delivery thresholds for each residential district'}
+                  ? 'تحديد وإضافة مناطق جديدة، تعديل الأسماء والرسوم وحد التوصيل المجاني لكل حي'
+                  : 'Manage, add, and edit delivery fees and free-delivery thresholds for each residential district'}
               </p>
             </div>
+
+            <Button
+              size="sm"
+              onClick={() => setIsAddZoneModalOpen(true)}
+              className="flex items-center gap-1.5 bg-brand-700 hover:bg-brand-800 text-white text-xs"
+            >
+              <Plus size={15} />
+              <span>{isAr ? 'إضافة منطقة جديدة' : 'Add New Zone'}</span>
+            </Button>
           </div>
+
+          {/* Add Zone Modal */}
+          {isAddZoneModalOpen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
+              role="dialog"
+              aria-modal="true"
+            >
+              <div className="relative w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl border border-surface-border">
+                <button
+                  onClick={() => setIsAddZoneModalOpen(false)}
+                  className="absolute end-4 top-4 rounded-xl p-2 text-foreground-subtle hover:bg-surface-subtle"
+                >
+                  <X size={18} />
+                </button>
+
+                <h3 className="text-lg font-bold text-foreground mb-4">
+                  {isAr ? 'إضافة منطقة توصيل جديدة' : 'Add New Delivery Zone'}
+                </h3>
+
+                {addZoneError && (
+                  <div className="mb-3 rounded-xl border border-red-200 bg-red-50 p-2.5 text-xs text-red-600">
+                    {addZoneError}
+                  </div>
+                )}
+
+                <form onSubmit={handleCreateZoneSubmit} className="space-y-3">
+                  <div>
+                    <label className="block text-xs font-semibold text-foreground mb-1">
+                      {isAr ? 'اسم المنطقة (بالعربية)' : 'District Name (Arabic)'}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder={isAr ? 'مثال: الحي السابع - 6 أكتوبر' : 'Arabic name'}
+                      value={newZoneNameAr}
+                      onChange={(e) => setNewZoneNameAr(e.target.value)}
+                      className="w-full rounded-xl border border-surface-border px-3 py-2 text-xs focus:border-brand-600 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-foreground mb-1">
+                      {isAr ? 'اسم المنطقة (بالإنجليزية)' : 'District Name (English)'}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder={isAr ? 'e.g. 7th District - 6th of October' : 'English name'}
+                      value={newZoneNameEn}
+                      onChange={(e) => setNewZoneNameEn(e.target.value)}
+                      className="w-full rounded-xl border border-surface-border px-3 py-2 text-xs focus:border-brand-600 focus:outline-none"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-semibold text-foreground mb-1">
+                        {isAr ? 'رسوم التوصيل (ج.م)' : 'Delivery Fee (EGP)'}
+                      </label>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        required
+                        value={newZoneFee}
+                        onChange={(e) => setNewZoneFee(e.target.value)}
+                        className="w-full rounded-xl border border-surface-border px-3 py-2 text-xs focus:border-brand-600 focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-foreground mb-1">
+                        {isAr ? 'حد التوصيل المجاني (ج.م)' : 'Free Threshold (EGP)'}
+                      </label>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        placeholder={isAr ? 'اختياري' : 'Optional'}
+                        value={newZoneThreshold}
+                        onChange={(e) => setNewZoneThreshold(e.target.value)}
+                        className="w-full rounded-xl border border-surface-border px-3 py-2 text-xs focus:border-brand-600 focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-2 pt-3 border-t border-surface-border">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setIsAddZoneModalOpen(false)}
+                      className="text-xs"
+                    >
+                      {isAr ? 'إلغاء' : 'Cancel'}
+                    </Button>
+                    <Button
+                      type="submit"
+                      variant="default"
+                      size="sm"
+                      disabled={createAreaMutation.isPending}
+                      className="bg-brand-700 hover:bg-brand-800 text-white text-xs"
+                    >
+                      {createAreaMutation.isPending ? (isAr ? 'جاري الإضافة...' : 'Adding...') : (isAr ? 'إضافة المنطقة' : 'Add Zone')}
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
 
           {isAreasLoading ? (
             <div className="py-12 text-center text-sm text-foreground-muted">
@@ -449,7 +642,12 @@ export default function AdminDashboard() {
                       area={area}
                       isAr={isAr}
                       onUpdate={(updates) => updateAreaMutation.mutate({ id: area.id, updates })}
-                      isUpdating={updateAreaMutation.isPending}
+                      onDelete={() => {
+                        if (window.confirm(isAr ? `هل أنت متأكد من حذف منطقة "${area.name_ar}"؟` : `Delete zone "${area.name_en}"?`)) {
+                          deleteAreaMutation.mutate(area.id);
+                        }
+                      }}
+                      isUpdating={updateAreaMutation.isPending || deleteAreaMutation.isPending}
                     />
                   ))}
                 </tbody>
@@ -748,108 +946,220 @@ function OrderOperatorCard({
 interface DeliveryAreaRowProps {
   area: DeliveryArea;
   isAr: boolean;
-  onUpdate: (updates: { fee?: number; free_delivery_threshold?: number | null; is_active?: boolean }) => void;
+  onUpdate: (updates: {
+    name_ar?: string;
+    name_en?: string;
+    fee?: number;
+    free_delivery_threshold?: number | null;
+    is_active?: boolean;
+  }) => void;
+  onDelete: () => void;
   isUpdating: boolean;
 }
 
-function DeliveryAreaRow({ area, isAr, onUpdate, isUpdating }: DeliveryAreaRowProps) {
+function DeliveryAreaRow({ area, isAr, onUpdate, onDelete, isUpdating }: DeliveryAreaRowProps) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [nameAr, setNameAr] = useState(area.name_ar);
+  const [nameEn, setNameEn] = useState(area.name_en);
   const [fee, setFee] = useState(String(area.fee));
   const [threshold, setThreshold] = useState(
     area.free_delivery_threshold !== null ? String(area.free_delivery_threshold) : ''
   );
   const [isActive, setIsActive] = useState(area.is_active);
-  const [hasChanges, setHasChanges] = useState(false);
 
-  const handleFeeChange = (val: string) => {
-    setFee(val);
-    setHasChanges(true);
-  };
-
-  const handleThresholdChange = (val: string) => {
-    setThreshold(val);
-    setHasChanges(true);
-  };
-
-  const handleToggleActive = () => {
-    const next = !isActive;
+  const handleToggleActiveDirect = () => {
+    const next = !area.is_active;
     setIsActive(next);
     onUpdate({ is_active: next });
+  };
+
+  const handleCancel = () => {
+    setNameAr(area.name_ar);
+    setNameEn(area.name_en);
+    setFee(String(area.fee));
+    setThreshold(area.free_delivery_threshold !== null ? String(area.free_delivery_threshold) : '');
+    setIsActive(area.is_active);
+    setIsEditing(false);
   };
 
   const handleSave = () => {
     const numFee = parseFloat(fee);
     const numThreshold = threshold.trim() ? parseFloat(threshold) : null;
     if (isNaN(numFee) || numFee < 0) return;
+    if (!nameAr.trim() || !nameEn.trim()) return;
 
     onUpdate({
+      name_ar: nameAr.trim(),
+      name_en: nameEn.trim(),
       fee: numFee,
       free_delivery_threshold: numThreshold,
+      is_active: isActive,
     });
-    setHasChanges(false);
+    setIsEditing(false);
   };
+
+  if (isEditing) {
+    return (
+      <tr className="bg-brand-50/40 border-b border-surface-border">
+        <td className="py-3 px-3">
+          <div className="space-y-1.5 min-w-[180px]">
+            <div>
+              <label className="text-[10px] font-bold text-foreground-muted block mb-0.5">
+                {isAr ? 'الاسم بالعربية' : 'Arabic Name'}
+              </label>
+              <input
+                type="text"
+                value={nameAr}
+                onChange={(e) => setNameAr(e.target.value)}
+                className="w-full rounded-lg border border-surface-border bg-white px-2 py-1 text-xs font-semibold focus:border-brand-600 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="text-[10px] font-bold text-foreground-muted block mb-0.5">
+                {isAr ? 'الاسم بالإنجليزية' : 'English Name'}
+              </label>
+              <input
+                type="text"
+                value={nameEn}
+                onChange={(e) => setNameEn(e.target.value)}
+                className="w-full rounded-lg border border-surface-border bg-white px-2 py-1 text-xs font-semibold focus:border-brand-600 focus:outline-none"
+              />
+            </div>
+          </div>
+        </td>
+
+        <td className="py-3 px-3">
+          <div className="flex items-center gap-1 min-w-[90px]">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              value={fee}
+              onChange={(e) => setFee(e.target.value)}
+              className="w-20 rounded-lg border border-surface-border bg-white px-2 py-1 text-xs font-semibold focus:border-brand-600 focus:outline-none"
+            />
+            <span className="text-xs text-foreground-muted">{isAr ? 'ج.م' : 'EGP'}</span>
+          </div>
+        </td>
+
+        <td className="py-3 px-3">
+          <div className="flex items-center gap-1 min-w-[110px]">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              placeholder={isAr ? 'بدون حد' : 'No limit'}
+              value={threshold}
+              onChange={(e) => setThreshold(e.target.value)}
+              className="w-24 rounded-lg border border-surface-border bg-white px-2 py-1 text-xs font-semibold focus:border-brand-600 focus:outline-none"
+            />
+            <span className="text-xs text-foreground-muted">{isAr ? 'ج.م' : 'EGP'}</span>
+          </div>
+        </td>
+
+        <td className="py-3 px-3 text-center">
+          <button
+            type="button"
+            onClick={() => setIsActive(!isActive)}
+            className={`rounded-full px-2.5 py-1 text-[11px] font-bold transition-colors ${
+              isActive
+                ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
+                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+            }`}
+          >
+            {isActive ? (isAr ? 'نشط' : 'Active') : (isAr ? 'معطل' : 'Disabled')}
+          </button>
+        </td>
+
+        <td className="py-3 px-3 text-end">
+          <div className="flex items-center justify-end gap-1.5">
+            <Button
+              size="sm"
+              variant="default"
+              disabled={isUpdating}
+              onClick={handleSave}
+              className="text-xs py-1 px-2.5 bg-brand-700 hover:bg-brand-800 text-white flex items-center gap-1"
+            >
+              <Check size={13} />
+              <span>{isAr ? 'حفظ' : 'Save'}</span>
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              disabled={isUpdating}
+              onClick={handleCancel}
+              className="text-xs py-1 px-2 text-foreground-muted hover:text-foreground"
+            >
+              <X size={13} />
+            </Button>
+          </div>
+        </td>
+      </tr>
+    );
+  }
 
   return (
     <tr className="hover:bg-surface-subtle/50 transition-colors">
       <td className="py-3 px-3">
-        <div className="font-bold text-foreground">{isAr ? area.name_ar : area.name_en}</div>
+        <div className="font-bold text-foreground text-sm">{isAr ? area.name_ar : area.name_en}</div>
         <div className="text-[11px] text-foreground-muted">{isAr ? area.name_en : area.name_ar}</div>
       </td>
 
       <td className="py-3 px-3">
-        <div className="flex items-center gap-1 max-w-[110px]">
-          <input
-            type="number"
-            min="0"
-            step="1"
-            value={fee}
-            onChange={(e) => handleFeeChange(e.target.value)}
-            className="w-20 rounded-lg border border-surface-border bg-white px-2 py-1 text-xs font-semibold focus:border-brand-600 focus:outline-none"
-          />
-          <span className="text-xs text-foreground-muted">{isAr ? 'ج.م' : 'EGP'}</span>
-        </div>
+        <span className="font-semibold text-foreground text-sm">{area.fee}</span>{' '}
+        <span className="text-xs text-foreground-muted">{isAr ? 'ج.م' : 'EGP'}</span>
       </td>
 
       <td className="py-3 px-3">
-        <div className="flex items-center gap-1 max-w-[130px]">
-          <input
-            type="number"
-            min="0"
-            step="1"
-            placeholder={isAr ? 'بدون حد' : 'No limit'}
-            value={threshold}
-            onChange={(e) => handleThresholdChange(e.target.value)}
-            className="w-24 rounded-lg border border-surface-border bg-white px-2 py-1 text-xs font-semibold focus:border-brand-600 focus:outline-none"
-          />
-          <span className="text-xs text-foreground-muted">{isAr ? 'ج.م' : 'EGP'}</span>
-        </div>
+        {area.free_delivery_threshold !== null && area.free_delivery_threshold !== undefined ? (
+          <>
+            <span className="font-semibold text-foreground text-sm">{area.free_delivery_threshold}</span>{' '}
+            <span className="text-xs text-foreground-muted">{isAr ? 'ج.م' : 'EGP'}</span>
+          </>
+        ) : (
+          <span className="text-xs text-foreground-subtle italic">{isAr ? 'بدون حد مجاني' : 'No free threshold'}</span>
+        )}
       </td>
 
       <td className="py-3 px-3 text-center">
         <button
-          onClick={handleToggleActive}
+          onClick={handleToggleActiveDirect}
           disabled={isUpdating}
-          className={`rounded-full px-2.5 py-1 text-[11px] font-bold transition-colors ${
-            isActive
+          title={isAr ? 'انقر لتغيير الحالة' : 'Click to toggle status'}
+          className={`rounded-full px-2.5 py-1 text-[11px] font-bold transition-colors cursor-pointer ${
+            area.is_active
               ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
               : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
           }`}
         >
-          {isActive ? (isAr ? 'نشط' : 'Active') : (isAr ? 'معطل' : 'Disabled')}
+          {area.is_active ? (isAr ? 'نشط' : 'Active') : (isAr ? 'معطل' : 'Disabled')}
         </button>
       </td>
 
       <td className="py-3 px-3 text-end">
-        {hasChanges && (
+        <div className="flex items-center justify-end gap-1.5">
           <Button
             size="sm"
-            variant="default"
+            variant="outline"
             disabled={isUpdating}
-            onClick={handleSave}
-            className="text-xs py-1 px-2.5 bg-brand-700 hover:bg-brand-800 text-white"
+            onClick={() => setIsEditing(true)}
+            className="text-xs py-1 px-2.5 text-brand-700 hover:text-brand-900 hover:bg-brand-50 border-surface-border flex items-center gap-1"
           >
-            {isAr ? 'حفظ' : 'Save'}
+            <Pencil size={13} />
+            <span>{isAr ? 'تعديل' : 'Edit'}</span>
           </Button>
-        )}
+
+          <Button
+            size="sm"
+            variant="ghost"
+            disabled={isUpdating}
+            onClick={onDelete}
+            className="text-xs py-1 px-2 text-red-500 hover:text-red-700 hover:bg-red-50"
+            title={isAr ? 'حذف المنطقة' : 'Delete Zone'}
+          >
+            <Trash2 size={14} />
+          </Button>
+        </div>
       </td>
     </tr>
   );

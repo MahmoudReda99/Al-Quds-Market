@@ -16,6 +16,7 @@ export interface ProductFilters {
   maxPrice?: number;
   inStockOnly?: boolean;
   isFeatured?: boolean;
+  includeInactive?: boolean;
   sortBy?: ProductSortOption;
   limit?: number;
   offset?: number;

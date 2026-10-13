@@ -109,22 +109,24 @@ export default function ProfilePage() {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {/* Navigation cards / quick links */}
         <div className="space-y-3">
-          <Link
-            to="/orders"
-            className="flex items-center gap-3 rounded-2xl border border-surface-border bg-white p-4 shadow-card card-hover"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-              <ShoppingBag size={20} />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-foreground">
-                {t('common.orders')}
-              </h3>
-              <p className="text-xs text-foreground-muted">
-                {i18n.language === 'ar' ? 'عرض ومتابعة طلباتك' : 'View order history'}
-              </p>
-            </div>
-          </Link>
+          {profile?.role !== 'admin' && (
+            <Link
+              to="/orders"
+              className="flex items-center gap-3 rounded-2xl border border-surface-border bg-white p-4 shadow-card card-hover"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                <ShoppingBag size={20} />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground">
+                  {t('common.orders')}
+                </h3>
+                <p className="text-xs text-foreground-muted">
+                  {i18n.language === 'ar' ? 'عرض ومتابعة طلباتك' : 'View order history'}
+                </p>
+              </div>
+            </Link>
+          )}
 
           <Link
             to="/favorites"

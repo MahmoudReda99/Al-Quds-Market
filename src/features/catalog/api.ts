@@ -104,8 +104,11 @@ export async function fetchCategoryBySlug(slug: string): Promise<CategoryWithChi
 export async function fetchProducts(filters: ProductFilters = {}): Promise<ProductsResponse> {
   let query = supabase
     .from('products')
-    .select('*', { count: 'exact' })
-    .eq('is_active', true);
+    .select('*', { count: 'exact' });
+
+  if (!filters.includeInactive) {
+    query = query.eq('is_active', true);
+  }
 
   // Category filter: if slug provided, lookup category ID first
   if (filters.categorySlug) {

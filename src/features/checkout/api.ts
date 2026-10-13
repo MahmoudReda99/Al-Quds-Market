@@ -85,9 +85,54 @@ export async function fetchAllDeliveryAreasAdmin(): Promise<DeliveryArea[]> {
   }));
 }
 
+export async function createDeliveryAreaAdmin(data: {
+  name_ar: string;
+  name_en: string;
+  fee: number;
+  free_delivery_threshold?: number | null;
+  is_active?: boolean;
+  sort_order?: number;
+}): Promise<DeliveryArea> {
+  const { data: newRow, error } = await supabase
+    .from('delivery_areas')
+    .insert({
+      name_ar: data.name_ar,
+      name_en: data.name_en,
+      fee: data.fee,
+      free_delivery_threshold: data.free_delivery_threshold ?? null,
+      is_active: data.is_active ?? true,
+      sort_order: data.sort_order ?? 99,
+    })
+    .select('*')
+    .single();
+
+  if (error || !newRow) {
+    throw new Error(`فشل إضافة منطقة التوصيل: ${error?.message}`);
+  }
+
+  return {
+    id: String(newRow.id),
+    name_ar: String(newRow.name_ar),
+    name_en: String(newRow.name_en),
+    fee: Number(newRow.fee),
+    free_delivery_threshold:
+      newRow.free_delivery_threshold !== null && newRow.free_delivery_threshold !== undefined
+        ? Number(newRow.free_delivery_threshold)
+        : null,
+    is_active: Boolean(newRow.is_active),
+  };
+}
+
 export async function updateDeliveryAreaAdmin(
   id: string,
-  updates: { fee?: number; free_delivery_threshold?: number | null; is_active?: boolean }
+  updates: {
+    name_ar?: string;
+    name_en?: string;
+    fee?: number;
+    free_delivery_threshold?: number | null;
+    is_active?: boolean;
+    sort_order?: number;
+  }
 ): Promise<void> {
   const { error } = await supabase
     .from('delivery_areas')
@@ -98,4 +143,16 @@ export async function updateDeliveryAreaAdmin(
     throw new Error(`فشل تحديث منطقة التوصيل: ${error.message}`);
   }
 }
+
+export async function deleteDeliveryAreaAdmin(id: string): Promise<void> {
+  const { error } = await supabase
+    .from('delivery_areas')
+    .delete()
+    .eq('id', id);
+
+  if (error) {
+    throw new Error(`فشل حذف منطقة التوصيل: ${error.message}`);
+  }
+}
+
 
