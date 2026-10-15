@@ -1,0 +1,1434 @@
+﻿sku,category_slug,category_ar,category_en,name_ar,unit_ar,unit_en,cost_price,selling_price,stock_quantity,total_cost
+ALQ-SOF-0005,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,ببسى كانز,قطعة,piece,14.17,16.72,367,5200.39
+ALQ-SOF-0007,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيريل كانز,قطعة,piece,14.67,17.31,32,469.31
+ALQ-SOF-0009,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيبسى لتر ونص,1.5 لتر,1.5L,28.83,34.0,94,2710.02
+ALQ-CHO-0011,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,عسليه اوسكار 120 جرام,120 جم,120g,26.55,31.5,4,106.2
+ALQ-NUT-0013,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",جوز هند اوسكار 120 جرام,120 جم,120g,49.5,58.5,5,247.5
+ALQ-NUT-0016,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",لب عباد اوسكار,قطعة,piece,44.55,52.5,5,222.75
+ALQ-NUT-0018,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",لب ابيض اوسكار,قطعة,piece,62.55,74.0,15,938.25
+ALQ-NUT-0020,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",اوسكار سودانى,قطعة,piece,61.65,73.0,9,554.85
+ALQ-NUT-0022,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",كاجو مملح150جم,150 جم,150g,189.0,223.0,3,567.0
+ALQ-NUT-0024,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",فسدق 150جم مملح,150 جم,150g,189.0,223.0,2,378.0
+ALQ-NUT-0026,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",مكسرات مشكلة 150جم,150 جم,150g,175.5,207.0,7,1228.5
+ALQ-FRO-0028,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,طعمية بسمة,قطعة,piece,28.52,33.5,18,513.36
+ALQ-FRO-0030,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,خرشوف بسمة,قطعة,piece,57.96,68.5,18,1043.28
+ALQ-FRO-0032,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,قلقاس بسمة,قطعة,piece,23.92,28.0,17,406.64
+ALQ-FRO-0034,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بامية زيرو,قطعة,piece,39.1,46.0,36,1407.6
+ALQ-FRO-0036,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بامية اكسترا بسمة,قطعة,piece,43.7,51.5,17,742.9
+ALQ-FRO-0038,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بامية ممتازة,قطعة,piece,22.08,26.0,43,949.44
+ALQ-FRO-0040,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فاصوليا بسمة,قطعة,piece,14.72,17.37,9,132.48
+ALQ-FRO-0042,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,سبانخ بسمة,قطعة,piece,13.34,15.74,35,466.9
+ALQ-FRO-0044,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بسلة جزر,قطعة,piece,25.3,30.0,33,834.9
+ALQ-FRO-0046,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بسلة سادة,قطعة,piece,44.16,52.0,75,3312.0
+ALQ-FRO-0048,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,شوربة خضار بسمة,قطعة,piece,14.72,17.37,2,29.44
+ALQ-FRO-0050,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,ملوخية بسمة,قطعة,piece,14.72,17.37,66,971.52
+ALQ-FRO-0052,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,خضار مشكل,قطعة,piece,16.1,19.0,14,225.4
+ALQ-FRO-0054,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,ملوخية تقلية,قطعة,piece,14.49,17.1,11,159.39
+ALQ-MEA-0056,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",برجر اطياب جامبو,قطعة,piece,430.0,507.5,2,860.0
+ALQ-MEA-0058,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",برجر اطياب 8قطع,8 قطع,8 pcs,143.44,169.5,5,717.2
+ALQ-MEA-0060,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",ناجتس اطياب 1ك,1 كجم,1kg,281.6,332.5,2,563.2
+ALQ-MEA-0062,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بانية بارد 1ك,1 كجم,1kg,291.28,343.5,2,582.56
+ALQ-MEA-0064,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",ستربس بارد1ك,1 كجم,1kg,313.28,369.5,2,626.56
+ALQ-MEA-0066,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",شيش اطياب,قطعة,piece,188.32,222.0,4,753.28
+ALQ-MEA-0068,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",ستربس حار40جم,40 جم,40g,134.64,159.0,4,538.56
+ALQ-MEA-0070,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",ستربس باد400جم,400 جم,400g,134.64,159.0,9,1211.76
+ALQ-MEA-0072,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بانية بارد 400جم,400 جم,400g,121.44,143.5,3,364.32
+ALQ-MEA-0074,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بانية حار 400جم,400 جم,400g,112.0,132.0,5,560.0
+ALQ-MEA-0076,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",برجر فراخ اطياب 6قطع,6 قطع,6 pcs,132.0,156.0,5,660.0
+ALQ-MEA-0078,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بانية ستربس حار 1ك,1 كجم,1kg,313.28,369.5,4,1253.12
+ALQ-MEA-0080,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",فرخة كاملة اطياب,قطعة,piece,246.0,290.5,1,246.0
+ALQ-HYG-0082,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,اكس روئح مختلفة,قطعة,piece,135.0,159.5,19,2565.0
+ALQ-KIT-0084,kitchen-pantry,أدوات المطبخ ومستلزمات الحفلات,Kitchen & Party Essentials,كوبيات كرتون +بلاستك,قطعة,piece,19.5,23.0,14,273.0
+ALQ-CER-0086,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,شوفان لينو سريع التحضير,قطعة,piece,64.75,76.5,5,323.75
+ALQ-CER-0089,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,تميز كورن فلكس واحد كيلو,قطعة,piece,179.5,212.0,3,538.5
+ALQ-CHO-0092,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كورن فليكس 120جرام,120 جم,120g,32.0,38.0,1,32.0
+ALQ-CHO-0093,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كورن فليكس250جرام,250 جم,250g,52.5,62.0,3,157.5
+ALQ-CHO-0095,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,تيميز شوكو رايس,قطعة,piece,59.38,70.0,5,296.88
+ALQ-PAS-0097,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ندولز جامبو,قطعة,piece,8.26,9.75,78,644.28
+ALQ-CAN-0099,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",دريا خل تفاح,قطعة,piece,40.0,47.0,3,120.0
+ALQ-COF-0101,coffee-tea,قهوة وشاي,Coffee & Tea,شاى الكبوس 100 جرام,100 جم,100g,35.5,42.0,5,177.5
+ALQ-COF-0103,coffee-tea,قهوة وشاي,Coffee & Tea,الكابوس 200 جرام,200 جم,200g,60.4,71.5,1,60.4
+ALQ-COF-0105,coffee-tea,قهوة وشاي,Coffee & Tea,شاي العروسة 40 جرام,40 جم,40g,8.58,10.12,46,394.68
+ALQ-HOU-0107,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ريد 400بدون رائحة,قطعة,piece,81.55,96.0,2,163.1
+ALQ-HOU-0109,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بلدج ملمع خشب,قطعة,piece,55.0,65.0,9,495.0
+ALQ-SOF-0111,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,ارسىms,قطعة,piece,4.6,5.43,20,92.0
+ALQ-SOF-0113,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيور جوافة لمار 1لتر,1 لتر,1L,50.0,59.0,2,100.0
+ALQ-CHO-0115,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مارشملو 10 ج,قطعة,piece,8.33,9.83,51,425.0
+ALQ-BAK-0117,bakery,مخبوزات طازجة,Bakery & Bread,مقرمشات توستى,قطعة,piece,12.5,14.75,51,637.5
+ALQ-CAN-0119,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فلفل هالبينو الصالخية,قطعة,piece,33.0,39.0,4,132.0
+ALQ-DAI-0121,dairy-eggs,ألبان وبيض,Dairy & Eggs,مثلثات مزارع دينا,قطعة,piece,40.0,47.0,5,200.0
+ALQ-CHO-0123,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جلى كاندى 150جم,150 جم,150g,33.33,39.5,4,133.33
+ALQ-CAN-0125,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب,قطعة,piece,43.86,52.0,14,614.04
+ALQ-CAN-0127,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",دبس رومان ثمار 350مل,350 مل,350ml,42.0,49.5,2,84.0
+ALQ-CAN-0129,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل تفاح ثمار 250مل,250 مل,250ml,28.0,33.0,4,112.0
+ALQ-CAN-0131,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صويا صوص ثمار,قطعة,piece,32.0,38.0,3,96.0
+ALQ-CAN-0133,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ماجيك صوص قرفه,قطعة,piece,90.0,106.0,9,810.0
+ALQ-HER-0135,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",ملح تاج الملوك,قطعة,piece,2.5,2.95,27,67.5
+ALQ-CAN-0137,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فراولة,قطعة,piece,49.0,58.0,16,784.0
+ALQ-CAN-0139,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى تين الرشيدى 720جم,720 جم,720g,50.92,60.0,1,50.92
+ALQ-PAS-0142,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",اندومى زيت,قطعة,piece,9.5,11.21,149,1415.5
+ALQ-ELE-0144,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,وصلة ايفن 2/1 ك,500 جم,500g,27.66,32.5,7,193.62
+ALQ-COF-0146,coffee-tea,قهوة وشاي,Coffee & Tea,بن محوج غامق 100جم العروبة,100 جم,100g,80.5,95.0,8,644.0
+ALQ-COF-0149,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة غامق العروبة 200جم,200 جم,200g,132.0,156.0,5,660.0
+ALQ-ELE-0152,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,شاحن 2/1 ك,500 جم,500g,85.0,100.5,4,340.0
+ALQ-CAN-0154,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى مشمش 700مل,700 مل,700ml,50.92,60.0,3,152.76
+ALQ-HER-0156,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",بصل بودر,قطعة,piece,17.0,20.0,1,17.0
+ALQ-HOU-0158,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كمفورت كيس,قطعة,piece,34.0,40.0,16,544.0
+ALQ-CHI-0160,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,فشار توب,قطعة,piece,29.0,34.0,20,580.0
+ALQ-DAI-0162,dairy-eggs,ألبان وبيض,Dairy & Eggs,مكس المراعي 200 مل,200 مل,200ml,11.08,13.07,87,963.96
+ALQ-BAK-0164,bakery,مخبوزات طازجة,Bakery & Bread,عيش بلدى ريتش باك 4رغيف,4 قطع,4 pcs,21.9,26.0,5,109.5
+ALQ-DAI-0167,dairy-eggs,ألبان وبيض,Dairy & Eggs,مراعي خالى لتر,1 لتر,1L,41.0,48.5,3,123.0
+ALQ-CAN-0169,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صويا صوص دريا,قطعة,piece,45.0,53.0,3,135.0
+ALQ-HOM-0171,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,روائح طعام,قطعة,piece,14.5,17.11,31,449.5
+ALQ-HOU-0173,household-care,منظفات وعناية منزلية,Household Care & Cleaning,معطر فريدة 300مل,300 مل,300ml,30.0,35.5,1,30.0
+ALQ-HOU-0175,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل جيب,قطعة,piece,1.33,1.57,140,186.2
+ALQ-CAN-0177,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة الرشيدى ظرف,قطعة,piece,4.27,5.03,62,264.53
+ALQ-CHO-0179,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بريك ليمون,قطعة,piece,4.17,4.92,14,58.38
+ALQ-HOU-0181,household-care,منظفات وعناية منزلية,Household Care & Cleaning,داوني 1 لتر,1 لتر,1L,92.5,109.0,6,555.0
+ALQ-FRO-0182,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,ماجنم مني 15ج,قطعة,piece,12.29,14.5,20,245.8
+ALQ-PAS-0184,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",حلوة 4.5لتر,4.5 لتر,4.5L,301.5,356.0,1,301.5
+ALQ-DAI-0186,dairy-eggs,ألبان وبيض,Dairy & Eggs,توك جبنه,قطعة,piece,6.65,7.85,3,19.95
+ALQ-DAI-0188,dairy-eggs,ألبان وبيض,Dairy & Eggs,نيدو 100جم,100 جم,100g,41.0,48.5,10,410.0
+ALQ-MOR-0190,more,أخرى ومستلزمات,More & Essentials,معسل دندش تفاحتين,قطعة,piece,43.0,50.5,3,129.0
+ALQ-CAN-0192,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حمص امريكانا,قطعة,piece,28.56,33.5,22,628.32
+ALQ-HOU-0194,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ديتول 50مل,50 مل,50ml,32.0,38.0,2,64.0
+ALQ-FRU-0196,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,راني لتر جوافه,1 لتر,1L,34.16,40.5,79,2698.64
+ALQ-DAI-0198,dairy-eggs,ألبان وبيض,Dairy & Eggs,مش اسكندانى,قطعة,piece,25.0,29.5,13,325.0
+ALQ-DAI-0200,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة كيرى رومى,قطعة,piece,80.0,94.5,1.7,136.0
+ALQ-DAI-0202,dairy-eggs,ألبان وبيض,Dairy & Eggs,سلطة كازبلانكا,قطعة,piece,155.0,183.0,1.7,263.5
+ALQ-MEA-0204,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",لانشون فريش فارم قطع بسطرمة,قطعة,piece,260.0,307.0,2.75,715.0
+ALQ-DAI-0207,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه قريش,قطعة,piece,80.0,94.5,16,1280.0
+ALQ-DAI-0209,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة شيدر مستوردة,قطعة,piece,400.0,472.0,2.6,1040.0
+ALQ-DAI-0211,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه استنبولى,قطعة,piece,135.0,159.5,2,270.0
+ALQ-DAI-0213,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة براميلى سادة وفلفل,قطعة,piece,128.0,151.0,27,3456.0
+ALQ-DAI-0215,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه رومى وسط,قطعة,piece,215.0,253.5,6.6,1419.0
+ALQ-CAN-0217,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زيتون كلاماتا اسبانى,قطعة,piece,100.0,118.0,8.5,850.0
+ALQ-CAN-0219,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خيار شرائح,قطعة,piece,43.5,51.5,3.5,152.25
+ALQ-SOF-0221,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير انانس 250 جرام,250 جم,250g,25.04,29.5,1,25.04
+ALQ-CAN-0223,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فلفل ميكسيكى القدس,قطعة,piece,25.0,29.5,3.5,87.5
+ALQ-DAI-0225,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة راهى ملح خفيف,قطعة,piece,90.0,106.0,14,1260.0
+ALQ-DAI-0227,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة بيور ملح خيفيف,قطعة,piece,80.0,94.5,2.5,200.0
+ALQ-MEA-0229,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",رنجة بطروخ دلعة,قطعة,piece,105.0,124.0,5,525.0
+ALQ-MEA-0231,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",رنجه ابو السيد,قطعة,piece,150.0,177.0,1.98,297.75
+ALQ-DAI-0233,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن جاموسى سايب,قطعة,piece,30.0,35.5,100,3000.0
+ALQ-CAN-0235,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة طحنية سادة,قطعة,piece,98.0,115.5,54,5292.0
+ALQ-DAI-0237,dairy-eggs,ألبان وبيض,Dairy & Eggs,قشطة بلدى طازة,قطعة,piece,175.0,206.5,0.5,87.5
+ALQ-HOU-0239,household-care,منظفات وعناية منزلية,Household Care & Cleaning,وفير 4لتر,4 لتر,4L,83.5,98.5,4,334.0
+ALQ-SOF-0241,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فتراك خروب,قطعة,piece,68.0,80.0,3,204.0
+ALQ-DAI-0243,dairy-eggs,ألبان وبيض,Dairy & Eggs,تستى دانون,قطعة,piece,11.75,13.86,6,70.5
+ALQ-PAS-0245,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",هلالية حواء,قطعة,piece,13.25,15.63,35,463.75
+ALQ-COF-0247,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة 50جم,50 جم,50g,32.0,38.0,26,832.0
+ALQ-CAN-0249,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مخلل بوليف,قطعة,piece,16.75,19.77,25,418.75
+ALQ-CHO-0251,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاتة لايت كرونا,قطعة,piece,16.66,19.66,126,2099.16
+ALQ-COF-0253,coffee-tea,قهوة وشاي,Coffee & Tea,ليبتون 25,قطعة,piece,26.6,31.5,9,239.4
+ALQ-ELE-0255,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,حجار سخان,قطعة,piece,80.0,94.5,7,560.0
+ALQ-SOF-0257,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,ببسى 2.5لتر انواع,2.5 لتر,2.5L,31.83,37.5,77,2450.91
+ALQ-CAN-0259,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زرة حلوة ثمار,قطعة,piece,36.0,42.5,25,900.0
+ALQ-CAN-0261,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مايونيز ديوبال,قطعة,piece,38.75,45.5,12,465.0
+ALQ-BAK-0263,bakery,مخبوزات طازجة,Bakery & Bread,عجينة سمبوسك الزهار,قطعة,piece,21.0,25.0,14,294.0
+ALQ-HYG-0265,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,فاتيكا 140جرام,140 جم,140g,40.0,47.0,6,240.0
+ALQ-DAI-0267,dairy-eggs,ألبان وبيض,Dairy & Eggs,عرض زبادى جهينة 9+3,قطعة,piece,70.0,82.5,15,1050.0
+ALQ-PAS-0269,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",فريك السوهاجى,قطعة,piece,40.0,47.0,4,160.0
+ALQ-COF-0270,coffee-tea,قهوة وشاي,Coffee & Tea,بن محوج فاتح 50 جرام,50 جم,50g,40.0,47.0,19,760.0
+ALQ-HOM-0272,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,ام علي قشطه,قطعة,piece,35.0,41.5,4,140.0
+ALQ-CAN-0274,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب 285 جرام,285 جم,285g,34.58,41.0,12,414.96
+ALQ-MEA-0276,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",تونة مفتت اكسبريس,قطعة,piece,31.5,37.0,53,1669.5
+ALQ-MEA-0278,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",تونة صن شاين قطعة واحدة اكسبريس,قطعة,piece,50.0,59.0,19,950.0
+ALQ-CHO-0281,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكوت ماجيك 5ج,قطعة,piece,4.17,4.92,5,20.85
+ALQ-HOU-0283,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فاين اسمارت 10+2,قطعة,piece,95.0,112.0,3,285.0
+ALQ-HER-0285,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",شوربه خضروات كنور,قطعة,piece,24.0,28.5,44,1056.0
+ALQ-BAK-0287,bakery,مخبوزات طازجة,Bakery & Bread,جيلي يوبي بيتزا,قطعة,piece,16.67,19.67,5,83.33
+ALQ-MEA-0289,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",لانشون فريش فارم فراخ سادة,قطعة,piece,224.0,264.5,0.8,179.2
+ALQ-MEA-0292,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",لانشون تركى مدخن من فريش فارم,قطعة,piece,299.0,353.0,7,2093.0
+ALQ-HOU-0295,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اوكسى 5ك,5 كجم,5kg,284.0,335.0,3,852.0
+ALQ-CAN-0297,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة كفتة الحاتى,قطعة,piece,12.5,14.75,6,75.0
+ALQ-MEA-0299,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",لانشون فريش فارم سادة زيتون سادة,قطعة,piece,224.0,264.5,7,1568.0
+ALQ-CAN-0302,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة برجر ماجى,قطعة,piece,12.0,14.16,4,48.0
+ALQ-CAN-0304,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك كريز اسود,قطعة,piece,60.8,71.5,6,364.8
+ALQ-CAN-0306,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى كريمى تين فيتراك,قطعة,piece,45.5,53.5,10,455.0
+ALQ-CER-0308,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,دقيق شوفان دوبيلا اوت,قطعة,piece,63.65,75.0,7,445.55
+ALQ-HYG-0310,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صانصيلك 250مل زيت,250 مل,250ml,75.0,88.5,2,150.0
+ALQ-CAN-0312,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب روسلين 580 جرام,580 جم,580g,39.0,46.0,22,858.0
+ALQ-PAS-0315,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت زيتون وادي فودز,قطعة,piece,228.0,269.0,2,456.0
+ALQ-CAN-0317,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حمص السوهاجى,قطعة,piece,67.0,79.0,18,1206.0
+ALQ-CAN-0319,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول مدشوش السوهاجى,قطعة,piece,38.5,45.5,6,231.0
+ALQ-PAS-0321,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",فاصوليا السوهاجى,قطعة,piece,60.0,71.0,4,240.0
+ALQ-PAS-0323,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",عدس بجبة السوهاجى,قطعة,piece,40.0,47.0,4,160.0
+ALQ-PAS-0325,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز السوهاجى 1ك,1 كجم,1kg,37.0,43.5,2,74.0
+ALQ-HOM-0327,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,نشا السوهاجى,قطعة,piece,20.0,23.5,52,1040.0
+ALQ-PAS-0329,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",برغل السوهاجى,قطعة,piece,27.0,32.0,5,135.0
+ALQ-PAS-0331,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",قمح السوهاجى,قطعة,piece,24.0,28.5,9,216.0
+ALQ-DAI-0333,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى يونانى 200مل فراولة,200 مل,200ml,39.0,46.0,17,663.0
+ALQ-CAN-0336,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل تفاح دوبيلا,قطعة,piece,21.0,25.0,2,42.0
+ALQ-NUT-0338,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",سودانى سوبر كرانشى,قطعة,piece,12.25,14.46,7,85.75
+ALQ-HYG-0340,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شامبو اكلير 360مل,360 مل,360ml,106.9,126.0,4,427.6
+ALQ-HYG-0342,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صن صاصيلك 360مل,360 مل,360ml,71.67,84.5,18,1289.99
+ALQ-HYG-0344,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,سجنال 120مل +فرشاة,120 مل,120ml,48.99,58.0,22,1077.78
+ALQ-NUT-0346,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",معجون كلوز اب احمر 120مل,120 مل,120ml,40.0,47.0,22,880.0
+ALQ-CHO-0349,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كرونا لايت,قطعة,piece,25.0,29.5,1,25.0
+ALQ-CHI-0351,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بيك رولز 10ج,قطعة,piece,8.33,9.83,161,1341.61
+ALQ-CAN-0353,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل تفاح,قطعة,piece,40.0,47.0,4,160.0
+ALQ-CAN-0355,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل وادى فود,قطعة,piece,13.15,15.52,48,631.2
+ALQ-HOU-0357,household-care,منظفات وعناية منزلية,Household Care & Cleaning,غيار معطر بلومز,قطعة,piece,60.0,71.0,72,4320.0
+ALQ-HYG-0359,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,لوكس 120 جرام .,120 جم,120g,16.83,19.86,70,1178.33
+ALQ-CHO-0360,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ميني تربو,قطعة,piece,9.0,10.62,19,171.0
+ALQ-PAS-0362,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز دريا نصف كيلو ابيض,500 جم,500g,59.0,69.5,23,1357.0
+ALQ-PAS-0364,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز بسمتى زهبى نصف كيلو فاخر,500 جم,500g,59.0,69.5,23,1357.0
+ALQ-COF-0367,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة غامق ابو عوف,قطعة,piece,122.0,144.0,5,610.0
+ALQ-CAN-0369,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",هوت صوص دريا,قطعة,piece,41.0,48.5,2,82.0
+ALQ-CAN-0371,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص باربيكيو دريا,قطعة,piece,50.0,59.0,8,400.0
+ALQ-HOU-0373,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بيروسول,قطعة,piece,38.0,45.0,264,10032.0
+ALQ-HOU-0375,household-care,منظفات وعناية منزلية,Household Care & Cleaning,جركن الشلال 8كيلو,8 كجم,8kg,113.0,133.5,6,678.0
+ALQ-CAN-0377,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول امريكانا بالفلف الحار,قطعة,piece,19.8,23.5,4,79.2
+ALQ-HOU-0379,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بريل الشلال,قطعة,piece,22.75,27.0,12,273.0
+ALQ-DAI-0381,dairy-eggs,ألبان وبيض,Dairy & Eggs,خلطة بشاميل جبنه,قطعة,piece,12.5,14.75,6,75.0
+ALQ-CAN-0383,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة شيش طاوك,قطعة,piece,12.5,14.75,10,125.0
+ALQ-CAN-0385,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",جود فرانس كاتشب,قطعة,piece,34.0,40.0,12,408.0
+ALQ-CAN-0387,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل اسود 700جم,700 جم,700g,41.66,49.0,5,208.3
+ALQ-CHO-0389,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,الرشيدى بار 2ج,قطعة,piece,3.84,4.53,50,191.95
+ALQ-CAN-0391,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب دورة 250جم,250 جم,250g,24.28,28.5,11,267.08
+ALQ-CAN-0393,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشي دورة 900جم,900 جم,900g,80.0,94.5,9,720.0
+ALQ-CAN-0395,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب اسطوانى درة,قطعة,piece,32.9,39.0,15,493.5
+ALQ-CAN-0397,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مخلل مشكل وادى فودى,قطعة,piece,30.5,36.0,6,183.0
+ALQ-CAN-0399,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فلفل مكسيكى وادى فود,قطعة,piece,43.0,50.5,4,172.0
+ALQ-CAN-0401,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ليمون مخلل وادى فود,قطعة,piece,37.0,43.5,3,111.0
+ALQ-HOM-0403,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,ام على حلو الشام,قطعة,piece,33.0,39.0,1,33.0
+ALQ-SOF-0405,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيور برتقال لمار 200مل,200 مل,200ml,12.51,14.76,12,150.12
+ALQ-PAS-0407,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مصريه سوسته,قطعة,piece,13.7,16.17,13,178.1
+ALQ-PAS-0409,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مصريه قواقع,قطعة,piece,13.6,16.05,36,489.6
+ALQ-PAS-0411,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مصريه ودعه,قطعة,piece,13.7,16.17,3,41.1
+ALQ-MOR-0413,more,أخرى ومستلزمات,More & Essentials,بافى ابيض,قطعة,piece,5.83,6.88,55,320.83
+ALQ-CHO-0415,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جيلي سوري,قطعة,piece,4.0,4.72,158,632.0
+ALQ-CHI-0417,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,مبنى ستكس بريتزو,قطعة,piece,8.33,9.83,79,658.07
+ALQ-MOR-0419,more,أخرى ومستلزمات,More & Essentials,البرنس معسال اطعمه,قطعة,piece,43.0,50.5,9,387.0
+ALQ-DAI-0421,dairy-eggs,ألبان وبيض,Dairy & Eggs,هلثى جبنة برطمان 500جم,500 جم,500g,70.0,82.5,13,910.0
+ALQ-DAI-0424,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة هلثى 200جم,200 جم,200g,28.0,33.0,18,504.0
+ALQ-PAS-0426,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مرمرية ستار 400جم,400 جم,400g,12.6,14.87,3,37.8
+ALQ-PAS-0428,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ستار 400جم خواتم,400 جم,400g,12.6,14.87,3,37.8
+ALQ-PAS-0430,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان ستار 400جم,400 جم,400g,12.6,14.87,4,50.4
+ALQ-PAS-0432,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ستار ودعة 400جم,400 جم,400g,5.4,6.37,3,16.2
+ALQ-DAI-0434,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنة روابى 700جم,700 جم,700g,76.25,90.0,5,381.25
+ALQ-COF-0436,coffee-tea,قهوة وشاي,Coffee & Tea,ابو عوف 100جم غامق محوج ى,100 جم,100g,86.0,101.5,11,946.0
+ALQ-FRO-0439,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بسلة خضراء,قطعة,piece,25.0,29.5,13,325.0
+ALQ-CAN-0441,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حمص روسلين,قطعة,piece,28.0,33.0,24,672.0
+ALQ-CAN-0443,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صلصه 3 ك دره,3 كجم,3kg,211.5,249.5,1,211.5
+ALQ-CAN-0445,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صلصه دره 800 جرام,800 جم,800g,76.0,89.5,18,1368.0
+ALQ-CAN-0447,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صلصه دره 650 زجاج,قطعة,piece,58.4,69.0,4,233.6
+ALQ-CAN-0448,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صلصه 400 جرام,400 جم,400g,40.34,47.5,11,443.74
+ALQ-BAK-0450,bakery,مخبوزات طازجة,Bakery & Bread,توست شوفان,قطعة,piece,54.0,63.5,3,162.0
+ALQ-HOM-0452,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,فانليا دريم برتقال,قطعة,piece,4.98,5.88,450,2241.0
+ALQ-CHI-0454,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شبسى سباتس 10ج,قطعة,piece,8.32,9.82,295,2454.4
+ALQ-CHO-0456,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كادبوري 30جم,30 جم,30g,29.17,34.5,200,5834.0
+ALQ-DAI-0458,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى هلثى 1ك,1 كجم,1kg,46.0,54.5,3,138.0
+ALQ-PAS-0460,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",دق يق زاد 1ك,1 كجم,1kg,19.5,23.0,15,292.5
+ALQ-DAI-0462,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنة افانتى 700جم بقرى نقى,700 جم,700g,325.0,383.5,1,325.0
+ALQ-CAN-0465,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",البوادى حلاوه اسبريد كنافه,قطعة,piece,60.33,71.0,3,180.99
+ALQ-PAS-0468,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",صلصه مكرونه,قطعة,piece,29.0,34.0,1,29.0
+ALQ-BAK-0470,bakery,مخبوزات طازجة,Bakery & Bread,صلصه بيتزا,قطعة,piece,30.5,36.0,6,183.0
+ALQ-CAN-0472,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل قصب,قطعة,piece,14.5,17.11,43,623.5
+ALQ-CAN-0474,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص باربيكيو دره,قطعة,piece,47.78,56.5,9,430.02
+ALQ-HOU-0476,household-care,منظفات وعناية منزلية,Household Care & Cleaning,رينول 250مل عرض,250 مل,250ml,59.12,70.0,5,295.63
+ALQ-HOU-0478,household-care,منظفات وعناية منزلية,Household Care & Cleaning,منظف زجاج الشلال,قطعة,piece,24.16,28.5,16,386.56
+ALQ-MOR-0480,more,أخرى ومستلزمات,More & Essentials,زره حلوة دريا,قطعة,piece,71.0,84.0,12,852.0
+ALQ-CAN-0482,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل بلسميك,قطعة,piece,40.0,47.0,5,200.0
+ALQ-CAN-0484,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ماء ورد دريا,قطعة,piece,25.5,30.0,5,127.5
+ALQ-CAN-0486,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول روسلين,قطعة,piece,15.5,18.29,17,263.5
+ALQ-DAI-0488,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه مزارع دينا فيتا,قطعة,piece,95.0,112.0,7,665.0
+ALQ-BAK-0490,bakery,مخبوزات طازجة,Bakery & Bread,جلاش السلام 350جم,350 جم,350g,12.5,14.75,18,225.0
+ALQ-COF-0492,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة غامق العروبة 100جم,100 جم,100g,66.0,78.0,11,726.0
+ALQ-COF-0495,coffee-tea,قهوة وشاي,Coffee & Tea,كوكس 3\1كوفى,1 كجم,1kg,5.42,6.39,22,119.15
+ALQ-DAI-0497,dairy-eggs,ألبان وبيض,Dairy & Eggs,موزديرلا الحمد 1ك,1 كجم,1kg,128.0,151.0,2,256.0
+ALQ-CAN-0499,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل تفاح وادى فود زجاج,قطعة,piece,46.0,54.5,6,276.0
+ALQ-CAN-0501,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فلفل هالبينو وادى فود,قطعة,piece,55.0,65.0,1,55.0
+ALQ-CAN-0503,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل بلسميك وادى فود,قطعة,piece,67.0,79.0,4,268.0
+ALQ-HER-0505,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",تتبيلة البطاطس كنور,قطعة,piece,3.15,3.72,200,630.0
+ALQ-CAN-0507,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مسطردة درة,قطعة,piece,34.46,40.5,9,310.14
+ALQ-SOF-0509,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فيمتو كانز,قطعة,piece,17.06,20.0,27,460.62
+ALQ-COF-0511,coffee-tea,قهوة وشاي,Coffee & Tea,بن 50جم وسط محوج,50 جم,50g,43.0,50.5,8,344.0
+ALQ-CAN-0513,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى محاصيل,قطعة,piece,29.0,34.0,15,435.0
+ALQ-CAN-0515,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فاصويا حمراء روسلين,قطعة,piece,30.0,35.5,13,390.0
+ALQ-CAN-0517,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",هريسة الدرة,قطعة,piece,51.0,60.0,15,765.0
+ALQ-HYG-0519,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,سوفى عرض طويل جدا 14*2,قطعة,piece,78.12,92.0,2,156.25
+ALQ-HOU-0522,household-care,منظفات وعناية منزلية,Household Care & Cleaning,برسيل جل 1لتر لافندر,1 لتر,1L,80.0,94.5,1,80.0
+ALQ-PAS-0524,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سكر عادي 1ك,1 كجم,1kg,27.5,32.5,35,962.5
+ALQ-SOF-0526,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير جواغة 235جم سعودى,235 جم,235g,13.05,15.4,51,665.55
+ALQ-SOF-0529,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير مراعى برتقال 235مل,235 مل,235ml,13.05,15.4,114,1487.7
+ALQ-SOF-0532,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير مراعى لتر كرتون جوافة,1 لتر,1L,41.2,48.5,14,576.8
+ALQ-SOF-0535,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير مراعى مانجو لتر كرتون,1 لتر,1L,41.28,48.5,10,412.8
+ALQ-HER-0537,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",مرقة دجاج فورية,قطعة,piece,2.89,3.41,59,170.51
+ALQ-HYG-0539,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,6221155608581شامبو اكلير حريمى 360مل,360 مل,360ml,111.0,131.0,2,222.0
+ALQ-HOU-0543,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل سحب 400منديل برستيج,قطعة,piece,22.67,27.0,7,158.66
+ALQ-HOU-0546,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل 24بكرة حمام,24 قطع,24 pcs,97.5,115.0,8,780.0
+ALQ-MOR-0548,more,أخرى ومستلزمات,More & Essentials,مناديل فاين ميجا رول 375جم,375 جم,375g,51.25,60.5,2,102.5
+ALQ-HOU-0551,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فاين رول مطبخ 750جم,750 جم,750g,85.0,100.5,3,255.0
+ALQ-SOF-0553,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فيمتو بزازة,قطعة,piece,20.5,24.0,72,1476.0
+ALQ-CAN-0555,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب 500اطفال,قطعة,piece,41.2,48.5,21,865.2
+ALQ-CAN-0557,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب اسطوانى,قطعة,piece,40.42,47.5,29,1172.18
+ALQ-CAN-0559,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مايونيز 250جم,250 جم,250g,49.35,58.0,20,987.0
+ALQ-CAN-0561,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",باربيكيو 250جم,250 جم,250g,31.4,37.0,8,251.2
+ALQ-SOF-0563,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير الراعي برتقال لتر,1 لتر,1L,41.2,48.5,14,576.8
+ALQ-DAI-0565,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة دومتى 1/4ك لبن طبيعى,4 كجم,4kg,34.15,40.5,12,409.8
+ALQ-HYG-0568,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,اكلير 180جم,180 جم,180g,67.5,79.5,3,202.5
+ALQ-CAN-0570,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مشروم 85جم,85 جم,85g,91.9,108.5,7,643.3
+ALQ-CAN-0572,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فاصوليا حمراء دريا 330جم,330 جم,330g,32.0,38.0,12,384.0
+ALQ-CAN-0575,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة البوادى 1كجم,1 كجم,1kg,114.7,135.5,5,573.5
+ALQ-MOR-0577,more,أخرى ومستلزمات,More & Essentials,زره حلوة روسلين,قطعة,piece,38.0,45.0,1,38.0
+ALQ-COF-0579,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة غامق 100جم ابو عوف,100 جم,100g,65.5,77.5,7,458.5
+ALQ-PAS-0582,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونة 500جم سويتة,500 جم,500g,16.25,19.18,1,16.25
+ALQ-NUT-0584,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",حلاوة بند ولوز الرشيدى,قطعة,piece,61.36,72.5,8,490.85
+ALQ-NUT-0586,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",حلاوة فسدق الرشيدى,قطعة,piece,83.12,98.0,5,415.63
+ALQ-CAN-0588,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة الرشيدى 700جم,700 جم,700g,161.0,190.0,3,483.0
+ALQ-HOU-0590,household-care,منظفات وعناية منزلية,Household Care & Cleaning,رينول 500مل عرض,500 مل,500ml,66.33,78.5,2,132.66
+ALQ-HOU-0592,household-care,منظفات وعناية منزلية,Household Care & Cleaning,رينول 750مل عرض,750 مل,750ml,92.5,109.0,5,462.5
+ALQ-COF-0594,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافية جولد 50جم,50 جم,50g,135.0,159.5,4,540.0
+ALQ-CHO-0596,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مورال,قطعة,piece,43.33,51.0,3,129.99
+ALQ-CHO-0598,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جلى فراولة رومان,قطعة,piece,16.0,18.88,3,48.0
+ALQ-CHI-0600,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بريك خضار,قطعة,piece,8.66,10.22,43,372.38
+ALQ-DAI-0602,dairy-eggs,ألبان وبيض,Dairy & Eggs,ميكس الحمد1/2 ك,2 كجم,2kg,63.0,74.5,1,63.0
+ALQ-COF-0604,coffee-tea,قهوة وشاي,Coffee & Tea,شاى احمد تى ناعم 40جم,40 جم,40g,12.13,14.31,13,157.69
+ALQ-ELE-0606,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,سماعة ج,قطعة,piece,50.0,59.0,3,150.0
+ALQ-NUT-0608,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",لوز قلب 150جم,150 جم,150g,148.5,175.0,3,445.5
+ALQ-CAN-0610,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زرة حلوة وادى فود,قطعة,piece,43.0,50.5,10,430.0
+ALQ-COF-0612,coffee-tea,قهوة وشاي,Coffee & Tea,بنجورنو لاتية كراميل سهل الفتح,قطعة,piece,8.75,10.32,59,516.25
+ALQ-COF-0615,coffee-tea,قهوة وشاي,Coffee & Tea,بنجرنو لاتيه سهل الفتح,قطعة,piece,8.75,10.32,74,647.5
+ALQ-COF-0617,coffee-tea,قهوة وشاي,Coffee & Tea,بنجرنو موكا سهل الفتح,قطعة,piece,8.75,10.32,87,761.25
+ALQ-COF-0619,coffee-tea,قهوة وشاي,Coffee & Tea,بنجرنو فانليا,قطعة,piece,8.75,10.32,24,210.0
+ALQ-NUT-0621,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",بنجرنو بندق سهل الفتح,قطعة,piece,8.35,9.85,80,668.0
+ALQ-CAN-0623,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مايونيز الكبير 16جم,16 جم,16g,2.45,2.89,192,470.4
+ALQ-HYG-0625,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,دوف شمبو 180 ملل,180 مل,180ml,68.9,81.5,4,275.6
+ALQ-HYG-0626,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شامبو اكلير 600 ملل,600 مل,600ml,160.0,189.0,2,320.0
+ALQ-COF-0628,coffee-tea,قهوة وشاي,Coffee & Tea,نسكويك 150غ,150 جم,150g,56.0,66.0,7,392.0
+ALQ-SOF-0630,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير تفاح مراعى لتر كرتون,1 لتر,1L,41.2,48.5,14,576.8
+ALQ-NUT-0633,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",لوز محمص 120جم,120 جم,120g,121.5,143.5,6,729.0
+ALQ-NUT-0635,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",ترمس السوهاجى,قطعة,piece,33.6,39.5,13,436.8
+ALQ-DAI-0637,dairy-eggs,ألبان وبيض,Dairy & Eggs,موتزرله الحمد,قطعة,piece,53.0,62.5,2,106.0
+ALQ-CHI-0639,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,توب اوف فشار,قطعة,piece,29.0,34.0,21,609.0
+ALQ-DAI-0641,dairy-eggs,ألبان وبيض,Dairy & Eggs,دومتى زتون 1ك,1 كجم,1kg,76.7,90.5,1,76.7
+ALQ-CHO-0643,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,فرسكا ك جديده 10ج,قطعة,piece,8.2,9.68,77,631.4
+ALQ-HYG-0645,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شامبو دوف 350مل,350 مل,350ml,100.0,118.0,7,700.0
+ALQ-HOU-0647,household-care,منظفات وعناية منزلية,Household Care & Cleaning,رويال اكياس كمامة 1/2ك,2 كجم,2kg,29.0,34.0,43,1247.0
+ALQ-HOU-0649,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مفرش سفرة 1ك رويال,1 كجم,1kg,48.0,56.5,22,1056.0
+ALQ-HOU-0651,household-care,منظفات وعناية منزلية,Household Care & Cleaning,رول كمامة 1ك رويال,1 كجم,1kg,49.0,58.0,42,2058.0
+ALQ-HOU-0653,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مفرش سفرة مطبوع 1/2ك,2 كجم,2kg,30.0,35.5,32,960.0
+ALQ-HOU-0656,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اكياس تلاجة مقاس 20/30رويال,قطعة,piece,28.0,33.0,65,1820.0
+ALQ-HOU-0659,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اكياس تلاجة مقاس 21/30رويال,قطعة,piece,28.0,33.0,39,1092.0
+ALQ-DAI-0662,dairy-eggs,ألبان وبيض,Dairy & Eggs,ورق زبدة رويال,قطعة,piece,29.0,34.0,27,783.0
+ALQ-HOU-0664,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فويل 20متر رويال,قطعة,piece,78.0,92.0,21,1638.0
+ALQ-HOU-0666,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فويل 10متر رويال,قطعة,piece,49.0,58.0,17,833.0
+ALQ-DAI-0668,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة فلامنك مستورد,قطعة,piece,480.0,566.5,1,480.0
+ALQ-MEA-0670,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",لانشون بيفى سادة,قطعة,piece,70.0,82.5,9,630.0
+ALQ-DAI-0672,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة كيرى سادة,قطعة,piece,60.0,71.0,4.5,270.0
+ALQ-DAI-0674,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة كيرى بسطرمة,قطعة,piece,230.0,271.5,1.5,345.0
+ALQ-DAI-0676,dairy-eggs,ألبان وبيض,Dairy & Eggs,سلطه قريش,قطعة,piece,120.0,141.5,1.5,180.0
+ALQ-CAN-0678,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زيتون شراءح اسود اخضر,قطعة,piece,120.0,141.5,7,840.0
+ALQ-CAN-0681,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زيتون اخضر جامبو,قطعة,piece,100.0,118.0,2,200.0
+ALQ-CAN-0683,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة مشاوى ماجى 30جم,30 جم,30g,14.0,16.52,10,140.0
+ALQ-CAN-0686,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة شاورما ماجى 30جم,30 جم,30g,12.5,14.75,5,62.5
+ALQ-CAN-0689,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة حواوشى 35جم ماجى,35 جم,35g,12.5,14.75,14,175.0
+ALQ-DAI-0692,dairy-eggs,ألبان وبيض,Dairy & Eggs,خلطة بشاميل جبنة 70جم,70 جم,70g,14.0,16.52,8,112.0
+ALQ-MOR-0694,more,أخرى ومستلزمات,More & Essentials,مناديل الربيع مطبخ,قطعة,piece,75.0,88.5,2,150.0
+ALQ-HOU-0696,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بلدج سراميك 1لتر,1 لتر,1L,135.0,159.5,5,675.0
+ALQ-CHI-0698,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شبسى زنجر +فراخ,قطعة,piece,6.21,7.33,30,186.3
+ALQ-CAN-0700,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل روسلين,قطعة,piece,15.0,17.7,41,615.0
+ALQ-DAI-0702,dairy-eggs,ألبان وبيض,Dairy & Eggs,موزدريلا مكس الحمد 200جم,200 جم,200g,26.0,30.5,11,286.0
+ALQ-HOM-0705,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,بيك صودا,قطعة,piece,8.0,9.44,2,16.0
+ALQ-MOR-0707,more,أخرى ومستلزمات,More & Essentials,فايل شيشة,قطعة,piece,12.5,14.75,22,275.0
+ALQ-COF-0709,coffee-tea,قهوة وشاي,Coffee & Tea,نسكويك ظرف 13جم,13 جم,13g,5.91,6.97,68,401.88
+ALQ-COF-0711,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافية جولد190جم,190 جم,190g,450.0,531.0,2,900.0
+ALQ-SOF-0713,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بريكس لتر,1 لتر,1L,23.33,27.5,5,116.65
+ALQ-COF-0715,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة العروبة,قطعة,piece,66.0,78.0,3,198.0
+ALQ-COF-0716,coffee-tea,قهوة وشاي,Coffee & Tea,بن محوج العروبة,قطعة,piece,80.5,95.0,6,483.0
+ALQ-HOU-0718,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اوكسي 9كيلو,9 كجم,9kg,447.5,528.0,2,895.0
+ALQ-CAN-0720,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",هوت صوص درة 175مل,175 مل,175ml,19.58,23.0,16,313.28
+ALQ-CHI-0722,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بيك كولا,قطعة,piece,6.18,7.29,52,321.36
+ALQ-CHO-0724,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بيمبو بسكوت لارج,قطعة,piece,4.16,4.91,24,99.84
+ALQ-MOR-0726,more,أخرى ومستلزمات,More & Essentials,كافي بريك,قطعة,piece,4.71,5.56,1,4.71
+ALQ-SOF-0728,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيريل 350جم كيس,350 جم,350g,18.75,22.0,2,37.5
+ALQ-COF-0730,coffee-tea,قهوة وشاي,Coffee & Tea,العروبه فاتح 200,قطعة,piece,161.0,190.0,9,1449.0
+ALQ-COF-0732,coffee-tea,قهوة وشاي,Coffee & Tea,العروبه ساده فاتح 200,قطعة,piece,132.0,156.0,6,792.0
+ALQ-HOU-0734,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ملمع ستانلس رينول,قطعة,piece,42.25,50.0,11,464.75
+ALQ-SOF-0736,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,تويست طاقة,قطعة,piece,11.25,13.27,1,11.25
+ALQ-CHI-0738,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بيكرولز حجم 10 كبير,10 كجم,10kg,12.29,14.5,93,1142.97
+ALQ-HYG-0740,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,كامى صابون 120جم,120 جم,120g,15.88,18.73,45,714.38
+ALQ-HYG-0742,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون لوكس 165جم,165 جم,165g,26.75,31.5,51,1364.25
+ALQ-DAI-0744,dairy-eggs,ألبان وبيض,Dairy & Eggs,الحمد صغيره,قطعة,piece,27.0,32.0,4,108.0
+ALQ-HER-0746,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",الزهبى كسبرة ناعمة,قطعة,piece,8.4,9.91,16,134.4
+ALQ-MEA-0748,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بط العابد,قطعة,piece,120.0,141.5,5.5,660.0
+ALQ-COF-0750,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافيه كلاسيك 100جم,100 جم,100g,147.0,173.5,5,735.0
+ALQ-HOU-0752,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مفرش سفرة اهلا رمضان,قطعة,piece,50.0,59.0,20,1000.0
+ALQ-BAK-0754,bakery,مخبوزات طازجة,Bakery & Bread,مولتو مينى 7ج,قطعة,piece,8.33,9.83,4,33.32
+ALQ-DAI-0756,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنة جنه 350جم,350 جم,350g,39.5,46.5,10,395.0
+ALQ-PAS-0758,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان روجينا حروف,قطعة,piece,21.28,25.0,30,638.4
+ALQ-DAI-0760,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبنة مزارع دينا,قطعة,piece,52.0,61.5,1,52.0
+ALQ-HOU-0762,household-care,منظفات وعناية منزلية,Household Care & Cleaning,برسيل جل 5ج,قطعة,piece,3.12,3.69,50,156.25
+ALQ-CAN-0764,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة كفتة كنور 35جم,35 جم,35g,12.16,14.35,34,413.44
+ALQ-CAN-0766,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كلاماتا مخلي 720,قطعة,piece,108.5,128.0,4,434.0
+ALQ-MEA-0768,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",سوسيس عرض مراعى,قطعة,piece,89.0,105.0,2,178.0
+ALQ-COF-0770,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة وسط 200جم .,200 جم,200g,128.0,151.0,5,640.0
+ALQ-BAK-0772,bakery,مخبوزات طازجة,Bakery & Bread,برجل سمسم بردوى,قطعة,piece,22.25,26.0,3,66.75
+ALQ-HOM-0774,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كب كيك فانيليا,قطعة,piece,5.93,7.0,31,183.83
+ALQ-PAS-0776,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",رز هندي اسمار 800 جرام,800 جم,800g,83.0,98.0,15,1245.0
+ALQ-PAS-0779,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت زتون 500,قطعة,piece,285.0,336.5,6,1710.0
+ALQ-CAN-0781,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مشرم شرايح اسمار 425 جرام,425 جم,425g,51.0,60.0,14,714.0
+ALQ-COF-0784,coffee-tea,قهوة وشاي,Coffee & Tea,الكابوس 30 جرام,30 جم,30g,11.8,13.92,23,271.4
+ALQ-HYG-0786,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون دوف خصم 3ج,قطعة,piece,30.65,36.0,2,61.3
+ALQ-CHO-0788,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مارشملو ضفاير,قطعة,piece,4.17,4.92,96,400.32
+ALQ-MEA-0790,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بولبيف امريكانا الاصلى,قطعة,piece,52.65,62.0,12,631.8
+ALQ-CAN-0792,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى تين 750حلوانى,قطعة,piece,61.2,72.0,13,795.6
+ALQ-HOU-0794,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اوكسي 80 جرام,80 جم,80g,4.3,5.07,46,197.8
+ALQ-MEA-0796,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",برجر التوابل الشرقيه,قطعة,piece,112.0,132.0,1,112.0
+ALQ-MOR-0798,more,أخرى ومستلزمات,More & Essentials,مراعى اناناس لتر,1 لتر,1L,41.2,48.5,13,535.6
+ALQ-SOF-0800,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير مراعى اناناس 235مل,235 مل,235ml,13.05,15.4,87,1135.35
+ALQ-HOU-0803,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اوكسى 10ج,قطعة,piece,8.68,10.24,4,34.72
+ALQ-PAS-0804,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان عصفور لمتا,قطعة,piece,10.35,12.21,24,248.4
+ALQ-PAS-0806,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",شعرية لمتنا 400جم,400 جم,400g,10.35,12.21,2,20.7
+ALQ-PAS-0808,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونة خواتم لمتنا 400جم,400 جم,400g,10.35,12.21,18,186.3
+ALQ-MEA-0811,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بانيه شرقي,قطعة,piece,122.0,144.0,1,122.0
+ALQ-HYG-0813,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون لوكس 75جم,75 جم,75g,10.64,12.56,1,10.64
+ALQ-HOU-0815,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فانش 450مل سائل,450 مل,450ml,110.0,130.0,2,220.0
+ALQ-CAN-0817,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى مشمش حلوانى 380جم,380 جم,380g,34.8,41.0,2,69.6
+ALQ-CAN-0820,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى مشمش الرشيدى 350جم,350 جم,350g,25.4,30.0,7,177.82
+ALQ-CAN-0823,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ثومية حار درة,قطعة,piece,68.93,81.5,6,413.58
+ALQ-CAN-0825,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة بانية ماجى,قطعة,piece,11.7,13.81,15,175.5
+ALQ-CHI-0827,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,فرسكا شيكو ستكس,قطعة,piece,4.16,4.91,1,4.16
+ALQ-CAN-0829,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة شاورما كنور,قطعة,piece,12.9,15.22,66,851.4
+ALQ-CAN-0831,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص لحمة ديمى جلاس,قطعة,piece,19.8,23.5,57,1128.6
+ALQ-CAN-0833,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة برجر كنور 18جم,18 جم,18g,12.75,15.04,18,229.5
+ALQ-CAN-0835,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة حواوشى كنور 18جم,18 جم,18g,12.8,15.1,17,217.6
+ALQ-COF-0838,coffee-tea,قهوة وشاي,Coffee & Tea,فابن بيبى مقاس 4/58قطعة,58 قطع,58 pcs,292.0,344.5,5,1460.0
+ALQ-BAB-0841,baby-care,عناية بالأطفال,Baby Care,فاين بيبى مقاس 3/58قطعة,58 قطع,58 pcs,308.0,363.5,6,1848.0
+ALQ-BAK-0844,bakery,مخبوزات طازجة,Bakery & Bread,عيش قمح كامك يدوت سكر,قطعة,piece,20.4,24.0,3,61.2
+ALQ-HOU-0847,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اكياس زبالة 50*55,قطعة,piece,28.0,33.0,16,448.0
+ALQ-HYG-0849,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون كلونكس,قطعة,piece,10.1,11.92,17,171.7
+ALQ-CHO-0851,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,رولز شكولاتة,قطعة,piece,33.33,39.5,2,66.66
+ALQ-CHI-0853,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,جاكور كرييشن,قطعة,piece,8.35,9.85,72,601.2
+ALQ-HOU-0855,household-care,منظفات وعناية منزلية,Household Care & Cleaning,منعم ملابس فريدة,قطعة,piece,120.0,141.5,6,720.0
+ALQ-HOU-0857,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اوكسي 2.5 اوتو ماتك عطور,قطعة,piece,167.0,197.0,1,167.0
+ALQ-CHI-0860,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,فلامنكو 10ج,قطعة,piece,9.0,10.62,1,9.0
+ALQ-HER-0862,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فلفل اسود السوهاجى,قطعة,piece,35.7,42.0,5,178.5
+ALQ-CAN-0864,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة كارى السوهاجى,قطعة,piece,31.5,37.0,4,126.0
+ALQ-HER-0866,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",شطة السوهاجى,قطعة,piece,16.0,18.88,1,16.0
+ALQ-CAN-0868,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حمص طبيخ السوهاجى,قطعة,piece,12.0,14.16,4,48.0
+ALQ-HER-0870,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",بهارات لحمة السوهاجى,قطعة,piece,41.0,48.5,9,369.0
+ALQ-HER-0872,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كربونات صوديوم السوهاجى,قطعة,piece,10.0,11.8,6,60.0
+ALQ-DAI-0875,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن رومانو 300جم,300 جم,300g,75.0,88.5,1,75.0
+ALQ-COF-0877,coffee-tea,قهوة وشاي,Coffee & Tea,العروبة محوج غامق 200جم,200 جم,200g,161.0,190.0,4,644.0
+ALQ-HYG-0880,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,اكس برفان,قطعة,piece,43.0,50.5,9,387.0
+ALQ-MOR-0882,more,أخرى ومستلزمات,More & Essentials,ثوم مفروم 2فور,قطعة,piece,30.0,35.5,2,60.0
+ALQ-MOR-0884,more,أخرى ومستلزمات,More & Essentials,لندن بلندن 100 فتلة,100 قطع,100 pcs,119.0,140.5,1,119.0
+ALQ-HYG-0886,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,ايزى سويت 3قطع,3 قطع,3 pcs,10.5,12.39,8,84.0
+ALQ-HYG-0888,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل مبللة 12منديل,قطعة,piece,3.96,4.67,48,190.08
+ALQ-HYG-0890,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,هاند ووش ايزى كير,قطعة,piece,36.0,42.5,8,288.0
+ALQ-BAB-0892,baby-care,عناية بالأطفال,Baby Care,فاين بيبى مقاس 2,قطعة,piece,250.0,295.0,3,750.0
+ALQ-COF-0893,coffee-tea,قهوة وشاي,Coffee & Tea,كوفى بريك كلاسيك,قطعة,piece,7.05,8.32,749,5280.45
+ALQ-COF-0895,coffee-tea,قهوة وشاي,Coffee & Tea,كوفى بريك 3*1,قطعة,piece,4.75,5.6,13,61.75
+ALQ-COF-0897,coffee-tea,قهوة وشاي,Coffee & Tea,ليبون 40جم,40 جم,40g,10.1,11.92,54,545.4
+ALQ-COF-0899,coffee-tea,قهوة وشاي,Coffee & Tea,ليبتون خرز ربع كيلو,250 جم,250g,68.0,80.0,25,1700.0
+ALQ-COF-0901,coffee-tea,قهوة وشاي,Coffee & Tea,ليبتون 100جم ناعم,100 جم,100g,27.0,32.0,9,243.0
+ALQ-CAN-0903,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",دوبيلا صويا صوص,قطعة,piece,22.5,26.5,11,247.5
+ALQ-HYG-0905,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,سندريلا 9فوطة,قطعة,piece,21.0,25.0,9,189.0
+ALQ-CAN-0907,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة كفتة سبايسى,قطعة,piece,21.12,25.0,8,168.96
+ALQ-NUT-0909,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر الطحان أطعم,قطعة,piece,30.0,35.5,4,120.0
+ALQ-SOF-0911,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,ميلك شيك اطعم,قطعة,piece,8.5,10.03,81,688.5
+ALQ-HOM-0913,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,مشروب كاكاو كوكس,قطعة,piece,6.5,7.67,34,221.0
+ALQ-COF-0915,coffee-tea,قهوة وشاي,Coffee & Tea,انجلش احمد تي,قطعة,piece,143.92,170.0,1,143.92
+ALQ-COF-0917,coffee-tea,قهوة وشاي,Coffee & Tea,ليبتون 50فتلة ليبول,50 قطع,50 pcs,60.9,72.0,8,487.2
+ALQ-CAN-0919,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة شيش طاوك كنور,قطعة,piece,10.57,12.48,36,380.63
+ALQ-DAI-0921,dairy-eggs,ألبان وبيض,Dairy & Eggs,نيدو 900جم,900 جم,900g,360.0,425.0,5,1800.0
+ALQ-COF-0923,coffee-tea,قهوة وشاي,Coffee & Tea,ابو عوف فاتح محوج 50جرام,50 جم,50g,43.0,50.5,7,301.0
+ALQ-COF-0926,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة ابو عوف 50جم,50 جم,50g,34.0,40.0,4,136.0
+ALQ-CHO-0928,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,حلاوة 700جم شكولاتة الرشيدى الميزان,700 جم,700g,124.28,146.5,5,621.43
+ALQ-SOF-0931,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,لوبيا اسكندراني,قطعة,piece,60.0,71.0,6,360.0
+ALQ-CHO-0933,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كرونا ستفيا,قطعة,piece,38.33,45.0,86,3296.38
+ALQ-DAI-0935,dairy-eggs,ألبان وبيض,Dairy & Eggs,كورونا بالحليب,قطعة,piece,25.0,29.5,75,1875.0
+ALQ-CHO-0937,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جلى كاندى,قطعة,piece,4.17,4.92,54,225.18
+ALQ-BAK-0939,bakery,مخبوزات طازجة,Bakery & Bread,سوفت رول بردواي,قطعة,piece,22.25,26.0,1,22.25
+ALQ-MOR-0941,more,أخرى ومستلزمات,More & Essentials,كوكس هوت شوكليت 400جرام,400 جم,400g,63.0,74.5,12,756.0
+ALQ-MOR-0944,more,أخرى ومستلزمات,More & Essentials,مناديل الربيع 550منديل,قطعة,piece,18.0,21.0,3,54.0
+ALQ-CAN-0946,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى مشمش 850جم حلوانى,850 جم,850g,60.5,71.5,5,302.5
+ALQ-DAI-0949,dairy-eggs,ألبان وبيض,Dairy & Eggs,نيدو 225جم,225 جم,225g,92.0,108.5,5,460.0
+ALQ-CHO-0951,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بيمبو شوفان,قطعة,piece,4.17,4.92,15,62.55
+ALQ-HOU-0953,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل زينة 6بكرة حمام,6 قطع,6 pcs,51.5,61.0,2,103.0
+ALQ-BAK-0955,bakery,مخبوزات طازجة,Bakery & Bread,كيكه تورتا 5ج,قطعة,piece,4.17,4.92,20,83.4
+ALQ-HOU-0957,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كلوركس ظرف الوان 210مل,210 مل,210ml,8.77,10.35,8,70.16
+ALQ-SOF-0960,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,ببسى ماكس 400مل بلاك,400 مل,400ml,8.5,10.03,50,425.0
+ALQ-HER-0962,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",زعتر الزهبى,قطعة,piece,7.94,9.37,15,119.1
+ALQ-CHI-0964,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شبسى 15ج,قطعة,piece,13.2,15.58,8,105.6
+ALQ-BAK-0966,bakery,مخبوزات طازجة,Bakery & Bread,فورنى قواعد بيتزا 3ق,قطعة,piece,76.25,90.0,4,305.0
+ALQ-CHI-0968,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شيبسي 15 جنيه,قطعة,piece,13.2,15.58,85,1122.0
+ALQ-COF-0970,coffee-tea,قهوة وشاي,Coffee & Tea,على كافية 5/1,قطعة,piece,14.0,16.52,24,336.0
+ALQ-COF-0972,coffee-tea,قهوة وشاي,Coffee & Tea,على كافية 4/1,قطعة,piece,14.0,16.52,55,770.0
+ALQ-COF-0974,coffee-tea,قهوة وشاي,Coffee & Tea,على كافية3/1,قطعة,piece,11.0,12.98,43,473.0
+ALQ-COF-0976,coffee-tea,قهوة وشاي,Coffee & Tea,على كافية 2/1,قطعة,piece,11.0,12.98,46,506.0
+ALQ-COF-0978,coffee-tea,قهوة وشاي,Coffee & Tea,على كافية بلاك جولد,قطعة,piece,12.5,14.75,3,37.5
+ALQ-HOU-0980,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كمفورت 3لتر نواعم الزهور,3 لتر,3L,210.1,248.0,6,1260.6
+ALQ-CHO-0982,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جلاكسى 90جم,90 جم,90g,75.0,88.5,6,450.0
+ALQ-CAN-0984,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",البوادى حلاوه اسبريد برتقال,قطعة,piece,60.33,71.0,3,180.99
+ALQ-CAN-0987,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مايونيز مدخن,قطعة,piece,72.1,85.0,1,72.1
+ALQ-CAN-0989,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",دريا حمص مسلوق,قطعة,piece,29.0,34.0,26,754.0
+ALQ-HYG-0991,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,ايزى سويت قطعة,قطعة,piece,5.24,6.18,30,157.2
+ALQ-CHO-0993,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مارشميلو استاند 40جم,40 جم,40g,6.0,7.08,18,108.0
+ALQ-CHO-0995,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جلى برجر,قطعة,piece,3.33,3.93,130,433.33
+ALQ-CHO-0997,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مينى تويست مارشميلو,قطعة,piece,30.0,35.5,5,150.0
+ALQ-MOR-0999,more,أخرى ومستلزمات,More & Essentials,جلس سو يتو,قطعة,piece,7.3,8.61,29,211.7
+ALQ-FRO-1001,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,مولتو ماجنم 10جم,10 جم,10g,8.56,10.1,48,410.67
+ALQ-WAT-1003,water,مياه معدنية,Bottled Water,جالون 11لتر,11 لتر,11L,24.0,28.5,26,624.0
+ALQ-HOM-1005,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كاكاو مشروب دريم,قطعة,piece,21.16,25.0,5,105.8
+ALQ-HER-1007,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فيجتار عادى 250جم,250 جم,250g,29.27,34.5,5,146.35
+ALQ-CHI-1009,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,كرانشى فراخ كبير1,قطعة,piece,9.0,10.62,384,3456.0
+ALQ-HOM-1011,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,نشا زرة كوكس 50جم,50 جم,50g,4.1,4.84,11,45.1
+ALQ-HOU-1013,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فانش اقراص 30قرص,30 قطع,30 pcs,275.0,324.5,10,2750.0
+ALQ-COF-1015,coffee-tea,قهوة وشاي,Coffee & Tea,ليبتون 100 فتله جديد,100 قطع,100 pcs,106.5,125.5,19,2023.5
+ALQ-CHO-1017,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,فركسا 5 جنيه جديده,قطعة,piece,4.17,4.92,69,287.73
+ALQ-CHI-1019,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,كاراتية زيووو,قطعة,piece,3.85,4.54,228,877.8
+ALQ-CHO-1021,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مصاصه برجر,قطعة,piece,8.33,9.83,73,608.31
+ALQ-HOM-1023,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,معجون اكستر تفاح,قطعة,piece,16.67,19.67,38,633.46
+ALQ-CHI-1025,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بيك كولا لتر وربع,1 لتر,1L,24.6,29.0,37,910.2
+ALQ-NUT-1027,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",جود داى كاجو,قطعة,piece,3.67,4.33,11,40.37
+ALQ-CHI-1029,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,ديتوس 10ج,قطعة,piece,8.73,10.3,74,646.02
+ALQ-HOU-1031,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اوكسى جل 2.5ك,2.5 كجم,2.5kg,190.0,224.0,2,380.0
+ALQ-HYG-1033,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,هاند ووش ديفا,قطعة,piece,34.16,40.5,1,34.16
+ALQ-HOU-1035,household-care,منظفات وعناية منزلية,Household Care & Cleaning,رينول مزيل دهون,قطعة,piece,43.33,51.0,24,1039.92
+ALQ-MOR-1037,more,أخرى ومستلزمات,More & Essentials,كيك كوكس برتقال,قطعة,piece,44.0,52.0,8,352.0
+ALQ-MOR-1039,more,أخرى ومستلزمات,More & Essentials,كيك براونيز كوكس,قطعة,piece,67.0,79.0,6,402.0
+ALQ-CHO-1041,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كيك شكولاتة كوكس,قطعة,piece,47.0,55.5,8,376.0
+ALQ-COF-1043,coffee-tea,قهوة وشاي,Coffee & Tea,كافية او 3*1,قطعة,piece,5.17,6.1,19,98.23
+ALQ-COF-1045,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافية اوة 3*1نكهات,قطعة,piece,5.75,6.78,57,327.75
+ALQ-HYG-1047,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,فاين ديلوكس 6بكرة,6 قطع,6 pcs,47.83,56.5,5,239.17
+ALQ-BAB-1049,baby-care,عناية بالأطفال,Baby Care,فاين بيبى مقاس 3/80قطعة,80 قطع,80 pcs,371.0,438.0,3,1113.0
+ALQ-BAB-1052,baby-care,عناية بالأطفال,Baby Care,فاين بيبى 80قطعة مقاس 4,80 قطع,80 pcs,371.0,438.0,7,2597.0
+ALQ-FRO-1055,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,خضار مشكل دريا,قطعة,piece,28.0,33.0,4,112.0
+ALQ-COF-1057,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافية مثلج نستلة,قطعة,piece,27.0,32.0,4,108.0
+ALQ-CAN-1059,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك 850جم,850 جم,850g,55.6,65.5,1,55.6
+ALQ-CAN-1061,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة مفروم,قطعة,piece,17.2,20.5,20,344.0
+ALQ-DAI-1063,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن نيدو 600جم,600 جم,600g,245.0,289.0,6,1470.0
+ALQ-CHI-1065,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,صن بايتس 10ج,قطعة,piece,8.46,9.98,193,1632.78
+ALQ-CHI-1067,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,فرنو 10ج,قطعة,piece,8.85,10.44,5,44.25
+ALQ-CHO-1069,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,هوهوز كريمة 5ج,قطعة,piece,4.17,4.92,57,237.69
+ALQ-CHO-1070,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,تونكز فراولة 5ج,قطعة,piece,4.17,4.92,6,25.02
+ALQ-CHO-1072,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,تونكز كريمة حجم جديد,قطعة,piece,4.17,4.92,30,125.1
+ALQ-HYG-1074,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,كريم سيداج,قطعة,piece,25.0,29.5,20,500.0
+ALQ-CHO-1076,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كادبوري 50 جم,50 جم,50g,50.0,59.0,23,1150.0
+ALQ-DAI-1078,dairy-eggs,ألبان وبيض,Dairy & Eggs,كيرى باندا 6قطع,6 قطع,6 pcs,39.0,46.0,5,195.0
+ALQ-ELE-1080,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,وصله ايفون 2/1,قطعة,piece,61.0,72.0,2,122.0
+ALQ-CHI-1082,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بيك شبسى 10ج,قطعة,piece,9.0,10.62,83,747.0
+ALQ-COF-1084,coffee-tea,قهوة وشاي,Coffee & Tea,على كافية كابتشينو,قطعة,piece,14.2,16.76,14,198.8
+ALQ-SOF-1086,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير بيتى بلس,قطعة,piece,7.4,8.73,100,740.0
+ALQ-HOU-1088,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كلوركس الوان كيس 450جم,450 جم,450g,19.5,23.0,3,58.5
+ALQ-FRO-1091,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,جفركس ملوخية,قطعة,piece,16.0,18.88,2,32.0
+ALQ-CHO-1093,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مالتيزرز,قطعة,piece,39.0,46.0,22,858.0
+ALQ-FRO-1095,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,سلة مونتانا,قطعة,piece,41.0,48.5,3,123.0
+ALQ-CHO-1097,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,رول اب 16 جرام,16 جم,16g,8.33,9.83,142,1183.33
+ALQ-CAN-1099,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ثمار ماء ورد,قطعة,piece,21.25,25.0,8,170.0
+ALQ-HOU-1101,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اكياس زبالة رويال 1ك سوداء,1 كجم,1kg,47.0,55.5,3,141.0
+ALQ-COF-1104,coffee-tea,قهوة وشاي,Coffee & Tea,بن فلاح 200جم محوج,200 جم,200g,130.0,153.5,2,260.0
+ALQ-FRO-1106,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فرايدى كومبو,قطعة,piece,8.9,10.5,13,115.7
+ALQ-FRO-1108,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فرايدى كوب,قطعة,piece,11.0,12.98,18,198.0
+ALQ-FRO-1110,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فرايدى ميجا,قطعة,piece,9.17,10.82,48,440.16
+ALQ-CHO-1112,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ليدفى 5ج,قطعة,piece,6.2,7.32,80,496.0
+ALQ-COF-1114,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافية 2*1انى تايم,قطعة,piece,4.38,5.16,30,131.25
+ALQ-FRO-1116,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فرايدى سنكرز,قطعة,piece,9.17,10.82,56,513.52
+ALQ-FRO-1118,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فرايدى زبدية,قطعة,piece,4.6,5.43,49,225.4
+ALQ-COF-1120,coffee-tea,قهوة وشاي,Coffee & Tea,متة سوريه,قطعة,piece,52.0,61.5,1,52.0
+ALQ-MOR-1122,more,أخرى ومستلزمات,More & Essentials,مناديل ابزى باك 120منديل,قطعة,piece,6.5,7.67,19,123.5
+ALQ-MEA-1125,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",تونه شرائح بارد حار,قطعة,piece,64.0,75.5,32,2048.0
+ALQ-CHI-1127,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شبسى للمه,قطعة,piece,17.5,20.5,41,717.5
+ALQ-CHI-1129,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,جاكوار 10 ج,قطعة,piece,8.5,10.03,27,229.5
+ALQ-HOM-1131,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كوكس بان كيك,قطعة,piece,53.0,62.5,8,424.0
+ALQ-HOM-1133,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كوكس كيك فانليا,قطعة,piece,44.0,52.0,5,220.0
+ALQ-CHO-1135,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كاستر فراولة شكولاتة كوكس,قطعة,piece,6.5,7.67,52,338.0
+ALQ-HOM-1138,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كوكس مج كيك,قطعة,piece,12.69,14.97,1,12.69
+ALQ-HOU-1140,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ليفة مغربية,قطعة,piece,22.0,26.0,1,22.0
+ALQ-CHI-1142,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,تايجر اكسلانس 15ج,قطعة,piece,13.02,15.36,233,3033.66
+ALQ-HER-1144,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",مرقة خضار فاين 8مكعب,قطعة,piece,12.0,14.16,1,12.0
+ALQ-HYG-1146,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,هاند ووش 3لتر,3 لتر,3L,88.95,105.0,1,88.95
+ALQ-NUT-1148,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",كلوز اب 25مل,25 مل,25ml,15.9,18.76,22,349.8
+ALQ-FRO-1150,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فرسكا ايس كريم,قطعة,piece,10.94,12.91,13,142.18
+ALQ-CHO-1152,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,لبان تاكس حار,قطعة,piece,4.17,4.92,35,145.95
+ALQ-CHO-1154,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,لبان بيك بابل مصرى,قطعة,piece,4.17,4.92,111,462.87
+ALQ-NUT-1156,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",كلوز اب25مل اخضر,25 مل,25ml,24.1,28.5,2,48.2
+ALQ-COF-1158,coffee-tea,قهوة وشاي,Coffee & Tea,شاى ريد ليبل 1/4ك,4 كجم,4kg,45.47,53.5,67,3046.49
+ALQ-PAS-1159,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",اندومى 5ج,قطعة,piece,4.31,5.09,108,465.48
+ALQ-DAI-1161,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى لبنتا عرض,قطعة,piece,6.46,7.62,12,77.52
+ALQ-HER-1163,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فيجتار حار 250 جرام,250 جم,250g,29.27,34.5,6,175.62
+ALQ-COF-1165,coffee-tea,قهوة وشاي,Coffee & Tea,كابتشينو دوبل شوت,قطعة,piece,8.75,10.32,60,525.0
+ALQ-CAN-1167,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل العنب الاحمر من كارفيلا,قطعة,piece,65.0,76.5,1,65.0
+ALQ-CAN-1170,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل البلسمك من مودينا,قطعة,piece,83.25,98.0,1,83.25
+ALQ-CHO-1172,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شراب شكولاتة مركز مومنت,قطعة,piece,94.0,111.0,7,658.0
+ALQ-SOF-1175,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,شراب الفراولة من ماجيك,قطعة,piece,24.0,28.5,26,624.0
+ALQ-COF-1177,coffee-tea,قهوة وشاي,Coffee & Tea,نعاع ليبتون 20فلتة,قطعة,piece,16.9,19.94,5,84.5
+ALQ-COF-1179,coffee-tea,قهوة وشاي,Coffee & Tea,رويال شاى طبيعى بالناع,قطعة,piece,19.21,22.5,1,19.21
+ALQ-COF-1181,coffee-tea,قهوة وشاي,Coffee & Tea,رويال شاى اطفال,قطعة,piece,30.0,35.5,6,180.0
+ALQ-COF-1183,coffee-tea,قهوة وشاي,Coffee & Tea,كابتشينو موكاتى شكولاتة,قطعة,piece,10.25,12.09,15,153.75
+ALQ-CHO-1185,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاتة فور يو,قطعة,piece,10.83,12.78,30,324.9
+ALQ-MOR-1187,more,أخرى ومستلزمات,More & Essentials,اوف سبراى,قطعة,piece,152.0,179.5,7,1064.0
+ALQ-HYG-1189,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون جولد 4قطع,4 قطع,4 pcs,30.0,35.5,56,1680.0
+ALQ-CHO-1191,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,انيرو لوتس,قطعة,piece,8.0,9.44,70,560.0
+ALQ-CAN-1193,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل بلسمك من ثمار,قطعة,piece,29.5,35.0,1,29.5
+ALQ-HER-1195,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",بصل بودر الضحى 20جم,20 جم,20g,20.4,24.0,18,367.2
+ALQ-BAK-1197,bakery,مخبوزات طازجة,Bakery & Bread,مالو فطير كاستر,قطعة,piece,47.5,56.0,2,95.0
+ALQ-DAI-1199,dairy-eggs,ألبان وبيض,Dairy & Eggs,عبور فلامنك 1/2ك,2 كجم,2kg,40.25,47.5,4,161.0
+ALQ-CHI-1201,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شيتوس اللوان 10ج,قطعة,piece,8.2,9.68,23,188.6
+ALQ-COF-1203,coffee-tea,قهوة وشاي,Coffee & Tea,جو اكياس اعشاب للتخسيس وازالة السموم من الجسم,قطعة,piece,327.25,386.0,1,327.25
+ALQ-CAN-1207,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب ظرف هاينز 14جم,14 جم,14g,1.61,1.9,96,154.56
+ALQ-MOR-1209,more,أخرى ومستلزمات,More & Essentials,فحم الشعله سريع,قطعة,piece,12.5,14.75,2,25.0
+ALQ-PAS-1211,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سكر سويتال 75ظرف,قطعة,piece,68.0,80.0,5,340.0
+ALQ-PAS-1213,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت قطفه 1.5,قطعة,piece,139.33,164.5,3,417.99
+ALQ-PAS-1215,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت قطفه 1.5 زره,قطعة,piece,211.5,249.5,8,1692.0
+ALQ-PAS-1217,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت عباد 2.1,قطعة,piece,190.0,224.0,12,2280.0
+ALQ-PAS-1219,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت هايلة 700جم,700 جم,700g,43.33,51.0,24,1039.92
+ALQ-CHI-1221,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,برتىن تايجر 15,قطعة,piece,12.58,14.84,330,4151.4
+ALQ-CAN-1223,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خل تفاح دريا عضوى,قطعة,piece,63.0,74.5,9,567.0
+ALQ-CAN-1225,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ماء زهر دريا,قطعة,piece,31.0,36.5,9,279.0
+ALQ-COF-1227,coffee-tea,قهوة وشاي,Coffee & Tea,سحلب الغزاوى,قطعة,piece,12.5,14.75,22,275.0
+ALQ-DAI-1229,dairy-eggs,ألبان وبيض,Dairy & Eggs,قشطة مائدة فارم,قطعة,piece,10.0,11.8,12,120.0
+ALQ-FRU-1231,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,طماطم بالكيلو,1 كجم,1kg,6.8,8.02,250,1700.0
+ALQ-FRU-1233,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,خيار بالكيلو,1 كجم,1kg,19.3,23.0,100,1930.0
+ALQ-FRU-1235,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,بطاطس تحمير,قطعة,piece,16.14,19.05,232,3744.48
+ALQ-FRU-1237,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,بصل ابيض بالكيلو,1 كجم,1kg,13.7,16.17,65,890.5
+ALQ-FRU-1239,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,بصل احمربالكيلو,1 كجم,1kg,11.2,13.22,30,336.0
+ALQ-FRU-1241,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,كوسه,قطعة,piece,25.5,30.0,20,510.0
+ALQ-FRU-1243,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,بطاطا شوى,قطعة,piece,14.35,16.93,12,172.2
+ALQ-FRU-1245,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,جزر مفروز,قطعة,piece,12.25,14.46,25,306.25
+ALQ-FRU-1247,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,بسلة طازة,قطعة,piece,24.4,29.0,26,634.4
+ALQ-FRU-1248,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,فاصوليا طازة,قطعة,piece,25.5,30.0,10,255.0
+ALQ-FRU-1250,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,ليمون اخضر,قطعة,piece,35.5,42.0,25,887.5
+ALQ-FRU-1252,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,فلفل حامى اخضر,قطعة,piece,16.8,19.82,32,537.6
+ALQ-FRU-1254,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,فلفل الوان مشكل,قطعة,piece,29.5,35.0,20,590.0
+ALQ-FRU-1256,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,بزنجان رومى وسط,قطعة,piece,11.5,13.57,26,299.0
+ALQ-FRU-1258,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,بزنجان عروس ابيض,قطعة,piece,16.5,19.47,14,231.0
+ALQ-FRU-1260,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,برتقال بصرة,قطعة,piece,18.7,22.0,90,1683.0
+ALQ-FRU-1262,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,برتقال يوسفى بلدى,قطعة,piece,17.8,21.0,150,2670.0
+ALQ-FRU-1264,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,جوافه,قطعة,piece,24.1,28.5,49,1180.9
+ALQ-FRU-1266,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,رومان فريش,قطعة,piece,37.8,44.5,45,1701.0
+ALQ-FRU-1268,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,تفاح احمر امريكى,قطعة,piece,65.7,77.5,35,2299.5
+ALQ-FRU-1270,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,تفاح لبنانى اصفر,قطعة,piece,61.0,72.0,35,2135.0
+ALQ-FRU-1272,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,كانتلوب العريش,قطعة,piece,15.7,18.53,56,879.2
+ALQ-FRU-1274,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,فراولة طازة,قطعة,piece,30.95,36.5,32,990.4
+ALQ-FRU-1276,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,موز بلدى طازج,قطعة,piece,26.0,30.5,120,3120.0
+ALQ-FRU-1278,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,كيوى طازج,قطعة,piece,70.0,82.5,8,560.0
+ALQ-DAI-1280,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنة قطفة 650جم,650 جم,650g,70.83,83.5,12,849.96
+ALQ-DAI-1282,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنه قطفة 2ك,2 كجم,2kg,133.41,157.5,1,133.41
+ALQ-PAS-1284,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت قطفة 5لتر عباد,5 لتر,5L,427.25,504.0,3,1281.75
+ALQ-DAI-1286,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنة عجب 650جم,650 جم,650g,57.92,68.5,12,695.04
+ALQ-DAI-1288,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنة عجب 1.5اصفر,قطعة,piece,112.0,132.0,3,336.0
+ALQ-DAI-1290,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنه عجب 2ك,2 كجم,2kg,174.62,206.0,1,174.62
+ALQ-PAS-1292,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت قطفه ذرة 1.5لتر,1.5 لتر,1.5L,155.1,183.0,5,775.5
+ALQ-SOF-1294,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,ببسى ماكسى لتر,1 لتر,1L,17.0,20.0,35,595.0
+ALQ-CHI-1296,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,استكس,قطعة,piece,12.0,14.16,68,816.0
+ALQ-CHI-1298,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بونز طماطم متبله,قطعة,piece,8.19,9.66,470,3849.3
+ALQ-CHO-1300,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كوناته سندودش,قطعة,piece,9.0,10.62,18,162.0
+ALQ-FRO-1302,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بطيخ ايس,قطعة,piece,4.4,5.19,18,79.2
+ALQ-CHO-1304,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكوته كوبايه,قطعة,piece,11.0,12.98,45,495.0
+ALQ-CHO-1306,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكوت ساده اونيرو,قطعة,piece,4.0,4.72,28,112.0
+ALQ-HOU-1308,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كلوركس ابيض 500 جرام,500 جم,500g,8.75,10.32,1,8.75
+ALQ-PAS-1311,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",اندومى كورى دراكون,قطعة,piece,4.27,5.04,128,546.56
+ALQ-CHO-1313,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مشروب شكولاتة كوكس,قطعة,piece,4.0,4.72,20,80.0
+ALQ-HOU-1315,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فاين عرض 380 منديل,قطعة,piece,14.44,17.04,81,1169.96
+ALQ-BAB-1317,baby-care,عناية بالأطفال,Baby Care,فاين بيبي مقاس 1 60 قطعه,60 قطع,60 pcs,260.0,307.0,4,1040.0
+ALQ-HER-1320,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فلفل احم ببريكا ك,قطعة,piece,21.2,25.0,7,148.4
+ALQ-HOU-1322,household-care,منظفات وعناية منزلية,Household Care & Cleaning,باور عرض,قطعة,piece,17.5,20.5,10,175.0
+ALQ-HOM-1324,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كيك ماستر كوكس,قطعة,piece,3.75,4.42,120,450.0
+ALQ-DAI-1326,dairy-eggs,ألبان وبيض,Dairy & Eggs,ميكس لمار شيكولاته لتر,1 لتر,1L,51.25,60.5,1,51.25
+ALQ-DAI-1328,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبدة جاموسى بيور الشرقية,قطعة,piece,150.0,177.0,4,600.0
+ALQ-MEA-1331,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",اللحيمى كفته سيخ,قطعة,piece,153.0,180.5,2,306.0
+ALQ-MEA-1333,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",اللحيمى بانيه,قطعة,piece,126.0,148.5,1,126.0
+ALQ-CAN-1335,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",درة صوص برجر,قطعة,piece,99.64,117.5,4,398.56
+ALQ-HER-1336,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",ملح كوكس كيس,قطعة,piece,2.5,2.95,47,117.5
+ALQ-FRU-1338,fruits-vegetables,فواكه وخضروات,Fruits & Vegetables,برقوق احمر,قطعة,piece,90.95,107.5,25,2273.75
+ALQ-BAK-1340,bakery,مخبوزات طازجة,Bakery & Bread,تي رولز ناكيس,قطعة,piece,12.5,14.75,20,250.0
+ALQ-MOR-1342,more,أخرى ومستلزمات,More & Essentials,بيضه سيمبا العاب,قطعة,piece,30.0,35.5,9,270.0
+ALQ-NUT-1344,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",ريستاشيو كنافه و فسدق,قطعة,piece,20.83,24.5,31,645.73
+ALQ-HYG-1346,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون مارينا,قطعة,piece,11.04,13.03,10,110.4
+ALQ-HER-1348,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",دليش مرقه اطعم مختلفه,قطعة,piece,13.0,15.34,9,117.0
+ALQ-COF-1350,coffee-tea,قهوة وشاي,Coffee & Tea,على كافية 3*1اطعمه,قطعة,piece,5.75,6.78,162,931.5
+ALQ-PAS-1352,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سكر بنى بالقرفة,قطعة,piece,26.0,30.5,9,234.0
+ALQ-NUT-1354,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",عصير مايوكا قمر الين خروب تمر,قطعة,piece,38.33,45.0,29,1111.57
+ALQ-CAN-1357,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بصل مخلل,قطعة,piece,66.5,78.5,5,332.5
+ALQ-CAN-1359,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص شيبى درة,قطعة,piece,45.5,53.5,1,45.5
+ALQ-MOR-1361,more,أخرى ومستلزمات,More & Essentials,لعبه عروسه,قطعة,piece,4.17,4.92,475,1979.18
+ALQ-MOR-1363,more,أخرى ومستلزمات,More & Essentials,معسل مزج,قطعة,piece,43.0,50.5,3,129.0
+ALQ-HYG-1365,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مكنه حلاقه كملى,قطعة,piece,165.0,194.5,1,165.0
+ALQ-HYG-1367,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,هاند ووش لايف بوى,قطعة,piece,69.59,82.0,4,278.36
+ALQ-PAS-1369,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",يودلز اطعم مختلفة,قطعة,piece,4.0,4.72,200,800.0
+ALQ-HER-1371,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",ورق لورا السوهاجي,قطعة,piece,14.5,17.11,1,14.5
+ALQ-HER-1373,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",توم بدره السوهاجي,قطعة,piece,33.0,39.0,7,231.0
+ALQ-CAN-1375,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",دريا صوص رانش,قطعة,piece,48.0,56.5,1,48.0
+ALQ-CAN-1377,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص برجر تكساس,قطعة,piece,48.0,56.5,3,144.0
+ALQ-CHO-1379,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جيلي كاندي بالفواكه 65 جم,65 جم,65g,15.0,17.7,23,345.0
+ALQ-CHO-1382,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكويت اسماش محشي شيكولاته,قطعة,piece,8.33,9.83,1,8.33
+ALQ-FRO-1385,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,فرايدى سويتش,قطعة,piece,11.0,12.98,22,242.0
+ALQ-FRO-1387,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بذنجان مقرمش من بسمة,قطعة,piece,34.96,41.0,3,104.88
+ALQ-DAI-1389,dairy-eggs,ألبان وبيض,Dairy & Eggs,دانون 170جم,170 جم,170g,13.0,15.34,8,104.0
+ALQ-CHO-1391,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,هوهوز عائلى,قطعة,piece,35.0,41.5,1,35.0
+ALQ-HER-1393,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادرو بهارات اصناف,قطعة,piece,11.66,13.76,83,967.78
+ALQ-CHO-1395,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,تونكز ميكس,قطعة,piece,8.33,9.83,39,325.0
+ALQ-HYG-1397,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل مبلله اورانت,قطعة,piece,12.91,15.23,12,154.92
+ALQ-COF-1399,coffee-tea,قهوة وشاي,Coffee & Tea,سبرسو ميجا,قطعة,piece,6.0,7.08,65,390.0
+ALQ-CHO-1401,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بوريو 8 قطع,8 قطع,8 pcs,5.84,6.89,134,782.56
+ALQ-CAN-1403,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صويا صوص دره,قطعة,piece,44.0,52.0,1,44.0
+ALQ-BAK-1405,bakery,مخبوزات طازجة,Bakery & Bread,فورنى رقايق باف بستترى,قطعة,piece,76.25,90.0,3,228.75
+ALQ-CHO-1407,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كادبوري 18.5 جم,5 جم,5g,12.5,14.75,74,925.0
+ALQ-HYG-1409,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل مبلله120 منديل,قطعة,piece,21.67,25.5,2,43.34
+ALQ-COF-1411,coffee-tea,قهوة وشاي,Coffee & Tea,يتسون ليبتون,قطعة,piece,16.9,19.94,3,50.7
+ALQ-CHO-1413,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,هوهوز غية مغطى 10ج,قطعة,piece,8.33,9.83,39,325.0
+ALQ-CAN-1415,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص كاتشب 1ك حار,1 كجم,1kg,55.0,65.0,3,165.0
+ALQ-CAN-1418,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص كاتشب 310حار,قطعة,piece,32.42,38.5,18,583.56
+ALQ-CAN-1421,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص باربيكو,قطعة,piece,34.58,41.0,5,172.9
+ALQ-CAN-1423,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص مسطردة,قطعة,piece,35.25,41.5,7,246.75
+ALQ-CAN-1424,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص مايونبز 310,قطعة,piece,41.42,49.0,9,372.78
+ALQ-CAN-1426,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص رانش,قطعة,piece,46.83,55.5,8,374.64
+ALQ-CAN-1428,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص تكساس برجر,قطعة,piece,43.0,50.5,1,43.0
+ALQ-CAN-1430,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص سويت شيلى,قطعة,piece,57.25,67.5,2,114.5
+ALQ-CAN-1432,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص مسطردة 235مل,235 مل,235ml,28.08,33.0,2,56.16
+ALQ-CAN-1435,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص صلصله 650جم,650 جم,650g,50.83,60.0,1,50.83
+ALQ-CAN-1438,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بابا صوص شطه حارة,قطعة,piece,14.88,17.56,6,89.28
+ALQ-HER-1440,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فاين فودز مرقه خضار 8مكب,قطعة,piece,10.73,12.66,24,257.52
+ALQ-CAN-1443,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مشروم روسلين,قطعة,piece,36.0,42.5,12,432.0
+ALQ-MOR-1445,more,أخرى ومستلزمات,More & Essentials,كيكةز ةوسيل ستي,قطعة,piece,4.0,4.72,2,8.0
+ALQ-HER-1447,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادرو كمون,قطعة,piece,12.1,14.28,12,145.2
+ALQ-HER-1449,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادلاو بابريكا,قطعة,piece,11.66,13.76,17,198.22
+ALQ-HER-1451,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادرو كبسه,قطعة,piece,11.6,13.69,22,255.2
+ALQ-HER-1453,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادرو سماق,قطعة,piece,11.66,13.76,12,139.92
+ALQ-HER-1455,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",ورق لورا كوادرو,قطعة,piece,15.85,18.7,1,15.85
+ALQ-HER-1457,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كنور كفته,قطعة,piece,13.15,15.52,93,1222.95
+ALQ-CHO-1459,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مارشلمو 150.,قطعة,piece,30.0,35.5,3,90.0
+ALQ-CHO-1461,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكوت ويفز,قطعة,piece,8.33,9.83,24,199.92
+ALQ-BAK-1463,bakery,مخبوزات طازجة,Bakery & Bread,تورتا 10ج,قطعة,piece,8.33,9.83,42,349.86
+ALQ-COF-1465,coffee-tea,قهوة وشاي,Coffee & Tea,شاى تيس,قطعة,piece,102.0,120.5,14,1428.0
+ALQ-COF-1467,coffee-tea,قهوة وشاي,Coffee & Tea,شاى جرين فيلد اطعم,قطعة,piece,84.5,99.5,45,3802.5
+ALQ-COF-1469,coffee-tea,قهوة وشاي,Coffee & Tea,شاى تيس كينى 25فتلة,25 قطع,25 pcs,76.5,90.5,7,535.5
+ALQ-COF-1471,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافية جاردين,قطعة,piece,217.0,256.0,7,1519.0
+ALQ-COF-1473,coffee-tea,قهوة وشاي,Coffee & Tea,كبسول اسبرسو دبلو,قطعة,piece,260.0,307.0,24,6240.0
+ALQ-PAS-1475,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",رجب العطار ارز 1ك عريض,1 كجم,1kg,34.0,40.0,11,374.0
+ALQ-MOR-1478,more,أخرى ومستلزمات,More & Essentials,رجب العطار زرة فيشار,قطعة,piece,32.5,38.5,1,32.5
+ALQ-HYG-1480,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شاور ديفا لتر,1 لتر,1L,65.25,77.0,2,130.5
+ALQ-DAI-1482,dairy-eggs,ألبان وبيض,Dairy & Eggs,فلفيتا جل للابيض لبوان,قطعة,piece,50.0,59.0,1,50.0
+ALQ-COF-1484,coffee-tea,قهوة وشاي,Coffee & Tea,ليبتون كركدبه,قطعة,piece,16.9,19.94,1,16.9
+ALQ-CAN-1486,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ماسترد بالعسل,قطعة,piece,79.9,94.5,3,239.7
+ALQ-HER-1488,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",رجب العطار بابريكا مدخنه كيس,قطعة,piece,18.0,21.0,4,72.0
+ALQ-HER-1491,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",رجب العطار بهارات بطاطس كيس,قطعة,piece,15.0,17.7,1,15.0
+ALQ-HER-1494,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",رجب العطار دقة زعتر,قطعة,piece,8.5,10.03,1,8.5
+ALQ-HER-1496,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",رجب العطار بهارات فراخ حار,قطعة,piece,15.0,17.7,2,30.0
+ALQ-HER-1499,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",رجب العطار ثوم بودر,قطعة,piece,8.5,10.03,3,25.5
+ALQ-HER-1501,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",رجب العطار كسبرة ناعمه كيس,قطعة,piece,8.5,10.03,4,34.0
+ALQ-DAI-1504,dairy-eggs,ألبان وبيض,Dairy & Eggs,ابوالولد فلفل حار,قطعة,piece,17.17,20.5,2,34.34
+ALQ-PAS-1506,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت خليط 1 لتر,1 لتر,1L,68.62,81.0,32,2195.84
+ALQ-PAS-1508,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت خليط 700 جرام,700 جم,700g,49.5,58.5,35,1732.5
+ALQ-CHO-1510,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بستاشيو دبى,قطعة,piece,18.33,21.5,50,916.5
+ALQ-NUT-1512,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",بن فلاح بندق,قطعة,piece,55.0,65.0,2,110.0
+ALQ-COF-1513,coffee-tea,قهوة وشاي,Coffee & Tea,بن فلاح اسبشيال 250جم,250 جم,250g,150.0,177.0,1,150.0
+ALQ-HOU-1515,household-care,منظفات وعناية منزلية,Household Care & Cleaning,معطر فريده 2 ك,2 كجم,2kg,72.5,85.5,4,290.0
+ALQ-HOU-1517,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ليفه سراميك جمبو,قطعة,piece,45.0,53.0,2,90.0
+ALQ-PAS-1519,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لمتنا 400جم,400 جم,400g,10.35,12.21,1,10.35
+ALQ-PAS-1521,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لمتنا سوسته,قطعة,piece,10.35,12.21,8,82.8
+ALQ-COF-1523,coffee-tea,قهوة وشاي,Coffee & Tea,بنجرنوايس لاتيه,قطعة,piece,12.58,14.84,40,503.2
+ALQ-DAI-1525,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا جور ميه 8 قطع,8 قطع,8 pcs,28.0,33.0,12,336.0
+ALQ-HER-1527,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",قرفه السوهاجي كيس,قطعة,piece,21.5,25.5,10,215.0
+ALQ-HER-1529,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",زعتر السوهاجي,قطعة,piece,15.5,18.29,8,124.0
+ALQ-HER-1531,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",حبه البركه كيس,قطعة,piece,22.0,26.0,5,110.0
+ALQ-HER-1533,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",حلبه حصي كيس,قطعة,piece,10.0,11.8,9,90.0
+ALQ-COF-1535,coffee-tea,قهوة وشاي,Coffee & Tea,كيك مكس قهوه كوكس,قطعة,piece,51.0,60.0,5,255.0
+ALQ-MOR-1537,more,أخرى ومستلزمات,More & Essentials,فريسكيتو ديب ليك,قطعة,piece,8.0,9.44,18,144.0
+ALQ-CHI-1539,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,سوبر وتش,قطعة,piece,6.2,7.32,41,254.2
+ALQ-HYG-1541,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,دوش شاور 350جم,350 جم,350g,40.5,48.0,24,972.0
+ALQ-PAS-1543,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",نودلز 5ج,قطعة,piece,4.5,5.31,200,900.0
+ALQ-MOR-1545,more,أخرى ومستلزمات,More & Essentials,جهاز ايكوس,قطعة,piece,965.0,1138.5,1,965.0
+ALQ-DAI-1547,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه المراعى 1/4ك,4 كجم,4kg,19.04,22.5,253,4817.12
+ALQ-DAI-1549,dairy-eggs,ألبان وبيض,Dairy & Eggs,فيتا زيتون 1\2,قطعة,piece,38.0,45.0,118,4484.0
+ALQ-CHO-1551,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,سبريدو 200جم,200 جم,200g,69.95,82.5,2,139.9
+ALQ-CHO-1553,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,سبريدو 350جم,350 جم,350g,114.0,134.5,7,798.0
+ALQ-COF-1555,coffee-tea,قهوة وشاي,Coffee & Tea,عبد المعبود 1\4 صافي,قطعة,piece,140.0,165.0,4,560.0
+ALQ-COF-1557,coffee-tea,قهوة وشاي,Coffee & Tea,عبد المعبود محوج 250 صافي,قطعة,piece,183.75,217.0,4,735.0
+ALQ-SOF-1560,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,مشروب مصري,قطعة,piece,8.58,10.12,21,180.18
+ALQ-ELE-1562,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,شاحن 15/1,قطعة,piece,145.0,171.0,2,290.0
+ALQ-DAI-1564,dairy-eggs,ألبان وبيض,Dairy & Eggs,دانون جديد,قطعة,piece,7.25,8.55,30,217.5
+ALQ-MOR-1566,more,أخرى ومستلزمات,More & Essentials,سوبر فرواله,قطعة,piece,7.25,8.55,40,290.0
+ALQ-MOR-1568,more,أخرى ومستلزمات,More & Essentials,برجر ماكس شيكولاته,قطعة,piece,8.33,9.83,35,291.55
+ALQ-CAN-1570,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربي ريك راك,قطعة,piece,27.0,32.0,15,405.0
+ALQ-CAN-1572,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صلصه ريك راك 300 جرام,300 جم,300g,22.0,26.0,40,880.0
+ALQ-PAS-1575,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",صوص مكرونه,قطعة,piece,35.0,41.5,1,35.0
+ALQ-HER-1577,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",قرفه عدان,قطعة,piece,12.95,15.28,9,116.55
+ALQ-CHO-1579,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ويفر جو فريش,قطعة,piece,8.33,9.83,15,124.95
+ALQ-BAK-1581,bakery,مخبوزات طازجة,Bakery & Bread,شيش كيك,قطعة,piece,13.75,16.22,23,316.25
+ALQ-NUT-1583,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",زبده فول سوداني دريا,قطعة,piece,60.0,71.0,17,1020.0
+ALQ-CAN-1585,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مركز ليمون دريا,قطعة,piece,52.0,61.5,12,624.0
+ALQ-NUT-1587,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر الشروق 300 جرام,300 جم,300g,30.0,35.5,6,180.0
+ALQ-NUT-1589,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر 550 جرام,550 جم,550g,54.0,63.5,1,54.0
+ALQ-NUT-1591,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر شفاف 550 جرام,550 جم,550g,57.0,67.5,1,57.0
+ALQ-NUT-1593,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر شفاف 800 جرام,800 جم,800g,85.0,100.5,1,85.0
+ALQ-NUT-1595,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر ساده 700 درام,قطعة,piece,70.0,82.5,1,70.0
+ALQ-NUT-1597,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر ساده 1 ك,1 كجم,1kg,97.0,114.5,2,194.0
+ALQ-NUT-1599,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر كاجو 400 جرام,400 جم,400g,150.0,177.0,2,300.0
+ALQ-NUT-1601,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر 2 عين لوز و كاجو,قطعة,piece,155.0,183.0,2,310.0
+ALQ-NUT-1602,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر مكس,قطعة,piece,3.92,4.63,77,301.84
+ALQ-NUT-1604,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر شوكلاته 3 قطع,3 قطع,3 pcs,12.5,14.75,5,62.5
+ALQ-NUT-1606,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر كاجو 3 قطع,3 قطع,3 pcs,12.5,14.75,9,112.5
+ALQ-CAN-1608,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل السلطان 1ك,1 كجم,1kg,160.0,189.0,17,2720.0
+ALQ-CAN-1610,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل السلطان 1/2ك,2 كجم,2kg,80.0,94.5,24,1920.0
+ALQ-CAN-1612,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل جبلى شمع,قطعة,piece,120.0,141.5,15,1800.0
+ALQ-CAN-1614,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صلصة انيستا,قطعة,piece,13.33,15.73,101,1346.33
+ALQ-MOR-1616,more,أخرى ومستلزمات,More & Essentials,باند عرض 2علبه 1/4ك+مثلثات هديه,4 كجم,4kg,45.36,53.5,46,2086.42
+ALQ-CHO-1619,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,غزل كاندي,قطعة,piece,8.33,9.83,8,66.64
+ALQ-HOU-1621,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل مطبخ 6بكرة سوبر تول,6 قطع,6 pcs,95.0,112.0,1,95.0
+ALQ-HER-1624,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كريمي بشامل,قطعة,piece,14.0,16.52,57,798.0
+ALQ-COF-1626,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافيه 200 جرام حجم جديد,200 جم,200g,275.0,324.5,2,550.0
+ALQ-DAI-1629,dairy-eggs,ألبان وبيض,Dairy & Eggs,فيتا مراعي 1كيلو,1 كجم,1kg,76.83,90.5,7,537.81
+ALQ-SOF-1631,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فرست كولا لتر,1 لتر,1L,15.83,18.68,8,126.64
+ALQ-SOF-1633,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فرست كولا 400مل,400 مل,400ml,8.33,9.83,65,541.65
+ALQ-CHI-1635,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شنايدر,قطعة,piece,8.75,10.32,133,1163.75
+ALQ-SOF-1637,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فرست كولا مينى,قطعة,piece,4.3,5.07,212,911.6
+ALQ-HOU-1639,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بايجون طاير,قطعة,piece,40.0,47.0,1,40.0
+ALQ-HOU-1641,household-care,منظفات وعناية منزلية,Household Care & Cleaning,موبلكس ملمع زجتج,قطعة,piece,37.08,44.0,7,259.56
+ALQ-HYG-1643,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون جولد,قطعة,piece,7.92,9.35,100,792.0
+ALQ-HER-1645,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",ديمه ملح ك,قطعة,piece,23.33,27.5,3,69.99
+ALQ-CER-1647,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,ديمه شوفان,قطعة,piece,75.0,88.5,6,450.0
+ALQ-COF-1649,coffee-tea,قهوة وشاي,Coffee & Tea,نسكويت 300 جرام,300 جم,300g,100.0,118.0,2,200.0
+ALQ-CHO-1651,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,لبان بازوكا,قطعة,piece,4.17,4.92,46,191.82
+ALQ-CHO-1653,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكويت باتر,قطعة,piece,10.0,11.8,5,50.0
+ALQ-FRO-1655,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,بوب ايس كريم,قطعة,piece,4.58,5.4,25,114.5
+ALQ-HOU-1657,household-care,منظفات وعناية منزلية,Household Care & Cleaning,باهى 20ج عرض,قطعة,piece,15.6,18.41,1,15.6
+ALQ-HOU-1659,household-care,منظفات وعناية منزلية,Household Care & Cleaning,باهى 15ج عرض,قطعة,piece,11.6,13.69,5,58.0
+ALQ-DAI-1661,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن ميلكي مان كامل الدسم,قطعة,piece,43.8,51.5,1,43.8
+ALQ-DAI-1663,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن ميلكي مان خالي الدسم,قطعة,piece,43.95,52.0,3,131.85
+ALQ-BAK-1665,bakery,مخبوزات طازجة,Bakery & Bread,تشيز كيك,قطعة,piece,13.75,16.22,40,550.0
+ALQ-CHI-1667,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شيبسي رو,قطعة,piece,8.33,9.83,59,491.47
+ALQ-CHI-1669,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,رو كرنكل,قطعة,piece,12.5,14.75,67,837.5
+ALQ-HOU-1671,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بريل روزينا,قطعة,piece,15.0,17.7,3,45.0
+ALQ-HOU-1673,household-care,منظفات وعناية منزلية,Household Care & Cleaning,منعم ملابس روزينا 2 لتر,2 لتر,2L,50.0,59.0,5,250.0
+ALQ-CAN-1675,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خيار دره 750جم,750 جم,750g,54.44,64.0,3,163.32
+ALQ-HER-1677,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كنور مرقه دجاج 12مكعب,قطعة,piece,15.4,18.17,22,338.8
+ALQ-HER-1679,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فيجتار بروست,قطعة,piece,36.08,42.5,11,396.88
+ALQ-CAN-1681,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ابهار خلطه برجر,قطعة,piece,8.33,9.83,93,774.69
+ALQ-CHO-1683,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شوتس شيكى بوم,قطعة,piece,4.17,4.92,1,4.17
+ALQ-MOR-1685,more,أخرى ومستلزمات,More & Essentials,اونيرو ساده 10ج,قطعة,piece,8.0,9.44,12,96.0
+ALQ-HER-1687,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فلفل اسود كوادرو,قطعة,piece,13.75,16.22,14,192.5
+ALQ-HER-1689,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",جنزبيل مطحون كوادرو,قطعة,piece,11.67,13.77,9,105.03
+ALQ-MEA-1690,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",بانيه مزايا 1ك,1 كجم,1kg,68.0,80.0,5,340.0
+ALQ-BAK-1692,bakery,مخبوزات طازجة,Bakery & Bread,بيتزا دجاج باربيكيو,قطعة,piece,144.0,170.0,1,144.0
+ALQ-BAK-1694,bakery,مخبوزات طازجة,Bakery & Bread,بيتزا ببروني,قطعة,piece,127.0,150.0,4,508.0
+ALQ-HER-1696,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",بصل السوهاجي,قطعة,piece,30.77,36.5,5,153.85
+ALQ-HER-1698,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",7 بهارات السوهاجي,قطعة,piece,38.25,45.0,1,38.25
+ALQ-HER-1700,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",جنزبيل السوهاجي,قطعة,piece,25.5,30.0,3,76.5
+ALQ-CHO-1702,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مصاصه ديب لوكو,قطعة,piece,8.33,9.83,26,216.58
+ALQ-CHO-1704,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جيلي مروحه,قطعة,piece,4.17,4.92,38,158.46
+ALQ-CHO-1706,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,لبان بيست,قطعة,piece,4.0,4.72,40,160.0
+ALQ-CHO-1708,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ويفر ماستر جوفريت,قطعة,piece,8.33,9.83,5,41.65
+ALQ-CHO-1710,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مارس جديد,قطعة,piece,40.0,47.0,20,800.0
+ALQ-BAB-1712,baby-care,عناية بالأطفال,Baby Care,مولفكس مقاس 6لرميم,6 لتر,6L,310.0,366.0,1,310.0
+ALQ-BAB-1714,baby-care,عناية بالأطفال,Baby Care,مولفكس مقاس 4برميم,قطعة,piece,308.33,364.0,1,308.33
+ALQ-HYG-1716,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,ندا سويت,قطعة,piece,7.75,9.14,20,155.0
+ALQ-CER-1718,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,زيرو شوفان,قطعة,piece,6.67,7.87,6,40.02
+ALQ-HER-1720,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",بهارات الشام,قطعة,piece,13.5,15.93,25,337.5
+ALQ-CAN-1722,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل هيرو 365 جرام,365 جم,365g,86.08,101.5,6,516.5
+ALQ-CAN-1724,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",هريسه بابا صوص,قطعة,piece,26.25,31.0,12,315.0
+ALQ-CAN-1726,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص باربيكيو بابا صوص,قطعة,piece,27.5,32.5,5,137.5
+ALQ-SOF-1729,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير اصلان مشكل 235مل,235 مل,235ml,6.48,7.65,51,330.48
+ALQ-CHO-1732,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,هابي بيير,قطعة,piece,4.17,4.92,2,8.34
+ALQ-CHO-1734,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,لارج ويفر,قطعة,piece,8.33,9.83,1,8.33
+ALQ-CHO-1736,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,باي بك,قطعة,piece,4.17,4.92,13,54.21
+ALQ-CHO-1738,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بابا وبفر,قطعة,piece,4.17,4.92,142,592.14
+ALQ-CER-1740,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,بابا شوفان,قطعة,piece,4.17,4.92,45,187.65
+ALQ-NUT-1742,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",بابا تمر,قطعة,piece,8.33,9.83,23,191.59
+ALQ-BAK-1744,bakery,مخبوزات طازجة,Bakery & Bread,كمارا كيك شو,قطعة,piece,3.33,3.93,15,49.95
+ALQ-SOF-1746,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,كي كو مشروب,قطعة,piece,12.08,14.25,60,724.8
+ALQ-CAN-1748,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صلصه فاين 350جم,350 جم,350g,49.72,58.5,1,49.72
+ALQ-HOU-1750,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل برستيج كرتون,قطعة,piece,17.83,21.0,2,35.66
+ALQ-CHI-1752,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,او يو ستربس,قطعة,piece,8.33,9.83,116,966.28
+ALQ-CHI-1754,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,اويو سناكس,قطعة,piece,10.0,11.8,96,960.0
+ALQ-CHO-1756,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ديمه معمول 16جم,16 جم,16g,5.42,6.4,58,314.36
+ALQ-HOU-1758,household-care,منظفات وعناية منزلية,Household Care & Cleaning,معطر جو وايت,قطعة,piece,34.17,40.5,21,717.57
+ALQ-HOU-1760,household-care,منظفات وعناية منزلية,Household Care & Cleaning,منديل جيب لايت,قطعة,piece,1.29,1.52,50,64.5
+ALQ-MOR-1762,more,أخرى ومستلزمات,More & Essentials,ازيس بقدونس وكرفس,قطعة,piece,15.0,17.7,1,15.0
+ALQ-DAI-1764,dairy-eggs,ألبان وبيض,Dairy & Eggs,المراعى جبنه فيتا 1/8ك,8 كجم,8kg,10.83,12.78,105,1137.15
+ALQ-DAI-1766,dairy-eggs,ألبان وبيض,Dairy & Eggs,حليب مكثف المراعي,قطعة,piece,95.0,112.0,5,475.0
+ALQ-HYG-1768,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,دف حجم جديد,قطعة,piece,118.0,139.0,1,118.0
+ALQ-DAI-1770,dairy-eggs,ألبان وبيض,Dairy & Eggs,عرض جبنه 1/2 باندا + مربي,قطعة,piece,45.2,53.5,72,3254.4
+ALQ-SOF-1773,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,ماكس كولا 300,قطعة,piece,12.71,15.0,9,114.39
+ALQ-COF-1775,coffee-tea,قهوة وشاي,Coffee & Tea,بن سوبر محوج فاتح عبد المعبود,قطعة,piece,98.0,115.5,7,686.0
+ALQ-COF-1778,coffee-tea,قهوة وشاي,Coffee & Tea,عبد المعبود محوج دوبل فاتح,قطعة,piece,94.1,111.0,5,470.5
+ALQ-CHO-1781,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ايانتو شمعان,قطعة,piece,8.33,9.83,63,524.79
+ALQ-CHO-1783,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ماشميو هوت وج,قطعة,piece,8.33,9.83,66,549.78
+ALQ-CHO-1785,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كريزي اند ديب,قطعة,piece,8.33,9.83,1,8.33
+ALQ-HER-1787,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",روزماري السوهاجى,قطعة,piece,15.0,17.7,8,120.0
+ALQ-HER-1789,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",شمر سوهاحى,قطعة,piece,12.0,14.16,8,96.0
+ALQ-CHO-1791,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ماندولين ويفر 16 جم,16 جم,16g,4.17,4.92,100,417.0
+ALQ-CHO-1793,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ماندولين ويفر 33 جم,33 جم,33g,8.33,9.83,98,816.34
+ALQ-HOU-1795,household-care,منظفات وعناية منزلية,Household Care & Cleaning,سائل 4لتر,4 لتر,4L,77.75,91.5,8,622.0
+ALQ-SOF-1797,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيورانا منظف اطباق 1لتر,1 لتر,1L,25.0,29.5,35,875.0
+ALQ-SOF-1799,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيورانا 675مل,675 مل,675ml,20.0,23.5,7,140.0
+ALQ-HOU-1801,household-care,منظفات وعناية منزلية,Household Care & Cleaning,سواتش معطر هوائى,قطعة,piece,34.7,41.0,1,34.7
+ALQ-HYG-1803,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,ساوتش هاند ووش,قطعة,piece,46.83,55.5,12,561.96
+ALQ-HOU-1805,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ملمع طابلوه سياره,قطعة,piece,30.38,36.0,25,759.5
+ALQ-HYG-1807,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,ساوتش سائل استحمام,قطعة,piece,38.92,46.0,25,973.0
+ALQ-HYG-1809,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,ساوتش سائل 2لتر,2 لتر,2L,122.75,145.0,15,1841.25
+ALQ-HYG-1811,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون ساوتش,قطعة,piece,9.38,11.07,44,412.72
+ALQ-HOU-1813,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كازان كلين منظف ملمع بوتجاز,قطعة,piece,27.92,33.0,1,27.92
+ALQ-HOU-1816,household-care,منظفات وعناية منزلية,Household Care & Cleaning,منظف كازان ملمع خشب,قطعة,piece,41.92,49.5,5,209.6
+ALQ-HYG-1818,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,سلوتش 500مل صابون ايدى,500 مل,500ml,26.33,31.0,288,7583.04
+ALQ-HOU-1821,household-care,منظفات وعناية منزلية,Household Care & Cleaning,زكيه سفنجه,قطعة,piece,9.17,10.82,1,9.17
+ALQ-MOR-1823,more,أخرى ومستلزمات,More & Essentials,هاند وش فروزا500مل,500 مل,500ml,35.29,41.5,20,705.8
+ALQ-HYG-1825,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شاور جل 1.250لتر فروزا,1.250 لتر,1.250L,95.09,112.0,24,2282.16
+ALQ-HYG-1828,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مخمريه فروزا 50جم,50 جم,50g,40.49,48.0,78,3158.22
+ALQ-HYG-1830,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جل برو واكس,قطعة,piece,66.83,79.0,10,668.33
+ALQ-HYG-1832,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جل سبايدر,قطعة,piece,70.58,83.5,10,705.83
+ALQ-DAI-1834,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه دومتى طبيعى 1/2ك,2 كجم,2kg,68.3,80.5,4,273.2
+ALQ-ELE-1836,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,وصله ايفن /12,قطعة,piece,100.0,118.0,1,100.0
+ALQ-ELE-1838,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,كابل 2/1,قطعة,piece,65.0,76.5,2,130.0
+ALQ-HYG-1840,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,فروزينا حمام كريم 1ك,1 كجم,1kg,89.9,106.0,17,1528.3
+ALQ-HYG-1842,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,حمام كريم فروزينا 500مل,500 مل,500ml,59.58,70.5,35,2085.3
+ALQ-HOU-1845,household-care,منظفات وعناية منزلية,Household Care & Cleaning,سلك ستالس نوفال,قطعة,piece,2.95,3.48,204,601.8
+ALQ-MEA-1847,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",هود دج دجاج,قطعة,piece,75.0,88.5,5,375.0
+ALQ-MEA-1849,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",كوند بيف 340جم,340 جم,340g,105.0,124.0,3,315.0
+ALQ-HOU-1851,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كلوركس جل 400مل,400 مل,400ml,26.25,31.0,4,105.0
+ALQ-CHO-1853,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ميلوكس كاندي زون,قطعة,piece,2.08,2.45,35,72.8
+ALQ-CHO-1855,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ميلوكس عيون,قطعة,piece,6.67,7.87,35,233.45
+ALQ-DAI-1857,dairy-eggs,ألبان وبيض,Dairy & Eggs,ميلوكس مصاصه لبن,قطعة,piece,4.17,4.92,24,100.08
+ALQ-CHI-1859,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,لبان ستكس,قطعة,piece,4.17,4.92,43,179.31
+ALQ-NUT-1861,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",جو ناتس سوداني اطعم,قطعة,piece,5.0,5.9,90,450.0
+ALQ-HYG-1863,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,هاند ووش ايزى كي,قطعة,piece,26.04,30.5,12,312.48
+ALQ-HYG-1865,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل ايزى كي 20منديل,قطعة,piece,7.92,9.35,23,182.16
+ALQ-HYG-1867,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل ايزى كي 40منديل,قطعة,piece,15.87,18.73,7,111.09
+ALQ-HYG-1868,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل ايزى كي 80منديل,قطعة,piece,32.0,38.0,5,160.0
+ALQ-HYG-1870,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل ايزى كي 72منديل,قطعة,piece,51.5,61.0,2,103.0
+ALQ-HYG-1872,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,مناديل ايزى كي 72يى,قطعة,piece,59.5,70.0,3,178.5
+ALQ-CAN-1874,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب روسلين 300مل,300 مل,300ml,25.0,29.5,8,200.0
+ALQ-DAI-1876,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبده راهى 1ك نيوزلاندى,1 كجم,1kg,140.0,165.0,4,560.0
+ALQ-CAN-1878,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كاتشب بابا صوص 240جم,240 جم,240g,25.0,29.5,3,75.0
+ALQ-CAN-1881,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مايونيز بابا صوص 220جم,220 جم,220g,30.0,35.5,3,90.0
+ALQ-ELE-1884,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,شاحن سياره,قطعة,piece,150.0,177.0,1,150.0
+ALQ-SOF-1886,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فيروزا صابون,قطعة,piece,42.33,50.0,22,931.33
+ALQ-SOF-1888,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فيروزا زيت شعر 200مل,200 مل,200ml,55.75,66.0,22,1226.5
+ALQ-HYG-1890,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,بيرتى حمام كريم 1ك افوكادو,1 كجم,1kg,60.55,71.5,11,666.05
+ALQ-HYG-1893,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جل واكس شفاف,قطعة,piece,59.42,70.0,10,594.2
+ALQ-HYG-1895,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,بيرتى هير شامبو بلسم,قطعة,piece,54.58,64.5,22,1200.76
+ALQ-SOF-1897,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فيروزا بلسم 500مل,500 مل,500ml,59.5,70.0,32,1904.0
+ALQ-CHO-1899,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاته لبوبو,قطعة,piece,90.0,106.0,5,450.0
+ALQ-PAS-1901,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز خيرات بلدنا 1ك,1 كجم,1kg,22.4,26.5,555,12432.0
+ALQ-PAS-1903,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز استار 1ك,1 كجم,1kg,23.5,27.5,227,5334.5
+ALQ-HOU-1905,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ملمع خشب رينول,قطعة,piece,38.0,45.0,6,228.0
+ALQ-DAI-1907,dairy-eggs,ألبان وبيض,Dairy & Eggs,روابى كيس 350جم,350 جم,350g,38.5,45.5,21,808.5
+ALQ-CAN-1909,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كمبوت اناناس الاغصان,قطعة,piece,110.0,130.0,5,550.0
+ALQ-CAN-1911,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",كمبوت خوخ الاغصان,قطعة,piece,90.0,106.0,6,540.0
+ALQ-CAN-1913,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",الاغصان مشروم 400جم,400 جم,400g,30.0,35.5,1,30.0
+ALQ-CAN-1915,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",الاغصان مشروم 800جم,800 جم,800g,60.0,71.0,3,180.0
+ALQ-MEA-1917,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",هنا لانشون دجاج 340جم,340 جم,340g,72.5,85.5,5,362.5
+ALQ-MEA-1919,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",هنا لانشون دجاج 380جم,380 جم,380g,72.5,85.5,5,362.5
+ALQ-MEA-1921,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",هنا لانشون دجاج 835جم,835 جم,835g,153.5,181.0,3,460.5
+ALQ-MEA-1923,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",هنا لانشون دجاج 200جم,200 جم,200g,41.5,49.0,3,124.5
+ALQ-PAS-1925,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز بسمتى النخيل 800جم,800 جم,800g,58.0,68.5,3,174.0
+ALQ-NUT-1928,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",النخيل لوز محمص ليمون,قطعة,piece,114.71,135.5,4,458.84
+ALQ-NUT-1930,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",النخيل بندق محمص ابيض 125جم,125 جم,125g,158.96,187.5,2,317.92
+ALQ-ELE-1933,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,كابل ايوفن,قطعة,piece,85.0,100.5,4,340.0
+ALQ-MOR-1935,more,أخرى ومستلزمات,More & Essentials,طرف ابيض 750حم,قطعة,piece,13.17,15.54,1,13.17
+ALQ-CAN-1937,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",وادى فود صلصه ظرف,قطعة,piece,2.41,2.84,48,115.68
+ALQ-CAN-1939,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مشوم وادى فود,قطعة,piece,127.0,150.0,5,635.0
+ALQ-ELE-1941,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,وصله 25,قطعة,piece,50.0,59.0,2,100.0
+ALQ-HOU-1943,household-care,منظفات وعناية منزلية,Household Care & Cleaning,هاربيك 190 ملى,190 مل,190ml,22.75,27.0,6,136.5
+ALQ-HYG-1945,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,معجون فرايده,قطعة,piece,20.83,24.5,21,437.43
+ALQ-NUT-1947,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",كامى شاور لتر جوز هند,1 لتر,1L,93.0,109.5,1,93.0
+ALQ-MOR-1949,more,أخرى ومستلزمات,More & Essentials,اونيرو 10,قطعة,piece,8.0,9.44,3,24.0
+ALQ-CHO-1951,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاته ماى تيلا 1ك,1 كجم,1kg,120.0,141.5,2,240.0
+ALQ-CHO-1953,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,معمول الشروق,قطعة,piece,8.33,9.83,50,416.5
+ALQ-NUT-1955,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",تمر واحه الريان,قطعة,piece,68.0,80.0,4,272.0
+ALQ-CAN-1956,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول ساده,قطعة,piece,438.0,517.0,54,23652.0
+ALQ-FRO-1958,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,سوبر فريز برجر جبنه,قطعة,piece,190.0,224.0,2,380.0
+ALQ-FRO-1960,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,سوبر فريز برجر ستيك,قطعة,piece,195.0,230.0,2,390.0
+ALQ-CHI-1962,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بوتاتو شيبس 50 جم,50 جم,50g,20.83,24.5,10,208.3
+ALQ-CHI-1964,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بوتاتو شيبس 100 جم,100 جم,100g,41.67,49.0,7,291.69
+ALQ-CHO-1966,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كادبوري فليك,قطعة,piece,33.33,39.5,3,99.99
+ALQ-CHO-1968,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مسدس مصاصه,قطعة,piece,25.0,29.5,11,275.0
+ALQ-CHO-1970,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ميدكام جيلي,قطعة,piece,8.33,9.83,11,91.63
+ALQ-CHO-1972,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,صودا جيلي,قطعة,piece,7.0,8.26,27,189.0
+ALQ-MOR-1974,more,أخرى ومستلزمات,More & Essentials,كشاف بروجيكتور حيوانات,قطعة,piece,8.33,9.83,3,24.99
+ALQ-CHO-1977,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,سميلز شيكو بن,قطعة,piece,4.17,4.92,18,75.06
+ALQ-SOF-1979,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,صودا فريز,قطعة,piece,8.67,10.23,45,390.15
+ALQ-CHO-1981,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ويفر اني مستورد .,قطعة,piece,8.33,9.83,37,308.21
+ALQ-CHO-1983,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ريزو رايس,قطعة,piece,4.17,4.92,23,95.91
+ALQ-CHO-1985,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بيضه جيلي,قطعة,piece,12.5,14.75,15,187.5
+ALQ-CHO-1987,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مصاصه مضيئه,قطعة,piece,4.17,4.92,21,87.57
+ALQ-DAI-1989,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن مبخر بستوى,قطعة,piece,27.0,32.0,3,81.0
+ALQ-HOU-1991,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كلوركس اللوان لافندلر,قطعة,piece,41.53,49.0,1,41.53
+ALQ-MOR-1993,more,أخرى ومستلزمات,More & Essentials,مندولين 15ج,قطعة,piece,12.5,14.75,106,1325.0
+ALQ-CHO-1995,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاته ابلانتو,قطعة,piece,8.33,9.83,75,624.75
+ALQ-CHI-1997,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بيج شبسى,قطعة,piece,20.83,24.5,34,708.22
+ALQ-CHO-1999,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ماشملو فانت,قطعة,piece,34.0,40.0,10,340.0
+ALQ-CHO-2001,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ماشملو فلنت,قطعة,piece,20.0,23.5,5,100.0
+ALQ-HYG-2003,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,فازلين لوشن,قطعة,piece,103.0,121.5,4,412.0
+ALQ-HYG-2005,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,دوف ا,قطعة,piece,128.0,151.0,5,640.0
+ALQ-HYG-2007,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,دوف شاور وفر 15ج,قطعة,piece,87.0,102.5,4,348.0
+ALQ-HYG-2009,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شاور لوكس 250جم,250 جم,250g,50.0,59.0,9,450.0
+ALQ-HYG-2011,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جنال اعشا,قطعة,piece,48.33,57.0,7,338.31
+ALQ-HER-2013,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",سجنال قرنفل,قطعة,piece,48.33,57.0,8,386.64
+ALQ-CHO-2015,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكوت اتش ار10ج,قطعة,piece,8.33,9.83,10,83.3
+ALQ-PAS-2017,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت عجب 2.25,قطعة,piece,155.6,183.5,3,466.8
+ALQ-PAS-2019,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت عجب 4,قطعة,piece,269.5,318.0,5,1347.5
+ALQ-ELE-2021,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,سمعاعه طوق,قطعة,piece,250.0,295.0,3,750.0
+ALQ-MEA-2023,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",ستربس مزايا,قطعة,piece,185.0,218.5,3,555.0
+ALQ-DAI-2025,dairy-eggs,ألبان وبيض,Dairy & Eggs,دانون خوخ,قطعة,piece,9.17,10.82,6,55.02
+ALQ-HER-2027,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادرو فلفل اسود ملاحه,قطعة,piece,55.0,65.0,2,110.0
+ALQ-HER-2029,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادرو بابريكا ملاحه,قطعة,piece,37.5,44.0,4,150.0
+ALQ-HER-2031,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كوادرو شطه ملاحة,قطعة,piece,37.5,44.0,5,187.5
+ALQ-CAN-2033,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطه سبع بهارات ملاحه,قطعة,piece,43.33,51.0,9,390.0
+ALQ-HYG-2035,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,ليك فرد,قطعة,piece,55.0,65.0,5,275.0
+ALQ-DAI-2037,dairy-eggs,ألبان وبيض,Dairy & Eggs,عرض باندا 216+18مثلث هديه,قطعة,piece,76.0,89.5,152,11552.0
+ALQ-DAI-2040,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه ديرى موزريلا 2ك,2 كجم,2kg,241.0,284.5,6,1446.0
+ALQ-DAI-2042,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا مربعات 8قطع,8 قطع,8 pcs,51.0,60.0,13,663.0
+ALQ-DAI-2044,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا مربعات 12قطعه,12 قطع,12 pcs,74.35,87.5,19,1412.65
+ALQ-CHI-2045,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,تايجر 20جد,قطعة,piece,17.42,20.5,71,1236.82
+ALQ-SOF-2047,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بلانس شوت,قطعة,piece,16.87,19.91,11,185.57
+ALQ-HOM-2049,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كوكس مج كيك فانلبا باك,قطعة,piece,49.0,58.0,5,245.0
+ALQ-CHO-2051,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مارفيلوس 19 جم,19 جم,19g,12.5,14.75,65,812.5
+ALQ-CHO-2053,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شيكولاته مولكي كنافه,قطعة,piece,120.0,141.5,2,240.0
+ALQ-DAI-2055,dairy-eggs,ألبان وبيض,Dairy & Eggs,بودنج مراعى 105جم,105 جم,105g,10.84,12.79,20,216.8
+ALQ-DAI-2057,dairy-eggs,ألبان وبيض,Dairy & Eggs,بودنج شكولاته 65جم,65 جم,65g,5.42,6.4,16,86.72
+ALQ-DAI-2059,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبنه المراعى,قطعة,piece,89.0,105.0,2,178.0
+ALQ-DAI-2061,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه المراعى فريش,قطعة,piece,108.0,127.5,1,108.0
+ALQ-CAN-2063,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل سدر جبلى 1ك,1 كجم,1kg,200.0,236.0,4,800.0
+ALQ-CAN-2065,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل سدر جبلى,قطعة,piece,100.0,118.0,11,1100.0
+ALQ-ELE-2067,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,راس شاحن2,قطعة,piece,125.0,147.5,1,125.0
+ALQ-ELE-2069,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,وصله 2/1,قطعة,piece,70.0,82.5,3,210.0
+ALQ-ELE-2071,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,وصله ايفن 2,قطعة,piece,35.0,41.5,2,70.0
+ALQ-CHI-2073,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بيك رولز 20ج,قطعة,piece,16.42,19.38,8,131.36
+ALQ-BAK-2075,bakery,مخبوزات طازجة,Bakery & Bread,كيك كيدز,قطعة,piece,4.0,4.72,47,188.0
+ALQ-BAK-2077,bakery,مخبوزات طازجة,Bakery & Bread,كيك اورنو,قطعة,piece,4.0,4.72,48,192.0
+ALQ-HOU-2079,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل دانتى 550منديل,قطعة,piece,20.0,23.5,11,220.0
+ALQ-HOU-2081,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كلوريل لتر باليمون,1 لتر,1L,16.0,18.88,4,64.0
+ALQ-PAS-2083,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت ظاظا 700مل,700 مل,700ml,40.0,47.0,102,4080.0
+ALQ-NUT-2085,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",البوادى اسبريد شوكوته بندق,قطعة,piece,85.67,101.0,3,257.01
+ALQ-NUT-2088,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",البوادى اسبريد قطع فسدق,قطعة,piece,87.5,103.0,3,262.5
+ALQ-FRO-2091,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,ايس كريم نبااتى,قطعة,piece,10.0,11.8,96,960.0
+ALQ-CHO-2093,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,باى لاك ويفر,قطعة,piece,4.17,4.92,91,379.47
+ALQ-CAN-2095,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل اسود الرشيدى,قطعة,piece,21.31,25.0,9,191.81
+ALQ-NUT-2097,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",بسكوت تمر كمارا,قطعة,piece,4.1,4.84,21,86.1
+ALQ-CHO-2099,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,تاو تاو بسكريم,قطعة,piece,4.17,4.92,3,12.51
+ALQ-CAN-2101,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",بصل الصالحية,قطعة,piece,70.0,82.5,3,210.0
+ALQ-CHO-2103,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكويت جولي,قطعة,piece,21.5,25.5,8,172.0
+ALQ-CHO-2105,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكويت شااتو,قطعة,piece,18.4,21.5,16,294.4
+ALQ-CHO-2107,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بسكويت دانش,قطعة,piece,21.5,25.5,5,107.5
+ALQ-CHO-2109,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,باكو بسكويت شورتي,قطعة,piece,8.3,9.79,12,99.6
+ALQ-HOU-2111,household-care,منظفات وعناية منزلية,Household Care & Cleaning,قيبا 4لتر +600مل هدية,4 لتر,4L,88.75,104.5,2,177.5
+ALQ-HOU-2113,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فيبا 700مل,700 مل,700ml,19.2,22.5,8,153.6
+ALQ-HOM-2115,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,بودر كوكس,قطعة,piece,2.68,3.16,150,402.0
+ALQ-PAS-2117,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",فانيلين بالسكر,قطعة,piece,0.75,0.89,500,375.0
+ALQ-HOM-2119,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,خميره فوريه كوكس,قطعة,piece,3.84,4.53,50,192.0
+ALQ-HOM-2121,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كيس نشا كوكس,قطعة,piece,16.0,18.88,14,224.0
+ALQ-HOM-2123,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كوكس كاستر,قطعة,piece,26.66,31.5,14,373.24
+ALQ-HOU-2125,household-care,منظفات وعناية منزلية,Household Care & Cleaning,سلك سايب,قطعة,piece,3.83,4.52,83,317.89
+ALQ-HOU-2127,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اكياس زبالة 1ك سوداء,1 كجم,1kg,21.0,25.0,21,441.0
+ALQ-HOU-2129,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اكياس زبالة زرقاء 1ك,1 كجم,1kg,38.0,45.0,9,342.0
+ALQ-HER-2131,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فلفل ابيض 45,قطعة,piece,47.6,56.0,9,428.4
+ALQ-HER-2133,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",سماق السوهاجي 75,قطعة,piece,35.0,41.5,8,280.0
+ALQ-HER-2134,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",قرنفل 35,قطعة,piece,47.6,56.0,9,428.4
+ALQ-HER-2136,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",حبهان السوهاجي 35,قطعة,piece,110.5,130.5,9,994.5
+ALQ-MEA-2138,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",لانشون فراخ حلوانى سادة,قطعة,piece,265.0,312.5,1.35,357.75
+ALQ-DAI-2140,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة دومتى 1/2ك بلس,2 كجم,2kg,40.25,47.5,139,5594.75
+ALQ-DAI-2142,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة دومتى بلاس 1/4ك,4 كجم,4kg,20.11,23.5,239,4806.29
+ALQ-DAI-2144,dairy-eggs,ألبان وبيض,Dairy & Eggs,دومتى1/8ك,8 كجم,8kg,10.5,12.39,144,1512.0
+ALQ-SOF-2146,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيور برتقال 235مل,235 مل,235ml,15.0,17.7,79,1185.0
+ALQ-DAI-2148,dairy-eggs,ألبان وبيض,Dairy & Eggs,عرض زبادى جهينة 5+1مجانا,قطعة,piece,8.21,9.69,5,41.04
+ALQ-DAI-2151,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن جهينة 1لتر,1 لتر,1L,43.83,51.5,10,438.3
+ALQ-DAI-2153,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن بخيرة 1ك,1 كجم,1kg,36.33,43.0,17,617.61
+ALQ-DAI-2155,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن بخيرة نصف كيلو,500 جم,500g,20.25,24.0,31,627.75
+ALQ-BAK-2157,bakery,مخبوزات طازجة,Bakery & Bread,توست ابيض برادواى,قطعة,piece,45.0,53.0,1,45.0
+ALQ-SOF-2159,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير اناناس بيتى لتر,1 لتر,1L,30.0,35.5,56,1680.0
+ALQ-SOF-2161,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير بيتى لتر جوافة,1 لتر,1L,29.1,34.5,130,3783.0
+ALQ-SOF-2163,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير بيتى مانجو لتر,1 لتر,1L,30.08,35.5,24,721.92
+ALQ-SOF-2165,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير بيتى كوكتيل لتر,1 لتر,1L,29.1,34.5,62,1804.2
+ALQ-SOF-2167,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير برتقال بيتى لتر,1 لتر,1L,29.1,34.5,180,5238.0
+ALQ-SOF-2169,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيتى كوكتيل 235مل,235 مل,235ml,7.5,8.85,251,1882.5
+ALQ-SOF-2171,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيتى جوافة 235مل,235 مل,235ml,7.49,8.84,226,1692.74
+ALQ-SOF-2173,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيتى مانجو 235مل,235 مل,235ml,8.2,9.68,189,1549.8
+ALQ-SOF-2175,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيتى اناناس 235مل,235 مل,235ml,8.2,9.68,170,1394.0
+ALQ-SOF-2177,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيتى برتقال 235مل,235 مل,235ml,7.5,8.85,182,1365.0
+ALQ-SOF-2179,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير تفاح235مل,235 مل,235ml,8.2,9.68,283,2320.6
+ALQ-DAI-2181,dairy-eggs,ألبان وبيض,Dairy & Eggs,رايب مراعى 440مل,440 مل,440ml,27.09,32.0,11,297.99
+ALQ-DAI-2183,dairy-eggs,ألبان وبيض,Dairy & Eggs,رياب مراعى 220مل,220 مل,220ml,16.0,18.88,20,320.0
+ALQ-DAI-2185,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادو 220مل,220 مل,220ml,16.0,18.88,14,224.0
+ALQ-DAI-2187,dairy-eggs,ألبان وبيض,Dairy & Eggs,عرض زبادى لايت مراعى5+1مجانا,قطعة,piece,8.38,9.89,1,8.38
+ALQ-DAI-2190,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى مراعى 200جم,200 جم,200g,13.0,15.34,2,26.0
+ALQ-DAI-2192,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى مراعى لايت 200مل,200 مل,200ml,13.0,15.34,12,156.0
+ALQ-DAI-2195,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى مراعى فواكه مشكلة,قطعة,piece,11.3,13.33,55,621.5
+ALQ-COF-2198,coffee-tea,قهوة وشاي,Coffee & Tea,كوفى شيك دينا,قطعة,piece,21.0,25.0,9,189.0
+ALQ-DAI-2200,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن مراعى نصف دسم,قطعة,piece,48.5,57.0,31,1503.5
+ALQ-DAI-2202,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن مراعى كامل الدسم لتر,1 لتر,1L,48.5,57.0,245,11882.5
+ALQ-DAI-2204,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن فراولة مراعى200مل,200 مل,200ml,11.08,13.07,36,398.88
+ALQ-DAI-2206,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادو فراولة مراعى 220مل,220 مل,220ml,16.0,18.88,10,160.0
+ALQ-DAI-2209,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن مراعى لتر زنصف,1 لتر,1L,67.9,80.0,47,3191.3
+ALQ-DAI-2211,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى مراعى,قطعة,piece,8.38,9.89,23,192.74
+ALQ-SOF-2213,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير تفاح بيتي لتر,1 لتر,1L,29.1,34.5,125,3637.5
+ALQ-DAI-2215,dairy-eggs,ألبان وبيض,Dairy & Eggs,كريمة طبخ المراعى,قطعة,piece,60.0,71.0,9,540.0
+ALQ-DAI-2217,dairy-eggs,ألبان وبيض,Dairy & Eggs,عرض زبادى ستارز,قطعة,piece,7.6,8.97,4,30.4
+ALQ-HOU-2219,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اسكوتش سفنجه,قطعة,piece,5.14,6.07,10,51.4
+ALQ-HOU-2221,household-care,منظفات وعناية منزلية,Household Care & Cleaning,ايطاينو سفنجه,قطعة,piece,17.5,20.5,9,157.5
+ALQ-SOF-2222,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فيترالورد لتر,1 لتر,1L,71.5,84.5,5,357.5
+ALQ-CAN-2224,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك تين900مل,900 مل,900ml,78.25,92.5,11,860.75
+ALQ-CAN-2226,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فراولة فيتراك 900مل,900 مل,900ml,78.25,92.5,8,626.0
+ALQ-CAN-2229,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك توت ازرق 350مل,350 مل,350ml,60.8,71.5,2,121.6
+ALQ-CAN-2232,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك فراولة 350مل,350 مل,350ml,45.66,54.0,11,502.26
+ALQ-CAN-2235,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فبتراك توت احمر 350مل,350 مل,350ml,60.8,71.5,3,182.4
+ALQ-CAN-2238,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك مشمش 350مل,350 مل,350ml,45.66,54.0,6,273.96
+ALQ-CAN-2241,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك تين 350مل,350 مل,350ml,45.66,54.0,3,136.98
+ALQ-CAN-2243,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك كريمى 350مل,350 مل,350ml,45.66,54.0,10,456.6
+ALQ-CAN-2246,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك فراولة 230جم,230 جم,230g,28.83,34.0,9,259.47
+ALQ-CAN-2249,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك مشمش,قطعة,piece,31.25,37.0,10,312.5
+ALQ-CAN-2251,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فيتراك فراولة لايت,قطعة,piece,28.83,34.0,11,317.13
+ALQ-CAN-2253,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فراولة حلوانى,قطعة,piece,32.91,39.0,8,263.28
+ALQ-CAN-2255,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى تين حلوانى,قطعة,piece,32.91,39.0,5,164.55
+ALQ-CAN-2257,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى تين 230جم,230 جم,230g,28.83,34.0,11,317.13
+ALQ-MOR-2259,more,أخرى ومستلزمات,More & Essentials,فيتراك فراولة وتوت 430جم,430 جم,430g,45.6,54.0,14,638.4
+ALQ-CAN-2262,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى كريمى فراولة,قطعة,piece,45.6,54.0,9,410.4
+ALQ-MOR-2264,more,أخرى ومستلزمات,More & Essentials,فيتراك لمونادا لتر,1 لتر,1L,56.0,66.0,1,56.0
+ALQ-SOF-2266,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فيروز اناناس كانز,قطعة,piece,14.17,16.72,20,283.33
+ALQ-WAT-2268,water,مياه معدنية,Bottled Water,مياه اكوالايف19لتر,19 لتر,19L,64.0,75.5,29,1856.0
+ALQ-COF-2270,coffee-tea,قهوة وشاي,Coffee & Tea,ينسون 50فتلة,50 قطع,50 pcs,40.0,47.0,15,600.0
+ALQ-MEA-2272,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",كوكى جناح,قطعة,piece,112.0,132.0,1,112.0
+ALQ-MEA-2274,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",دبوس كوكى,قطعة,piece,165.0,194.5,1,165.0
+ALQ-MEA-2276,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",وجبة كوكى,قطعة,piece,220.0,259.5,1,220.0
+ALQ-DAI-2278,dairy-eggs,ألبان وبيض,Dairy & Eggs,موتزاريلا باندا صغيره,قطعة,piece,32.25,38.0,57,1838.25
+ALQ-MEA-2280,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",برجر 1ك حلوانى,1 كجم,1kg,205.0,242.0,1,205.0
+ALQ-PAS-2282,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",فرن مصرية 1ك,1 كجم,1kg,35.0,41.5,18,630.0
+ALQ-FRO-2284,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,ايس كريم بيور,قطعة,piece,6.99,8.25,73,510.27
+ALQ-SOF-2286,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بيريل 2.5لتر عرض,2.5 لتر,2.5L,98.5,116.0,3,295.5
+ALQ-HER-2288,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",كسبرة الضحى كيس,قطعة,piece,35.5,42.0,6,213.0
+ALQ-HOM-2290,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,علبة فانليا دريم,قطعة,piece,0.71,0.84,300,213.0
+ALQ-HOU-2292,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بابيا مناديل حمام,قطعة,piece,51.66,61.0,1,51.66
+ALQ-PAS-2294,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز بسمتى ابيض,قطعة,piece,115.0,135.5,12,1380.0
+ALQ-PAS-2296,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز بسمتى زهبى,قطعة,piece,115.0,135.5,12,1380.0
+ALQ-PAS-2298,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز تيلاندى ابيض,قطعة,piece,76.0,89.5,12,912.0
+ALQ-PAS-2300,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز تيلاندى زهبى,قطعة,piece,76.0,89.5,7,532.0
+ALQ-CER-2302,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,شوفان دريا,قطعة,piece,47.0,55.5,6,282.0
+ALQ-CAN-2304,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فلفل هالبينو,قطعة,piece,25.0,29.5,11,275.0
+ALQ-CAN-2306,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زرة حلوة 425جم,425 جم,425g,72.0,85.0,14,1008.0
+ALQ-NUT-2308,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",لبن جوز هند دريا.,قطعة,piece,63.0,74.5,23,1449.0
+ALQ-PAS-2310,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",زيت زتون تونسى بكر ممتاز,قطعة,piece,209.0,246.5,2,418.0
+ALQ-CAN-2312,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص تتبيلة فرنسية من دريا,قطعة,piece,33.0,39.0,4,132.0
+ALQ-PAS-2315,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سويتال محلى خالى من الاسبرتام 250جم,250 جم,250g,112.0,132.0,6,672.0
+ALQ-PAS-2318,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",عدس اصفر السوهاجى,قطعة,piece,42.5,50.0,14,595.0
+ALQ-CAN-2320,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول تدميس السوهاجى,قطعة,piece,41.0,48.5,8,328.0
+ALQ-MOR-2322,more,أخرى ومستلزمات,More & Essentials,زرة فيشار السوهاجى,قطعة,piece,40.0,47.0,16,640.0
+ALQ-PAS-2324,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز الساعة 5ك,5 كجم,5kg,168.0,198.0,31,5208.0
+ALQ-PAS-2326,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز الساعة 1ك,1 كجم,1kg,33.6,39.5,634,21302.4
+ALQ-PAS-2328,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سباكتى ملكة 400جم,400 جم,400g,12.9,15.22,19,245.1
+ALQ-PAS-2330,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان ملكة 400جم,400 جم,400g,12.85,15.16,21,269.85
+ALQ-PAS-2332,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",شعرية ملكة 400جم,400 جم,400g,12.9,15.22,35,451.5
+ALQ-PAS-2334,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ملكة قلم 400جم,400 جم,400g,12.9,15.22,10,129.0
+ALQ-PAS-2336,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مرمرية ملكة 400جم,400 جم,400g,12.9,15.22,16,206.4
+ALQ-PAS-2338,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",خواتم ملكة 400جم,400 جم,400g,12.9,15.22,34,438.6
+ALQ-PAS-2340,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",اطليانو زيتى,قطعة,piece,19.35,23.0,3,58.05
+ALQ-PAS-2342,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",شعرية حواء,قطعة,piece,13.25,15.63,11,145.75
+ALQ-PAS-2344,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مرمرية حواء,قطعة,piece,13.25,15.63,19,251.75
+ALQ-PAS-2346,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان حواء,قطعة,piece,13.25,15.63,26,344.5
+ALQ-PAS-2348,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونه حواء فرن,قطعة,piece,13.25,15.63,17,225.25
+ALQ-PAS-2350,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونه رويال 1ك,1 كجم,1kg,25.07,29.5,16,401.12
+ALQ-CAN-2352,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص تتبيلة ايطاليه من دريا,قطعة,piece,33.0,39.0,6,198.0
+ALQ-CAN-2355,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص مايو كاتشب من دريا,قطعة,piece,38.0,45.0,3,114.0
+ALQ-CAN-2358,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص سويت شيلى من دريا,قطعة,piece,38.0,45.0,3,114.0
+ALQ-CAN-2361,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",صوص الريزو من دريا,قطعة,piece,38.0,45.0,8,304.0
+ALQ-PAS-2363,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونة مصرية مرمرية 1ك,1 كجم,1kg,35.0,41.5,13,455.0
+ALQ-PAS-2366,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سباكتى مصرية 1ك,1 كجم,1kg,35.0,41.5,38,1330.0
+ALQ-PAS-2368,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونة فرن مصرية 400جم,400 جم,400g,13.8,16.28,61,841.8
+ALQ-PAS-2371,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سباكتى مصرية 400جم,400 جم,400g,13.5,15.93,122,1647.0
+ALQ-PAS-2373,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",شعرية مصرية 400جم,400 جم,400g,13.7,16.17,12,164.4
+ALQ-PAS-2375,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان مصرية 400جم,400 جم,400g,14.0,16.52,56,784.0
+ALQ-PAS-2377,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مرمرية مصرية 400جم,400 جم,400g,13.7,16.17,69,945.3
+ALQ-PAS-2379,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونة مقصوصة مصرية 400جم,400 جم,400g,14.0,16.52,52,728.0
+ALQ-PAS-2382,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مرونة مصرية هلالية 400جم,400 جم,400g,13.7,16.17,4,54.8
+ALQ-PAS-2385,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا مرمرية 400جم,400 جم,400g,21.0,25.0,92,1932.0
+ALQ-PAS-2387,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا هلالية 400جم,400 جم,400g,21.28,25.0,14,297.92
+ALQ-PAS-2389,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا ودعة 400جم,400 جم,400g,21.0,25.0,2,42.0
+ALQ-PAS-2391,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا ودعة صغيرة,قطعة,piece,21.28,25.0,37,787.36
+ALQ-PAS-2393,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا خواتم 400جم,400 جم,400g,21.8,25.5,86,1874.8
+ALQ-PAS-2395,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا قلم 400جم,400 جم,400g,21.3,25.0,39,830.7
+ALQ-PAS-2397,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا فيوزلى 400جم,400 جم,400g,21.28,25.0,7,148.96
+ALQ-PAS-2399,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",شعرية روجينا 400جم,400 جم,400g,21.0,25.0,68,1428.0
+ALQ-PAS-2401,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا شريط400جم,400 جم,400g,21.27,25.0,16,340.32
+ALQ-PAS-2402,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان روجينا 400جم,400 جم,400g,21.28,25.0,27,574.56
+ALQ-PAS-2404,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونة مصرية خواتم 1ك,1 كجم,1kg,35.0,41.5,17,595.0
+ALQ-PAS-2406,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",مكرونة مصرية شريط 1/2ك,2 كجم,2kg,13.8,16.28,20,276.0
+ALQ-PAS-2409,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",روجينا سباكتى,قطعة,piece,21.27,25.0,56,1191.12
+ALQ-PAS-2411,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",صلصة روجينا,قطعة,piece,25.0,29.5,1,25.0
+ALQ-HOU-2413,household-care,منظفات وعناية منزلية,Household Care & Cleaning,شاوت مزيل بقع,قطعة,piece,97.0,114.5,1,97.0
+ALQ-HOU-2415,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فانش بودر كيس,قطعة,piece,13.0,15.34,3,39.0
+ALQ-COF-2417,coffee-tea,قهوة وشاي,Coffee & Tea,نسكافية بلاك 50 جرام,50 جم,50g,80.0,94.5,7,560.0
+ALQ-COF-2419,coffee-tea,قهوة وشاي,Coffee & Tea,كافي ميت صغير,قطعة,piece,75.0,88.5,1,75.0
+ALQ-COF-2421,coffee-tea,قهوة وشاي,Coffee & Tea,1*3 كراميل,3 كجم,3kg,5.45,6.43,1,5.45
+ALQ-COF-2423,coffee-tea,قهوة وشاي,Coffee & Tea,1*3 original,قطعة,piece,5.79,6.83,282,1632.78
+ALQ-COF-2425,coffee-tea,قهوة وشاي,Coffee & Tea,1*2,قطعة,piece,5.73,6.76,96,550.08
+ALQ-COF-2427,coffee-tea,قهوة وشاي,Coffee & Tea,بلاك ظرف,قطعة,piece,3.52,4.15,290,1020.8
+ALQ-HOM-2429,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,جولد فانليا,قطعة,piece,10.0,11.8,53,530.0
+ALQ-HYG-2431,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جولد موكا,قطعة,piece,9.58,11.3,10,95.8
+ALQ-HYG-2433,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جولد كرميل,قطعة,piece,10.0,11.8,7,70.0
+ALQ-HYG-2435,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جولد لاتيه,قطعة,piece,10.0,11.8,76,760.0
+ALQ-HYG-2437,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جولد ساده,قطعة,piece,10.0,11.8,52,520.0
+ALQ-COF-2439,coffee-tea,قهوة وشاي,Coffee & Tea,ميلك 1*3,قطعة,piece,8.33,9.83,58,483.14
+ALQ-COF-2441,coffee-tea,قهوة وشاي,Coffee & Tea,بن محوج مخصوص غامق 100 جرام,100 جم,100g,80.0,94.5,11,880.0
+ALQ-COF-2444,coffee-tea,قهوة وشاي,Coffee & Tea,بن عبد المعبود محوج غامق 200 جرام,200 جم,200g,160.0,189.0,5,800.0
+ALQ-COF-2447,coffee-tea,قهوة وشاي,Coffee & Tea,بن عبد المعبود محوج فاتح 200 جرام,200 جم,200g,160.0,189.0,14,2240.0
+ALQ-COF-2450,coffee-tea,قهوة وشاي,Coffee & Tea,بن عبد المعبود محوج فاتح 100 جرام,100 جم,100g,80.0,94.5,15,1200.0
+ALQ-COF-2453,coffee-tea,قهوة وشاي,Coffee & Tea,بن عبد المعبود ساده فاتح 200 جرام,200 جم,200g,128.0,151.0,10,1280.0
+ALQ-COF-2456,coffee-tea,قهوة وشاي,Coffee & Tea,بن عبد المعبود ساده غامق 100 جرام,100 جم,100g,64.0,75.5,26,1664.0
+ALQ-COF-2459,coffee-tea,قهوة وشاي,Coffee & Tea,بن عبد المعبود محوج وسط 200 جرام,200 جم,200g,157.0,185.5,5,785.0
+ALQ-COF-2462,coffee-tea,قهوة وشاي,Coffee & Tea,هوت شكولت كادبرى,قطعة,piece,10.0,11.8,4,40.0
+ALQ-COF-2464,coffee-tea,قهوة وشاي,Coffee & Tea,بن محوج وسط 100 جرام,100 جم,100g,80.0,94.5,12,960.0
+ALQ-DAI-2467,dairy-eggs,ألبان وبيض,Dairy & Eggs,نيدو 22,قطعة,piece,9.76,11.52,22,214.72
+ALQ-CHI-2469,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,شبسى10,قطعة,piece,9.0,10.62,539,4851.0
+ALQ-CHI-2471,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,مقرمشات مكسي,قطعة,piece,12.92,15.25,29,374.68
+ALQ-COF-2473,coffee-tea,قهوة وشاي,Coffee & Tea,ينسون 12,قطعة,piece,13.4,15.81,4,53.6
+ALQ-COF-2475,coffee-tea,قهوة وشاي,Coffee & Tea,نعناع 12,قطعة,piece,14.0,16.52,1,14.0
+ALQ-COF-2477,coffee-tea,قهوة وشاي,Coffee & Tea,تيليو 12,قطعة,piece,14.0,16.52,3,42.0
+ALQ-COF-2479,coffee-tea,قهوة وشاي,Coffee & Tea,كركديه 12,قطعة,piece,14.0,16.52,1,14.0
+ALQ-CHI-2481,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,ويندوز 5ج,قطعة,piece,4.16,4.91,10,41.6
+ALQ-CHI-2483,chips-snacks,شيبسي ومقرمشات,Chips & Snacks,بريتزو ستكس 80جم,80 جم,80g,8.61,10.16,43,370.23
+ALQ-CAN-2485,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",ليمون معصفر,قطعة,piece,25.0,29.5,3.5,87.5
+ALQ-PAS-2487,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",لسان عصفور مصرية 1ك,1 كجم,1kg,35.0,41.5,12,420.0
+ALQ-PAS-2489,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سكر سويتال 50كيس خالى من السعرات,50 كجم,50kg,68.0,80.0,6,408.0
+ALQ-PAS-2491,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سكر سويتال 50جم,50 جم,50g,68.0,80.0,6,408.0
+ALQ-PAS-2493,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سكر سويتال 25ظرف,قطعة,piece,28.0,33.0,4,112.0
+ALQ-COF-2495,coffee-tea,قهوة وشاي,Coffee & Tea,كابتشينو موكاتى فانليا,قطعة,piece,10.25,12.09,54,553.5
+ALQ-MOR-2497,more,أخرى ومستلزمات,More & Essentials,جنرال لتر خصم 2جنية,1 لتر,1L,40.83,48.0,1,40.83
+ALQ-HOU-2499,household-care,منظفات وعناية منزلية,Household Care & Cleaning,بريكس منظف حمام 450مل,450 مل,450ml,26.7,31.5,2,53.4
+ALQ-HYG-2502,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شامبو صانصيلك 600جم20/100خصم,600 جم,600g,102.54,121.0,12,1230.49
+ALQ-HOU-2505,household-care,منظفات وعناية منزلية,Household Care & Cleaning,هاربيك 500مل خصم 20/100,500 مل,500ml,60.62,71.5,2,121.24
+ALQ-HOU-2508,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فانيش مسحوق 1ك,1 كجم,1kg,290.0,342.0,5,1450.0
+ALQ-HOU-2510,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فنيك العاشر,قطعة,piece,34.55,41.0,2,69.1
+ALQ-HOU-2512,household-care,منظفات وعناية منزلية,Household Care & Cleaning,معطر فريده بالانواع,قطعة,piece,46.09,54.5,2,92.18
+ALQ-PAS-2514,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",دقيق لسميد البسبوسه,قطعة,piece,41.8,49.5,6,250.8
+ALQ-CHO-2516,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,دقيق كحك و بسكوت,قطعة,piece,31.35,37.0,2,62.7
+ALQ-PAS-2518,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",دقيق كيك,قطعة,piece,31.35,37.0,2,62.7
+ALQ-PAS-2520,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",دقيق لجميع الاستعمالات,قطعة,piece,29.45,35.0,2,58.9
+ALQ-PAS-2522,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",دقيق دره اصفر دوبيلا,قطعة,piece,33.25,39.0,15,498.75
+ALQ-HYG-2524,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جولد ظرف,قطعة,piece,5.4,6.37,60,324.0
+ALQ-HYG-2526,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,جولد 3\1,قطعة,piece,9.92,11.71,54,535.68
+ALQ-COF-2528,coffee-tea,قهوة وشاي,Coffee & Tea,ريتش 1*3,قطعة,piece,9.17,10.82,27,247.59
+ALQ-COF-2530,coffee-tea,قهوة وشاي,Coffee & Tea,قهوه تركي فاتح 100محوج,قطعة,piece,86.0,101.5,3,258.0
+ALQ-COF-2533,coffee-tea,قهوة وشاي,Coffee & Tea,قهوه وسط تركي محوج 100جم,100 جم,100g,86.0,101.5,14,1204.0
+ALQ-NUT-2536,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",لب سوبر 150 جرام,150 جم,150g,58.5,69.0,1,58.5
+ALQ-CAN-2538,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",دوره محمصه اوسكار 95 جرام,95 جم,95g,51.75,61.0,4,207.0
+ALQ-NUT-2541,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",عين جمل مقشر 120 جرام اوسكار,120 جم,120g,112.5,133.0,3,337.5
+ALQ-BAK-2544,bakery,مخبوزات طازجة,Bakery & Bread,دقيق بيتزا ومخبوزات دوبيلا,قطعة,piece,31.35,37.0,5,156.75
+ALQ-CER-2547,cereals-packets,حبوب إفطار وشوفان,Cereals & Oats,كورن فلكس 2\1 ك,1 كجم,1kg,95.8,113.0,4,383.2
+ALQ-MOR-2549,more,أخرى ومستلزمات,More & Essentials,علبه فحم الشعله 10,قطعة,piece,10.0,11.8,17,170.0
+ALQ-MOR-2551,more,أخرى ومستلزمات,More & Essentials,كيس فحم 10ج,قطعة,piece,16.0,18.88,48,768.0
+ALQ-MOR-2553,more,أخرى ومستلزمات,More & Essentials,فحم 30ج,قطعة,piece,35.0,41.5,13,455.0
+ALQ-NUT-2555,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",زبيب اوسكار,قطعة,piece,67.5,79.5,5,337.5
+ALQ-PAS-2557,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",ارز زاد 1ك,1 كجم,1kg,23.8,28.0,25,595.0
+ALQ-HYG-2559,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,دوش شاور 1لتر,1 لتر,1L,76.0,89.5,9,684.0
+ALQ-PAS-2561,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",سكر ستفيا خالى من السعرات 250جم,250 جم,250g,112.0,132.0,3,336.0
+ALQ-HOU-2564,household-care,منظفات وعناية منزلية,Household Care & Cleaning,شرشوبة,قطعة,piece,12.5,14.75,40,500.0
+ALQ-HOU-2566,household-care,منظفات وعناية منزلية,Household Care & Cleaning,عصا مقشة,قطعة,piece,10.4,12.27,48,499.2
+ALQ-HOU-2568,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مقشة,قطعة,piece,15.0,17.7,8,120.0
+ALQ-HOU-2570,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مساحة,قطعة,piece,10.0,11.8,14,140.0
+ALQ-HOU-2572,household-care,منظفات وعناية منزلية,Household Care & Cleaning,جردل شرشوبة,قطعة,piece,92.0,108.5,11,1012.0
+ALQ-HOU-2574,household-care,منظفات وعناية منزلية,Household Care & Cleaning,رول سترتش منزلى 35متر,قطعة,piece,40.0,47.0,1,40.0
+ALQ-HOU-2577,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فويل 60متر,قطعة,piece,90.0,106.0,4,360.0
+ALQ-HOU-2580,household-care,منظفات وعناية منزلية,Household Care & Cleaning,فرشة حمام,قطعة,piece,15.0,17.7,3,45.0
+ALQ-HOU-2582,household-care,منظفات وعناية منزلية,Household Care & Cleaning,معطر ارضيات فريده,قطعة,piece,34.58,41.0,48,1659.84
+ALQ-CAN-2584,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زتون اخضر سليم وادى فود,قطعة,piece,89.0,105.0,2,178.0
+ALQ-CAN-2587,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زتون اسود طبيعى,قطعة,piece,109.0,128.5,2,218.0
+ALQ-CAN-2589,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زتون اسود كلاماتا وادى فود,قطعة,piece,121.0,143.0,3,363.0
+ALQ-CAN-2592,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زتون شرائح اسود,قطعة,piece,121.0,143.0,3,363.0
+ALQ-CAN-2594,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زتون شرائح اخضر وادى فود,قطعة,piece,115.0,135.5,3,345.0
+ALQ-DAI-2597,dairy-eggs,ألبان وبيض,Dairy & Eggs,المراعي حليب بالشوكولاته,قطعة,piece,11.08,13.07,312,3456.96
+ALQ-MEA-2600,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",تونة صن شاين قطع,قطعة,piece,55.0,65.0,7,385.0
+ALQ-MEA-2602,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",تونة مفتته حارة,قطعة,piece,36.0,42.5,22,792.0
+ALQ-MEA-2604,meat-fish,لحوم ودواجن وأسماك,"Meat, Fish & Cold Cuts",انشوجة,قطعة,piece,72.0,85.0,9,648.0
+ALQ-CAN-2606,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول كلفورنيا سادة,قطعة,piece,18.8,22.0,67,1259.6
+ALQ-CAN-2608,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول كلفورنيا طحينة,قطعة,piece,23.5,27.5,3,70.5
+ALQ-CAN-2610,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول كلفورنيا خلطة سعودية,قطعة,piece,23.5,27.5,7,164.5
+ALQ-CAN-2613,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول كلفورنيا خلطة مصرية,قطعة,piece,24.3,28.5,23,558.9
+ALQ-CAN-2616,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فاصوليا حمراء كلفورنيا,قطعة,piece,34.0,40.0,10,340.0
+ALQ-DAI-2618,dairy-eggs,ألبان وبيض,Dairy & Eggs,فول كلفورنيا خلطة لبنانية,قطعة,piece,24.3,28.5,27,656.1
+ALQ-CAN-2620,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول كلفورنيا فلفل حار,قطعة,piece,24.3,28.5,19,461.7
+ALQ-CAN-2622,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول كلفورنيا بالخلطة المصرية,قطعة,piece,23.5,27.5,11,258.5
+ALQ-CAN-2625,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",زرة امريكانا 330جم,330 جم,330g,41.2,48.5,4,164.8
+ALQ-SOF-2627,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,فول اسكندرانى امريكانا,قطعة,piece,20.2,24.0,10,202.0
+ALQ-CAN-2629,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فول امريكانا صلصة تسبيكة,قطعة,piece,20.2,24.0,12,242.4
+ALQ-PAS-2632,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",فول زيت زتون,قطعة,piece,21.9,26.0,31,678.9
+ALQ-CAN-2634,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل اسود بوادى 350مل,350 مل,350ml,23.0,27.0,4,92.0
+ALQ-CAN-2636,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل اسود البوادى 750جم,750 جم,750g,43.0,50.5,6,258.0
+ALQ-CAN-2639,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",عسل اسود صغير البوادى,قطعة,piece,14.5,17.11,5,72.5
+ALQ-CAN-2641,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة البوادى 750مل,750 مل,750ml,100.0,118.0,6,600.0
+ALQ-CAN-2643,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة البوادى 500جم,500 جم,500g,51.5,61.0,4,206.0
+ALQ-CAN-2645,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة البوادى 1/4ك,4 كجم,4kg,27.5,32.5,6,165.0
+ALQ-CAN-2647,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة البوادى 750جم,750 جم,750g,87.0,102.5,6,522.0
+ALQ-CAN-2649,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة البوادى 350جم,350 جم,350g,46.0,54.5,4,184.0
+ALQ-CAN-2651,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة البوادى 1/4ك,4 كجم,4kg,23.0,27.0,5,115.0
+ALQ-CAN-2653,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة الرشيدى 750جم,750 جم,750g,100.15,118.0,14,1402.04
+ALQ-CAN-2655,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة الرشيدى 350جم,350 جم,350g,51.46,60.5,4,205.83
+ALQ-CAN-2657,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة الرشيدى 1/4ك,4 كجم,4kg,27.07,32.0,26,703.95
+ALQ-CAN-2659,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة الرشيدى 750جم,750 جم,750g,87.88,103.5,6,527.25
+ALQ-CAN-2661,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة الرشيدى 350جم,350 جم,350g,45.92,54.0,13,596.96
+ALQ-CAN-2663,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة الرشيدى 1/4ك,4 كجم,4kg,23.17,27.5,23,532.83
+ALQ-CAN-2665,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",حلاوة سبريد سادة الرشيدى,قطعة,piece,53.2,63.0,16,851.2
+ALQ-CHO-2668,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,سبريد شكولاتة الرشيدى,قطعة,piece,56.8,67.0,12,681.6
+ALQ-SOF-2669,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,لمار ليمون نعناع لتر,1 لتر,1L,30.0,35.5,2,60.0
+ALQ-DAI-2671,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن 200مل لمار بالموز,200 مل,200ml,10.76,12.7,8,86.08
+ALQ-MOR-2673,more,أخرى ومستلزمات,More & Essentials,مارلبور ابيض جديد,قطعة,piece,78.36,92.5,7,548.51
+ALQ-MOR-2675,more,أخرى ومستلزمات,More & Essentials,مارلبور احمر جديد,قطعة,piece,78.36,92.5,20,1567.16
+ALQ-COF-2677,coffee-tea,قهوة وشاي,Coffee & Tea,كابتشينو موكاتى كراميل,قطعة,piece,10.25,12.09,5,51.25
+ALQ-MOR-2679,more,أخرى ومستلزمات,More & Essentials,وي متو نام وان,قطعة,piece,8.33,9.83,45,374.85
+ALQ-CHO-2681,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جيلي فروله دبل,قطعة,piece,31.77,37.5,17,540.09
+ALQ-CHO-2683,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جلى فروله فردى,قطعة,piece,11.44,13.5,1,11.44
+ALQ-FRO-2685,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,ايس كريم مانجو,قطعة,piece,17.19,20.5,45,773.44
+ALQ-FRO-2687,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,ايس كريم فانليا,قطعة,piece,17.19,20.5,26,446.94
+ALQ-CHO-2689,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جيلي كوكس كريز,قطعة,piece,11.6,13.69,5,58.0
+ALQ-CHO-2691,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جيلي فروله كوكس,قطعة,piece,11.6,13.69,42,487.2
+ALQ-CHO-2693,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شوكلاته كراميتا,قطعة,piece,65.43,77.0,3,196.28
+ALQ-DAI-2695,dairy-eggs,ألبان وبيض,Dairy & Eggs,بيض تكا ولد ص,قطعة,piece,8.33,9.83,35,291.55
+ALQ-NUT-2697,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",كتاكت شانكى سودانى,قطعة,piece,26.7,31.5,33,881.1
+ALQ-CHO-2699,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كرميتا 200جم,200 جم,200g,40.12,47.5,7,280.84
+ALQ-COF-2701,coffee-tea,قهوة وشاي,Coffee & Tea,بن سادة وسط 100جم,100 جم,100g,64.0,75.5,8,512.0
+ALQ-HYG-2703,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,الويز بشرة حساسة 8فوطة,قطعة,piece,27.5,32.5,7,192.5
+ALQ-SOF-2706,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,رانى حبيبات اطعم,قطعة,piece,16.88,19.92,181,3055.28
+ALQ-SOF-2708,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,رانى فراولة وموز,قطعة,piece,13.33,15.73,151,2012.83
+ALQ-SOF-2710,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بربيكان فراولة كانز,قطعة,piece,17.08,20.0,36,614.99
+ALQ-SOF-2712,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,بربكان زجاج رمان,قطعة,piece,21.5,25.5,38,817.0
+ALQ-FRO-2714,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,باميه جيفركس كبيره,قطعة,piece,19.0,22.5,16,304.0
+ALQ-SOF-2716,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,دينا ليمون 250مل,250 مل,250ml,19.5,23.0,3,58.5
+ALQ-SOF-2718,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير برتقال دينا لتر,1 لتر,1L,64.8,76.5,3,194.4
+ALQ-SOF-2720,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,دينا مانجو لتر,1 لتر,1L,64.8,76.5,5,324.0
+ALQ-DAI-2722,dairy-eggs,ألبان وبيض,Dairy & Eggs,لبن دينا لتر,1 لتر,1L,47.5,56.0,12,570.0
+ALQ-DAI-2724,dairy-eggs,ألبان وبيض,Dairy & Eggs,رايب دينا لتر,1 لتر,1L,47.5,56.0,4,190.0
+ALQ-DAI-2726,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى دينا,قطعة,piece,3.25,3.83,12,39.0
+ALQ-SOF-2728,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,عصير رومان لتر دينا,1 لتر,1L,68.4,80.5,1,68.4
+ALQ-DAI-2730,dairy-eggs,ألبان وبيض,Dairy & Eggs,هلثى رايب لتر,1 لتر,1L,42.0,49.5,2,84.0
+ALQ-CHO-2732,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاتة هلثى 235مل,235 مل,235ml,21.5,25.5,10,215.0
+ALQ-DAI-2734,dairy-eggs,ألبان وبيض,Dairy & Eggs,هلثى قهوة,قطعة,piece,21.5,25.5,3,64.5
+ALQ-DAI-2736,dairy-eggs,ألبان وبيض,Dairy & Eggs,زبادى هلثى,قطعة,piece,5.0,5.9,4,20.0
+ALQ-HOU-2738,household-care,منظفات وعناية منزلية,Household Care & Cleaning,كمفورت لتر نواعم الزهور,1 لتر,1L,86.1,101.5,1,86.1
+ALQ-BAB-2740,baby-care,عناية بالأطفال,Baby Care,شامبو جنسون 100مل,100 مل,100ml,45.0,53.0,4,180.0
+ALQ-HYG-2742,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,شامبو صانصيلك 200مل خصم 20/100,200 مل,200ml,45.5,53.5,7,318.5
+ALQ-HOU-2745,household-care,منظفات وعناية منزلية,Household Care & Cleaning,زيت فانش غسالة اطباق,قطعة,piece,260.5,307.5,3,781.5
+ALQ-NUT-2747,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",كلوز اب 120مل,120 مل,120ml,49.56,58.5,6,297.36
+ALQ-HOU-2749,household-care,منظفات وعناية منزلية,Household Care & Cleaning,اريال جل 5كج,5 كجم,5kg,172.5,203.5,2,345.0
+ALQ-CAN-2751,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فراولة الرشيدى,قطعة,piece,24.12,28.5,3,72.37
+ALQ-CAN-2753,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى تين الرشيدى,قطعة,piece,30.0,35.5,4,120.0
+ALQ-DAI-2755,dairy-eggs,ألبان وبيض,Dairy & Eggs,دانون كريم كراميل,قطعة,piece,9.07,10.7,25,226.75
+ALQ-HOM-2757,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كستر دانيت,قطعة,piece,4.55,5.37,4,18.2
+ALQ-DAI-2758,dairy-eggs,ألبان وبيض,Dairy & Eggs,سمنة خشالة الحلوب 700جم,700 جم,700g,366.5,432.5,3,1099.5
+ALQ-BAK-2761,bakery,مخبوزات طازجة,Bakery & Bread,باتيه برانش,قطعة,piece,13.0,15.34,50,650.0
+ALQ-BAK-2763,bakery,مخبوزات طازجة,Bakery & Bread,عيش كيزر ريتش باك,قطعة,piece,22.0,26.0,1,22.0
+ALQ-DAI-2765,dairy-eggs,ألبان وبيض,Dairy & Eggs,عيش لبناني صغير ريتش باك,قطعة,piece,12.45,14.69,5,62.25
+ALQ-DAI-2768,dairy-eggs,ألبان وبيض,Dairy & Eggs,توست حليب ريتش,قطعة,piece,45.0,53.0,2,90.0
+ALQ-BAK-2770,bakery,مخبوزات طازجة,Bakery & Bread,عيش بيتي بان ريتش,قطعة,piece,22.0,26.0,4,88.0
+ALQ-BAK-2772,bakery,مخبوزات طازجة,Bakery & Bread,توست ابيض ريتش باك,قطعة,piece,45.0,53.0,3,135.0
+ALQ-BAK-2774,bakery,مخبوزات طازجة,Bakery & Bread,توست اسمر دايت بالرده,قطعة,piece,45.0,53.0,5,225.0
+ALQ-BAK-2776,bakery,مخبوزات طازجة,Bakery & Bread,كيك رزاز جامبوو,قطعة,piece,37.0,43.5,19,703.0
+ALQ-DAI-2778,dairy-eggs,ألبان وبيض,Dairy & Eggs,عيش لبنانى 30سم,قطعة,piece,17.6,21.0,6,105.6
+ALQ-BAK-2780,bakery,مخبوزات طازجة,Bakery & Bread,خبز فوكاشيا رول,قطعة,piece,31.5,37.0,1,31.5
+ALQ-BAK-2782,bakery,مخبوزات طازجة,Bakery & Bread,خبز بريوش رول,قطعة,piece,31.5,37.0,1,31.5
+ALQ-BAK-2784,bakery,مخبوزات طازجة,Bakery & Bread,توست السبع حبوب برد واي,قطعة,piece,49.5,58.5,2,99.0
+ALQ-BAK-2787,bakery,مخبوزات طازجة,Bakery & Bread,توست القمح الكامل برد واي,قطعة,piece,45.0,53.0,9,405.0
+ALQ-BAK-2790,bakery,مخبوزات طازجة,Bakery & Bread,بيتي بان برد واي,قطعة,piece,22.25,26.0,6,133.5
+ALQ-HYG-2792,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,معجون سجنال 50مل,50 مل,50ml,13.69,16.15,23,314.87
+ALQ-BAK-2794,bakery,مخبوزات طازجة,Bakery & Bread,عيش بلدى,قطعة,piece,1.25,1.47,100,125.0
+ALQ-BAK-2796,bakery,مخبوزات طازجة,Bakery & Bread,فينو,قطعة,piece,1.7,2.01,250,425.0
+ALQ-MOR-2798,more,أخرى ومستلزمات,More & Essentials,عبش سورى,قطعة,piece,9.0,10.62,43,387.0
+ALQ-HYG-2800,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,برفان 150جرام,150 جم,150g,45.0,53.0,3,135.0
+ALQ-DAI-2802,dairy-eggs,ألبان وبيض,Dairy & Eggs,طبق بيض سايب او احمر,قطعة,piece,4.0,4.72,2070,8280.0
+ALQ-DAI-2804,dairy-eggs,ألبان وبيض,Dairy & Eggs,بيض بلدى,قطعة,piece,6.0,7.08,99,594.0
+ALQ-HYG-2806,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,الويز ماكسى طويل جدا 14+2,قطعة,piece,43.8,51.5,4,175.2
+ALQ-ELE-2809,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,انجيزر ريموت,قطعة,piece,69.0,81.5,18,1242.0
+ALQ-ELE-2811,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,افريدى وسط اسود,قطعة,piece,90.0,106.0,1,90.0
+ALQ-ELE-2813,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,افريدى قلم اسود,قطعة,piece,12.12,14.31,4,48.5
+ALQ-ELE-2815,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,افريدى ريموت اسود,قطعة,piece,12.12,14.31,42,509.25
+ALQ-PAS-2817,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",قلم احمر,قطعة,piece,8.75,10.32,45,393.75
+ALQ-ELE-2819,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,ريموت افريدى احمر,قطعة,piece,8.75,10.32,10,87.5
+ALQ-ELE-2821,electronics,إلكترونيات واكسسوارات,Electronics & Accessories,حجر انجيزر 2016,قطعة,piece,46.0,54.5,8,368.0
+ALQ-CAN-2823,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",فاصوليا بيضا دريا,قطعة,piece,28.0,33.0,10,280.0
+ALQ-CAN-2825,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مايونيز310جم,310 جم,310g,49.58,58.5,7,347.06
+ALQ-PAS-2827,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",وادى فود زيت زيتون 500 مللى,500 مل,500ml,402.0,474.5,5,2010.0
+ALQ-COF-2830,coffee-tea,قهوة وشاي,Coffee & Tea,شاي اخضر نعناع 25 فتلة,25 قطع,25 pcs,31.5,37.0,43,1354.5
+ALQ-COF-2833,coffee-tea,قهوة وشاي,Coffee & Tea,شاي ليبتون ناعم ربع كيلو,250 جم,250g,54.0,63.5,18,972.0
+ALQ-COF-2836,coffee-tea,قهوة وشاي,Coffee & Tea,احمد تي انجليزي,قطعة,piece,38.63,45.5,5,193.15
+ALQ-COF-2838,coffee-tea,قهوة وشاي,Coffee & Tea,احمد تي اخضر نعناع 100,قطعة,piece,164.58,194.0,1,164.58
+ALQ-NUT-2841,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",معجون كلوز اب ترابل فريش,قطعة,piece,49.56,58.5,10,495.6
+ALQ-COF-2844,coffee-tea,قهوة وشاي,Coffee & Tea,شاى احمد تى 250جم لندن بالنعناع,250 جم,250g,80.0,94.5,1,80.0
+ALQ-CAN-2847,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",طحينة حلونى 1/2ك,2 كجم,2kg,90.0,106.0,6,540.0
+ALQ-HOM-2848,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كيك فانليا دريم,قطعة,piece,46.91,55.5,4,187.64
+ALQ-HOM-2850,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كيك شيف,قطعة,piece,5.03,5.94,2,10.06
+ALQ-HOM-2852,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,دريم مسحوق كريمه,قطعة,piece,16.65,19.65,84,1398.6
+ALQ-HOM-2854,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كيس بسبوسة ماركيز,قطعة,piece,20.55,24.0,5,102.75
+ALQ-HOM-2856,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كيس بسبوسة حلو الشام,قطعة,piece,26.11,31.0,7,182.77
+ALQ-HOM-2858,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كيك ديم فاوله,قطعة,piece,45.83,54.0,5,229.15
+ALQ-HOM-2860,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,شوكلاته مطبخ دريم,قطعة,piece,51.0,60.0,3,153.0
+ALQ-BAK-2862,bakery,مخبوزات طازجة,Bakery & Bread,كيك مولتن,قطعة,piece,93.0,109.5,1,93.0
+ALQ-HOM-2864,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كريم شانتى فانليا,قطعة,piece,14.16,16.71,11,155.76
+ALQ-HOU-2866,household-care,منظفات وعناية منزلية,Household Care & Cleaning,باهى 2.5ك اتومتاتك,2.5 كجم,2.5kg,140.0,165.0,2,280.0
+ALQ-HYG-2868,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,فاتيكا 70مل,70 مل,70ml,21.7,25.5,9,195.3
+ALQ-HYG-2870,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,صابون جوى 2صابونة 165جم,165 جم,165g,15.65,18.47,16,250.4
+ALQ-CHO-2873,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,نوجا اوسكار,قطعة,piece,35.55,42.0,5,177.75
+ALQ-HER-2875,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",ملح كوكس علبة,قطعة,piece,10.33,12.19,17,175.61
+ALQ-HER-2877,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",ملح كوكس ص,قطعة,piece,5.0,5.9,22,110.0
+ALQ-MOR-2879,more,أخرى ومستلزمات,More & Essentials,ماجى خضار 8 مكعب,قطعة,piece,13.5,15.93,29,391.5
+ALQ-MOR-2881,more,أخرى ومستلزمات,More & Essentials,ماجى فراخ 12 مكعب,قطعة,piece,17.5,20.5,6,105.0
+ALQ-NUT-2883,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",فرسكا بلوك زبدة فول سودانى,قطعة,piece,8.33,9.83,32,266.56
+ALQ-DAI-2886,dairy-eggs,ألبان وبيض,Dairy & Eggs,فيتار بارد,قطعة,piece,4.76,5.62,90,428.4
+ALQ-HER-2888,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",فيجتار حار,قطعة,piece,4.75,5.6,90,427.5
+ALQ-CAN-2890,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",خلطة بشاميل كنور,قطعة,piece,13.05,15.4,33,430.65
+ALQ-HER-2892,herbs-spices,أعشاب وتوابل وبهارات,"Herbs, Spices & Seasonings",مةقه بنكهة لحم الضان,قطعة,piece,10.72,12.65,112,1200.64
+ALQ-CHO-2894,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,صوص سولو شكولاتة وكراميل,قطعة,piece,45.0,53.0,2,90.0
+ALQ-PAS-2897,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",دقيق زرة بيضاء دوبيلا,قطعة,piece,34.0,40.0,3,102.0
+ALQ-DAI-2899,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا 16مثلث,قطعة,piece,38.35,45.0,11,421.85
+ALQ-DAI-2901,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا500شيدر,قطعة,piece,150.67,178.0,4,602.66
+ALQ-DAI-2903,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا قشطة500جم,500 جم,500g,150.75,178.0,3,452.25
+ALQ-DAI-2905,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا شيدر90جم,90 جم,90g,269.0,317.5,4,1076.0
+ALQ-DAI-2907,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة 900قشطة باندا,قطعة,piece,269.33,318.0,5,1346.67
+ALQ-DAI-2909,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا 240شيدر,قطعة,piece,83.25,98.0,9,749.25
+ALQ-DAI-2911,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا قشطة 240جم,240 جم,240g,83.0,98.0,2,166.0
+ALQ-DAI-2913,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا شيدر 140جم,140 جم,140g,57.75,68.0,8,462.0
+ALQ-DAI-2915,dairy-eggs,ألبان وبيض,Dairy & Eggs,باندا فشطة 140جم,140 جم,140g,57.83,68.0,19,1098.83
+ALQ-DAI-2917,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنة مزديرلا باندا 325جم,325 جم,325g,48.25,57.0,49,2364.25
+ALQ-DAI-2920,dairy-eggs,ألبان وبيض,Dairy & Eggs,جبنه موزريلا بندا,قطعة,piece,107.43,127.0,20,2148.6
+ALQ-NUT-2922,nuts-seeds,مكسرات وبذور وتمر,"Nuts, Seeds & Dates",جلاكسي بالبندق 22 جم,22 جم,22g,12.5,14.75,75,937.5
+ALQ-CHO-2924,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,سنكرز 40جم,40 جم,40g,35.5,42.0,4,142.0
+ALQ-CHO-2926,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,ام اند ام 2,قطعة,piece,38.75,45.5,63,2441.25
+ALQ-CHO-2928,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بابلي 28جم,28 جم,28g,20.83,24.5,73,1520.59
+ALQ-CHO-2930,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مارفيليوس 38جم,38 جم,38g,29.17,34.5,8,233.33
+ALQ-CHO-2932,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,اوريو 95جم,95 جم,95g,75.0,88.5,9,675.0
+ALQ-CHO-2934,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,مورو,قطعة,piece,9.9,11.68,47,465.3
+ALQ-CHO-2936,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,كادبري بابلي 87 جم,87 جم,87g,75.0,88.5,10,750.0
+ALQ-CHO-2937,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاتة كيت كات 4صابع,قطعة,piece,30.0,35.5,42,1260.0
+ALQ-CHO-2939,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,شكولاتة كيت كات 2صابع,قطعة,piece,16.67,19.67,62,1033.34
+ALQ-CHO-2941,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,جلاكسى سادة 36جم,36 جم,36g,34.75,41.0,65,2258.75
+ALQ-CHO-2943,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,سكتلز توت,قطعة,piece,25.36,30.0,28,710.08
+ALQ-CAN-2945,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مربى فراولة حلوانى 750جم,750 جم,750g,60.5,71.5,16,968.0
+ALQ-CHO-2948,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,اريوة بسكوات,قطعة,piece,12.22,14.42,90,1100.0
+ALQ-CHO-2950,chocolates-candies,شوكولاتة وحلويات,Chocolates & Candies,بابلى 40جم,40 جم,40g,33.33,39.5,22,733.26
+ALQ-WAT-2952,water,مياه معدنية,Bottled Water,زجاجة نسلة كبير,قطعة,piece,7.33,8.65,1128,8271.62
+ALQ-WAT-2954,water,مياه معدنية,Bottled Water,زجاجة نسلة ص,قطعة,piece,4.4,5.19,500,2200.0
+ALQ-WAT-2956,water,مياه معدنية,Bottled Water,جالون مياة نسلة غيار,قطعة,piece,86.0,101.5,26,2236.0
+ALQ-WAT-2958,water,مياه معدنية,Bottled Water,جالون نسلة 6لتر,6 لتر,6L,29.0,34.0,179,5191.0
+ALQ-WAT-2960,water,مياه معدنية,Bottled Water,جالون نهل 6لتر,6 لتر,6L,16.0,18.88,36,576.0
+ALQ-WAT-2962,water,مياه معدنية,Bottled Water,مياه كماننه,قطعة,piece,4.35,5.13,1260,5481.0
+ALQ-MOR-2964,more,أخرى ومستلزمات,More & Essentials,فاين 2بكرة مضغوط,2 قطع,2 pcs,16.5,19.47,16,264.0
+ALQ-MOR-2966,more,أخرى ومستلزمات,More & Essentials,منادبل مطبخ عرض6 بكر,6 قطع,6 pcs,56.25,66.5,1,56.25
+ALQ-BAB-2968,baby-care,عناية بالأطفال,Baby Care,موليفكس مقاس3,قطعة,piece,303.5,358.0,1,303.5
+ALQ-MOR-2970,more,أخرى ومستلزمات,More & Essentials,عرض 550 فاين,قطعة,piece,22.1,26.0,128,2828.8
+ALQ-HOU-2972,household-care,منظفات وعناية منزلية,Household Care & Cleaning,مناديل 6بكرة سمارت فاين,6 قطع,6 pcs,47.83,56.5,6,287.0
+ALQ-FRO-2974,frozen,مجمدات ومثلجات,Frozen Food & Ice Cream,مولتو ماجنم 15ج,قطعة,piece,12.3,14.51,24,295.2
+ALQ-HYG-2976,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,معجون اسنان سيجنل وسط,قطعة,piece,26.0,30.5,10,260.0
+ALQ-HYG-2979,hygiene-personal-care,نظافة وعناية شخصية,Hygiene & Personal Care,عرض هند هوش,قطعة,piece,65.0,76.5,9,585.0
+ALQ-HOU-2981,household-care,منظفات وعناية منزلية,Household Care & Cleaning,جيف ليمون 500مل,500 مل,500ml,109.0,128.5,3,327.0
+ALQ-SOF-2983,soft-drinks-juices,مشروبات غازية وعصائر,Soft Drinks & Juices,صلصه بيوريه ظرف,قطعة,piece,6.89,8.13,240,1653.6
+ALQ-PAS-2985,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",اندومي جامبو,قطعة,piece,9.5,11.21,340,3230.0
+ALQ-PAS-2987,pasta-rice,مكرونة وأرز وحبوب,"Pasta, Rice & Grains",اندومي صغير,قطعة,piece,6.81,8.04,782,5325.42
+ALQ-COF-2989,coffee-tea,قهوة وشاي,Coffee & Tea,نعناع 20 فتله,20 قطع,20 pcs,23.0,27.0,7,161.0
+ALQ-COF-2991,coffee-tea,قهوة وشاي,Coffee & Tea,ازيس مريمية,قطعة,piece,23.0,27.0,1,23.0
+ALQ-MOR-2993,more,أخرى ومستلزمات,More & Essentials,مارلبور احمر,قطعة,piece,96.63,114.0,9,869.69
+ALQ-MOR-2995,more,أخرى ومستلزمات,More & Essentials,مارلبور ابيض,قطعة,piece,96.63,114.0,7,676.42
+ALQ-MOR-2997,more,أخرى ومستلزمات,More & Essentials,ميرت ازرق,قطعة,piece,104.6,123.5,17,1778.2
+ALQ-MOR-2999,more,أخرى ومستلزمات,More & Essentials,lm توت,قطعة,piece,75.71,89.5,18,1362.8
+ALQ-MOR-3001,more,أخرى ومستلزمات,More & Essentials,lm ابيض,قطعة,piece,75.71,89.5,16,1211.36
+ALQ-MOR-3003,more,أخرى ومستلزمات,More & Essentials,lm ازرق,قطعة,piece,75.71,89.5,5,378.55
+ALQ-MOR-3005,more,أخرى ومستلزمات,More & Essentials,lmاحمر,قطعة,piece,75.71,89.5,62,4694.02
+ALQ-MOR-3007,more,أخرى ومستلزمات,More & Essentials,سجائر مالبور ميكس,قطعة,piece,96.63,114.0,15,1449.48
+ALQ-MOR-3009,more,أخرى ومستلزمات,More & Essentials,هيتس تيرا,قطعة,piece,75.39,89.0,75,5654.4
+ALQ-MOR-3011,more,أخرى ومستلزمات,More & Essentials,هتس تيرا صن,قطعة,piece,79.36,93.5,29,2301.44
+ALQ-MOR-3013,more,أخرى ومستلزمات,More & Essentials,فحم 1ك,1 كجم,1kg,20.0,23.5,9,180.0
+ALQ-BAK-3015,bakery,مخبوزات طازجة,Bakery & Bread,كوكيز العبد 2قطعة,2 قطع,2 pcs,10.0,11.8,9,90.0
+ALQ-WAT-3017,water,مياه معدنية,Bottled Water,جالون نسلة فاضى,قطعة,piece,75.0,88.5,183,13725.0
+ALQ-CAN-3019,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مايونيز درة,قطعة,piece,76.77,90.5,12,921.2
+ALQ-HOM-3021,home-baking,مستلزمات الخبز والحلويات,Home Baking & Mixes,كستر دريم,قطعة,piece,28.35,33.5,2,56.7
+ALQ-CAN-3023,cans-jars,معلبات وبرطمانات وصوصات,"Cans, Jars & Condiments",مسترده دره 410 جرام,410 جم,410g,51.7,61.0,12,620.4
