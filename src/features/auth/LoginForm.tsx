@@ -29,8 +29,11 @@ export default function LoginForm({
     setIsLoading(true);
 
     try {
+      const rawInput = email.trim();
+      const normalizedEmail = rawInput.includes('@') ? rawInput : `${rawInput}@alqudsmarket.com`;
+
       const { data, error } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
+        email: normalizedEmail,
         password,
       });
 
@@ -59,19 +62,19 @@ export default function LoginForm({
         </div>
       )}
 
-      {/* Email */}
+      {/* Email or Username */}
       <div>
         <label className="mb-1 block text-sm font-medium text-foreground">
-          {t('auth.email')}
+          {t('auth.email')} / {t('common.username', 'اسم المستخدم')}
         </label>
         <div className="relative">
           <Mail className="absolute start-3 top-1/2 -translate-y-1/2 text-foreground-subtle" size={18} />
           <input
-            type="email"
+            type="text"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="name@example.com"
+            placeholder="eroot أو name@example.com"
             className="w-full rounded-xl border border-surface-border bg-surface-muted py-2.5 pe-4 ps-10 text-sm focus:border-brand-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
           />
         </div>

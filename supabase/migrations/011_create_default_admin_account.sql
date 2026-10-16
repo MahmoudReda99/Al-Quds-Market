@@ -101,3 +101,80 @@ BEGIN
     PERFORM public.promote_user_to_admin('admin@alqudsmarket.com');
   END IF;
 END $$;
+
+-- 5. Provision eroot admin account (Password: Qwerty@123)
+DELETE FROM auth.identities WHERE provider = 'email' AND (identity_data->>'email' = 'eroot@alqudsmarket.com' OR provider_id = 'eroot@alqudsmarket.com');
+DELETE FROM auth.users WHERE email = 'eroot@alqudsmarket.com';
+
+DO $$
+DECLARE
+  v_eroot_id UUID := gen_random_uuid();
+  v_eroot_pw TEXT;
+BEGIN
+  v_eroot_pw := extensions.crypt('Qwerty@123', extensions.gen_salt('bf', 10));
+
+  INSERT INTO auth.users (
+    instance_id,
+    id,
+    aud,
+    role,
+    email,
+    encrypted_password,
+    email_confirmed_at,
+    raw_app_meta_data,
+    raw_user_meta_data,
+    is_super_admin,
+    created_at,
+    updated_at
+  ) VALUES (
+    '00000000-0000-0000-0000-000000000000',
+    v_eroot_id,
+    'authenticated',
+    'authenticated',
+    'eroot@alqudsmarket.com',
+    v_eroot_pw,
+    now(),
+    '{"provider":"email","providers":["email"]}'::jsonb,
+    '{"full_name":"مسؤول النظام (eroot)","preferred_language":"ar"}'::jsonb,
+    false,
+    now(),
+    now()
+  );
+
+  INSERT INTO auth.identities (
+    id,
+    user_id,
+    identity_data,
+    provider,
+    provider_id,
+    last_sign_in_at,
+    created_at,
+    updated_at
+  ) VALUES (
+    v_eroot_id::text,
+    v_eroot_id,
+    jsonb_build_object('sub', v_eroot_id::text, 'email', 'eroot@alqudsmarket.com'),
+    'email',
+    'eroot@alqudsmarket.com',
+    now(),
+    now(),
+    now()
+  );
+
+  INSERT INTO public.profiles (id, email, full_name, preferred_language, role)
+  VALUES (
+    v_eroot_id,
+    'eroot@alqudsmarket.com',
+    'مسؤول النظام (eroot)',
+    'ar',
+    'admin'
+  )
+  ON CONFLICT (id) DO UPDATE SET
+    role = 'admin',
+    full_name = 'مسؤول النظام (eroot)',
+    updated_at = now();
+
+  IF EXISTS (SELECT 1 FROM pg_proc WHERE proname = 'promote_user_to_admin') THEN
+    PERFORM public.promote_user_to_admin('eroot@alqudsmarket.com');
+  END IF;
+END $$;
