@@ -8,7 +8,6 @@ import type { SupportedLanguage } from '@/lib/i18n';
 import { useCartStore } from '@/features/cart/store';
 import { useFavoritesStore } from '@/features/favorites/store';
 import { useAuthStore } from '@/features/auth/store';
-import AdminProductQuickEditModal from './admin/AdminProductQuickEditModal';
 import { useState } from 'react';
 
 interface ProductCardProps {
@@ -34,7 +33,6 @@ export default function ProductCard({ product, className }: ProductCardProps) {
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
 
   const [isAddedRecently, setIsAddedRecently] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const hasDiscount = product.compare_at_price !== null && product.compare_at_price > product.price;
   const discountPct = hasDiscount
@@ -156,19 +154,15 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           </div>
 
           {isAdmin ? (
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setIsEditModalOpen(true);
-              }}
+            <Link
+              to={`/product/${product.id}`}
               className="flex h-9 items-center gap-1.5 px-3 rounded-xl bg-amber-500 text-white font-bold text-xs shadow-sm transition-all hover:bg-amber-600 active:scale-95"
               aria-label="تعديل المنتج | Edit Product"
               title="تعديل المنتج | Edit Product"
             >
               <Pencil size={13} />
               <span>تعديل</span>
-            </button>
+            </Link>
           ) : (
             <button
               onClick={handleAddToCart}
@@ -197,15 +191,6 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           )}
         </div>
       </div>
-
-      {/* Admin Quick Edit Modal */}
-      {isAdmin && (
-        <AdminProductQuickEditModal
-          product={product}
-          isOpen={isEditModalOpen}
-          onClose={() => setIsEditModalOpen(false)}
-        />
-      )}
     </div>
   );
 }

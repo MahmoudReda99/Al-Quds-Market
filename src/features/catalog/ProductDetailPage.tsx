@@ -9,7 +9,7 @@ import type { SupportedLanguage } from '@/lib/i18n';
 import { useCartStore } from '@/features/cart/store';
 import { useFavoritesStore } from '@/features/favorites/store';
 import { useAuthStore } from '@/features/auth/store';
-import AdminProductQuickEditModal from './admin/AdminProductQuickEditModal';
+import AdminProductInlineEditor from './admin/AdminProductInlineEditor';
 import { Button } from '@/components/ui/Button';
 import {
   Heart,
@@ -22,7 +22,6 @@ import {
   ArrowRight,
   ArrowLeft,
   Loader2,
-  Pencil,
 } from 'lucide-react';
 
 export default function ProductDetailPage() {
@@ -48,7 +47,6 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [addedToast, setAddedToast] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   if (isLoading) {
     return (
@@ -70,6 +68,11 @@ export default function ProductDetailPage() {
         </Button>
       </div>
     );
+  }
+
+  // When logged in as admin, display full in-page editor directly (no popup window)
+  if (isAdmin) {
+    return <AdminProductInlineEditor product={product} />;
   }
 
   const name = localizedText(product.name_ar, product.name_en, lang);
@@ -241,91 +244,50 @@ export default function ProductDetailPage() {
             </div>
           )}
 
-          {/* Quantity and Add to Cart Section OR Admin Controls */}
-          {isAdmin ? (
-            <div className="mt-8 rounded-3xl border border-amber-200 bg-amber-50/70 p-5 sm:p-6 space-y-4 shadow-sm">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-amber-900 font-bold text-sm sm:text-base">
-                  <Pencil size={18} className="text-amber-600" />
-                  <span>وضع الإدارة والتحكم | Admin Controls</span>
-                </div>
-                <span
-                  className={`rounded-xl px-3 py-1 text-xs font-bold ${
-                    product.is_active ? 'bg-emerald-600 text-white' : 'bg-red-600 text-white'
-                  }`}
-                >
-                  {product.is_active ? 'نشط في المتجر' : 'معطل ومخفي'}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 text-xs bg-white/80 p-3 rounded-2xl border border-amber-100">
-                <div>
-                  <span className="text-foreground-muted block">المخزون الحالي:</span>
-                  <span className="font-bold text-foreground text-sm">{product.stock_quantity} {unit}</span>
-                </div>
-                <div>
-                  <span className="text-foreground-muted block">السعر:</span>
-                  <span className="font-bold text-brand-700 text-sm">{product.price.toFixed(2)} {t('common.currency')}</span>
-                </div>
-              </div>
-
-              <p className="text-xs text-foreground-muted leading-relaxed">
-                بصفتك مسؤول إدارة (Admin)، حسابك مخصص للتحكم وتعديل الأسعار والكميات وتفعيل/تعطيل المنتجات، ولا يمكنه إجراء طلبات شراء.
-              </p>
-
-              <Button
-                onClick={() => setIsEditModalOpen(true)}
-                className="w-full h-12 bg-amber-500 hover:bg-amber-600 text-white font-bold text-base shadow-md shadow-amber-500/20"
+          {/* Quantity and Add to Cart Section (Customer View) */}
+          <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            {/* Quantity Selector */}
+            <div className="flex h-12 items-center justify-between rounded-xl border border-surface-border bg-surface-muted px-3 min-w-[130px]">
+              <button
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                disabled={quantity <= 1 || isOutOfStock}
+                className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-foreground shadow-sm hover:bg-surface-subtle disabled:opacity-40 transition-colors"
+                aria-label="Decrease quantity"
               >
-                <Pencil className="me-2" size={18} />
-                <span>تعديل هذا المنتج | Edit This Product</span>
-              </Button>
-            </div>
-          ) : (
-            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              {/* Quantity Selector */}
-              <div className="flex h-12 items-center justify-between rounded-xl border border-surface-border bg-surface-muted px-3 min-w-[130px]">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  disabled={quantity <= 1 || isOutOfStock}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-foreground shadow-sm hover:bg-surface-subtle disabled:opacity-40 transition-colors"
-                  aria-label="Decrease quantity"
-                >
-                  <Minus size={15} />
-                </button>
-                <span className="text-base font-bold text-foreground">
-                  {quantity}
-                </span>
-                <button
-                  onClick={() => setQuantity(Math.min(product.stock_quantity, quantity + 1))}
-                  disabled={quantity >= product.stock_quantity || isOutOfStock}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-foreground shadow-sm hover:bg-surface-subtle disabled:opacity-40 transition-colors"
-                  aria-label="Increase quantity"
-                >
-                  <Plus size={15} />
-                </button>
-              </div>
-
-              {/* Add To Cart Button */}
-              <Button
-                onClick={handleAddToCart}
-                disabled={isOutOfStock}
-                className="flex-1 h-12 text-base font-bold shadow-md shadow-brand-700/20"
+                <Minus size={15} />
+              </button>
+              <span className="text-base font-bold text-foreground">
+                {quantity}
+              </span>
+              <button
+                onClick={() => setQuantity(Math.min(product.stock_quantity, quantity + 1))}
+                disabled={quantity >= product.stock_quantity || isOutOfStock}
+                className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-foreground shadow-sm hover:bg-surface-subtle disabled:opacity-40 transition-colors"
+                aria-label="Increase quantity"
               >
-                {addedToast ? (
-                  <>
-                    <Check className="me-2" size={18} />
-                    <span>{t('common.addedToCart')}</span>
-                  </>
-                ) : (
-                  <>
-                    <ShoppingCart className="me-2" size={18} />
-                    <span>{t('common.addToCart')} ({(product.price * quantity).toFixed(2)} {t('common.currency')})</span>
-                  </>
-                )}
-              </Button>
+                <Plus size={15} />
+              </button>
             </div>
-          )}
+
+            {/* Add To Cart Button */}
+            <Button
+              onClick={handleAddToCart}
+              disabled={isOutOfStock}
+              className="flex-1 h-12 text-base font-bold shadow-md shadow-brand-700/20"
+            >
+              {addedToast ? (
+                <>
+                  <Check className="me-2" size={18} />
+                  <span>{t('common.addedToCart')}</span>
+                </>
+              ) : (
+                <>
+                  <ShoppingCart className="me-2" size={18} />
+                  <span>{t('common.addToCart')} ({(product.price * quantity).toFixed(2)} {t('common.currency')})</span>
+                </>
+              )}
+            </Button>
+          </div>
 
           {/* Guarantees row */}
           <div className="mt-8 grid grid-cols-2 gap-3 border-t border-surface-border pt-6">
@@ -369,15 +331,6 @@ export default function ProductDetailPage() {
             ))}
           </div>
         </section>
-      )}
-
-      {/* Admin Quick Edit Modal */}
-      {isAdmin && (
-        <AdminProductQuickEditModal
-          product={product}
-          isOpen={isEditModalOpen}
-          onClose={() => setIsEditModalOpen(false)}
-        />
       )}
     </div>
   );
