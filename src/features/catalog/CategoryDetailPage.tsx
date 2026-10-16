@@ -7,6 +7,7 @@ import ProductCard from './ProductCard';
 import { localizedText, cn } from '@/lib/utils';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
+import { useAuthStore } from '@/features/auth/store';
 import { ArrowLeft, ArrowRight, ArrowUpDown, Loader2 } from 'lucide-react';
 
 export default function CategoryDetailPage() {
@@ -16,6 +17,9 @@ export default function CategoryDetailPage() {
   const lang = (i18n.language as SupportedLanguage) ?? 'ar';
   const isRtl = lang === 'ar';
   const ArrowIcon = isRtl ? ArrowRight : ArrowLeft;
+
+  const profile = useAuthStore((s) => s.profile);
+  const isAdmin = profile?.role === 'admin';
 
   const activeSubcategoryId = searchParams.get('sub') || undefined;
   const [sortBy, setSortBy] = useState<ProductSortOption>('featured');
@@ -28,7 +32,7 @@ export default function CategoryDetailPage() {
   // Fetch category and subcategories
   const { data: category, isLoading: isCategoryLoading } = useCategoryQuery(slug);
 
-  // Fetch products under category
+  // Fetch products under category (admins can see all items including disabled ones)
   const { data: productsData, isLoading: isProductsLoading } = useProductsQuery({
     categorySlug: slug,
     subcategoryId: activeSubcategoryId,
@@ -36,6 +40,7 @@ export default function CategoryDetailPage() {
     minPrice,
     maxPrice,
     sortBy,
+    includeInactive: isAdmin,
   });
 
   const products = productsData?.products || [];

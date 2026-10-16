@@ -139,6 +139,33 @@ export default function CheckoutPage() {
     }
   };
 
+  // If user is admin, block checkout with clear guidance
+  if (profile?.role === 'admin') {
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-lg flex-col items-center justify-center px-4 py-12 text-center animate-fade-in">
+        <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-amber-100 text-amber-700 text-3xl mb-4">
+          🛡️
+        </div>
+        <h2 className="text-2xl font-black text-foreground">
+          {isRtl ? 'حساب إدارة وتحكم' : 'Admin Account'}
+        </h2>
+        <p className="mt-2 text-sm text-foreground-muted leading-relaxed">
+          {isRtl
+            ? `أنت مسجل الدخول كمسؤول إدارة (${profile.email || 'Admin'}). حسابات الإدارة مخصصة لإدارة وتعديل المنتجات والمخزون ومتابعة الطلبات، ولا يمكنها إجراء طلبات شراء.`
+            : `You are logged in as an administrator (${profile.email || 'Admin'}). Admin accounts are for managing products, inventory, and orders only, and cannot place customer orders.`}
+        </p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full justify-center">
+          <Button onClick={() => navigate('/admin')} className="bg-brand-700">
+            {isRtl ? 'لوحة التحكم بالإدارة' : 'Admin Dashboard'}
+          </Button>
+          <Button variant="outline" onClick={() => navigate('/categories')}>
+            {isRtl ? 'تصفح وتعديل المنتجات' : 'Browse & Edit Catalog'}
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   // If cart is empty and not currently submitting
   if (items.length === 0 && !isPlacingOrder) {
     return (

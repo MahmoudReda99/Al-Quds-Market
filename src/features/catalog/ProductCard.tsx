@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Heart, ShoppingCart, Check } from 'lucide-react';
+import { Heart, ShoppingCart, Check, Pencil } from 'lucide-react';
 import type { Product } from '@/types';
 import { localizedText, cn } from '@/lib/utils';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import { useCartStore } from '@/features/cart/store';
 import { useFavoritesStore } from '@/features/favorites/store';
+import { useAuthStore } from '@/features/auth/store';
+import AdminProductQuickEditModal from './admin/AdminProductQuickEditModal';
 import { useState } from 'react';
 
 interface ProductCardProps {
@@ -20,6 +22,9 @@ export default function ProductCard({ product, className }: ProductCardProps) {
   const name = localizedText(product.name_ar, product.name_en, lang);
   const unit = localizedText(product.unit_label_ar, product.unit_label_en, lang);
 
+  const profile = useAuthStore((s) => s.profile);
+  const isAdmin = profile?.role === 'admin';
+
   const addItem = useCartStore((s) => s.addItem);
   const openCart = useCartStore((s) => s.openCart);
   const cartItems = useCartStore((s) => s.items);
@@ -29,6 +34,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
 
   const [isAddedRecently, setIsAddedRecently] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const hasDiscount = product.compare_at_price !== null && product.compare_at_price > product.price;
   const discountPct = hasDiscount
@@ -65,6 +71,11 @@ export default function ProductCard({ product, className }: ProductCardProps) {
       {/* Top badges & Favorite */}
       <div className="absolute inset-x-2 top-2 z-10 flex items-center justify-between">
         <div className="flex flex-col gap-1">
+          {!product.is_active && (
+            <span className="rounded-lg bg-red-600 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+              معطل | Inactive
+            </span>
+          )}
           {hasDiscount && (
             <span className="rounded-lg bg-red-600 px-2 py-0.5 text-[11px] font-bold text-white shadow-sm">
               -{discountPct}%
@@ -129,7 +140,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           {unit}
         </p>
 
-        {/* Price & Add to Cart */}
+        {/* Price & Action Button (Edit for Admin, Add to Cart for Customer) */}
         <div className="mt-auto flex items-end justify-between pt-3">
           <div>
             <div className="flex items-baseline gap-1.5">
@@ -144,32 +155,57 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             </div>
           </div>
 
-          <button
-            onClick={handleAddToCart}
-            disabled={isOutOfStock}
-            className={cn(
-              'flex h-9 w-9 items-center justify-center rounded-xl shadow-sm transition-all active:scale-90',
-              isOutOfStock
-                ? 'bg-surface-border text-foreground-subtle cursor-not-allowed'
-                : isAddedRecently
-                ? 'bg-emerald-600 text-white'
-                : inCart
-                ? 'bg-brand-700 text-white hover:bg-brand-800'
-                : 'bg-brand-50 text-brand-700 hover:bg-brand-700 hover:text-white'
-            )}
-            aria-label={t('common.addToCart')}
-            title={inCart ? `${inCart.quantity} in cart` : t('common.addToCart')}
-          >
-            {isAddedRecently ? (
-              <Check size={16} />
-            ) : inCart ? (
-              <span className="text-xs font-bold">{inCart.quantity}</span>
-            ) : (
-              <ShoppingCart size={16} />
-            )}
-          </button>
+          {isAdmin ? (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsEditModalOpen(true);
+              }}
+              className="flex h-9 items-center gap-1.5 px-3 rounded-xl bg-amber-500 text-white font-bold text-xs shadow-sm transition-all hover:bg-amber-600 active:scale-95"
+              aria-label="تعديل المنتج | Edit Product"
+              title="تعديل المنتج | Edit Product"
+            >
+              <Pencil size={13} />
+              <span>تعديل</span>
+            </button>
+          ) : (
+            <button
+              onClick={handleAddToCart}
+              disabled={isOutOfStock}
+              className={cn(
+                'flex h-9 w-9 items-center justify-center rounded-xl shadow-sm transition-all active:scale-90',
+                isOutOfStock
+                  ? 'bg-surface-border text-foreground-subtle cursor-not-allowed'
+                  : isAddedRecently
+                  ? 'bg-emerald-600 text-white'
+                  : inCart
+                  ? 'bg-brand-700 text-white hover:bg-brand-800'
+                  : 'bg-brand-50 text-brand-700 hover:bg-brand-700 hover:text-white'
+              )}
+              aria-label={t('common.addToCart')}
+              title={inCart ? `${inCart.quantity} in cart` : t('common.addToCart')}
+            >
+              {isAddedRecently ? (
+                <Check size={16} />
+              ) : inCart ? (
+                <span className="text-xs font-bold">{inCart.quantity}</span>
+              ) : (
+                <ShoppingCart size={16} />
+              )}
+            </button>
+          )}
         </div>
       </div>
+
+      {/* Admin Quick Edit Modal */}
+      {isAdmin && (
+        <AdminProductQuickEditModal
+          product={product}
+          isOpen={isEditModalOpen}
+          onClose={() => setIsEditModalOpen(false)}
+        />
+      )}
     </div>
   );
 }
