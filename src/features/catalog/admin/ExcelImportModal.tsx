@@ -244,74 +244,133 @@ export default function ExcelImportModal({
         throw new Error(isAr ? 'الملف فارغ أو لا يحتوي على صفوف صالحة.' : 'File is empty or contains no valid rows.');
       }
 
+function getField(row: Record<string, unknown>, aliases: string[]): unknown {
+  const rowKeys = Object.keys(row);
+
+  // 1. Direct trimmed case-insensitive comparison
+  for (const alias of aliases) {
+    const target = alias.trim().toLowerCase();
+    for (const key of rowKeys) {
+      if (key.trim().toLowerCase() === target) {
+        const val = row[key];
+        if (val !== undefined && val !== null && String(val).trim() !== '') {
+          return val;
+        }
+      }
+    }
+  }
+
+  // 2. Partial substring matching (e.g. key contains "quantity" or "الكمية")
+  for (const alias of aliases) {
+    const target = alias.trim().toLowerCase();
+    for (const key of rowKeys) {
+      const cleanKey = key.trim().toLowerCase();
+      if (cleanKey.includes(target)) {
+        const val = row[key];
+        if (val !== undefined && val !== null && String(val).trim() !== '') {
+          return val;
+        }
+      }
+    }
+  }
+
+  return undefined;
+}
+
+function parseNumeric(val: unknown): number {
+  if (val === undefined || val === null) return 0;
+  if (typeof val === 'number') return isNaN(val) ? 0 : val;
+  const str = String(val).trim();
+  if (!str) return 0;
+  const cleaned = str.replace(/,/g, '').replace(/[^\d.-]/g, '');
+  const num = parseFloat(cleaned);
+  return isNaN(num) ? 0 : num;
+}
+
       // Map rows
       const parsed: ParsedRowPreview[] = [];
       rawJson.forEach((row, idx) => {
-        // Try multiple header aliases
-        const nameAr = String(
-          row['Product Name (Arabic)'] ||
-          row['Product Name'] ||
-          row['اسم المنتج'] ||
-          row['الصنف'] ||
-          row['name_ar'] ||
-          ''
-        ).trim();
+        // Robust header resolution with aliases
+        const rawNameAr = getField(row, [
+          'Product Name (Arabic)',
+          'Product Name',
+          'اسم المنتج',
+          'الصنف',
+          'اسم الصنف',
+          'name_ar',
+          'name',
+        ]);
+        const nameAr = String(rawNameAr || '').trim();
 
         if (!nameAr || nameAr.includes('تقرير الارصده') || nameAr.includes('الاجمالى')) {
           return;
         }
 
         const catAr = String(
-          row['Category (Arabic)'] ||
-          row['القسم'] ||
-          row['الفئة'] ||
-          row['category_ar'] ||
-          ''
+          getField(row, [
+            'Category (Arabic)',
+            'القسم',
+            'الفئة',
+            'التصنيف',
+            'category_ar',
+          ]) || ''
         ).trim();
 
         const catEn = String(
-          row['Category (English)'] ||
-          row['Category'] ||
-          row['category_en'] ||
-          ''
+          getField(row, [
+            'Category (English)',
+            'Category',
+            'category_en',
+            'category_slug',
+          ]) || ''
         ).trim();
 
-        const brand = String(row['Brand'] || row['الماركة'] || '').trim();
+        const brand = String(
+          getField(row, ['Brand', 'الماركة', 'الشركة', 'brand']) || ''
+        ).trim();
 
-        const rawPrice =
-          row['Unit Cost/Price'] ||
-          row['Price'] ||
-          row['السعر'] ||
-          row['سعر'] ||
-          row['price'] ||
-          0;
-        const price = Math.max(0, parseFloat(String(rawPrice)) || 0);
+        const rawPrice = getField(row, [
+          'Unit Cost/Price',
+          'Price',
+          'السعر',
+          'سعر',
+          'Unit Cost',
+          'price',
+          'cost_price',
+        ]);
+        const price = Math.max(0, parseNumeric(rawPrice));
 
-        const rawQty =
-          row['Quantity/الكمية'] ||
-          row['الكمية'] ||
-          row['Quantity'] ||
-          row['كميه'] ||
-          row['stock_quantity'] ||
-          0;
-        const stock = Math.max(0, parseFloat(String(rawQty)) || 0);
+        const rawQty = getField(row, [
+          'Quantity/الكمية',
+          'Quantity',
+          'الكمية',
+          'كميه',
+          'كمية',
+          'qty',
+          'stock_quantity',
+          'stock',
+        ]);
+        const stock = Math.max(0, parseNumeric(rawQty));
 
         const rawSku = String(
-          row['SKU / Barcode'] ||
-          row['SKU'] ||
-          row['Barcode'] ||
-          row['الباركود'] ||
-          row['كود'] ||
-          row['sku'] ||
-          ''
+          getField(row, [
+            'SKU / Barcode',
+            'SKU',
+            'Barcode',
+            'الباركود',
+            'كود',
+            'sku',
+            'barcode',
+          ]) || ''
         ).trim();
 
         const resolvedCat = resolveCategory(catAr, catEn);
         const sku = rawSku || `ALQ-${resolvedCat.slug.slice(0, 3).toUpperCase()}-${String(idx + 1).padStart(4, '0')}`;
 
-        const imageUrl = String(row['Image URL'] || row['Image'] || row['صورة'] || '').trim() || undefined;
+        const rawImageUrl = getField(row, ['Image URL', 'Image', 'صورة', 'صوره', 'image_url', 'image']);
+        const imageUrl = rawImageUrl ? String(rawImageUrl).trim() : undefined;
 
-        const rawActive = String(row['Active'] || row['نشط'] || 'Yes').trim().toLowerCase();
+        const rawActive = String(getField(row, ['Active', 'نشط', 'الحالة', 'is_active']) || 'Yes').trim().toLowerCase();
         const isActive = rawActive === 'yes' || rawActive === '1' || rawActive === 'true' || rawActive === 'نعم';
 
         const units = autoDetectUnit(nameAr);
