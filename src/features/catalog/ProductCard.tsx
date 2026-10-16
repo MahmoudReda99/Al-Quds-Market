@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Heart, ShoppingCart, Check, Pencil } from 'lucide-react';
 import type { Product } from '@/types';
 import { localizedText, cn } from '@/lib/utils';
+import { resolveProductImage } from '@/lib/productImages';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import { useCartStore } from '@/features/cart/store';
@@ -57,7 +58,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
     toggleFavorite(product.id);
   };
 
-  const imageUrl = product.images?.[0]?.url;
+  const imageUrl = resolveProductImage(product);
 
   return (
     <div

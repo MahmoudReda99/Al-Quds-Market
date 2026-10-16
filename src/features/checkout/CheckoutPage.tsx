@@ -7,6 +7,7 @@ import { useDeliveryAreasQuery } from './hooks';
 import { calculateDelivery } from './api';
 import { useCreateOrderMutation } from '@/features/orders/hooks';
 import { localizedText } from '@/lib/utils';
+import { resolveProductImage } from '@/lib/productImages';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import type { DeliveryArea } from '@/types';
@@ -390,16 +391,12 @@ export default function CheckoutPage() {
 
                 return (
                   <div key={product.id} className="flex items-center gap-3 pt-3 first:pt-0">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface-muted p-1">
-                      {product.images?.[0]?.url ? (
-                        <img
-                          src={product.images[0].url}
-                          alt={name}
-                          className="h-full w-full rounded-lg object-contain"
-                        />
-                      ) : (
-                        <span>🛒</span>
-                      )}
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface-muted p-1 overflow-hidden">
+                      <img
+                        src={resolveProductImage(product)}
+                        alt={name}
+                        className="h-full w-full rounded-lg object-contain"
+                      />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-bold text-foreground line-clamp-1">{name}</p>

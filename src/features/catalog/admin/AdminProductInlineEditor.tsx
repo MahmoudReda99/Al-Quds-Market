@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import type { Product } from '@/types';
 import { useUpdateProductMutation, useCategoriesQuery } from '../hooks';
 import { uploadProductImage } from '@/lib/storage';
+import { resolveProductImage } from '@/lib/productImages';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import {
@@ -53,7 +54,7 @@ export default function AdminProductInlineEditor({ product }: AdminProductInline
   const [isFeatured, setIsFeatured] = useState(product.is_featured);
 
   // Image State
-  const initialImg = product.images?.[0]?.url || '';
+  const initialImg = product.images?.[0]?.url || resolveProductImage(product);
   const [imageUrl, setImageUrl] = useState(initialImg);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -75,7 +76,7 @@ export default function AdminProductInlineEditor({ product }: AdminProductInline
     setDescriptionAr(product.description_ar || '');
     setIsActive(product.is_active);
     setIsFeatured(product.is_featured);
-    setImageUrl(product.images?.[0]?.url || '');
+    setImageUrl(product.images?.[0]?.url || resolveProductImage(product));
   }, [product]);
 
   const handleImageFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {

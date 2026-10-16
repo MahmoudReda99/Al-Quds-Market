@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useProductQuery, useRelatedProductsQuery } from './hooks';
 import ProductCard from './ProductCard';
 import { localizedText, cn } from '@/lib/utils';
+import { resolveProductImage } from '@/lib/productImages';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import { useCartStore } from '@/features/cart/store';
@@ -87,11 +88,13 @@ export default function ProductDetailPage() {
   const isOutOfStock = product.stock_quantity <= 0;
   const isLowStock = product.stock_quantity > 0 && product.stock_quantity <= 5;
 
-  const images = product.images && product.images.length > 0
-    ? product.images
-    : [{ url: '', alt_ar: name, alt_en: name }];
+  const fallbackUrl = resolveProductImage(product);
+  const images =
+    product.images && product.images.length > 0 && product.images[0]?.url
+      ? product.images
+      : [{ url: fallbackUrl, alt_ar: name, alt_en: name }];
 
-  const activeImageUrl = images[selectedImageIndex]?.url;
+  const activeImageUrl = images[selectedImageIndex]?.url || fallbackUrl;
 
   const handleAddToCart = () => {
     if (isOutOfStock) return;

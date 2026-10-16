@@ -6,6 +6,7 @@ import { useAuthStore } from '@/features/auth/store';
 import { useDeliveryAreasQuery } from '@/features/checkout/hooks';
 import { calculateDelivery } from '@/features/checkout/api';
 import { localizedText } from '@/lib/utils';
+import { resolveProductImage } from '@/lib/productImages';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import type { DeliveryArea } from '@/types';
@@ -264,17 +265,13 @@ export default function CartPage() {
                     <div className="flex items-center gap-4 flex-1 min-w-0">
                       <Link
                         to={`/product/${product.id}`}
-                        className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-surface-muted p-2 hover:scale-105 transition-transform"
+                        className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-surface-muted p-2 hover:scale-105 transition-transform overflow-hidden"
                       >
-                        {product.images?.[0]?.url ? (
-                          <img
-                            src={product.images[0].url}
-                            alt={name}
-                            className="h-full w-full rounded-xl object-contain"
-                          />
-                        ) : (
-                          <span className="text-3xl">🛒</span>
-                        )}
+                        <img
+                          src={resolveProductImage(product)}
+                          alt={name}
+                          className="h-full w-full rounded-xl object-contain"
+                        />
                       </Link>
 
                       <div className="min-w-0 flex-1">

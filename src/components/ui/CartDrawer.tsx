@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { useCartStore } from '@/features/cart/store';
 import { localizedText } from '@/lib/utils';
+import { resolveProductImage } from '@/lib/productImages';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import { Button } from './Button';
@@ -144,16 +145,12 @@ export default function CartDrawer() {
                     className="flex items-center gap-3.5 rounded-2xl border border-surface-border bg-white p-3 shadow-card transition-all"
                   >
                     {/* Thumbnail */}
-                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-surface-muted text-2xl">
-                      {product.images?.[0]?.url ? (
-                        <img
-                          src={product.images[0].url}
-                          alt={name}
-                          className="h-full w-full rounded-xl object-contain p-1"
-                        />
-                      ) : (
-                        <span>🛒</span>
-                      )}
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-surface-muted text-2xl overflow-hidden">
+                      <img
+                        src={resolveProductImage(product)}
+                        alt={name}
+                        className="h-full w-full rounded-xl object-contain p-1"
+                      />
                     </div>
 
                     {/* Details */}
