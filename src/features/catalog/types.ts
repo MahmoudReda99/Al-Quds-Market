@@ -63,3 +63,8 @@ export interface CreateCategoryInput {
   sort_order?: number;
   is_active?: boolean;
 }
+
+export interface UpdateCategoryInput extends Partial<CreateCategoryInput> {
+  id: string;
+}
+

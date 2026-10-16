@@ -1,31 +1,70 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCategoriesQuery } from './hooks';
-import { localizedText } from '@/lib/utils';
+import { useAuthStore } from '@/features/auth/store';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
-import { ArrowLeft, ArrowRight, Loader2 } from 'lucide-react';
+import { Loader2, Plus, Sparkles, Layers } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import CategoryCard from './CategoryCard';
+import AdminCategoryInlineCreate from './admin/AdminCategoryInlineCreate';
 
 export default function CategoriesPage() {
   const { t } = useTranslation();
   const lang = (i18n.language as SupportedLanguage) ?? 'ar';
-  const isRtl = lang === 'ar';
-  const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
+  const profile = useAuthStore((s) => s.profile);
+  const isAdmin = profile?.role === 'admin';
+
+  const [isCreating, setIsCreating] = useState(false);
   const { data: categories = [], isLoading, error } = useCategoriesQuery();
+
+  const nextSortOrder = (categories.length + 1) * 10;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 animate-fade-in">
-      {/* Header */}
-      <div className="mb-8 border-b border-surface-border pb-6">
-        <h1 className="text-3xl font-extrabold text-foreground sm:text-4xl">
-          {t('common.categories')}
-        </h1>
-        <p className="mt-2 text-base text-foreground-muted">
-          {t('home.categorySubtitle')}
-        </p>
+      {/* Page Header */}
+      <div className="mb-8 flex flex-col gap-4 border-b border-surface-border pb-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <div className="flex items-center gap-3">
+            <h1 className="text-3xl font-extrabold text-foreground sm:text-4xl">
+              {t('common.categories')}
+            </h1>
+            <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">
+              <Layers size={14} />
+              {categories.length} {t('common.categories')}
+            </span>
+          </div>
+          <p className="mt-2 text-base text-foreground-muted">
+            {t('home.categorySubtitle')}
+          </p>
+        </div>
+
+        {/* Admin Action: Add New Category Button */}
+        {isAdmin && (
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              onClick={() => setIsCreating((prev) => !prev)}
+              className="rounded-2xl bg-brand-700 px-5 py-2.5 font-bold text-white shadow-md hover:bg-brand-800 transition-all gap-2"
+            >
+              <Plus size={18} className="stroke-[2.5]" />
+              <span>إضافة قسم جديد | Add Category</span>
+            </Button>
+          </div>
+        )}
       </div>
 
+      {/* Admin Inline Category Creation Form (No popups!) */}
+      {isAdmin && (
+        <AdminCategoryInlineCreate
+          isOpen={isCreating}
+          onClose={() => setIsCreating(false)}
+          nextSortOrder={nextSortOrder}
+        />
+      )}
+
+      {/* Categories Grid or Loader */}
       {isLoading ? (
         <div className="flex min-h-[40vh] items-center justify-center">
           <Loader2 className="h-8 w-8 animate-spin text-brand-700" />
@@ -34,66 +73,29 @@ export default function CategoriesPage() {
         <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center text-red-600">
           <p>{t('common.error')}</p>
         </div>
+      ) : categories.length === 0 ? (
+        <div className="rounded-3xl border border-dashed border-surface-border bg-white p-12 text-center text-foreground-muted">
+          <Sparkles className="mx-auto h-12 w-12 text-brand-400 mb-3" />
+          <p className="text-lg font-bold text-foreground">لا توجد أقسام مسجلة حالياً</p>
+          {isAdmin && (
+            <Button
+              onClick={() => setIsCreating(true)}
+              className="mt-4 rounded-xl bg-brand-700 text-white"
+            >
+              إضافة أول قسم الآن
+            </Button>
+          )}
+        </div>
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {categories.map((category) => {
-            const name = localizedText(category.name_ar, category.name_en, lang);
-
-            return (
-              <div
-                key={category.id}
-                className="flex flex-col rounded-2xl border border-surface-border bg-white p-5 shadow-card card-hover transition-all"
-              >
-                {/* Category Main Card Header */}
-                <Link
-                  to={`/category/${category.slug}`}
-                  className="flex items-center gap-3.5 group"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-3xl group-hover:scale-105 transition-transform overflow-hidden shadow-xs">
-                    {category.image_url ? (
-                      <img
-                        src={category.image_url}
-                        alt={name}
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                    ) : (
-                      category.icon || '🛒'
-                    )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h2 className="text-lg font-bold text-foreground group-hover:text-brand-700 transition-colors">
-                      {name}
-                    </h2>
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-700 mt-0.5">
-                      {t('home.shopNow')}
-                      <ArrowIcon size={12} />
-                    </span>
-                  </div>
-                </Link>
-
-                {/* Subcategories Chips */}
-                {category.children && category.children.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-surface-border/60">
-                    <p className="text-xs font-medium text-foreground-subtle mb-2">
-                      الأقسام الفرعية | Subcategories:
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {category.children.map((sub) => (
-                        <Link
-                          key={sub.id}
-                          to={`/category/${category.slug}?sub=${sub.id}`}
-                          className="rounded-lg bg-surface-muted px-2.5 py-1 text-xs font-medium text-foreground-muted hover:bg-brand-50 hover:text-brand-700 transition-colors"
-                        >
-                          {localizedText(sub.name_ar, sub.name_en, lang)}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          {categories.map((category) => (
+            <CategoryCard
+              key={category.id}
+              category={category}
+              isAdmin={Boolean(isAdmin)}
+              lang={lang}
+            />
+          ))}
         </div>
       )}
     </div>

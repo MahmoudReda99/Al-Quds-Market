@@ -7,6 +7,7 @@ import type {
   CreateProductInput,
   UpdateProductInput,
   CreateCategoryInput,
+  UpdateCategoryInput,
 } from './types';
 
 // Helper to map DB row to Product domain type
@@ -319,12 +320,51 @@ export async function createCategory(input: CreateCategoryInput): Promise<Catego
   return data as unknown as Category;
 }
 
+export async function updateCategory(input: UpdateCategoryInput): Promise<Category> {
+  const updates: Record<string, unknown> = {};
+  if (input.name_ar !== undefined) updates.name_ar = input.name_ar.trim();
+  if (input.name_en !== undefined) updates.name_en = input.name_en.trim();
+  if (input.slug !== undefined) updates.slug = input.slug.trim().toLowerCase();
+  if (input.image_url !== undefined) updates.image_url = input.image_url || null;
+  if (input.icon !== undefined) updates.icon = input.icon || null;
+  if (input.sort_order !== undefined) updates.sort_order = input.sort_order;
+  if (input.is_active !== undefined) updates.is_active = input.is_active;
+  if (input.parent_id !== undefined) updates.parent_id = input.parent_id || null;
+
+  const { data, error } = await supabase
+    .from('categories')
+    .update(updates)
+    .eq('id', input.id)
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error(`Failed to update category: ${error.message}`);
+  }
+
+  return data as unknown as Category;
+}
+
 export async function deleteCategory(id: string): Promise<void> {
   const { error } = await supabase.from('categories').delete().eq('id', id);
   if (error) {
+    // If foreign key constraint prevents deletion because products belong to this category,
+    // gracefully deactivate it instead so it is removed from active catalog
+    if (error.code === '23503' || error.message.toLowerCase().includes('violates foreign key')) {
+      const { error: deactivateError } = await supabase
+        .from('categories')
+        .update({ is_active: false })
+        .eq('id', id);
+
+      if (deactivateError) {
+        throw new Error(`Failed to deactivate category: ${deactivateError.message}`);
+      }
+      return;
+    }
     throw new Error(`Failed to delete category: ${error.message}`);
   }
 }
+
 
 export async function bulkUpsertProducts(
   products: CreateProductInput[],

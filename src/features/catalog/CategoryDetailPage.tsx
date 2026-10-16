@@ -8,6 +8,7 @@ import { localizedText, cn } from '@/lib/utils';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import { useAuthStore } from '@/features/auth/store';
+import { getCategoryFallback } from '@/lib/categoryImages';
 import { ArrowLeft, ArrowRight, ArrowUpDown, Loader2 } from 'lucide-react';
 
 export default function CategoryDetailPage() {
@@ -81,37 +82,47 @@ export default function CategoryDetailPage() {
       </nav>
 
       {/* Category Hero / Header */}
-      <div className="mb-8 rounded-3xl bg-fresh-gradient p-6 sm:p-8 border border-brand-200/50 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-white shadow-sm text-4xl overflow-hidden p-1">
-            {category?.image_url ? (
-              <img
-                src={category.image_url}
-                alt={categoryName}
-                className="h-full w-full object-cover rounded-xl"
-              />
-            ) : (
-              category?.icon || '🥦'
-            )}
-          </div>
-          <div>
-            <h1 className="text-2xl font-black text-brand-950 sm:text-3xl">
-              {categoryName}
-            </h1>
-            <p className="mt-1 text-sm text-brand-800">
-              {productsData?.total ?? 0} {t('common.items')}
-            </p>
-          </div>
-        </div>
+      {(() => {
+        const fallback = getCategoryFallback(slug);
+        const displayImage = category?.image_url || fallback.imageUrl;
+        const displayIcon = category?.icon || fallback.icon || '🥦';
+        return (
+          <div className="mb-8 rounded-3xl bg-fresh-gradient p-6 sm:p-8 border border-brand-200/50 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-white shadow-sm text-4xl overflow-hidden p-1">
+                {displayImage ? (
+                  <img
+                    src={displayImage}
+                    alt={categoryName}
+                    className="h-full w-full object-cover rounded-xl"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = fallback.imageUrl;
+                    }}
+                  />
+                ) : (
+                  displayIcon
+                )}
+              </div>
+              <div>
+                <h1 className="text-2xl font-black text-brand-950 sm:text-3xl">
+                  {categoryName}
+                </h1>
+                <p className="mt-1 text-sm text-brand-800">
+                  {productsData?.total ?? 0} {t('common.items')}
+                </p>
+              </div>
+            </div>
 
-        <Link
-          to="/categories"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800 transition-colors"
-        >
-          <ArrowIcon size={16} />
-          <span>{t('nav.allCategories')}</span>
-        </Link>
-      </div>
+            <Link
+              to="/categories"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800 transition-colors"
+            >
+              <ArrowIcon size={16} />
+              <span>{t('nav.allCategories')}</span>
+            </Link>
+          </div>
+        );
+      })()}
 
       {/* Subcategory Pills */}
       {category?.children && category.children.length > 0 && (

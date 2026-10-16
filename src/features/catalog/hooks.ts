@@ -8,8 +8,17 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
+  createCategory,
+  updateCategory,
+  deleteCategory,
 } from './api';
-import type { ProductFilters, CreateProductInput, UpdateProductInput } from './types';
+import type {
+  ProductFilters,
+  CreateProductInput,
+  UpdateProductInput,
+  CreateCategoryInput,
+  UpdateCategoryInput,
+} from './types';
 
 export const CATALOG_KEYS = {
   all: ['catalog'] as const,
@@ -90,3 +99,37 @@ export function useDeleteProductMutation() {
     },
   });
 }
+
+export function useCreateCategoryMutation() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (input: CreateCategoryInput) => createCategory(input),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: CATALOG_KEYS.categories() });
+      queryClient.invalidateQueries({ queryKey: CATALOG_KEYS.all });
+    },
+  });
+}
+
+export function useUpdateCategoryMutation() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (input: UpdateCategoryInput) => updateCategory(input),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: CATALOG_KEYS.categories() });
+      queryClient.invalidateQueries({ queryKey: CATALOG_KEYS.all });
+    },
+  });
+}
+
+export function useDeleteCategoryMutation() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (id: string) => deleteCategory(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: CATALOG_KEYS.categories() });
+      queryClient.invalidateQueries({ queryKey: CATALOG_KEYS.all });
+    },
+  });
+}
+

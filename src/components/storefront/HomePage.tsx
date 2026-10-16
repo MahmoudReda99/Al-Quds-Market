@@ -13,6 +13,7 @@ import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
 import { useCategoriesQuery, useProductsQuery } from '@/features/catalog/hooks';
 import ProductCard from '@/features/catalog/ProductCard';
+import { getCategoryFallback } from '@/lib/categoryImages';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -59,6 +60,9 @@ export default function HomePage() {
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
               {categories.map((cat) => {
                 const name = localizedText(cat.name_ar, cat.name_en, lang);
+                const fallback = getCategoryFallback(cat.slug);
+                const displayImg = cat.image_url || fallback.imageUrl;
+                const displayIco = cat.icon || fallback.icon || '🛒';
                 return (
                   <Link
                     key={cat.id}
@@ -66,16 +70,19 @@ export default function HomePage() {
                     className="group flex flex-col items-center gap-2 rounded-2xl border border-surface-border bg-white p-2.5 sm:p-3 text-center card-hover hover:border-brand-200 transition-all"
                   >
                     <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-surface-muted overflow-hidden shadow-xs group-hover:scale-105 transition-transform">
-                      {cat.image_url ? (
+                      {displayImg ? (
                         <img
-                          src={cat.image_url}
+                          src={displayImg}
                           alt={name}
                           className="h-full w-full object-cover"
                           loading="lazy"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = fallback.imageUrl;
+                          }}
                         />
                       ) : (
                         <span className="text-3xl sm:text-4xl" aria-hidden="true">
-                          {cat.icon || '🛒'}
+                          {displayIco}
                         </span>
                       )}
                     </div>
