@@ -66,7 +66,7 @@ BEGIN
     created_at,
     updated_at
   ) VALUES (
-    v_user_id::text,
+    v_user_id,
     v_user_id,
     jsonb_build_object('sub', v_user_id::text, 'email', 'admin@alqudsmarket.com'),
     'email',
@@ -151,7 +151,7 @@ BEGIN
     created_at,
     updated_at
   ) VALUES (
-    v_eroot_id::text,
+    v_eroot_id,
     v_eroot_id,
     jsonb_build_object('sub', v_eroot_id::text, 'email', 'eroot@alqudsmarket.com'),
     'email',
