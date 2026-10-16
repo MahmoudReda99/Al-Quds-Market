@@ -325,3 +325,92 @@ export async function deleteCategory(id: string): Promise<void> {
     throw new Error(`Failed to delete category: ${error.message}`);
   }
 }
+
+export async function bulkUpsertProducts(
+  products: CreateProductInput[],
+  onProgress?: (processed: number, total: number) => void
+): Promise<{ successCount: number; errors: string[] }> {
+  const BATCH_SIZE = 50;
+  let successCount = 0;
+  const errors: string[] = [];
+
+  for (let i = 0; i < products.length; i += BATCH_SIZE) {
+    const chunk = products.slice(i, i + BATCH_SIZE);
+    const dbPayload = chunk.map((p) => ({
+      sku: p.sku,
+      name_ar: p.name_ar,
+      name_en: p.name_en,
+      description_ar: p.description_ar || null,
+      description_en: p.description_en || null,
+      category_id: p.category_id,
+      price: p.price,
+      compare_at_price: p.compare_at_price || null,
+      unit_label_ar: p.unit_label_ar,
+      unit_label_en: p.unit_label_en,
+      stock_quantity: p.stock_quantity,
+      is_active: p.is_active !== undefined ? p.is_active : true,
+      is_featured: p.is_featured !== undefined ? p.is_featured : false,
+      images: p.images || [],
+      updated_at: new Date().toISOString(),
+    }));
+
+    const { error } = await supabase.from('products').upsert(dbPayload, {
+      onConflict: 'sku',
+    });
+
+    if (error) {
+      errors.push(`Batch ${Math.floor(i / BATCH_SIZE) + 1}: ${error.message}`);
+    } else {
+      successCount += chunk.length;
+    }
+
+    if (onProgress) {
+      onProgress(Math.min(i + chunk.length, products.length), products.length);
+    }
+  }
+
+  return { successCount, errors };
+}
+
+export async function ensureCategory(
+  name_ar: string,
+  name_en?: string,
+  slugHint?: string
+): Promise<string> {
+  const { data: existing } = await supabase
+    .from('categories')
+    .select('id, name_ar, name_en, slug');
+
+  if (existing) {
+    const found = existing.find(
+      (c) =>
+        c.name_ar.trim().toLowerCase() === name_ar.trim().toLowerCase() ||
+        (name_en && c.name_en.trim().toLowerCase() === name_en.trim().toLowerCase()) ||
+        (slugHint && c.slug.trim().toLowerCase() === slugHint.trim().toLowerCase())
+    );
+    if (found) return found.id;
+  }
+
+  const slug = (slugHint || name_en || name_ar)
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\u0621-\u064A]+/g, '-')
+    .replace(/^-+|-+$/g, '') || `cat-${Date.now()}`;
+
+  const { data: created, error } = await supabase
+    .from('categories')
+    .insert({
+      slug,
+      name_ar: name_ar.trim(),
+      name_en: (name_en || name_ar).trim(),
+      is_active: true,
+      sort_order: 99,
+    })
+    .select('id')
+    .single();
+
+  if (error || !created) {
+    throw new Error(`Failed to create category: ${error?.message}`);
+  }
+  return created.id;
+}

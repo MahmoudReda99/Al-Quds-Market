@@ -13,6 +13,7 @@ import { uploadProductImage } from '@/lib/storage';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Badge } from '@/components/ui/Badge';
+import ExcelImportModal from './ExcelImportModal';
 import {
   Plus,
   Pencil,
@@ -24,6 +25,7 @@ import {
   Search,
   ChevronLeft,
   ChevronRight,
+  FileSpreadsheet,
 } from 'lucide-react';
 
 export default function ProductManagement() {
@@ -55,6 +57,7 @@ export default function ProductManagement() {
   // Dialog State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [isImportModalOpen, setIsImportModalOpen] = useState(false);
 
   // Filtered Products
   const filteredProducts = useMemo(() => {
@@ -270,10 +273,21 @@ export default function ProductManagement() {
           </p>
         </div>
 
-        <Button onClick={openCreateModal} className="flex items-center gap-2">
-          <Plus size={16} />
-          <span>{t('admin.addProduct')}</span>
-        </Button>
+        <div className="flex flex-wrap items-center gap-2.5">
+          <Button
+            variant="outline"
+            onClick={() => setIsImportModalOpen(true)}
+            className="flex items-center gap-2 border-surface-border text-foreground hover:bg-surface-subtle text-xs"
+          >
+            <FileSpreadsheet size={16} className="text-emerald-600" />
+            <span>{isAr ? 'استيراد من إكسيل / CSV' : 'Import Excel / CSV'}</span>
+          </Button>
+
+          <Button onClick={openCreateModal} className="flex items-center gap-2 bg-brand-700 hover:bg-brand-800 text-white text-xs">
+            <Plus size={16} />
+            <span>{t('admin.addProduct')}</span>
+          </Button>
+        </div>
       </div>
 
       {/* Search & Filter Toolbar */}
@@ -759,6 +773,14 @@ export default function ProductManagement() {
           </div>
         </div>
       )}
+
+      {/* Excel & CSV Catalog Import Modal */}
+      <ExcelImportModal
+        isOpen={isImportModalOpen}
+        onClose={() => setIsImportModalOpen(false)}
+        categories={categories}
+        isAr={isAr}
+      />
     </div>
   );
 }
