@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import type { CategoryWithChildren } from './types';
 import { useUpdateCategoryMutation, useDeleteCategoryMutation } from './hooks';
 import { getCategoryFallback } from '@/lib/categoryImages';
@@ -9,8 +8,6 @@ import type { SupportedLanguage } from '@/lib/i18n';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import {
-  ArrowLeft,
-  ArrowRight,
   Pencil,
   Trash2,
   Check,
@@ -26,10 +23,6 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category, isAdmin, lang }: CategoryCardProps) {
-  const { t } = useTranslation();
-  const isRtl = lang === 'ar';
-  const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
-
   const updateMutation = useUpdateCategoryMutation();
   const deleteMutation = useDeleteCategoryMutation();
 
@@ -47,7 +40,6 @@ export default function CategoryCard({ category, isAdmin, lang }: CategoryCardPr
 
   const fallback = getCategoryFallback(category.slug);
   const displayImage = category.image_url || fallback.imageUrl;
-  const displayIcon = category.icon || fallback.icon || '🛒';
   const name = localizedText(category.name_ar, category.name_en, lang);
 
   const handleSaveEdit = async (e: React.FormEvent) => {
@@ -267,38 +259,34 @@ export default function CategoryCard({ category, isAdmin, lang }: CategoryCardPr
   // 3. NORMAL DISPLAY MODE
   return (
     <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-surface-border bg-white shadow-card card-hover transition-all duration-300 hover:shadow-hover hover:border-brand-200">
-      {/* Category Image Header */}
+      {/* Category Tile and Names */}
       <Link
         to={`/category/${category.slug}`}
-        className="block relative aspect-[16/10] w-full overflow-hidden bg-brand-50"
+        className="flex flex-col items-center p-4 sm:p-5 text-center group/link"
       >
-        <img
-          src={displayImage}
-          alt={name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = fallback.imageUrl;
-          }}
-        />
-
-        {/* Gradient shadow for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-        {/* Icon Floating Badge */}
-        <div className="absolute top-3 right-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/95 backdrop-blur-md shadow-md text-xl">
-          {displayIcon}
+        {/* Square Illustration Tile matching screenshot */}
+        <div className="relative aspect-square w-28 sm:w-32 md:w-36 overflow-hidden rounded-2xl bg-surface-muted/30 border border-surface-border/80 shadow-xs group-hover/link:scale-105 group-hover/link:shadow-md transition-all duration-300 flex items-center justify-center p-1">
+          <img
+            src={displayImage}
+            alt={name}
+            className="h-full w-full object-contain rounded-xl"
+            loading="lazy"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = fallback.imageUrl;
+            }}
+          />
         </div>
 
-        {/* Category Name on Image */}
-        <div className="absolute bottom-3 right-3 left-3 text-white">
-          <h2 className="text-lg font-extrabold drop-shadow-md line-clamp-1">
+        {/* Category Names */}
+        <div className="mt-3 w-full">
+          <h2 className="text-sm sm:text-base font-extrabold text-foreground group-hover/link:text-brand-700 transition-colors line-clamp-1">
             {name}
           </h2>
-          <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-200 drop-shadow-sm mt-0.5">
-            {t('home.shopNow')}
-            <ArrowIcon size={12} />
-          </span>
+          {category.name_en && (
+            <p className="mt-0.5 text-xs font-medium text-foreground-muted line-clamp-1">
+              {lang === 'ar' ? category.name_en : category.name_ar}
+            </p>
+          )}
         </div>
       </Link>
 

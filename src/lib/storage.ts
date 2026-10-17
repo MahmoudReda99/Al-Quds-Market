@@ -7,8 +7,8 @@ const BUCKET_NAME = 'product-images';
  */
 export function getProductImageUrl(filePath: string): string {
   if (!filePath) return '';
-  // If already an absolute URL (e.g. external asset or placeholder), return as is
-  if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
+  // If already an absolute URL or local public asset path (e.g. /categories/...), return as is
+  if (filePath.startsWith('http://') || filePath.startsWith('https://') || filePath.startsWith('/')) {
     return filePath;
   }
   const { data } = supabase.storage.from(BUCKET_NAME).getPublicUrl(filePath);
