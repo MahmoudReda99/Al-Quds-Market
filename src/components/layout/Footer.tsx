@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Facebook, Instagram, Twitter, Phone, Mail } from 'lucide-react';
 
+import Logo from '@/components/ui/Logo';
+
 export default function Footer() {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
@@ -29,22 +31,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-2 rounded-lg">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-700 text-white">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" />
-                  <path d="M8 12l2.5 2.5L16 9" />
-                </svg>
-              </div>
+              <Logo size="md" showText={false} />
               <span className="text-base font-bold text-brand-700">{t('common.appName')}</span>
             </Link>
             <p className="mt-3 text-sm text-foreground-muted leading-relaxed">

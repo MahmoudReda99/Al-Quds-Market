@@ -25,6 +25,10 @@ import CheckoutPage from '@/features/checkout/CheckoutPage';
 import OrdersPage from '@/features/orders/OrdersPage';
 import OrderDetailPage from '@/features/orders/OrderDetailPage';
 
+// Customer Service & Support
+import CustomerServicePage from '@/features/info/CustomerServicePage';
+import ScrollToTop from '@/components/layout/ScrollToTop';
+
 export default function App() {
   const initializeAuth = useAuthStore((s) => s.initialize);
   const user = useAuthStore((s) => s.user);
@@ -36,6 +40,9 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      {/* Scroll restore on route transitions */}
+      <ScrollToTop />
+
       {/* Global Modals */}
       <AuthModal />
 
@@ -100,6 +107,14 @@ export default function App() {
               </AdminRouteGuard>
             }
           />
+
+          {/* Customer Service & Support */}
+          <Route path="/faq" element={<CustomerServicePage defaultTab="faq" />} />
+          <Route path="/contact" element={<CustomerServicePage defaultTab="contact" />} />
+          <Route path="/return-policy" element={<CustomerServicePage defaultTab="return" />} />
+          <Route path="/privacy" element={<CustomerServicePage defaultTab="privacy" />} />
+          <Route path="/terms" element={<CustomerServicePage defaultTab="terms" />} />
+          <Route path="/customer-service" element={<CustomerServicePage />} />
         </Route>
 
         {/* 404 */}

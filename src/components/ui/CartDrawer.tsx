@@ -16,6 +16,7 @@ import { localizedText } from '@/lib/utils';
 import { resolveProductImage } from '@/lib/productImages';
 import i18n from '@/lib/i18n';
 import type { SupportedLanguage } from '@/lib/i18n';
+import { useDeliveryPromotionStore } from '@/features/admin/deliveryPromotionStore';
 import { Button } from './Button';
 
 export default function CartDrawer() {
@@ -33,10 +34,13 @@ export default function CartDrawer() {
   const isRtl = lang === 'ar';
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
-  // Free delivery threshold indicator (e.g. 100 EGP)
-  const freeDeliveryThreshold = 100;
+  // Free delivery threshold indicator — controlled by Admin
+  const isPromoEnabled = useDeliveryPromotionStore((s) => s.isEnabled);
+  const freeDeliveryThreshold = useDeliveryPromotionStore((s) => s.threshold);
   const remainingForFreeDelivery = Math.max(0, freeDeliveryThreshold - subtotal);
-  const freeDeliveryProgress = Math.min(100, (subtotal / freeDeliveryThreshold) * 100);
+  const freeDeliveryProgress = freeDeliveryThreshold > 0
+    ? Math.min(100, (subtotal / freeDeliveryThreshold) * 100)
+    : 100;
 
   const handleProceedToCheckout = () => {
     closeCart();
@@ -84,8 +88,8 @@ export default function CartDrawer() {
             {t('cart.emptyDesc')}
           </Dialog.Description>
 
-          {/* Delivery Progress Bar */}
-          {items.length > 0 && (
+          {/* Delivery Progress Bar — Only if enabled by admin */}
+          {items.length > 0 && isPromoEnabled && (
             <div className="border-b border-surface-border bg-brand-50/60 px-5 py-3">
               <div className="flex items-center justify-between text-xs font-semibold text-brand-900 mb-1.5">
                 <span className="flex items-center gap-1.5">

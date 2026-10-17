@@ -42,6 +42,7 @@ import type { OrderDetail } from '@/features/orders/types';
 import { Button } from '@/components/ui/Button';
 import { formatCurrency } from '@/lib/utils';
 import { useAuthStore } from '@/features/auth/store';
+import FreeDeliveryPromotionCard from './FreeDeliveryPromotionCard';
 
 type DashboardTab = 'orders' | 'products' | 'delivery';
 
@@ -153,6 +154,21 @@ export default function AdminDashboard() {
     });
   };
 
+  const [isSyncingAll, setIsSyncingAll] = useState(false);
+  const handleSyncAllAreas = async (newThreshold: number | null) => {
+    setIsSyncingAll(true);
+    try {
+      await Promise.all(
+        deliveryAreas.map((area) =>
+          updateDeliveryAreaAdmin(area.id, { free_delivery_threshold: newThreshold })
+        )
+      );
+      queryClient.invalidateQueries({ queryKey: ['admin-delivery-areas'] });
+      queryClient.invalidateQueries({ queryKey: ['delivery-areas'] });
+    } finally {
+      setIsSyncingAll(false);
+    }
+  };
 
   // Calculate high-level KPIs
   const stats = useMemo(() => {
@@ -484,7 +500,15 @@ export default function AdminDashboard() {
 
       {/* TAB 3: DELIVERY AREAS & FEES */}
       {activeTab === 'delivery' && (
-        <div className="rounded-2xl border border-surface-border bg-white p-6 shadow-card space-y-6">
+        <div className="space-y-6">
+          {/* Admin Free Delivery Promotion & Basket Notice Settings */}
+          <FreeDeliveryPromotionCard
+            isAr={isAr}
+            onSyncAllAreas={handleSyncAllAreas}
+            isSyncing={isSyncingAll}
+          />
+
+          <div className="rounded-2xl border border-surface-border bg-white p-6 shadow-card space-y-6">
           <div className="flex flex-col justify-between gap-4 border-b border-surface-border pb-4 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
@@ -654,6 +678,7 @@ export default function AdminDashboard() {
               </table>
             </div>
           )}
+        </div>
         </div>
       )}
     </div>

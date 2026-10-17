@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Heart, ShoppingCart, Check, Pencil } from 'lucide-react';
+import { Heart, Plus, Minus, Info, Pencil, Check } from 'lucide-react';
 import type { Product } from '@/types';
 import { localizedText, cn } from '@/lib/utils';
 import { resolveProductImage } from '@/lib/productImages';
@@ -9,7 +10,7 @@ import type { SupportedLanguage } from '@/lib/i18n';
 import { useCartStore } from '@/features/cart/store';
 import { useFavoritesStore } from '@/features/favorites/store';
 import { useAuthStore } from '@/features/auth/store';
-import { useState } from 'react';
+import { useProductQuickViewStore } from './quickViewStore';
 
 interface ProductCardProps {
   product: Product;
@@ -26,13 +27,15 @@ export default function ProductCard({ product, className }: ProductCardProps) {
   const isAdmin = profile?.role === 'admin';
 
   const addItem = useCartStore((s) => s.addItem);
-  const openCart = useCartStore((s) => s.openCart);
+  const updateQuantity = useCartStore((s) => s.updateQuantity);
+  const removeItem = useCartStore((s) => s.removeItem);
   const cartItems = useCartStore((s) => s.items);
   const inCart = cartItems.find((i) => i.product.id === product.id);
 
   const isFav = useFavoritesStore((s) => s.isFavorite(product.id));
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
 
+  const openQuickView = useProductQuickViewStore((s) => s.openQuickView);
   const [isAddedRecently, setIsAddedRecently] = useState(false);
 
   const hasDiscount = product.compare_at_price !== null && product.compare_at_price > product.price;
@@ -43,18 +46,39 @@ export default function ProductCard({ product, className }: ProductCardProps) {
   const isOutOfStock = product.stock_quantity <= 0;
   const isLowStock = product.stock_quantity > 0 && product.stock_quantity <= 5;
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleIncrement = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     if (isOutOfStock) return;
 
-    addItem(product, 1);
-    openCart();
+    if (inCart) {
+      updateQuantity(product.id, inCart.quantity + 1);
+    } else {
+      addItem(product, 1);
+    }
     setIsAddedRecently(true);
-    setTimeout(() => setIsAddedRecently(false), 1500);
+    setTimeout(() => setIsAddedRecently(false), 1200);
+  };
+
+  const handleDecrement = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!inCart) return;
+
+    if (inCart.quantity <= 1) {
+      removeItem(product.id);
+    } else {
+      updateQuantity(product.id, inCart.quantity - 1);
+    }
+  };
+
+  const handleCardClick = () => {
+    openQuickView(product);
   };
 
   const handleToggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     toggleFavorite(product.id);
   };
 
@@ -62,48 +86,65 @@ export default function ProductCard({ product, className }: ProductCardProps) {
 
   return (
     <div
+      onClick={handleCardClick}
       className={cn(
-        'group relative flex flex-col rounded-2xl border border-surface-border bg-white shadow-card card-hover overflow-hidden transition-all',
+        'group relative flex flex-col rounded-2xl border border-surface-border bg-white shadow-card card-hover overflow-hidden transition-all cursor-pointer select-none',
         className
       )}
     >
-      {/* Top badges & Favorite */}
-      <div className="absolute inset-x-2 top-2 z-10 flex items-center justify-between">
-        <div className="flex flex-col gap-1">
-          {!product.is_active && (
-            <span className="rounded-lg bg-red-600 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
-              معطل | Inactive
-            </span>
-          )}
-          {hasDiscount && (
+      {/* Top Bar: Minus button (when in cart), Badges, and Quantity Badge */}
+      <div className="absolute inset-x-2 top-2 z-10 flex items-center justify-between pointer-events-none">
+        {/* Start corner: Minus button if inCart OR Discount/Stock badge */}
+        <div className="flex items-center gap-1 pointer-events-auto">
+          {inCart && inCart.quantity > 0 ? (
+            <button
+              type="button"
+              onClick={handleDecrement}
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-red-600 text-white shadow-md hover:bg-red-700 active:scale-90 transition-transform"
+              aria-label="Decrease quantity"
+              title="Decrease quantity"
+            >
+              <Minus size={14} className="stroke-[3]" />
+            </button>
+          ) : hasDiscount ? (
             <span className="rounded-lg bg-red-600 px-2 py-0.5 text-[11px] font-bold text-white shadow-sm">
               -{discountPct}%
             </span>
-          )}
-          {isLowStock && (
+          ) : !product.is_active ? (
+            <span className="rounded-lg bg-red-600 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+              معطل
+            </span>
+          ) : isLowStock ? (
             <span className="rounded-lg bg-amber-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
               {t('product.lowStock')}
             </span>
-          )}
+          ) : null}
         </div>
 
-        <button
-          onClick={handleToggleFavorite}
-          className={cn(
-            'flex h-8 w-8 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm transition-all hover:scale-110 active:scale-95',
-            isFav ? 'text-red-500' : 'text-foreground-subtle hover:text-red-500'
+        {/* End corner: Green quantity badge if inCart, plus favorite heart */}
+        <div className="flex items-center gap-1.5 pointer-events-auto">
+          {inCart && inCart.quantity > 0 ? (
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 text-xs font-black text-white shadow-md">
+              {inCart.quantity}
+            </span>
+          ) : (
+            <button
+              type="button"
+              onClick={handleToggleFavorite}
+              className={cn(
+                'flex h-7 w-7 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm transition-all hover:scale-110 active:scale-95',
+                isFav ? 'text-red-500' : 'text-foreground-subtle hover:text-red-500'
+              )}
+              aria-label="Toggle favorite"
+            >
+              <Heart size={14} className={isFav ? 'fill-red-500' : ''} />
+            </button>
           )}
-          aria-label="Toggle favorite"
-        >
-          <Heart size={16} className={isFav ? 'fill-red-500' : ''} />
-        </button>
+        </div>
       </div>
 
-      {/* Product Image Area: Shorter aspect-[4/3] ratio for compact card height */}
-      <Link
-        to={`/product/${product.id}`}
-        className="relative block aspect-[4/3] w-full overflow-hidden bg-surface-muted"
-      >
+      {/* Product Image Area */}
+      <div className="relative block aspect-[4/3] w-full overflow-hidden bg-surface-muted">
         {imageUrl ? (
           <img
             src={imageUrl}
@@ -124,22 +165,33 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             </span>
           </div>
         )}
-      </Link>
+
+        {/* InstaShop Info (i) button overlay at bottom-end of image */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            openQuickView(product);
+          }}
+          className="absolute bottom-2 end-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-white/85 text-foreground-muted shadow-xs hover:bg-white hover:text-brand-700 transition-all"
+          aria-label="Product info"
+          title="Product details"
+        >
+          <Info size={13} />
+        </button>
+      </div>
 
       {/* Info: Compact spacing */}
       <div className="flex flex-1 flex-col p-2.5 sm:p-3">
-        <Link
-          to={`/product/${product.id}`}
-          className="line-clamp-1 sm:line-clamp-2 text-xs sm:text-sm font-semibold text-foreground leading-snug hover:text-brand-700 transition-colors"
-        >
+        <h3 className="line-clamp-2 text-xs sm:text-sm font-semibold text-foreground leading-snug group-hover:text-brand-700 transition-colors min-h-[2.25rem]">
           {name}
-        </Link>
+        </h3>
 
         <p className="mt-0.5 text-[11px] text-foreground-muted">
-          {unit}
+          {unit || '\u00A0'}
         </p>
 
-        {/* Price & Action Button (Edit for Admin, Add to Cart for Customer) */}
+        {/* Price & Action Button (Edit for Admin, Plus / Cart for Customer) */}
         <div className="mt-auto flex items-end justify-between pt-2">
           <div>
             <div className="flex items-baseline gap-1">
@@ -157,6 +209,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           {isAdmin ? (
             <Link
               to={`/product/${product.id}`}
+              onClick={(e) => e.stopPropagation()}
               className="flex h-8 items-center gap-1 px-2.5 rounded-xl bg-amber-500 text-white font-bold text-xs shadow-sm transition-all hover:bg-amber-600 active:scale-95"
               aria-label="تعديل المنتج | Edit Product"
               title="تعديل المنتج | Edit Product"
@@ -166,7 +219,8 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             </Link>
           ) : (
             <button
-              onClick={handleAddToCart}
+              type="button"
+              onClick={handleIncrement}
               disabled={isOutOfStock}
               className={cn(
                 'flex h-8 w-8 sm:h-8.5 sm:w-8.5 items-center justify-center rounded-xl shadow-sm transition-all active:scale-90',
@@ -182,11 +236,11 @@ export default function ProductCard({ product, className }: ProductCardProps) {
               title={inCart ? `${inCart.quantity} in cart` : t('common.addToCart')}
             >
               {isAddedRecently ? (
-                <Check size={15} />
+                <Check size={16} />
               ) : inCart ? (
-                <span className="text-xs font-bold">{inCart.quantity}</span>
+                <Plus size={16} className="stroke-[2.5]" />
               ) : (
-                <ShoppingCart size={15} />
+                <Plus size={16} className="stroke-[2.5]" />
               )}
             </button>
           )}

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useState, useRef, useEffect } from 'react';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   ShoppingCart,
@@ -8,7 +8,6 @@ import {
   Globe,
   Menu,
   X,
-  ChevronDown,
   Package,
   ShieldCheck,
 } from 'lucide-react';
@@ -22,8 +21,13 @@ import Logo from '@/components/ui/Logo';
 export default function Header() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
+
   const itemCount = useCartStore((s) => s.itemCount());
   const toggleCart = useCartStore((s) => s.toggleCart);
 
@@ -38,6 +42,45 @@ export default function Header() {
     i18n.changeLanguage(next);
   }
 
+  // Close menus on route change
+  useEffect(() => {
+    setSearchOpen(false);
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // Click outside and escape handler for mobile search
+  useEffect(() => {
+    if (!searchOpen) return;
+
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
+      const target = event.target as Node;
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(target) &&
+        searchButtonRef.current &&
+        !searchButtonRef.current.contains(target)
+      ) {
+        setSearchOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setSearchOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [searchOpen]);
+
   const navLinks = [
     { to: '/', label: t('common.home') },
     { to: '/categories', label: t('common.categories') },
@@ -48,14 +91,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-surface-border bg-white/95 backdrop-blur-sm">
       {/* Top Bar */}
       <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo */}
+        {/* Logo & Brand Name displayed side-by-side on all screens */}
         <Link
           to="/"
           className="flex shrink-0 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 rounded-lg"
           aria-label={t('common.appName')}
         >
           <Logo size="md" showText={false} />
-          <span className="text-lg font-bold text-brand-700 leading-none hidden sm:block">
+          <span className="text-sm font-bold text-brand-700 leading-none sm:text-lg whitespace-nowrap">
             {t('common.appName')}
           </span>
         </Link>
@@ -67,9 +110,11 @@ export default function Header() {
 
         {/* Actions */}
         <div className="ms-auto flex items-center gap-1 sm:gap-2">
-          {/* Search toggle — mobile */}
+          {/* Search toggle — mobile (clean button with no sticking focus outline) */}
           <button
-            className="btn-ghost p-2 md:hidden"
+            ref={searchButtonRef}
+            type="button"
+            className="flex items-center justify-center p-2 rounded-xl text-foreground-muted hover:text-brand-700 transition-colors focus:outline-none focus:ring-0 active:bg-transparent md:hidden"
             onClick={() => setSearchOpen((v) => !v)}
             aria-label={t('common.searchShort')}
           >
@@ -160,10 +205,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile search bar */}
+      {/* Mobile search bar with click-outside support */}
       {searchOpen && (
-        <div className="border-t border-surface-border px-4 py-2 md:hidden">
-          <SearchBar autoFocus />
+        <div
+          ref={searchContainerRef}
+          className="border-t border-surface-border px-4 py-2.5 md:hidden bg-white shadow-sm animate-fade-in"
+        >
+          <SearchBar autoFocus onSearch={() => setSearchOpen(false)} />
         </div>
       )}
 
@@ -185,29 +233,6 @@ export default function Header() {
               {link.label}
             </NavLink>
           ))}
-
-          {/* Category mega menu trigger */}
-          <button className="flex items-center gap-1 text-sm font-medium text-foreground-muted transition-colors hover:text-brand-700">
-            {t('nav.allCategories')}
-            <ChevronDown size={14} />
-          </button>
-
-          {/* Language toggle in nav */}
-          <button
-            onClick={toggleLanguage}
-            className="ms-auto flex items-center gap-1.5 text-sm font-medium text-foreground-muted transition-colors hover:text-brand-700 md:hidden"
-          >
-            <Globe size={15} />
-            {t('common.language')}
-          </button>
-
-          <button
-            onClick={toggleLanguage}
-            className="ms-auto hidden items-center gap-1.5 text-sm font-medium text-foreground-muted transition-colors hover:text-brand-700 md:flex"
-          >
-            <Globe size={15} />
-            {t('common.language')}
-          </button>
         </div>
       </nav>
 
@@ -298,7 +323,13 @@ export default function Header() {
 
 
 /* ─── Search Bar ────────────────────────────── */
-function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
+function SearchBar({
+  autoFocus = false,
+  onSearch,
+}: {
+  autoFocus?: boolean;
+  onSearch?: () => void;
+}) {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -312,6 +343,7 @@ function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
         const q = data.get('q');
         if (q && String(q).trim()) {
           navigate(`/search?q=${encodeURIComponent(String(q).trim())}`);
+          onSearch?.();
         }
       }}
     >
