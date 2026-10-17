@@ -48,7 +48,7 @@ export default function HomePage() {
           />
 
           {isCategoriesLoading ? (
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+            <div className="grid grid-cols-3 gap-2.5 min-[480px]:grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
               {Array.from({ length: 8 }).map((_, i) => (
                 <div
                   key={i}
@@ -57,7 +57,7 @@ export default function HomePage() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <div className="grid grid-cols-3 gap-2.5 min-[480px]:grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
               {categories.map((cat) => {
                 const name = localizedText(cat.name_ar, cat.name_en, lang);
                 const fallback = getCategoryFallback(cat.slug);
@@ -93,9 +93,9 @@ export default function HomePage() {
                     {/* Name of the category below the card */}
                     <Link
                       to={`/category/${cat.slug}`}
-                      className="mt-2 text-center w-full px-1 block group/text"
+                      className="mt-1.5 text-center w-full px-0.5 block group/text"
                     >
-                      <span className="text-xs sm:text-sm font-bold text-foreground leading-snug line-clamp-2 group-hover/text:text-brand-700 transition-colors block min-h-[2.25rem] flex items-center justify-center">
+                      <span className="text-[11px] sm:text-xs md:text-sm font-bold text-foreground leading-tight line-clamp-2 group-hover/text:text-brand-700 transition-colors block min-h-[2rem] flex items-center justify-center">
                         {name}
                       </span>
                     </Link>

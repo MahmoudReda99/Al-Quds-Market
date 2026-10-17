@@ -72,10 +72,6 @@ export default function ProductCard({ product, className }: ProductCardProps) {
     }
   };
 
-  const handleCardClick = () => {
-    openQuickView(product);
-  };
-
   const handleToggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -86,9 +82,10 @@ export default function ProductCard({ product, className }: ProductCardProps) {
 
   return (
     <div
-      onClick={handleCardClick}
+      onClick={handleIncrement}
       className={cn(
-        'group relative flex flex-col rounded-2xl border border-surface-border bg-white shadow-card card-hover overflow-hidden transition-all cursor-pointer select-none',
+        'group relative flex flex-col rounded-2xl border border-surface-border bg-white shadow-card card-hover overflow-hidden transition-all select-none',
+        isOutOfStock ? 'cursor-not-allowed opacity-80' : 'cursor-pointer hover:border-brand-500/50 hover:shadow-card-hover',
         className
       )}
     >
@@ -123,23 +120,22 @@ export default function ProductCard({ product, className }: ProductCardProps) {
 
         {/* End corner: Green quantity badge if inCart, plus favorite heart */}
         <div className="flex items-center gap-1.5 pointer-events-auto">
-          {inCart && inCart.quantity > 0 ? (
+          {inCart && inCart.quantity > 0 && (
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 text-xs font-black text-white shadow-md">
               {inCart.quantity}
             </span>
-          ) : (
-            <button
-              type="button"
-              onClick={handleToggleFavorite}
-              className={cn(
-                'flex h-7 w-7 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm transition-all hover:scale-110 active:scale-95',
-                isFav ? 'text-red-500' : 'text-foreground-subtle hover:text-red-500'
-              )}
-              aria-label="Toggle favorite"
-            >
-              <Heart size={14} className={isFav ? 'fill-red-500' : ''} />
-            </button>
           )}
+          <button
+            type="button"
+            onClick={handleToggleFavorite}
+            className={cn(
+              'flex h-7 w-7 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm transition-all hover:scale-110 active:scale-95',
+              isFav ? 'text-red-500' : 'text-foreground-subtle hover:text-red-500'
+            )}
+            aria-label="Toggle favorite"
+          >
+            <Heart size={14} className={isFav ? 'fill-red-500' : ''} />
+          </button>
         </div>
       </div>
 
@@ -166,19 +162,27 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           </div>
         )}
 
-        {/* InstaShop Info (i) button overlay at bottom-end of image */}
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            openQuickView(product);
-          }}
-          className="absolute bottom-2 end-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-white/85 text-foreground-muted shadow-xs hover:bg-white hover:text-brand-700 transition-all"
-          aria-label="Product info"
-          title="Product details"
-        >
-          <Info size={13} />
-        </button>
+        {/* Product Details Icon Button with hover tooltip */}
+        <div className="group/details absolute bottom-2 end-2 z-10 pointer-events-auto">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              openQuickView(product);
+            }}
+            className="flex h-7 w-7 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm text-foreground-muted shadow-sm hover:bg-brand-700 hover:text-white hover:scale-110 active:scale-95 transition-all"
+            aria-label={lang === 'ar' ? 'تفاصيل المنتج' : 'Product Details'}
+            title={lang === 'ar' ? 'تفاصيل المنتج' : 'Product Details'}
+          >
+            <Info size={14} className="stroke-[2.2]" />
+          </button>
+
+          {/* Floating Tooltip */}
+          <div className="pointer-events-none absolute bottom-full end-0 mb-1.5 hidden group-hover/details:flex flex-col items-center whitespace-nowrap rounded-lg bg-foreground/95 px-2.5 py-1 text-[11px] font-semibold text-white shadow-xl z-30 animate-fade-in">
+            <span>{lang === 'ar' ? 'تفاصيل المنتج' : 'Product Details'}</span>
+            <div className="absolute -bottom-1 end-2.5 h-2 w-2 rotate-45 bg-foreground/95" />
+          </div>
+        </div>
       </div>
 
       {/* Info: Compact spacing */}

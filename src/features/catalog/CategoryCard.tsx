@@ -311,13 +311,13 @@ export default function CategoryCard({ category, isAdmin, lang }: CategoryCardPr
       {/* Name of the category below the card */}
       <Link
         to={`/category/${category.slug}`}
-        className="mt-2 text-center w-full px-1 block group/text"
+        className="mt-1.5 text-center w-full px-0.5 block group/text"
       >
-        <h2 className="text-xs sm:text-sm font-bold text-foreground group-hover/text:text-brand-700 transition-colors line-clamp-2 leading-snug min-h-[2.25rem] flex items-center justify-center">
+        <h2 className="text-[11px] sm:text-xs md:text-sm font-bold text-foreground group-hover/text:text-brand-700 transition-colors line-clamp-2 leading-tight min-h-[2rem] flex items-center justify-center">
           {name}
         </h2>
         {category.name_en && (
-          <p className="mt-0.5 text-[11px] text-foreground-muted line-clamp-1">
+          <p className="mt-0.5 text-[10px] sm:text-[11px] text-foreground-muted line-clamp-1">
             {lang === 'ar' ? category.name_en : category.name_ar}
           </p>
         )}
