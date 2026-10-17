@@ -50,6 +50,7 @@ export function useProductsQuery(filters: ProductFilters = {}) {
     queryKey: CATALOG_KEYS.products(filters),
     queryFn: () => fetchProducts(filters),
     staleTime: 1000 * 60 * 2, // 2 minutes
+    placeholderData: (previousData) => previousData,
   });
 }
 

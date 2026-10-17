@@ -99,55 +99,55 @@ export default function ProductCard({ product, className }: ProductCardProps) {
         </button>
       </div>
 
-      {/* Product Image Area */}
+      {/* Product Image Area: Shorter aspect-[4/3] ratio for compact card height */}
       <Link
         to={`/product/${product.id}`}
-        className="relative flex aspect-square items-center justify-center bg-surface-muted p-4 overflow-hidden"
+        className="relative block aspect-[4/3] w-full overflow-hidden bg-surface-muted"
       >
         {imageUrl ? (
           <img
             src={imageUrl}
             alt={name}
             loading="lazy"
-            className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
-          <span className="text-5xl" aria-hidden="true">
+          <div className="flex h-full w-full items-center justify-center text-4xl" aria-hidden="true">
             🛒
-          </span>
+          </div>
         )}
 
         {isOutOfStock && (
           <div className="absolute inset-0 flex items-center justify-center bg-white/70 backdrop-blur-[2px]">
-            <span className="rounded-xl bg-foreground/80 px-3 py-1 text-xs font-bold text-white">
+            <span className="rounded-xl bg-foreground/80 px-2.5 py-1 text-[11px] font-bold text-white">
               {t('common.outOfStock')}
             </span>
           </div>
         )}
       </Link>
 
-      {/* Info */}
-      <div className="flex flex-1 flex-col p-3.5">
+      {/* Info: Compact spacing */}
+      <div className="flex flex-1 flex-col p-2.5 sm:p-3">
         <Link
           to={`/product/${product.id}`}
-          className="line-clamp-2 text-sm font-semibold text-foreground leading-snug hover:text-brand-700 transition-colors"
+          className="line-clamp-1 sm:line-clamp-2 text-xs sm:text-sm font-semibold text-foreground leading-snug hover:text-brand-700 transition-colors"
         >
           {name}
         </Link>
 
-        <p className="mt-1 text-xs text-foreground-muted">
+        <p className="mt-0.5 text-[11px] text-foreground-muted">
           {unit}
         </p>
 
         {/* Price & Action Button (Edit for Admin, Add to Cart for Customer) */}
-        <div className="mt-auto flex items-end justify-between pt-3">
+        <div className="mt-auto flex items-end justify-between pt-2">
           <div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-base font-extrabold text-foreground">
+            <div className="flex items-baseline gap-1">
+              <span className="text-sm sm:text-base font-extrabold text-foreground">
                 {product.price.toFixed(2)} {t('common.currency')}
               </span>
               {hasDiscount && (
-                <span className="text-xs text-foreground-subtle line-through">
+                <span className="text-[11px] text-foreground-subtle line-through">
                   {product.compare_at_price!.toFixed(2)} {t('common.currency')}
                 </span>
               )}
@@ -157,11 +157,11 @@ export default function ProductCard({ product, className }: ProductCardProps) {
           {isAdmin ? (
             <Link
               to={`/product/${product.id}`}
-              className="flex h-9 items-center gap-1.5 px-3 rounded-xl bg-amber-500 text-white font-bold text-xs shadow-sm transition-all hover:bg-amber-600 active:scale-95"
+              className="flex h-8 items-center gap-1 px-2.5 rounded-xl bg-amber-500 text-white font-bold text-xs shadow-sm transition-all hover:bg-amber-600 active:scale-95"
               aria-label="تعديل المنتج | Edit Product"
               title="تعديل المنتج | Edit Product"
             >
-              <Pencil size={13} />
+              <Pencil size={12} />
               <span>تعديل</span>
             </Link>
           ) : (
@@ -169,7 +169,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
               onClick={handleAddToCart}
               disabled={isOutOfStock}
               className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-xl shadow-sm transition-all active:scale-90',
+                'flex h-8 w-8 sm:h-8.5 sm:w-8.5 items-center justify-center rounded-xl shadow-sm transition-all active:scale-90',
                 isOutOfStock
                   ? 'bg-surface-border text-foreground-subtle cursor-not-allowed'
                   : isAddedRecently
@@ -182,11 +182,11 @@ export default function ProductCard({ product, className }: ProductCardProps) {
               title={inCart ? `${inCart.quantity} in cart` : t('common.addToCart')}
             >
               {isAddedRecently ? (
-                <Check size={16} />
+                <Check size={15} />
               ) : inCart ? (
                 <span className="text-xs font-bold">{inCart.quantity}</span>
               ) : (
-                <ShoppingCart size={16} />
+                <ShoppingCart size={15} />
               )}
             </button>
           )}

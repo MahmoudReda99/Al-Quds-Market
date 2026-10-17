@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCategoryQuery, useProductsQuery } from './hooks';
@@ -30,11 +30,20 @@ export default function CategoryDetailPage() {
   const minPrice = priceRange === '10to25' ? 10 : priceRange === 'above25' ? 25 : undefined;
   const maxPrice = priceRange === 'under10' ? 10 : priceRange === '10to25' ? 25 : undefined;
 
+  const PAGE_SIZE = 36;
+  const [limit, setLimit] = useState(PAGE_SIZE);
+  const observerTarget = useRef<HTMLDivElement>(null);
+
   // Fetch category and subcategories
   const { data: category, isLoading: isCategoryLoading } = useCategoryQuery(slug);
 
+  // Reset pagination limit when category or active filters change
+  useEffect(() => {
+    setLimit(PAGE_SIZE);
+  }, [slug, activeSubcategoryId, inStockOnly, priceRange, sortBy]);
+
   // Fetch products under category (admins can see all items including disabled ones)
-  const { data: productsData, isLoading: isProductsLoading } = useProductsQuery({
+  const { data: productsData, isLoading: isProductsLoading, isFetching: isProductsFetching } = useProductsQuery({
     categorySlug: slug,
     subcategoryId: activeSubcategoryId,
     inStockOnly,
@@ -42,9 +51,40 @@ export default function CategoryDetailPage() {
     maxPrice,
     sortBy,
     includeInactive: isAdmin,
+    limit,
   });
 
   const products = productsData?.products || [];
+  const totalProducts = productsData?.total || 0;
+  const hasMore = Boolean(productsData && products.length < totalProducts);
+
+  // Automatic Infinite Scroll: Observe when user scrolls near the bottom of the page
+  useEffect(() => {
+    if (!hasMore || isProductsFetching) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setLimit((prev) => prev + PAGE_SIZE);
+        }
+      },
+      {
+        rootMargin: '300px', // Preload next batch 300px before user hits the bottom
+        threshold: 0.1,
+      }
+    );
+
+    const currentEl = observerTarget.current;
+    if (currentEl) {
+      observer.observe(currentEl);
+    }
+
+    return () => {
+      if (currentEl) {
+        observer.unobserve(currentEl);
+      }
+    };
+  }, [hasMore, isProductsFetching]);
   const categoryName = category ? localizedText(category.name_ar, category.name_en, lang) : '';
 
   const handleSubcategoryClick = (subId?: string) => {
@@ -275,11 +315,35 @@ export default function CategoryDetailPage() {
           )}
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          {hasMore ? (
+            <div
+              ref={observerTarget}
+              className="mt-8 flex flex-col items-center justify-center py-6"
+            >
+              <Loader2 className="h-6 w-6 animate-spin text-brand-700" />
+              <span className="mt-2 text-xs font-medium text-foreground-muted">
+                {isRtl
+                  ? `جاري تحميل المزيد من المنتجات... (${products.length} من ${totalProducts})`
+                  : `Loading more products... (${products.length} of ${totalProducts})`}
+              </span>
+            </div>
+          ) : totalProducts > PAGE_SIZE ? (
+            <div className="mt-8 text-center text-xs text-foreground-muted py-6 border-t border-surface-border/50">
+              <span>
+                {isRtl
+                  ? `تم عرض جميع المنتجات بنجاح (${totalProducts} منتج)`
+                  : `All ${totalProducts} products loaded`}
+              </span>
+            </div>
+          ) : null}
+        </>
       )}
     </div>
   );

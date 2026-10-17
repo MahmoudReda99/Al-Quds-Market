@@ -258,89 +258,70 @@ export default function CategoryCard({ category, isAdmin, lang }: CategoryCardPr
 
   // 3. NORMAL DISPLAY MODE
   return (
-    <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-surface-border bg-white shadow-card card-hover transition-all duration-300 hover:shadow-hover hover:border-brand-200">
-      {/* Category Tile and Names */}
+    <div className="group relative flex flex-col items-center">
+      {/* Category Image Card: Image takes the ENTIRE card */}
       <Link
         to={`/category/${category.slug}`}
-        className="flex flex-col items-center p-4 sm:p-5 text-center group/link"
+        className="relative aspect-square w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-surface-border bg-white shadow-card card-hover transition-all duration-300 hover:shadow-hover hover:border-brand-300 block"
       >
-        {/* Square Illustration Tile matching screenshot */}
-        <div className="relative aspect-square w-28 sm:w-32 md:w-36 overflow-hidden rounded-2xl bg-surface-muted/30 border border-surface-border/80 shadow-xs group-hover/link:scale-105 group-hover/link:shadow-md transition-all duration-300 flex items-center justify-center p-1">
-          <img
-            src={displayImage}
-            alt={name}
-            className="h-full w-full object-contain rounded-xl"
-            loading="lazy"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = fallback.imageUrl;
-            }}
-          />
-        </div>
+        <img
+          src={displayImage}
+          alt={name}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = fallback.imageUrl;
+          }}
+        />
 
-        {/* Category Names */}
-        <div className="mt-3 w-full">
-          <h2 className="text-sm sm:text-base font-extrabold text-foreground group-hover/link:text-brand-700 transition-colors line-clamp-1">
-            {name}
-          </h2>
-          {category.name_en && (
-            <p className="mt-0.5 text-xs font-medium text-foreground-muted line-clamp-1">
-              {lang === 'ar' ? category.name_en : category.name_ar}
-            </p>
-          )}
-        </div>
-      </Link>
-
-      {/* Subcategories Chips */}
-      {category.children && category.children.length > 0 && (
-        <div className="p-4 pt-3 border-t border-surface-border/60 flex-1">
-          <p className="text-[11px] font-medium text-foreground-muted mb-2">
-            الأقسام الفرعية | Subcategories:
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {category.children.map((sub) => (
-              <Link
-                key={sub.id}
-                to={`/category/${category.slug}?sub=${sub.id}`}
-                className="rounded-lg bg-surface-muted px-2.5 py-1 text-xs font-medium text-foreground-muted hover:bg-brand-50 hover:text-brand-700 transition-colors"
-              >
-                {localizedText(sub.name_ar, sub.name_en, lang)}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* ADMIN CONTROLS FOOTER */}
-      {isAdmin && (
-        <div className="flex items-center justify-between border-t border-amber-100 bg-amber-50/50 px-4 py-2.5">
-          <span className="text-[11px] font-bold text-amber-800 flex items-center gap-1">
-            <span className="h-2 w-2 rounded-full bg-amber-500 inline-block animate-pulse" />
-            إدارة القسم (Admin)
-          </span>
-
-          <div className="flex items-center gap-1.5">
+        {/* Admin Quick Action Floating Buttons (Top Corner) */}
+        {isAdmin && (
+          <div
+            className="absolute top-2 left-2 z-10 flex items-center gap-1.5"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
-              onClick={() => setIsEditing(true)}
-              className="flex items-center gap-1 rounded-lg border border-amber-300 bg-white px-2.5 py-1 text-xs font-semibold text-amber-900 shadow-xs hover:bg-amber-100 transition-colors"
-              title="تعديل بيانات القسم"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsEditing(true);
+              }}
+              className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-amber-800 shadow-md hover:bg-amber-100 transition-colors border border-amber-200"
+              title="تعديل | Edit"
             >
               <Pencil size={12} />
-              <span>تعديل</span>
             </button>
-
             <button
               type="button"
-              onClick={() => setIsConfirmingDelete(true)}
-              className="flex items-center gap-1 rounded-lg border border-red-200 bg-white px-2.5 py-1 text-xs font-semibold text-red-600 shadow-xs hover:bg-red-50 transition-colors"
-              title="حذف هذا القسم"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsConfirmingDelete(true);
+              }}
+              className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-red-600 shadow-md hover:bg-red-100 transition-colors border border-red-200"
+              title="حذف | Delete"
             >
               <Trash2 size={12} />
-              <span>حذف</span>
             </button>
           </div>
-        </div>
-      )}
+        )}
+      </Link>
+
+      {/* Name of the category below the card */}
+      <Link
+        to={`/category/${category.slug}`}
+        className="mt-2 text-center w-full px-1 block group/text"
+      >
+        <h2 className="text-xs sm:text-sm font-bold text-foreground group-hover/text:text-brand-700 transition-colors line-clamp-1">
+          {name}
+        </h2>
+        {category.name_en && (
+          <p className="mt-0.5 text-[11px] text-foreground-muted line-clamp-1">
+            {lang === 'ar' ? category.name_en : category.name_ar}
+          </p>
+        )}
+      </Link>
     </div>
   );
 }

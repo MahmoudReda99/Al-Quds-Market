@@ -64,32 +64,42 @@ export default function HomePage() {
                 const displayImg = cat.image_url || fallback.imageUrl;
                 const displayIco = cat.icon || fallback.icon || '🛒';
                 return (
-                  <Link
+                  <div
                     key={cat.id}
-                    to={`/category/${cat.slug}`}
-                    className="group flex flex-col items-center gap-2 rounded-2xl border border-surface-border bg-white p-2.5 sm:p-3 text-center card-hover hover:border-brand-200 transition-all"
+                    className="group flex flex-col items-center"
                   >
-                    <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-surface-muted overflow-hidden shadow-xs group-hover:scale-105 transition-transform">
+                    {/* The image takes the ALL of the card */}
+                    <Link
+                      to={`/category/${cat.slug}`}
+                      className="block aspect-square w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-surface-border bg-white shadow-card card-hover hover:border-brand-300 hover:shadow-hover transition-all duration-300"
+                    >
                       {displayImg ? (
                         <img
                           src={displayImg}
                           alt={name}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                           loading="lazy"
                           onError={(e) => {
                             (e.target as HTMLImageElement).src = fallback.imageUrl;
                           }}
                         />
                       ) : (
-                        <span className="text-3xl sm:text-4xl" aria-hidden="true">
+                        <div className="flex h-full w-full items-center justify-center text-3xl sm:text-4xl" aria-hidden="true">
                           {displayIco}
-                        </span>
+                        </div>
                       )}
-                    </div>
-                    <span className="text-[11px] font-bold text-foreground sm:text-xs leading-tight line-clamp-2">
-                      {name}
-                    </span>
-                  </Link>
+                    </Link>
+
+                    {/* Name of the category below the card */}
+                    <Link
+                      to={`/category/${cat.slug}`}
+                      className="mt-2 text-center w-full px-1 block group/text"
+                    >
+                      <span className="text-[11px] font-bold text-foreground sm:text-xs leading-tight line-clamp-2 group-hover/text:text-brand-700 transition-colors block">
+                        {name}
+                      </span>
+                    </Link>
+                  </div>
                 );
               })}
             </div>
