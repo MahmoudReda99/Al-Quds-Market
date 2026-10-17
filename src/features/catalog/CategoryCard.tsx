@@ -313,7 +313,7 @@ export default function CategoryCard({ category, isAdmin, lang }: CategoryCardPr
         to={`/category/${category.slug}`}
         className="mt-2 text-center w-full px-1 block group/text"
       >
-        <h2 className="text-xs sm:text-sm font-bold text-foreground group-hover/text:text-brand-700 transition-colors line-clamp-1">
+        <h2 className="text-xs sm:text-sm font-bold text-foreground group-hover/text:text-brand-700 transition-colors line-clamp-2 leading-snug min-h-[2.25rem] flex items-center justify-center">
           {name}
         </h2>
         {category.name_en && (

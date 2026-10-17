@@ -57,7 +57,7 @@ export default function HomePage() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {categories.map((cat) => {
                 const name = localizedText(cat.name_ar, cat.name_en, lang);
                 const fallback = getCategoryFallback(cat.slug);
@@ -95,7 +95,7 @@ export default function HomePage() {
                       to={`/category/${cat.slug}`}
                       className="mt-2 text-center w-full px-1 block group/text"
                     >
-                      <span className="text-[11px] font-bold text-foreground sm:text-xs leading-tight line-clamp-2 group-hover/text:text-brand-700 transition-colors block">
+                      <span className="text-xs sm:text-sm font-bold text-foreground leading-snug line-clamp-2 group-hover/text:text-brand-700 transition-colors block min-h-[2.25rem] flex items-center justify-center">
                         {name}
                       </span>
                     </Link>
@@ -218,15 +218,12 @@ function HeroSection({
                 {t('home.shopNow')}
                 <ArrowIcon size={18} aria-hidden="true" />
               </Link>
-              <Link to="/categories" className="btn-outline border-white/60 text-white hover:bg-white/10 px-6 py-3">
-                {t('home.shopCategories')}
-              </Link>
             </div>
 
             <div className="mt-10 flex gap-8">
               {[
                 { value: '500+', labelAr: 'منتج', labelEn: 'Products' },
-                { value: '1hr', labelAr: 'توصيل', labelEn: 'Delivery' },
+                { value: i18n.language === 'ar' ? '15 دقيقة' : '15 min', labelAr: 'توصيل', labelEn: 'Delivery' },
                 { value: '100%', labelAr: 'طازج', labelEn: 'Fresh' },
               ].map(({ value, labelAr, labelEn }) => (
                 <div key={value}>
